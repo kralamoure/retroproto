@@ -4,8 +4,8 @@
 
 Some examples of what you can do with this library:
 
-- Deserialize client/server packets into structured data
-- Serialize structured data into client/server packets
+- Deserialize client/server packets
+- Serialize messages
 
 ## Requirements:
 
@@ -20,7 +20,7 @@ go get github.com/kralamoure/d1proto
 
 ## Usage
 
-### Deserialize a client packet into structured data
+### Deserialize a client packet
  
 ```go
 package main
@@ -49,7 +49,7 @@ func main() {
 }
 ```
 
-### Deserialize a server packet into structured data
+### Deserialize a server packet
  
 ```go
 package main
@@ -78,7 +78,7 @@ func main() {
 }
 ```
 
-### Serialize structured data into a client packet
+### Serialize a client message
  
 ```go
 package main
@@ -108,7 +108,7 @@ func main() {
 }
 ```
 
-### Serialize structured data into a server packet
+### Serialize a server message
  
 ```go
 package main
