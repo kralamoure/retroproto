@@ -35,8 +35,8 @@ import (
 func main() {
     packet := "AAXxRamboPLxX|1|0|3635424|855309|16053493"
 
-    id, _ := d1proto.MsgCliIdByPkt(packet) // AA
-    extra := strings.TrimPrefix(packet, string(id)) // XxRamboPLxX|1|0|3635424|855309|16053493
+    id, _ := d1proto.MsgCliIdByPkt(packet) // "AA"
+    extra := strings.TrimPrefix(packet, string(id)) // "XxRamboPLxX|1|0|3635424|855309|16053493"
 
     switch id {
     case d1proto.AccountAddCharacter:
@@ -63,8 +63,8 @@ import (
 func main() {
     packet := "HCfdbijergrfklvdnsdfgviojsidesokpm"
 
-    id, _ := d1proto.MsgSvrIdByPkt(packet) // HC
-    extra := strings.TrimPrefix(packet, string(id)) // fdbijergrfklvdnsdfgviojsidesokpm
+    id, _ := d1proto.MsgSvrIdByPkt(packet) // "HC"
+    extra := strings.TrimPrefix(packet, string(id)) // "fdbijergrfklvdnsdfgviojsidesokpm"
 
     switch id {
     case d1proto.AksHelloConnect:
