@@ -101,7 +101,7 @@ func main() {
 
     extra, _ := message.Serialized()
 
-    // Note: the packet for msgcli.AccountVersion and msgcli.AccountCredential should not include their protocol ID 
+    // Note: packets for msgcli.AccountVersion and msgcli.AccountCredential should not include their protocol ID 
     packet := fmt.Sprintf("%s%s", message.ProtocolId(), extra)
 
     fmt.Print(packet) // "AAXxRamboPLxX|1|0|3635424|855309|16053493"
