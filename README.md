@@ -28,7 +28,7 @@ package main
 import (
     "fmt"
     "strings"
-	"github.com/kralamoure/d1proto"
+    "github.com/kralamoure/d1proto"
     "github.com/kralamoure/d1proto/msgcli"
 )
 
@@ -56,7 +56,7 @@ package main
 import (
     "fmt"
     "strings"
-	"github.com/kralamoure/d1proto"
+    "github.com/kralamoure/d1proto"
     "github.com/kralamoure/d1proto/msgsvr"
 )
 
