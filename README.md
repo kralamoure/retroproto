@@ -41,10 +41,10 @@ func main() {
 
     switch id {
     case d1proto.AccountAddCharacter:
-        data := &msgcli.AccountAddCharacter{}
-        data.Deserialize(extra)
+        message := &msgcli.AccountAddCharacter{}
+        message.Deserialize(extra)
 
-        fmt.Printf("%+v", *data) // {Name:XxRamboPLxX Class:1 Sex:0 Color1:3778e0 Color2:0d0d0d Color3:f4f4f5}
+        fmt.Printf("%+v", *message) // {Name:XxRamboPLxX Class:1 Sex:0 Color1:3778e0 Color2:0d0d0d Color3:f4f4f5}
     }
 }
 ```
@@ -70,10 +70,10 @@ func main() {
 
     switch id {
     case d1proto.AksHelloConnect:
-        data := &msgsvr.AksHelloConnect{}
-        data.Deserialize(extra)
+        message := &msgsvr.AksHelloConnect{}
+        message.Deserialize(extra)
 
-        fmt.Printf("%+v", *data) // {Salt:fdbijergrfklvdnsdfgviojsidesokpm}
+        fmt.Printf("%+v", *message) // {Salt:fdbijergrfklvdnsdfgviojsidesokpm}
     }
 }
 ```
@@ -90,7 +90,7 @@ import (
 )
 
 func main() {
-    data := msgcli.AccountAddCharacter{
+    message := msgcli.AccountAddCharacter{
         Name:   "XxRamboPLxX",
         Class:  1,
         Sex:    0,
@@ -99,10 +99,10 @@ func main() {
         Color3: "f4f4f5",
     }
 
-    extra, _ := data.Serialized()
+    extra, _ := message.Serialized()
 
     // Note: packets for msgcli.AccountVersion and msgcli.AccountCredential should not include their protocol ID 
-    packet := fmt.Sprintf("%s%s", data.ProtocolId(), extra)
+    packet := fmt.Sprintf("%s%s", message.ProtocolId(), extra)
 
     fmt.Print(packet) // "AAXxRamboPLxX|1|0|3635424|855309|16053493"
 }
@@ -120,11 +120,11 @@ import (
 )
 
 func main() {
-    data := msgsvr.AksHelloConnect{Salt: "fdbijergrfklvdnsdfgviojsidesokpm"}
+    message := msgsvr.AksHelloConnect{Salt: "fdbijergrfklvdnsdfgviojsidesokpm"}
 
-    extra, _ := data.Serialized()
+    extra, _ := message.Serialized()
  
-    packet := fmt.Sprintf("%s%s", data.ProtocolId(), extra)
+    packet := fmt.Sprintf("%s%s", message.ProtocolId(), extra)
 
     fmt.Print(packet) // "HCfdbijergrfklvdnsdfgviojsidesokpm"
 }
