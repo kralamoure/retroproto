@@ -20,7 +20,7 @@ go get github.com/kralamoure/d1proto
 
 ## Usage
 
-Deserializing a client packet into structured data:
+### Deserializing a client packet into structured data
  
 ```go
 package main
@@ -49,7 +49,7 @@ func main() {
 }
 ```
 
-Deserializing a server packet into structured data:
+### Deserializing a server packet into structured data
  
 ```go
 package main
@@ -78,7 +78,7 @@ func main() {
 }
 ```
 
-Serializing structured data into a client packet:
+### Serializing structured data into a client packet
  
 ```go
 package main
@@ -108,7 +108,7 @@ func main() {
 }
 ```
 
-Serializing structured data into a server packet:
+### Serializing structured data into a server packet
  
 ```go
 package main
