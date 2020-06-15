@@ -5,7 +5,7 @@ import (
 )
 
 type AccountSendTicket struct {
-	Id string
+	Ticket string
 }
 
 func (m AccountSendTicket) ProtocolId() d1proto.MsgCliId {
@@ -13,11 +13,11 @@ func (m AccountSendTicket) ProtocolId() d1proto.MsgCliId {
 }
 
 func (m AccountSendTicket) Serialized() (string, error) {
-	return m.Id, nil
+	return m.Ticket, nil
 }
 
 func (m *AccountSendTicket) Deserialize(extra string) error {
-	m.Id = extra
+	m.Ticket = extra
 
 	return nil
 }
