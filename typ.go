@@ -1,6 +1,5 @@
 package d1proto
 
 type Typ interface {
-	Serialized() (string, error)
-	Deserialize(string) error
+	Serialized() (extra string, err error)
 }

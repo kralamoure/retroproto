@@ -6,9 +6,8 @@ import (
 )
 
 type MsgCli interface {
-	ProtocolId() MsgCliId
-	Serialized() (string, error)
-	Deserialize(string) error
+	ProtocolId() (id MsgCliId)
+	Serialized() (extra string, err error)
 }
 
 type MsgCliId string

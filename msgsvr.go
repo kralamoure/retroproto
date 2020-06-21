@@ -3,9 +3,8 @@ package d1proto
 import "strings"
 
 type MsgSvr interface {
-	ProtocolId() MsgSvrId
-	Serialized() (string, error)
-	Deserialize(string) error
+	ProtocolId() (id MsgSvrId)
+	Serialized() (extra string, err error)
 }
 
 type MsgSvrId string
