@@ -1,7 +1,7 @@
 package msgsvr
 
 import (
-	"html"
+	"net/url"
 
 	"github.com/kralamoure/d1proto"
 )
@@ -15,11 +15,14 @@ func (m AccountSecretQuestion) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m AccountSecretQuestion) Serialized() (string, error) {
-	return html.EscapeString(m.Value), nil
+	return url.QueryEscape(m.Value), nil
 }
 
 func (m *AccountSecretQuestion) Deserialize(extra string) error {
-	m.Value = html.UnescapeString(extra)
-
+	v, err := url.QueryUnescape(extra)
+	if err != nil {
+		return err
+	}
+	m.Value = v
 	return nil
 }
