@@ -2,14 +2,16 @@ package msgsvr
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
-	"time"
 
 	"github.com/kralamoure/d1proto"
 )
 
 type BasicsDate struct {
-	Value time.Time
+	Year  int
+	Month int
+	Day   int
 }
 
 func (m BasicsDate) ProtocolId() d1proto.MsgSvrId {
@@ -17,7 +19,7 @@ func (m BasicsDate) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m BasicsDate) Serialized() (string, error) {
-	return fmt.Sprintf("%d|%d|%d", m.Value.Year(), m.Value.Month()-1, m.Value.Day()), nil
+	return fmt.Sprintf("%d|%d|%d", m.Year, m.Month, m.Day), nil
 }
 
 func (m *BasicsDate) Deserialize(extra string) error {
@@ -26,11 +28,23 @@ func (m *BasicsDate) Deserialize(extra string) error {
 		return d1proto.ErrInvalidMsg
 	}
 
-	value, err := time.Parse("2006|1|2", fmt.Sprintf("%s|%s|%s", sli[0], sli[1], sli[2]))
+	year, err := strconv.ParseInt(sli[0], 10, 32)
 	if err != nil {
 		return err
 	}
-	m.Value = value
+	m.Year = int(year)
+
+	month, err := strconv.ParseInt(sli[1], 10, 32)
+	if err != nil {
+		return err
+	}
+	m.Month = int(month)
+
+	day, err := strconv.ParseInt(sli[2], 10, 32)
+	if err != nil {
+		return err
+	}
+	m.Day = int(day)
 
 	return nil
 }
