@@ -19,7 +19,7 @@ func (m BasicsDate) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m BasicsDate) Serialized() (string, error) {
-	return fmt.Sprintf("%d|%d|%d", m.Year, m.Month, m.Day), nil
+	return fmt.Sprintf("%d|%d|%d", m.Year, m.Month-1, m.Day), nil
 }
 
 func (m *BasicsDate) Deserialize(extra string) error {
@@ -38,7 +38,7 @@ func (m *BasicsDate) Deserialize(extra string) error {
 	if err != nil {
 		return err
 	}
-	m.Month = int(month)
+	m.Month = int(month + 1)
 
 	day, err := strconv.ParseInt(sli[2], 10, 32)
 	if err != nil {
