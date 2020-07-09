@@ -337,9 +337,10 @@ func (m AccountStats) Serialized() (string, error) {
 	}
 	stats = append(stats, fireResistancePercentPVP)
 
-	return fmt.Sprintf("%d,%d,%d|%d|%d|%d|%d~%d,%d,%d,%d,%d|%d,%d|%d,%d|%d|%d|%s",
-		m.XP, m.XPLow, m.XPHigh, m.Kama, m.BonusPoints, m.BonusPointsSpell, m.Alignment, m.FakeAlignment, m.RankValue,
-		m.Honour, m.Disgrace, alignmentEnabled, m.LP, m.LPMax, m.Energy, m.EnergyMax, m.Initiative, m.Discernment,
+	return fmt.Sprintf("%d,%d,%d|%d|%d|%d|%d~%d,%d,%d,%d,%d,%d|%d,%d|%d,%d|%d|%d|%s",
+		m.XP, m.XPLow, m.XPHigh, m.Kama, m.BonusPoints, m.BonusPointsSpell, m.Alignment, m.FakeAlignment,
+		m.AlignmentUnknownValue, m.RankValue, m.Honour, m.Disgrace, alignmentEnabled, m.LP, m.LPMax, m.Energy,
+		m.EnergyMax, m.Initiative, m.Discernment,
 		strings.Join(stats, "|"),
 	), nil
 }
@@ -428,19 +429,19 @@ func (m *AccountStats) Deserialize(extra string) error {
 	}
 
 	if sli3[1] != "" {
-		rankValue, err := strconv.ParseInt(sli3[1], 10, 32)
-		if err != nil {
-			return err
-		}
-		m.RankValue = int(rankValue)
-	}
-
-	if sli3[2] != "" {
-		alignmentUnknownValue, err := strconv.ParseInt(sli3[2], 10, 32)
+		alignmentUnknownValue, err := strconv.ParseInt(sli3[1], 10, 32)
 		if err != nil {
 			return err
 		}
 		m.AlignmentUnknownValue = int(alignmentUnknownValue)
+	}
+
+	if sli3[2] != "" {
+		rankValue, err := strconv.ParseInt(sli3[2], 10, 32)
+		if err != nil {
+			return err
+		}
+		m.RankValue = int(rankValue)
 	}
 
 	if sli3[3] != "" {
