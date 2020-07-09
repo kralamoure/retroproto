@@ -8,7 +8,7 @@ import (
 )
 
 type ExchangeBigStoreType struct {
-	Type int
+	ItemType int
 }
 
 func (m ExchangeBigStoreType) ProtocolId() d1proto.MsgCliId {
@@ -16,7 +16,7 @@ func (m ExchangeBigStoreType) ProtocolId() d1proto.MsgCliId {
 }
 
 func (m ExchangeBigStoreType) Serialized() (string, error) {
-	return fmt.Sprintf("%d", m.Type), nil
+	return fmt.Sprintf("%d", m.ItemType), nil
 }
 
 func (m *ExchangeBigStoreType) Deserialize(extra string) error {
@@ -24,6 +24,6 @@ func (m *ExchangeBigStoreType) Deserialize(extra string) error {
 	if err != nil {
 		return err
 	}
-	m.Type = int(v)
+	m.ItemType = int(v)
 	return nil
 }
