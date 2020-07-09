@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1proto/typ"
 )
 
 type AccountCharacterSelectedSuccess struct {
@@ -18,8 +19,7 @@ type AccountCharacterSelectedSuccess struct {
 	Color1 string
 	Color2 string
 	Color3 string
-	// TODO
-	Items string
+	Items  []typ.AccountCharacterSelectedSuccessItem
 }
 
 func (m AccountCharacterSelectedSuccess) ProtocolId() d1proto.MsgSvrId {
@@ -27,8 +27,17 @@ func (m AccountCharacterSelectedSuccess) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m AccountCharacterSelectedSuccess) Serialized() (string, error) {
+	items := make([]string, len(m.Items))
+	for i, v := range m.Items {
+		item, err := v.Serialized()
+		if err != nil {
+			return "", err
+		}
+		items[i] = item
+	}
+
 	return fmt.Sprintf("|%d|%s|%d|%d|%d|%d|%s|%s|%s|%s",
-		m.Id, m.Name, m.Level, m.Guild, m.Sex, m.GFXId, m.Color1, m.Color2, m.Color3, m.Items), nil
+		m.Id, m.Name, m.Level, m.Guild, m.Sex, m.GFXId, m.Color1, m.Color2, m.Color3, strings.Join(items, ";")), nil
 }
 
 func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
@@ -82,7 +91,19 @@ func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
 	m.Color1 = sli[6]
 	m.Color2 = sli[7]
 	m.Color3 = sli[8]
-	m.Items = sli[9]
+
+	if sli[9] != "" {
+		items := strings.Split(sli[9], ";")
+		m.Items = make([]typ.AccountCharacterSelectedSuccessItem, len(items))
+		for i, v := range items {
+			var item typ.AccountCharacterSelectedSuccessItem
+			err := item.Deserialize(v)
+			if err != nil {
+				return err
+			}
+			m.Items[i] = item
+		}
+	}
 
 	return nil
 }
