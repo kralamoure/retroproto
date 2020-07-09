@@ -200,8 +200,8 @@ type GameMovementCharacter struct {
 	Color3                    string
 	Accessories               typ.CommonAccessories
 	AlignmentId               int
-	AlignmentUnknownValue     int // TODO: maybe check dofus/utils/DofusTranslator.as
-	AlignmentRank             int
+	AlignmentLevel            int
+	Grade                     int
 	AlignmentFallenAngelDemon bool
 	Aura                      int
 	Emote                     int
@@ -627,7 +627,7 @@ func (m GameMovement) Serialized() (string, error) {
 			}
 
 			sb.WriteString(fmt.Sprintf(";%d,%d,%d,%d%s;%s;%s;%s;%s",
-				t.AlignmentId, t.AlignmentUnknownValue, t.AlignmentRank, s.Id+t.Level, alignmentFallenAngelDemon,
+				t.AlignmentId, t.AlignmentLevel, t.Grade, s.Id+t.Level, alignmentFallenAngelDemon,
 				t.Color1, t.Color2, t.Color3, accessories,
 			))
 
@@ -1543,17 +1543,17 @@ func (m *GameMovement) Deserialize(extra string) error {
 			}
 			t.AlignmentId = int(alignmentId)
 
-			alignmentUnknownValue, err := strconv.ParseInt(alignmentSli[1], 10, 32)
+			alignmentLevel, err := strconv.ParseInt(alignmentSli[1], 10, 32)
 			if err != nil {
 				return err
 			}
-			t.AlignmentUnknownValue = int(alignmentUnknownValue)
+			t.AlignmentLevel = int(alignmentLevel)
 
-			alignmentRank, err := strconv.ParseInt(alignmentSli[2], 10, 32)
+			grade, err := strconv.ParseInt(alignmentSli[2], 10, 32)
 			if err != nil {
 				return err
 			}
-			t.AlignmentRank = int(alignmentRank)
+			t.Grade = int(grade)
 
 			if len(alignmentSli) > 3 && alignmentSli[3] != "" {
 				idPlusLevel, err := strconv.ParseInt(alignmentSli[3], 10, 32)
