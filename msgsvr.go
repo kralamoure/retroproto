@@ -249,7 +249,7 @@ const (
 	ExchangeBigStoreItemsList                 MsgSvrId = "EHl"
 	ExchangeBigStoreItemsMovementAdd          MsgSvrId = "EHm+"
 	ExchangeBigStoreItemsMovementRemove       MsgSvrId = "EHm-"
-	ExchangeBigStoreItemMiddlePriceInBigStore MsgSvrId = "EHp"
+	ExchangeBigStoreItemMiddlePriceInBigStore MsgSvrId = "EHP"
 	ExchangeCrafterReferenceAdd               MsgSvrId = "EHj+"
 	ExchangeCrafterReferenceRemove            MsgSvrId = "EHj-"
 	ExchangeCraftLoop                         MsgSvrId = "EA"
