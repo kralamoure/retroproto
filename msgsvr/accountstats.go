@@ -19,7 +19,7 @@ type AccountStats struct {
 	Alignment                   int
 	FakeAlignment               int
 	AlignmentUnknownValue       int // TODO: maybe check dofus/utils/DofusTranslator.as
-	RankValue                   int
+	Grade                       int
 	Honour                      int
 	Disgrace                    int
 	AlignmentEnabled            bool
@@ -339,7 +339,7 @@ func (m AccountStats) Serialized() (string, error) {
 
 	return fmt.Sprintf("%d,%d,%d|%d|%d|%d|%d~%d,%d,%d,%d,%d,%d|%d,%d|%d,%d|%d|%d|%s",
 		m.XP, m.XPLow, m.XPHigh, m.Kama, m.BonusPoints, m.BonusPointsSpell, m.Alignment, m.FakeAlignment,
-		m.AlignmentUnknownValue, m.RankValue, m.Honour, m.Disgrace, alignmentEnabled, m.LP, m.LPMax, m.Energy,
+		m.AlignmentUnknownValue, m.Grade, m.Honour, m.Disgrace, alignmentEnabled, m.LP, m.LPMax, m.Energy,
 		m.EnergyMax, m.Initiative, m.Discernment,
 		strings.Join(stats, "|"),
 	), nil
@@ -437,11 +437,11 @@ func (m *AccountStats) Deserialize(extra string) error {
 	}
 
 	if sli3[2] != "" {
-		rankValue, err := strconv.ParseInt(sli3[2], 10, 32)
+		grade, err := strconv.ParseInt(sli3[2], 10, 32)
 		if err != nil {
 			return err
 		}
-		m.RankValue = int(rankValue)
+		m.Grade = int(grade)
 	}
 
 	if sli3[3] != "" {
