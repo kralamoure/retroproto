@@ -1,4 +1,3 @@
-// generated (unrevised)
 package msgsvr
 
 import (
