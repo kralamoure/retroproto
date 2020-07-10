@@ -11,7 +11,7 @@ import (
 type DialogQuestion struct {
 	Question       int
 	QuestionParams []string
-	Responses      []int
+	Answers        []int
 }
 
 func (m DialogQuestion) ProtocolId() d1proto.MsgSvrId {
@@ -25,15 +25,15 @@ func (m DialogQuestion) Serialized() (string, error) {
 		questionParams += strings.Join(m.QuestionParams, ",")
 	}
 
-	var responses string
-	if len(m.Responses) != 0 {
-		responsesSli := make([]string, len(m.Responses))
-		for i, v := range m.Responses {
-			responsesSli[i] = fmt.Sprintf("%d", v)
+	var answers string
+	if len(m.Answers) != 0 {
+		answersSli := make([]string, len(m.Answers))
+		for i, v := range m.Answers {
+			answersSli[i] = fmt.Sprintf("%d", v)
 		}
 	}
 
-	return fmt.Sprintf("%d%s%s", m.Question, questionParams, responses), nil
+	return fmt.Sprintf("%d%s%s", m.Question, questionParams, answers), nil
 }
 
 func (m *DialogQuestion) Deserialize(extra string) error {
@@ -56,14 +56,14 @@ func (m *DialogQuestion) Deserialize(extra string) error {
 	}
 
 	if len(sli) > 1 && sli[1] != "" {
-		responses := strings.Split(sli[1], ";")
-		m.Responses = make([]int, len(responses))
-		for i, v := range responses {
-			response, err := strconv.ParseInt(v, 10, 32)
+		answers := strings.Split(sli[1], ";")
+		m.Answers = make([]int, len(answers))
+		for i, v := range answers {
+			answer, err := strconv.ParseInt(v, 10, 32)
 			if err != nil {
 				return err
 			}
-			m.Responses[i] = int(response)
+			m.Answers[i] = int(answer)
 		}
 	}
 
