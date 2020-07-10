@@ -394,11 +394,6 @@ func (m GameMovement) Serialized() (string, error) {
 				return "", err
 			}
 
-			var extraClipId string
-			if t.ExtraClipId != 0 {
-				extraClipId = fmt.Sprint(t.ExtraClipId)
-			}
-
 			var scale string
 			if t.ScaleX == t.ScaleY {
 				scale = fmt.Sprint(t.ScaleX)
@@ -406,9 +401,9 @@ func (m GameMovement) Serialized() (string, error) {
 				scale = fmt.Sprintf("%dx%d", t.ScaleX, t.ScaleY)
 			}
 
-			sb.WriteString(fmt.Sprintf("%s%d;%d;%d;%d;%d;%d;%d^%s;%d;%s;%s;%s;%s;%s;%d",
+			sb.WriteString(fmt.Sprintf("%s%d;%d;%d;%d;%d;%d;%d^%s;%d;%s;%s;%s;%s;%d;%d",
 				movementType, s.CellId, s.Direction, 0, s.Id, t.TemplateId, s.Type, t.GFXId, scale, t.Sex,
-				t.Color1, t.Color2, t.Color3, accessories, extraClipId, t.CustomArtwork,
+				t.Color1, t.Color2, t.Color3, accessories, t.ExtraClipId, t.CustomArtwork,
 			))
 		case enum.GameMovementSpriteType.OfflineCharacter:
 			t := s.OfflineCharacter
@@ -1008,10 +1003,9 @@ func (m *GameMovement) Deserialize(extra string) error {
 			if sli[12] != "" {
 				extraClipIdN, err := strconv.ParseInt(sli[12], 10, 32)
 				if err != nil {
-					t.ExtraClipId = -1
-				} else {
-					t.ExtraClipId = int(extraClipIdN)
+					return err
 				}
+				t.ExtraClipId = int(extraClipIdN)
 			}
 
 			customArtworkId, err := strconv.ParseInt(sli[13], 10, 32)
