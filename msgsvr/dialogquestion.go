@@ -21,16 +21,17 @@ func (m DialogQuestion) ProtocolId() d1proto.MsgSvrId {
 func (m DialogQuestion) Serialized() (string, error) {
 	var questionParams string
 	if len(m.QuestionParams) != 0 {
-		questionParams = ";"
-		questionParams += strings.Join(m.QuestionParams, ",")
+		questionParams = fmt.Sprintf(";%s", strings.Join(m.QuestionParams, ","))
 	}
 
 	var answers string
 	if len(m.Answers) != 0 {
+		answers = ";"
 		answersSli := make([]string, len(m.Answers))
 		for i, v := range m.Answers {
 			answersSli[i] = fmt.Sprintf("%d", v)
 		}
+		answers = fmt.Sprintf("|%s", strings.Join(answersSli, ";"))
 	}
 
 	return fmt.Sprintf("%d%s%s", m.Question, questionParams, answers), nil
