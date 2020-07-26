@@ -43,7 +43,7 @@ func (m ItemsAddSuccess) Serialized() (string, error) {
 		case enum.ItemsAddSuccessItemType.Objects:
 			objects := make([]string, len(v.Objects))
 			for i, v := range v.Objects {
-				effects := d1.EncodeEffects(v.Effects)
+				effects := d1.EncodeItemEffects(v.Effects)
 				objects[i] = fmt.Sprintf("%x~%x~%x~%x~%s", v.Id, v.TemplateId, v.Quantity, v.Position, strings.Join(effects, ","))
 			}
 			items[i] = fmt.Sprintf("%s%s", string(v.ItemType), strings.Join(objects, ";"))
@@ -106,7 +106,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 					}
 					object.Position = int(position)
 				}
-				effects, err := d1.DecodeEffects(sli[4])
+				effects, err := d1.DecodeItemEffects(sli[4], ",")
 				if err != nil {
 					return err
 				}
