@@ -44,7 +44,7 @@ func (m ItemsAddSuccess) Serialized() (string, error) {
 			objects := make([]string, len(v.Objects))
 			for i, v := range v.Objects {
 				effects := d1.EncodeEffects(v.Effects)
-				objects[i] = fmt.Sprintf("%x~%x~%x~%x~%s", v.Id, v.TemplateId, v.Quantity, v.Position, effects)
+				objects[i] = fmt.Sprintf("%x~%x~%x~%x~%s", v.Id, v.TemplateId, v.Quantity, v.Position, strings.Join(effects, ","))
 			}
 			items[i] = fmt.Sprintf("%s%s", string(v.ItemType), strings.Join(objects, ";"))
 		default:
