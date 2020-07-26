@@ -5,11 +5,13 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/kralamoure/d1/d1typ"
+
 	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeBigStoreTypeItemsList struct {
-	ItemType        int
+	ItemType        d1typ.ItemType
 	ItemTemplateIds []int
 }
 
@@ -36,7 +38,7 @@ func (m *ExchangeBigStoreTypeItemsList) Deserialize(extra string) error {
 	if err != nil {
 		return err
 	}
-	m.ItemType = int(itemType)
+	m.ItemType = d1typ.ItemType(itemType)
 
 	if sli[1] != "" {
 		itemTemplateIds := strings.Split(sli[1], ";")
