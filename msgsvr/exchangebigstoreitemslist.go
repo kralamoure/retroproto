@@ -10,8 +10,8 @@ import (
 )
 
 type ExchangeBigStoreItemsList struct {
-	ItemTemplateId int
-	Items          []typ.ExchangeBigStoreItemsListItem
+	TemplateId int
+	Items      []typ.ExchangeBigStoreItemsListItem
 }
 
 func (m ExchangeBigStoreItemsList) ProtocolId() d1proto.MsgSvrId {
@@ -28,7 +28,7 @@ func (m ExchangeBigStoreItemsList) Serialized() (string, error) {
 		items[i] = item
 	}
 
-	return fmt.Sprintf("%d|%s", m.ItemTemplateId, strings.Join(items, "|")), nil
+	return fmt.Sprintf("%d|%s", m.TemplateId, strings.Join(items, "|")), nil
 }
 
 func (m *ExchangeBigStoreItemsList) Deserialize(extra string) error {
@@ -42,7 +42,7 @@ func (m *ExchangeBigStoreItemsList) Deserialize(extra string) error {
 	if err != nil {
 		return err
 	}
-	m.ItemTemplateId = int(itemTemplateId)
+	m.TemplateId = int(itemTemplateId)
 
 	if len(sli) > 1 {
 		m.Items = make([]typ.ExchangeBigStoreItemsListItem, len(sli[1:]))
