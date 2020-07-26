@@ -12,9 +12,9 @@ func (m {{ . }}) ProtocolId() d1proto.MsgCliId {
 }
 
 func (m {{ . }}) Serialized() (string, error) {
-	return "", nil
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *{{ . }}) Deserialize(extra string) error {
-	return nil
+	return d1proto.ErrNotImplemented
 }
