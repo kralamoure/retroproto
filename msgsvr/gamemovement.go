@@ -401,7 +401,7 @@ func (m GameMovement) Serialized() (string, error) {
 				scale = fmt.Sprintf("%dx%d", t.ScaleX, t.ScaleY)
 			}
 
-			sb.WriteString(fmt.Sprintf("%s%d;%d;%d;%d;%d;%d;%d^%s;%d;%s;%s;%s;%s;%s;%d",
+			sb.WriteString(fmt.Sprintf("%s%d;%d;%d;%d;%d;%d;%d^%s;%d;%s;%s;%s;%s;%d;%d",
 				movementType, s.CellId, s.Direction, 0, s.Id, t.TemplateId, s.Type, t.GFXId, scale, t.Sex,
 				t.Color1, t.Color2, t.Color3, accessories, t.ExtraClipId, t.CustomArtwork,
 			))
