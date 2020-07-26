@@ -18,7 +18,7 @@ func (m AccountSelectServerSuccess) ProtocolId() d1proto.MsgSvrId {
 
 // TODO
 func (m AccountSelectServerSuccess) Serialized() (string, error) {
-	return "", nil
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *AccountSelectServerSuccess) Deserialize(extra string) error {

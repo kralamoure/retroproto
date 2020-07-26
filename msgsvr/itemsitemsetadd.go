@@ -5,14 +5,16 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/kralamoure/d1"
+	"github.com/kralamoure/d1/d1typ"
+
 	"github.com/kralamoure/d1proto"
 )
 
 type ItemsItemSetAdd struct {
 	Id                int
 	ItemsTemplatesIds []int
-	// TODO
-	Effects string
+	Effects           []d1typ.Effect
 }
 
 func (m ItemsItemSetAdd) ProtocolId() d1proto.MsgSvrId {
@@ -25,7 +27,7 @@ func (m ItemsItemSetAdd) Serialized() (string, error) {
 		itemsTemplatesIds[i] = fmt.Sprintf("%d", v)
 	}
 
-	return fmt.Sprintf("%d|%s|%s", m.Id, strings.Join(itemsTemplatesIds, ";"), m.Effects), nil
+	return fmt.Sprintf("%d|%s|%s", m.Id, strings.Join(itemsTemplatesIds, ";"), strings.Join(d1.EncodeItemEffects(m.Effects), ",")), nil
 }
 
 func (m *ItemsItemSetAdd) Deserialize(extra string) error {
@@ -54,7 +56,12 @@ func (m *ItemsItemSetAdd) Deserialize(extra string) error {
 		}
 	}
 
-	m.Effects = sli[2]
+	effectsStr := sli[2]
+	effects, err := d1.DecodeItemEffects(effectsStr, ",")
+	if err != nil {
+		return err
+	}
+	m.Effects = effects
 
 	return nil
 }
