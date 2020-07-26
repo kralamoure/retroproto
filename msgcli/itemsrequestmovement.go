@@ -28,7 +28,7 @@ func (m ItemsRequestMovement) Serialized() (string, error) {
 
 func (m *ItemsRequestMovement) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
-	if len(sli) != 2 {
+	if len(sli) < 2 {
 		return d1proto.ErrInvalidMsg
 	}
 
