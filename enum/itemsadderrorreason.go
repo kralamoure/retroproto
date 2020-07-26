@@ -1,16 +1,16 @@
 package enum
 
-var ItemsAdd = newItemsAdd()
+var ItemsAddErrorReason = newItemsAddErrorReason()
 
-func newItemsAdd() *itemsAdd {
-	return &itemsAdd{
+func newItemsAddErrorReason() *itemsAddErrorReason {
+	return &itemsAddErrorReason{
 		InventoryFull:      'F',
 		TooLowLevelForItem: 'L',
 		AlreadyEquipped:    'A',
 	}
 }
 
-type itemsAdd struct {
+type itemsAddErrorReason struct {
 	InventoryFull      rune
 	TooLowLevelForItem rune
 	AlreadyEquipped    rune
