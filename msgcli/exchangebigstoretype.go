@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"strconv"
 
+	"github.com/kralamoure/d1/d1typ"
+
 	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeBigStoreType struct {
-	ItemType int
+	ItemType d1typ.ItemType
 }
 
 func (m ExchangeBigStoreType) ProtocolId() d1proto.MsgCliId {
@@ -24,6 +26,6 @@ func (m *ExchangeBigStoreType) Deserialize(extra string) error {
 	if err != nil {
 		return err
 	}
-	m.ItemType = int(v)
+	m.ItemType = d1typ.ItemType(v)
 	return nil
 }
