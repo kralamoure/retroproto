@@ -91,22 +91,22 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 				}
 				object.TemplateId = int(templateId)
 
-				quantity, err := strconv.ParseInt(sli[3], 16, 32)
+				quantity, err := strconv.ParseInt(sli[2], 16, 32)
 				if err != nil {
 					return err
 				}
 				object.Quantity = int(quantity)
 
-				if sli[4] == "" {
+				if sli[3] == "" {
 					object.Position = -1
 				} else {
-					position, err := strconv.ParseInt(sli[4], 16, 32)
+					position, err := strconv.ParseInt(sli[3], 16, 32)
 					if err != nil {
 						return err
 					}
 					object.Position = int(position)
 				}
-				effects, err := d1.DecodeEffects(sli[5])
+				effects, err := d1.DecodeEffects(sli[4])
 				if err != nil {
 					return err
 				}
