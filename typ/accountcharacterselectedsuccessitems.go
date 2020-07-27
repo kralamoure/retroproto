@@ -19,7 +19,7 @@ type AccountCharacterSelectedSuccessItem struct {
 }
 
 func (m AccountCharacterSelectedSuccessItem) Serialized() (string, error) {
-	return fmt.Sprintf("%x~%x~%x~%x~%s", m.Id, m.TemplateId, m.Qty, m.Position, strings.Join(d1.EncodeItemEffects(m.Effects), ",")), nil
+	return fmt.Sprintf("%x~%x~%x~%x~%s", m.Id, m.TemplateId, m.Qty, int(m.Position), strings.Join(d1.EncodeItemEffects(m.Effects), ",")), nil
 }
 
 // TODO
