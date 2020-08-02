@@ -49,6 +49,9 @@ func (m *ItemsRequestMovement) Deserialize(extra string) error {
 		if err != nil {
 			return err
 		}
+		if quantity <= 0 {
+			return d1proto.ErrInvalidMsg
+		}
 		m.Quantity = int(quantity)
 	} else {
 		m.Quantity = 1
