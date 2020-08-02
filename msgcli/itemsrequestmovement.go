@@ -20,7 +20,7 @@ func (m ItemsRequestMovement) ProtocolId() d1proto.MsgCliId {
 
 func (m ItemsRequestMovement) Serialized() (string, error) {
 	quantity := ""
-	if m.Quantity != 0 {
+	if m.Quantity != 1 {
 		quantity = fmt.Sprintf("|%d", m.Quantity)
 	}
 	return fmt.Sprintf("%d|%d%s", m.Id, m.Position, quantity), nil
@@ -50,6 +50,8 @@ func (m *ItemsRequestMovement) Deserialize(extra string) error {
 			return err
 		}
 		m.Quantity = int(quantity)
+	} else {
+		m.Quantity = 1
 	}
 
 	return nil
