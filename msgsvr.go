@@ -5,6 +5,7 @@ import "strings"
 type MsgSvr interface {
 	ProtocolId() (id MsgSvrId)
 	Serialized() (extra string, err error)
+	Deserialize(extra string) error
 }
 
 type MsgSvrId string
