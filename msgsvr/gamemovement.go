@@ -273,9 +273,22 @@ func (m GameMovement) Serialized() (string, error) {
 				scale = fmt.Sprintf("%dx%d", t.ScaleX, t.ScaleY)
 			}
 
+			color1 := t.Color1
+			if color1 == "" {
+				color1 = "-1"
+			}
+			color2 := t.Color2
+			if color2 == "" {
+				color2 = "-1"
+			}
+			color3 := t.Color3
+			if color3 == "" {
+				color3 = "-1"
+			}
+
 			sb.WriteString(fmt.Sprintf("%s%d;%d;%d;%d;%d;%d;%d^%s%s;%d;%s;%s;%s;%s",
 				movementType, s.CellId, s.Direction, 0, s.Id, t.TemplateId, s.Type, t.GFXId, scale, noFlip,
-				t.PowerLevel, t.Color1, t.Color2, t.Color3, accessories,
+				t.PowerLevel, color1, color2, color3, accessories,
 			))
 
 			if s.Fight {
@@ -311,9 +324,22 @@ func (m GameMovement) Serialized() (string, error) {
 				scale = fmt.Sprintf("%dx%d", t.ScaleX, t.ScaleY)
 			}
 
+			color1 := t.Color1
+			if color1 == "" {
+				color1 = "-1"
+			}
+			color2 := t.Color2
+			if color2 == "" {
+				color2 = "-1"
+			}
+			color3 := t.Color3
+			if color3 == "" {
+				color3 = "-1"
+			}
+
 			sb.WriteString(fmt.Sprintf("%s%d;%d;%d;%d;%d;%d;%d^%s%s;%d;%s;%s;%s;%s",
 				movementType, s.CellId, s.Direction, 0, s.Id, t.TemplateId, s.Type, t.GFXId, scale, noFlip,
-				t.PowerLevel, t.Color1, t.Color2, t.Color3, accessories,
+				t.PowerLevel, color1, color2, color3, accessories,
 			))
 
 			if s.Fight {
@@ -364,7 +390,20 @@ func (m GameMovement) Serialized() (string, error) {
 				gfxIdsAndScales[i] = fmt.Sprintf("%d^%s", monster.GFXId, scale)
 				levels[i] = fmt.Sprintf("%d", monster.Level)
 
-				colors[i] = fmt.Sprintf("%s,%s,%s", monster.Color1, monster.Color2, monster.Color3)
+				color1 := monster.Color1
+				if color1 == "" {
+					color1 = "-1"
+				}
+				color2 := monster.Color2
+				if color2 == "" {
+					color2 = "-1"
+				}
+				color3 := monster.Color3
+				if color3 == "" {
+					color3 = "-1"
+				}
+
+				colors[i] = fmt.Sprintf("%s,%s,%s", color1, color2, color3)
 
 				if tmp, err := monster.Accessories.Serialized(); err != nil {
 					return "", err
@@ -401,9 +440,22 @@ func (m GameMovement) Serialized() (string, error) {
 				scale = fmt.Sprintf("%dx%d", t.ScaleX, t.ScaleY)
 			}
 
+			color1 := t.Color1
+			if color1 == "" {
+				color1 = "-1"
+			}
+			color2 := t.Color2
+			if color2 == "" {
+				color2 = "-1"
+			}
+			color3 := t.Color3
+			if color3 == "" {
+				color3 = "-1"
+			}
+
 			sb.WriteString(fmt.Sprintf("%s%d;%d;%d;%d;%d;%d;%d^%s;%d;%s;%s;%s;%s;%d;%d",
 				movementType, s.CellId, s.Direction, 0, s.Id, t.TemplateId, s.Type, t.GFXId, scale, t.Sex,
-				t.Color1, t.Color2, t.Color3, accessories, t.ExtraClipId, t.CustomArtwork,
+				color1, color2, color3, accessories, t.ExtraClipId, t.CustomArtwork,
 			))
 		case enum.GameMovementSpriteType.OfflineCharacter:
 			t := s.OfflineCharacter
@@ -425,9 +477,22 @@ func (m GameMovement) Serialized() (string, error) {
 				scale = fmt.Sprintf("%dx%d", t.ScaleX, t.ScaleY)
 			}
 
+			color1 := t.Color1
+			if color1 == "" {
+				color1 = "-1"
+			}
+			color2 := t.Color2
+			if color2 == "" {
+				color2 = "-1"
+			}
+			color3 := t.Color3
+			if color3 == "" {
+				color3 = "-1"
+			}
+
 			sb.WriteString(fmt.Sprintf("%s%d;%d;%d;%d;%s;%d;%d^%s;%s;%s;%s;%s;%s;%s;%d",
 				movementType, s.CellId, s.Direction, 0, s.Id, t.Name, s.Type, t.GFXId, scale,
-				t.Color1, t.Color2, t.Color3, accessories, t.GuildName, guildEmblem, t.OfflineType,
+				color1, color2, color3, accessories, t.GuildName, guildEmblem, t.OfflineType,
 			))
 		case enum.GameMovementSpriteType.TaxCollector:
 			t := s.TaxCollector
@@ -621,9 +686,22 @@ func (m GameMovement) Serialized() (string, error) {
 				alignmentFallenAngelDemon = ",1"
 			}
 
+			color1 := t.Color1
+			if color1 == "" {
+				color1 = "-1"
+			}
+			color2 := t.Color2
+			if color2 == "" {
+				color2 = "-1"
+			}
+			color3 := t.Color3
+			if color3 == "" {
+				color3 = "-1"
+			}
+
 			sb.WriteString(fmt.Sprintf(";%d,%d,%d,%d%s;%s;%s;%s;%s",
 				t.AlignmentId, t.AlignmentLevel, t.Grade, s.Id+t.Level, alignmentFallenAngelDemon,
-				t.Color1, t.Color2, t.Color3, accessories,
+				color1, color2, color3, accessories,
 			))
 
 			if s.Fight {
