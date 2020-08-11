@@ -11,7 +11,7 @@ import (
 )
 
 type SpellsList struct {
-	Spells map[int]d1.CharacterSpell
+	Spells []d1.CharacterSpell
 }
 
 func (m SpellsList) ProtocolId() d1proto.MsgSvrId {
@@ -20,8 +20,7 @@ func (m SpellsList) ProtocolId() d1proto.MsgSvrId {
 
 func (m SpellsList) Serialized() (string, error) {
 	spells := make([]string, len(m.Spells))
-	i := 0
-	for _, v := range m.Spells {
+	for i, v := range m.Spells {
 		position, err := d1proto.Encode64(v.Position)
 		if err != nil {
 			return "", err
@@ -41,8 +40,8 @@ func (m *SpellsList) Deserialize(extra string) error {
 	}
 
 	sli := strings.Split(extra, ";")
-	m.Spells = make(map[int]d1.CharacterSpell, len(sli))
-	for _, v := range sli {
+	m.Spells = make([]d1.CharacterSpell, len(sli))
+	for i, v := range sli {
 		var spell d1.CharacterSpell
 
 		sli2 := strings.Split(v, "~")
@@ -71,7 +70,7 @@ func (m *SpellsList) Deserialize(extra string) error {
 			break
 		}
 
-		m.Spells[spell.Id] = spell
+		m.Spells[i] = spell
 	}
 
 	return nil
