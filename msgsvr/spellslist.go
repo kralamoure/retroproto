@@ -26,7 +26,6 @@ func (m SpellsList) Serialized() (string, error) {
 			return "", err
 		}
 		spells[i] = fmt.Sprintf("%d~%d~%s", v.Id, v.Level, string(position))
-		i++
 	}
 
 	return strings.Join(spells, ";"), nil
