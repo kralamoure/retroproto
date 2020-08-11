@@ -5,21 +5,23 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/kralamoure/d1/d1typ"
+
 	"github.com/kralamoure/d1proto"
 	"github.com/kralamoure/d1proto/typ"
 )
 
 type AccountCharacterSelectedSuccess struct {
-	Id     int
-	Name   string
-	Level  int
-	Class  int // "guild" in client sources, but it's actually class
-	Sex    int
-	GFXId  int
-	Color1 string
-	Color2 string
-	Color3 string
-	Items  []typ.AccountCharacterSelectedSuccessItem
+	Id      int
+	Name    string
+	Level   int
+	ClassId d1typ.ClassId // "guild" in client sources, but it's actually class
+	Sex     int
+	GFXId   int
+	Color1  string
+	Color2  string
+	Color3  string
+	Items   []typ.AccountCharacterSelectedSuccessItem
 }
 
 func (m AccountCharacterSelectedSuccess) ProtocolId() d1proto.MsgSvrId {
@@ -37,7 +39,7 @@ func (m AccountCharacterSelectedSuccess) Serialized() (string, error) {
 	}
 
 	return fmt.Sprintf("|%d|%s|%d|%d|%d|%d|%s|%s|%s|%s",
-		m.Id, m.Name, m.Level, m.Class, m.Sex, m.GFXId, m.Color1, m.Color2, m.Color3, strings.Join(items, ";")), nil
+		m.Id, m.Name, m.Level, m.ClassId, m.Sex, m.GFXId, m.Color1, m.Color2, m.Color3, strings.Join(items, ";")), nil
 }
 
 func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
@@ -65,11 +67,11 @@ func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
 	}
 
 	if sli[3] != "" {
-		class, err := strconv.ParseInt(sli[3], 10, 32)
+		classId, err := strconv.ParseInt(sli[3], 10, 32)
 		if err != nil {
 			return err
 		}
-		m.Class = int(class)
+		m.ClassId = d1typ.ClassId(classId)
 	}
 
 	if sli[4] != "" {
