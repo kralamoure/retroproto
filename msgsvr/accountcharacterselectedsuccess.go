@@ -13,7 +13,7 @@ type AccountCharacterSelectedSuccess struct {
 	Id     int
 	Name   string
 	Level  int
-	Guild  int
+	Class  int // "guild" in client sources, but it's actually class
 	Sex    int
 	GFXId  int
 	Color1 string
@@ -37,7 +37,7 @@ func (m AccountCharacterSelectedSuccess) Serialized() (string, error) {
 	}
 
 	return fmt.Sprintf("|%d|%s|%d|%d|%d|%d|%s|%s|%s|%s",
-		m.Id, m.Name, m.Level, m.Guild, m.Sex, m.GFXId, m.Color1, m.Color2, m.Color3, strings.Join(items, ";")), nil
+		m.Id, m.Name, m.Level, m.Class, m.Sex, m.GFXId, m.Color1, m.Color2, m.Color3, strings.Join(items, ";")), nil
 }
 
 func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
@@ -65,11 +65,11 @@ func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
 	}
 
 	if sli[3] != "" {
-		guild, err := strconv.ParseInt(sli[3], 10, 32)
+		class, err := strconv.ParseInt(sli[3], 10, 32)
 		if err != nil {
 			return err
 		}
-		m.Guild = int(guild)
+		m.Class = int(class)
 	}
 
 	if sli[4] != "" {
