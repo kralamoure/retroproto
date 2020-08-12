@@ -1,20 +1,22 @@
-// generated (unrevised)
 package msgsvr
 
 import (
 	"github.com/kralamoure/d1proto"
 )
 
-type ChatServerMessage struct{}
+type ChatServerMessage struct {
+	Message string
+}
 
 func (m ChatServerMessage) ProtocolId() d1proto.MsgSvrId {
 	return d1proto.ChatServerMessage
 }
 
 func (m ChatServerMessage) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return m.Message, nil
 }
 
 func (m *ChatServerMessage) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	m.Message = extra
+	return nil
 }
