@@ -15,6 +15,7 @@ type ChatMessageSuccess struct {
 	Id          int
 	Name        string
 	Message     string
+	Params      string // TODO
 }
 
 func (m ChatMessageSuccess) ProtocolId() d1proto.MsgSvrId {
@@ -30,12 +31,12 @@ func (m ChatMessageSuccess) Serialized() (string, error) {
 		chatChannel = "T"
 	}
 
-	return fmt.Sprintf("%s|%d|%s|%s", chatChannel, m.Id, m.Name, m.Message), nil
+	return fmt.Sprintf("%s|%d|%s|%s|%s", chatChannel, m.Id, m.Name, m.Message, m.Params), nil
 }
 
 func (m *ChatMessageSuccess) Deserialize(extra string) error {
-	sli := strings.SplitN(extra, "|", 4)
-	if len(sli) != 4 {
+	sli := strings.SplitN(extra, "|", 5)
+	if len(sli) != 5 {
 		return d1proto.ErrInvalidMsg
 	}
 
@@ -59,6 +60,7 @@ func (m *ChatMessageSuccess) Deserialize(extra string) error {
 
 	m.Name = sli[2]
 	m.Message = sli[3]
+	m.Params = sli[4]
 
 	return nil
 }

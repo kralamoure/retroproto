@@ -13,6 +13,7 @@ type ChatSend struct {
 	ChatChannel     dofustyp.ChatChannel
 	PrivateReceiver string
 	Message         string
+	Params          string // TODO
 }
 
 func (m ChatSend) ProtocolId() d1proto.MsgCliId {
@@ -25,12 +26,12 @@ func (m ChatSend) Serialized() (string, error) {
 		dest = m.PrivateReceiver
 	}
 
-	return fmt.Sprintf("%s|%s", dest, m.Message), nil
+	return fmt.Sprintf("%s|%s|%s", dest, m.Message, m.Params), nil
 }
 
 func (m *ChatSend) Deserialize(extra string) error {
-	sli := strings.SplitN(extra, "|", 2)
-	if len(sli) != 2 {
+	sli := strings.SplitN(extra, "|", 3)
+	if len(sli) != 3 {
 		return d1proto.ErrInvalidMsg
 	}
 
@@ -50,14 +51,14 @@ func (m *ChatSend) Deserialize(extra string) error {
 		chatChannel = dofustyp.ChatChannelNewbies
 	}
 
-	_, ok := dofustyp.ChatChannels[chatChannel]
-	if !ok {
+	if len(sli[0]) >= 2 {
 		chatChannel = dofustyp.ChatChannelPrivate
 		m.PrivateReceiver = sli[0]
 	}
 
 	m.ChatChannel = chatChannel
 	m.Message = sli[1]
+	m.Params = sli[2]
 
 	return nil
 }
