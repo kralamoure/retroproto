@@ -2,6 +2,7 @@ package msgcli
 
 import (
 	"fmt"
+	"html"
 	"strings"
 
 	"github.com/kralamoure/dofus/dofustyp"
@@ -56,9 +57,14 @@ func (m *ChatSend) Deserialize(extra string) error {
 		m.PrivateReceiver = sli[0]
 	}
 
+	_, ok := dofustyp.ChatChannels[chatChannel]
+	if !ok {
+		return d1proto.ErrInvalidMsg
+	}
+
 	m.ChatChannel = chatChannel
-	m.Message = sli[1]
-	m.Params = sli[2]
+	m.Message = html.EscapeString(sli[1])
+	m.Params = html.EscapeString(sli[2])
 
 	return nil
 }
