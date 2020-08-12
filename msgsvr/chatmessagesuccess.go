@@ -13,6 +13,7 @@ import (
 type ChatMessageSuccess struct {
 	ChatChannel dofustyp.ChatChannel
 	Id          int
+	PrivateTo   bool
 	Name        string
 	Message     string
 	Params      string // TODO
@@ -28,7 +29,11 @@ func (m ChatMessageSuccess) Serialized() (string, error) {
 	case dofustyp.ChatChannelPublic:
 		chatChannel = ""
 	case dofustyp.ChatChannelPrivate:
-		chatChannel = "T"
+		if m.PrivateTo {
+			chatChannel = "T"
+		} else {
+			chatChannel = "F"
+		}
 	}
 
 	return fmt.Sprintf("%s|%d|%s|%s|%s", chatChannel, m.Id, m.Name, m.Message, m.Params), nil
@@ -43,8 +48,11 @@ func (m *ChatMessageSuccess) Deserialize(extra string) error {
 	switch sli[0] {
 	case "":
 		m.ChatChannel = dofustyp.ChatChannelPublic
+	case "F":
+		m.ChatChannel = dofustyp.ChatChannelPrivate
 	case "T":
 		m.ChatChannel = dofustyp.ChatChannelPrivate
+		m.PrivateTo = true
 	default:
 		for _, v := range sli[0] {
 			m.ChatChannel = dofustyp.ChatChannel(v)
