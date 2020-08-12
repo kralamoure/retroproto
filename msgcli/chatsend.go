@@ -63,7 +63,13 @@ func (m *ChatSend) Deserialize(extra string) error {
 	}
 
 	m.ChatChannel = chatChannel
-	m.Message = html.EscapeString(sli[1])
+
+	message := html.EscapeString(sli[1])
+	if message == "" {
+		return d1proto.ErrInvalidMsg
+	}
+	m.Message = message
+
 	m.Params = html.EscapeString(sli[2])
 
 	return nil
