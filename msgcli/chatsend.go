@@ -50,11 +50,13 @@ func (m *ChatSend) Deserialize(extra string) error {
 	switch chatChannel {
 	case '¤':
 		chatChannel = dofustyp.ChatChannelNewbies
+	case dofustyp.ChatChannelPrivate:
+		return d1proto.ErrInvalidMsg
 	}
 
 	if len(sli[0]) >= 2 {
 		chatChannel = dofustyp.ChatChannelPrivate
-		m.PrivateReceiver = sli[0]
+		m.PrivateReceiver = html.EscapeString(sli[0])
 	}
 
 	_, ok := dofustyp.ChatChannels[chatChannel]
