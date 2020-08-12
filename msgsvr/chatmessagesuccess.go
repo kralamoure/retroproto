@@ -11,10 +11,10 @@ import (
 )
 
 type ChatMessageSuccess struct {
-	ChatId  dofustyp.ChatChannel
-	Id      int
-	Name    string
-	Message string
+	ChatChannel dofustyp.ChatChannel
+	Id          int
+	Name        string
+	Message     string
 }
 
 func (m ChatMessageSuccess) ProtocolId() d1proto.MsgSvrId {
@@ -22,15 +22,15 @@ func (m ChatMessageSuccess) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m ChatMessageSuccess) Serialized() (string, error) {
-	chatId := string(m.ChatId)
-	switch m.ChatId {
+	chatChannel := string(m.ChatChannel)
+	switch m.ChatChannel {
 	case dofustyp.ChatChannelPublic:
-		chatId = ""
+		chatChannel = ""
 	case dofustyp.ChatChannelPrivate:
-		chatId = "T"
+		chatChannel = "T"
 	}
 
-	return fmt.Sprintf("%s|%d|%s|%s", chatId, m.Id, m.Name, m.Message), nil
+	return fmt.Sprintf("%s|%d|%s|%s", chatChannel, m.Id, m.Name, m.Message), nil
 }
 
 func (m *ChatMessageSuccess) Deserialize(extra string) error {
@@ -41,12 +41,12 @@ func (m *ChatMessageSuccess) Deserialize(extra string) error {
 
 	switch sli[0] {
 	case "":
-		m.ChatId = dofustyp.ChatChannelPublic
+		m.ChatChannel = dofustyp.ChatChannelPublic
 	case "T":
-		m.ChatId = dofustyp.ChatChannelPrivate
+		m.ChatChannel = dofustyp.ChatChannelPrivate
 	default:
 		for _, v := range sli[0] {
-			m.ChatId = dofustyp.ChatChannel(v)
+			m.ChatChannel = dofustyp.ChatChannel(v)
 			break
 		}
 	}
