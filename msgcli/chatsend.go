@@ -67,6 +67,7 @@ func (m *ChatSend) Deserialize(extra string) error {
 	m.ChatChannel = chatChannel
 
 	message := html.EscapeString(sli[1])
+	message = strings.TrimSpace(message)
 	if message == "" {
 		return d1proto.ErrInvalidMsg
 	}
