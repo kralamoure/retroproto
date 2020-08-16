@@ -22,11 +22,22 @@ func (m AccountSelectServerPlainSuccess) Serialized() (string, error) {
 }
 
 func (m *AccountSelectServerPlainSuccess) Deserialize(extra string) error {
+	if extra == "" {
+		return d1proto.ErrInvalidMsg
+	}
+
 	data := strings.Split(extra, ";")
+	if len(data) != 2 {
+		return d1proto.ErrInvalidMsg
+	}
+
 	addr := strings.Split(data[0], ":")
 
 	m.Host = addr[0]
-	m.Port = addr[1]
+	if len(addr) >= 2 {
+		m.Port = addr[1]
+	}
+
 	m.Ticket = data[1]
 
 	return nil

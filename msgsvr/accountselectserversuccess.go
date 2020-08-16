@@ -22,6 +22,10 @@ func (m AccountSelectServerSuccess) Serialized() (string, error) {
 }
 
 func (m *AccountSelectServerSuccess) Deserialize(extra string) error {
+	if extra == "" {
+		return d1proto.ErrInvalidMsg
+	}
+
 	host, port, ticket, err := d1proto.SplitEncodedHostPortTicket(extra)
 	if err != nil {
 		return err
