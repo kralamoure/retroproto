@@ -27,5 +27,6 @@ func (m *AccountBoost) Deserialize(extra string) error {
 		return err
 	}
 	m.CharacteristicId = d1typ.CharacteristicId(characteristicId)
+
 	return nil
 }
