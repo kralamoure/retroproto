@@ -1,4 +1,3 @@
-// generated (unrevised)
 package msgsvr
 
 import (
@@ -12,9 +11,9 @@ func (m SpellsUpgradeSpellError) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m SpellsUpgradeSpellError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", nil
 }
 
 func (m *SpellsUpgradeSpellError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return nil
 }
