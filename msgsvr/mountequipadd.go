@@ -37,7 +37,7 @@ type MountEquipAdd struct {
 	Tired            int
 	TiredMax         int
 	Reproductions    int
-	ReproduxtionsMax int
+	ReproductionsMax int
 }
 
 func (m MountEquipAdd) ProtocolId() d1proto.MsgSvrId {
