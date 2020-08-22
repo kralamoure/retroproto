@@ -38,8 +38,8 @@ type MountEquipAdd struct {
 	Fecundation      int
 	Fecundable       bool
 	Effects          []d1typ.Effect
-	Tired            int
-	TiredMax         int
+	Tiredness        int
+	TirednessMax     int
 	Reproductions    int
 	ReproductionsMax int
 }
@@ -104,8 +104,8 @@ func (m MountEquipAdd) Serialized() (string, error) {
 		m.Fecundation,
 		fecundable,
 		effects,
-		m.Tired,
-		m.TiredMax,
+		m.Tiredness,
+		m.TirednessMax,
 		m.Reproductions,
 		m.ReproductionsMax,
 	), nil
