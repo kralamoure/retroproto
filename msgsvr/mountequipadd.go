@@ -103,7 +103,7 @@ func (m MountEquipAdd) Serialized() (string, error) {
 		m.LoveMax,
 		m.Fecundation,
 		fecundable,
-		effects,
+		strings.Join(effects, ","),
 		m.Tiredness,
 		m.TirednessMax,
 		m.Reproductions,
