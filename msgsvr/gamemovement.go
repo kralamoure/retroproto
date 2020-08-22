@@ -740,7 +740,7 @@ func (m GameMovement) Serialized() (string, error) {
 
 				mountSB.WriteString(fmt.Sprintf("%d", t.MountModelId))
 
-				if !(t.MountCustomColor1 == "" || t.MountCustomColor2 == "" || t.MountCustomColor3 == "") {
+				if !(t.MountCustomColor1 == "" && t.MountCustomColor2 == "" && t.MountCustomColor3 == "") {
 					mountSB.WriteString(fmt.Sprintf(",%s,%s,%s",
 						t.MountCustomColor1, t.MountCustomColor2, t.MountCustomColor3,
 					))
