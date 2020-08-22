@@ -13,7 +13,7 @@ import (
 type MountEquipAdd struct {
 	Id               int
 	ModelId          int
-	Ancestors        []int
+	Ancestors        [14]int
 	Capacities       []int
 	Name             string
 	Sex              d1typ.Gender
@@ -49,10 +49,6 @@ func (m MountEquipAdd) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m MountEquipAdd) Serialized() (string, error) {
-	if len(m.Ancestors) < 14 {
-		m.Ancestors = make([]int, 14)
-	}
-
 	ancestors := make([]string, len(m.Ancestors))
 	for i := range m.Ancestors {
 		ancestors[i] = fmt.Sprintf("%d", m.Ancestors[i])
