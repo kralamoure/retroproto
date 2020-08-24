@@ -14,7 +14,7 @@ type MountEquipAdd struct {
 	Id               int
 	ModelId          int
 	Ancestors        [14]int
-	Capacities       []int
+	Capacities       []d1typ.MountCapacityId
 	Name             string
 	Sex              d1typ.Gender
 	XP               int
