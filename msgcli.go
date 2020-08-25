@@ -265,7 +265,7 @@ const (
 	PartyFollowAll        = MsgCliId("PG")
 
 	MountRename              = MsgCliId("Rn")
-	MountKill                = MsgCliId("Rk")
+	MountFree                = MsgCliId("Rf")
 	MountSetXP               = MsgCliId("Rx")
 	MountRide                = MsgCliId("Rr")
 	MountRequestData         = MsgCliId("Rd")
@@ -488,7 +488,7 @@ var msgCliNameByID = map[MsgCliId]string{
 	PartyFollowAll:        "PartyFollowAll",
 
 	MountRename:              "MountRename",
-	MountKill:                "MountKill",
+	MountFree:                "MountFree",
 	MountSetXP:               "MountSetXP",
 	MountRide:                "MountRide",
 	MountRequestData:         "MountRequestData",
@@ -711,7 +711,7 @@ var MsgCliIds = []MsgCliId{
 	PartyFollowAll,
 
 	MountRename,
-	MountKill,
+	MountFree,
 	MountSetXP,
 	MountRide,
 	MountRequestData,
