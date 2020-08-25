@@ -1,4 +1,3 @@
-// generated (unrevised)
 package msgcli
 
 import (
@@ -12,9 +11,9 @@ func (m MountFree) ProtocolId() d1proto.MsgCliId {
 }
 
 func (m MountFree) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", nil
 }
 
 func (m *MountFree) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return nil
 }
