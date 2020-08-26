@@ -5,7 +5,7 @@ import (
 )
 
 type MountEquipAdd struct {
-	MountData
+	MountData MountData
 }
 
 func (m MountEquipAdd) ProtocolId() d1proto.MsgSvrId {

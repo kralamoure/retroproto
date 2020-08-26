@@ -1,20 +1,22 @@
-// generated (unrevised)
 package msgsvr
 
 import (
 	"github.com/kralamoure/d1proto"
 )
 
-type MountName struct{}
+type MountName struct {
+	Name string
+}
 
 func (m MountName) ProtocolId() d1proto.MsgSvrId {
 	return d1proto.MountName
 }
 
 func (m MountName) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return m.Name, nil
 }
 
 func (m *MountName) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	m.Name = extra
+	return nil
 }
