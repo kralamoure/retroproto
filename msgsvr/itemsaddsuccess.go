@@ -106,7 +106,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 					}
 					object.Position = int(position)
 				}
-				effects, err := d1.DecodeItemEffects(sli[4], ",")
+				effects, err := d1.DecodeItemEffects(strings.Split(sli[4], ","))
 				if err != nil {
 					return err
 				}

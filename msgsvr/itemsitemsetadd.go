@@ -57,7 +57,7 @@ func (m *ItemsItemSetAdd) Deserialize(extra string) error {
 	}
 
 	effectsStr := sli[2]
-	effects, err := d1.DecodeItemEffects(effectsStr, ",")
+	effects, err := d1.DecodeItemEffects(strings.Split(effectsStr, ","))
 	if err != nil {
 		return err
 	}
