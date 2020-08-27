@@ -43,7 +43,7 @@ const (
 	AksServerMessage        MsgSvrId = "M"
 	AksServerWillDisconnect MsgSvrId = "k"
 
-	BasicsNoticed                     MsgSvrId = "BN"
+	BasicsNothing                     MsgSvrId = "BN"
 	BasicsAuthorizedCommandError      MsgSvrId = "BAE"
 	BasicsAuthorizedCommandSuccess    MsgSvrId = "BAT"
 	BasicsAuthorizedLine              MsgSvrId = "BAL"
@@ -363,8 +363,8 @@ const (
 	PartyMovement      MsgSvrId = "PM"
 
 	MountEquipError   MsgSvrId = "ReE"
-	MountEquipAdd     MsgSvrId = "Re+"
-	MountEquipRemove  MsgSvrId = "Re-"
+	MountEquipSuccess MsgSvrId = "Re+"
+	MountUnequip      MsgSvrId = "Re-"
 	MountXP           MsgSvrId = "Rx"
 	MountName         MsgSvrId = "Rn"
 	MountData         MsgSvrId = "Rd"
@@ -383,7 +383,7 @@ var msgSvrNameByID = map[MsgSvrId]string{
 	AksServerMessage:        "AksServerMessage",
 	AksServerWillDisconnect: "AksServerWillDisconnect",
 
-	BasicsNoticed:                     "BasicsNoticed",
+	BasicsNothing:                     "BasicsNothing",
 	BasicsAuthorizedCommandError:      "BasicsAuthorizedCommandError",
 	BasicsAuthorizedCommandSuccess:    "BasicsAuthorizedCommandSuccess",
 	BasicsAuthorizedLine:              "BasicsAuthorizedLine",
@@ -703,8 +703,8 @@ var msgSvrNameByID = map[MsgSvrId]string{
 	PartyMovement:      "PartyMovement",
 
 	MountEquipError:   "MountEquipError",
-	MountEquipAdd:     "MountEquipAdd",
-	MountEquipRemove:  "MountEquipRemove",
+	MountEquipSuccess: "MountEquipSuccess",
+	MountUnequip:      "MountUnequip",
 	MountXP:           "MountXP",
 	MountName:         "MountName",
 	MountData:         "MountData",
@@ -723,7 +723,7 @@ var MsgSvrIds = []MsgSvrId{
 	AksServerMessage,
 	AksServerWillDisconnect,
 
-	BasicsNoticed,
+	BasicsNothing,
 	BasicsAuthorizedCommandError,
 	BasicsAuthorizedCommandSuccess,
 	BasicsAuthorizedLine,
@@ -1043,8 +1043,8 @@ var MsgSvrIds = []MsgSvrId{
 	PartyMovement,
 
 	MountEquipError,
-	MountEquipAdd,
-	MountEquipRemove,
+	MountEquipSuccess,
+	MountUnequip,
 	MountXP,
 	MountName,
 	MountData,
