@@ -25,15 +25,7 @@ func (m GameActionsSendActions) ProtocolId() d1proto.MsgCliId {
 }
 
 func (m GameActionsSendActions) Serialized() (string, error) {
-	/*var extra string
-	switch m.ActionType {
-	case 1:
-		m.ActionMovement.CellIds
-
-		return fmt.Sprintf("%03d", m.ActionType), nil
-	}*/
-
-	return "", fmt.Errorf("unhandled action type %d", m.ActionType)
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *GameActionsSendActions) Deserialize(extra string) error {
