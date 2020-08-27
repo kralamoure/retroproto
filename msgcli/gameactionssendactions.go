@@ -2,7 +2,6 @@
 package msgcli
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -59,7 +58,7 @@ func (m *GameActionsSendActions) Deserialize(extra string) error {
 			m.ActionMovement.DirAndCells = append(m.ActionMovement.DirAndCells, *dirAndCell)
 		}
 	default:
-		return fmt.Errorf("unhandled action type %d", m.ActionType)
+		return d1proto.ErrNotImplemented
 	}
 
 	return nil
