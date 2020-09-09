@@ -1,4 +1,3 @@
-// generated (unrevised)
 package msgsvr
 
 import (
@@ -12,9 +11,9 @@ func (m ExchangeBuySuccess) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m ExchangeBuySuccess) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", nil
 }
 
 func (m *ExchangeBuySuccess) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return nil
 }
