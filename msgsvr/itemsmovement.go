@@ -5,12 +5,14 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/kralamoure/d1/d1typ"
+
 	"github.com/kralamoure/d1proto"
 )
 
 type ItemsMovement struct {
 	Id       int
-	Position int
+	Position d1typ.CharacterItemPosition
 }
 
 func (m ItemsMovement) ProtocolId() d1proto.MsgSvrId {
@@ -38,7 +40,7 @@ func (m *ItemsMovement) Deserialize(extra string) error {
 		if err != nil {
 			return err
 		}
-		m.Position = int(position)
+		m.Position = d1typ.CharacterItemPosition(position)
 	}
 
 	return nil
