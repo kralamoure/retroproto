@@ -26,7 +26,7 @@ type ItemsAddSuccessItemObject struct {
 	Id         int
 	TemplateId int
 	Quantity   int
-	Position   int
+	Position   d1typ.CharacterItemPosition
 	Effects    []d1typ.Effect
 }
 
@@ -104,7 +104,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 					if err != nil {
 						return err
 					}
-					object.Position = int(position)
+					object.Position = d1typ.CharacterItemPosition(position)
 				}
 				effects, err := d1.DecodeItemEffects(strings.Split(sli[4], ","))
 				if err != nil {
