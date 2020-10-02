@@ -37,11 +37,11 @@ func (m *MountRequestData) Deserialize(extra string) error {
 	}
 
 	if sli[1] != "undefined" {
-		sec, err := strconv.ParseInt(sli[1], 10, 64)
+		millis, err := strconv.ParseInt(sli[1], 10, 64)
 		if err != nil {
 			return err
 		}
-		m.Time = time.Unix(sec, 0)
+		m.Time = time.Unix(millis/1000, 0)
 	}
 
 	return nil
