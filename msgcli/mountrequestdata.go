@@ -29,7 +29,7 @@ func (m *MountRequestData) Deserialize(extra string) error {
 	}
 
 	if sli[0] != "undefined" {
-		id, err := strconv.ParseInt(sli[0], 10, 32)
+		id, err := strconv.ParseInt(sli[0], 10, 64)
 		if err != nil {
 			return err
 		}
@@ -37,7 +37,7 @@ func (m *MountRequestData) Deserialize(extra string) error {
 	}
 
 	if sli[1] != "undefined" {
-		sec, err := strconv.ParseInt(sli[1], 10, 32)
+		sec, err := strconv.ParseInt(sli[1], 10, 64)
 		if err != nil {
 			return err
 		}
