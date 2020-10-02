@@ -10,8 +10,8 @@ import (
 )
 
 type MountRequestData struct {
-	Id   int
-	Time time.Time
+	Id       int
+	Validity time.Time
 }
 
 func (m MountRequestData) ProtocolId() d1proto.MsgCliId {
@@ -19,7 +19,7 @@ func (m MountRequestData) ProtocolId() d1proto.MsgCliId {
 }
 
 func (m MountRequestData) Serialized() (string, error) {
-	return fmt.Sprintf("%d|%d", m.Id, m.Time.Unix()*1000), nil
+	return fmt.Sprintf("%d|%d", m.Id, m.Validity.Unix()*1000), nil
 }
 
 func (m *MountRequestData) Deserialize(extra string) error {
@@ -41,7 +41,7 @@ func (m *MountRequestData) Deserialize(extra string) error {
 		if err != nil {
 			return err
 		}
-		m.Time = time.Unix(millis/1000, 0)
+		m.Validity = time.Unix(millis/1000, 0)
 	}
 
 	return nil
