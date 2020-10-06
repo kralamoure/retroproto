@@ -233,7 +233,8 @@ const (
 	ExchangePlayerShopMovementError           MsgSvrId = "EiE"
 	ExchangePlayerShopMovementSuccess         MsgSvrId = "EiK"
 	ExchangeCraftPublicMode                   MsgSvrId = "EW"
-	ExchangeMountStorage                      MsgSvrId = "Ee"
+	ExchangeMountStorageAdd                   MsgSvrId = "Ee"
+	ExchangeMountStorageRemove                MsgSvrId = "Ee-"
 	ExchangeMountPark                         MsgSvrId = "Ef"
 	ExchangeMountPods                         MsgSvrId = "Ew"
 	ExchangeList                              MsgSvrId = "EL"
@@ -573,7 +574,8 @@ var msgSvrNameByID = map[MsgSvrId]string{
 	ExchangePlayerShopMovementError:           "ExchangePlayerShopMovementError",
 	ExchangePlayerShopMovementSuccess:         "ExchangePlayerShopMovementSuccess",
 	ExchangeCraftPublicMode:                   "ExchangeCraftPublicMode",
-	ExchangeMountStorage:                      "ExchangeMountStorage",
+	ExchangeMountStorageAdd:                   "ExchangeMountStorageAdd",
+	ExchangeMountStorageRemove:                "ExchangeMountStorageRemove",
 	ExchangeMountPark:                         "ExchangeMountPark",
 	ExchangeMountPods:                         "ExchangeMountPods",
 	ExchangeList:                              "ExchangeList",
@@ -913,7 +915,8 @@ var MsgSvrIds = []MsgSvrId{
 	ExchangePlayerShopMovementError,
 	ExchangePlayerShopMovementSuccess,
 	ExchangeCraftPublicMode,
-	ExchangeMountStorage,
+	ExchangeMountStorageAdd,
+	ExchangeMountStorageRemove,
 	ExchangeMountPark,
 	ExchangeMountPods,
 	ExchangeList,
