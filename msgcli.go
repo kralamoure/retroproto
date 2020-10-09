@@ -96,6 +96,7 @@ const (
 	AccountValidCharacterMigration  = MsgCliId("AM")
 	AccountDeleteCharacterMigration = MsgCliId("AM-")
 	AccountAskCharacterMigration    = MsgCliId("AM?")
+	AccountConfiguredPort           = MsgCliId("Ap")
 
 	GameCreate                   = MsgCliId("GC")
 	GameRequestLeave             = MsgCliId("GQ")
@@ -319,6 +320,7 @@ var msgCliNameByID = map[MsgCliId]string{
 	AccountValidCharacterMigration:  "AccountValidCharacterMigration",
 	AccountDeleteCharacterMigration: "AccountDeleteCharacterMigration",
 	AccountAskCharacterMigration:    "AccountAskCharacterMigration",
+	AccountConfiguredPort:           "AccountConfiguredPort",
 
 	GameCreate:                   "GameCreate",
 	GameRequestLeave:             "GameRequestLeave",
@@ -542,6 +544,7 @@ var MsgCliIds = []MsgCliId{
 	AccountValidCharacterMigration,
 	AccountDeleteCharacterMigration,
 	AccountAskCharacterMigration,
+	AccountConfiguredPort,
 
 	GameCreate,
 	GameRequestLeave,
