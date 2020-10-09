@@ -8,11 +8,13 @@ import (
 	"github.com/kralamoure/d1/d1typ"
 
 	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1proto/typ"
 )
 
 type ExchangeCreateSuccess struct {
-	Type   d1typ.Exchange
-	NPCBuy ExchangeCreateSuccessNPCBuy
+	Type    d1typ.Exchange
+	NPCBuy  ExchangeCreateSuccessNPCBuy
+	Paddock ExchangeCreateSuccessPaddock
 }
 
 type ExchangeCreateSuccessNPCBuy struct {
@@ -25,6 +27,11 @@ type ExchangeCreateSuccessNPCBuy struct {
 	MaxPerAccount int
 	NPCId         int
 	MaxHours      int
+}
+
+type ExchangeCreateSuccessPaddock struct {
+	Shed    []typ.CommonMountData
+	Paddock []typ.CommonMountData
 }
 
 func (m ExchangeCreateSuccess) ProtocolId() d1proto.MsgSvrId {
@@ -45,6 +52,28 @@ func (m ExchangeCreateSuccess) Serialized() (string, error) {
 		s = fmt.Sprintf("%d,%d,%d;%s;%f;%d;%d;%d;%d",
 			t.Quantity1, t.Quantity2, t.Quantity3, strings.Join(itemTypes, ","), t.Fee, t.MaxLevel, t.MaxPerAccount,
 			t.NPCId, t.MaxHours)
+	case d1typ.ExchangePaddock: // TODO
+		t := m.Paddock
+
+		shed := make([]string, len(t.Shed))
+		for i, v := range t.Shed {
+			str, err := v.Serialized()
+			if err != nil {
+				return "", err
+			}
+			shed[i] = str
+		}
+
+		paddock := make([]string, len(t.Paddock))
+		for i, v := range t.Paddock {
+			str, err := v.Serialized()
+			if err != nil {
+				return "", err
+			}
+			paddock[i] = str
+		}
+
+		s = fmt.Sprintf("%s~%s", strings.Join(shed, ";"), strings.Join(paddock, ";"))
 	default:
 		return "", d1proto.ErrNotImplemented
 	}
