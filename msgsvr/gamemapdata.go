@@ -4,14 +4,13 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
-	"time"
 
 	"github.com/kralamoure/d1proto"
 )
 
 type GameMapData struct {
 	Id   int
-	Date time.Time
+	Name string
 	Key  string
 }
 
@@ -20,7 +19,7 @@ func (m GameMapData) ProtocolId() d1proto.MsgSvrId {
 }
 
 func (m GameMapData) Serialized() (string, error) {
-	return fmt.Sprintf("|%d|%s|%s", m.Id, m.Date.UTC().Format("0601021504"), m.Key), nil
+	return fmt.Sprintf("|%d|%s|%s", m.Id, m.Name, m.Key), nil
 }
 
 func (m *GameMapData) Deserialize(extra string) error {
@@ -39,15 +38,8 @@ func (m *GameMapData) Deserialize(extra string) error {
 		m.Id = int(id)
 	}
 
-	if sli[1] != "" {
-		date, err := time.Parse("0601021504", sli[1])
-		if err != nil {
-			return err
-		}
-		m.Date = date
-	}
-
-	m.Key = sli[1]
+	m.Name = sli[1]
+	m.Key = sli[2]
 
 	return nil
 }
