@@ -13,6 +13,7 @@ type GameActions struct {
 	ActionType        int
 	ActionMovement    GameActionsActionMovement
 	ActionLoadGameMap GameActionsActionLoadGameMap
+	ActionChallenge   GameActionsActionChallenge
 }
 
 type GameActionsActionMovement struct {
@@ -24,6 +25,11 @@ type GameActionsActionMovement struct {
 type GameActionsActionLoadGameMap struct {
 	SpriteId  int
 	Cinematic int
+}
+
+type GameActionsActionChallenge struct {
+	ChallengerId int
+	ChallengedId int
 }
 
 func (m GameActions) ProtocolId() d1proto.MsgSvrId {
@@ -68,6 +74,8 @@ func (m GameActions) Serialized() (string, error) {
 		}
 
 		sb.WriteString(fmt.Sprintf(";%d;%s", m.ActionLoadGameMap.SpriteId, cinematic))
+	case enum.GameActionType.Challenge:
+		sb.WriteString(fmt.Sprintf(";%d;%d", m.ActionChallenge.ChallengerId, m.ActionChallenge.ChallengedId))
 	}
 
 	return fmt.Sprintf("%s;%d%s", id, m.ActionType, sb.String()), nil

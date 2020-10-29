@@ -11,12 +11,17 @@ import (
 )
 
 type GameActionsSendActions struct {
-	ActionType     int
-	ActionMovement GameActionsSendActionsActionMovement
+	ActionType      int
+	ActionMovement  GameActionsSendActionsActionMovement
+	ActionChallenge GameActionsSendActionsActionChallenge
 }
 
 type GameActionsSendActionsActionMovement struct {
 	DirAndCells []typ.CommonDirAndCell
+}
+
+type GameActionsSendActionsActionChallenge struct {
+	Id int
 }
 
 func (m GameActionsSendActions) ProtocolId() d1proto.MsgCliId {
@@ -57,6 +62,16 @@ func (m *GameActionsSendActions) Deserialize(extra string) error {
 
 			m.ActionMovement.DirAndCells = append(m.ActionMovement.DirAndCells, *dirAndCell)
 		}
+	case enum.GameActionType.Challenge:
+		if extra == "" {
+			return d1proto.ErrInvalidMsg
+		}
+
+		id, err := strconv.ParseInt(extra, 10, 32)
+		if err != nil {
+			return err
+		}
+		m.ActionChallenge.Id = int(id)
 	default:
 		return d1proto.ErrNotImplemented
 	}
