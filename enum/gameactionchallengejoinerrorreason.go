@@ -11,7 +11,7 @@ func newGameActionChallengeJoinErrorReason() *gameActionChallengeJoinErrorReason
 		TooLate:                 'l',
 		Mutant:                  'm',
 		Map:                     'p',
-		OnRespawn:               'r',
+		NotReady:                'r',
 		YouAreBusy:              'o',
 		OpponentBusy:            'z',
 		MultipleAccounts:        'h',
@@ -32,7 +32,7 @@ type gameActionChallengeJoinErrorReason struct {
 	TooLate                 rune
 	Mutant                  rune
 	Map                     rune
-	OnRespawn               rune
+	NotReady                rune
 	YouAreBusy              rune
 	OpponentBusy            rune
 	MultipleAccounts        rune
