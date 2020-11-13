@@ -10,10 +10,11 @@ import (
 )
 
 type GameActions struct {
-	ActionType        int
-	ActionMovement    GameActionsActionMovement
-	ActionLoadGameMap GameActionsActionLoadGameMap
-	ActionChallenge   GameActionsActionChallenge
+	ActionType          int
+	ActionMovement      GameActionsActionMovement
+	ActionLoadGameMap   GameActionsActionLoadGameMap
+	ActionChallenge     GameActionsActionChallenge
+	ActionChallengeJoin GameActionsActionChallengeJoin
 }
 
 type GameActionsActionMovement struct {
@@ -30,6 +31,10 @@ type GameActionsActionLoadGameMap struct {
 type GameActionsActionChallenge struct {
 	ChallengerId int
 	ChallengedId int
+}
+
+type GameActionsActionChallengeJoin struct {
+	ErrorId rune
 }
 
 func (m GameActions) ProtocolId() d1proto.MsgSvrId {
