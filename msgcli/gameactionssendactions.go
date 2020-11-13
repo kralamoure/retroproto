@@ -11,9 +11,11 @@ import (
 )
 
 type GameActionsSendActions struct {
-	ActionType      int
-	ActionMovement  GameActionsSendActionsActionMovement
-	ActionChallenge GameActionsSendActionsActionChallenge
+	ActionType            int
+	ActionMovement        GameActionsSendActionsActionMovement
+	ActionChallenge       GameActionsSendActionsActionChallenge
+	ActionChallengeAccept GameActionsSendActionsActionChallengeAccept
+	ActionChallengeRefuse GameActionsSendActionsActionChallengeRefuse
 }
 
 type GameActionsSendActionsActionMovement struct {
@@ -21,7 +23,15 @@ type GameActionsSendActionsActionMovement struct {
 }
 
 type GameActionsSendActionsActionChallenge struct {
-	Id int
+	ChallengedId int
+}
+
+type GameActionsSendActionsActionChallengeAccept struct {
+	ChallengerId int
+}
+
+type GameActionsSendActionsActionChallengeRefuse struct {
+	ChallengerId int
 }
 
 func (m GameActionsSendActions) ProtocolId() d1proto.MsgCliId {
@@ -71,7 +81,27 @@ func (m *GameActionsSendActions) Deserialize(extra string) error {
 		if err != nil {
 			return err
 		}
-		m.ActionChallenge.Id = int(id)
+		m.ActionChallenge.ChallengedId = int(id)
+	case enum.GameActionType.ChallengeAccept:
+		if extra == "" {
+			return d1proto.ErrInvalidMsg
+		}
+
+		id, err := strconv.ParseInt(extra, 10, 32)
+		if err != nil {
+			return err
+		}
+		m.ActionChallengeAccept.ChallengerId = int(id)
+	case enum.GameActionType.ChallengeRefuse:
+		if extra == "" {
+			return d1proto.ErrInvalidMsg
+		}
+
+		id, err := strconv.ParseInt(extra, 10, 32)
+		if err != nil {
+			return err
+		}
+		m.ActionChallengeRefuse.ChallengerId = int(id)
 	default:
 		return d1proto.ErrNotImplemented
 	}

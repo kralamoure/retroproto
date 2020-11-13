@@ -10,11 +10,13 @@ import (
 )
 
 type GameActions struct {
-	ActionType          int
-	ActionMovement      GameActionsActionMovement
-	ActionLoadGameMap   GameActionsActionLoadGameMap
-	ActionChallenge     GameActionsActionChallenge
-	ActionChallengeJoin GameActionsActionChallengeJoin
+	ActionType            int
+	ActionMovement        GameActionsActionMovement
+	ActionLoadGameMap     GameActionsActionLoadGameMap
+	ActionChallenge       GameActionsActionChallenge
+	ActionChallengeAccept GameActionsActionChallengeAccept
+	ActionChallengeRefuse GameActionsActionChallengeRefuse
+	ActionChallengeJoin   GameActionsActionChallengeJoin
 }
 
 type GameActionsActionMovement struct {
@@ -29,6 +31,16 @@ type GameActionsActionLoadGameMap struct {
 }
 
 type GameActionsActionChallenge struct {
+	ChallengerId int
+	ChallengedId int
+}
+
+type GameActionsActionChallengeAccept struct {
+	ChallengerId int
+	ChallengedId int
+}
+
+type GameActionsActionChallengeRefuse struct {
 	ChallengerId int
 	ChallengedId int
 }
@@ -82,6 +94,10 @@ func (m GameActions) Serialized() (string, error) {
 		sb.WriteString(fmt.Sprintf(";%d;%s", m.ActionLoadGameMap.SpriteId, cinematic))
 	case enum.GameActionType.Challenge:
 		sb.WriteString(fmt.Sprintf(";%d;%d", m.ActionChallenge.ChallengerId, m.ActionChallenge.ChallengedId))
+	case enum.GameActionType.ChallengeAccept:
+		sb.WriteString(fmt.Sprintf(";%d;%d", m.ActionChallengeRefuse.ChallengerId, m.ActionChallengeRefuse.ChallengedId))
+	case enum.GameActionType.ChallengeRefuse:
+		sb.WriteString(fmt.Sprintf(";%d;%d", m.ActionChallengeRefuse.ChallengerId, m.ActionChallengeRefuse.ChallengedId))
 	case enum.GameActionType.ChallengeJoin:
 		sb.WriteString(fmt.Sprintf(";%d;%s", m.ActionChallengeJoin.ChallengerId, string(m.ActionChallengeJoin.ErrorReason)))
 	}
