@@ -34,7 +34,8 @@ type GameActionsActionChallenge struct {
 }
 
 type GameActionsActionChallengeJoin struct {
-	ErrorId rune
+	ChallengedId int
+	ErrorReason  rune
 }
 
 func (m GameActions) ProtocolId() d1proto.MsgSvrId {
@@ -81,6 +82,8 @@ func (m GameActions) Serialized() (string, error) {
 		sb.WriteString(fmt.Sprintf(";%d;%s", m.ActionLoadGameMap.SpriteId, cinematic))
 	case enum.GameActionType.Challenge:
 		sb.WriteString(fmt.Sprintf(";%d;%d", m.ActionChallenge.ChallengerId, m.ActionChallenge.ChallengedId))
+	case enum.GameActionType.ChallengeJoin:
+		sb.WriteString(fmt.Sprintf(";%d;%s", m.ActionChallengeJoin.ChallengedId, string(m.ActionChallengeJoin.ErrorReason)))
 	}
 
 	return fmt.Sprintf("%s;%d%s", id, m.ActionType, sb.String()), nil
