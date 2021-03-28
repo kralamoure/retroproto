@@ -26,6 +26,12 @@ func MsgCliIdByPkt(pkt string) (id MsgCliId, ok bool) {
 		return
 	}
 
+	// Dotted I (Cyrillic), so "I" is not equal to "І". It seems like a bug in Dofus Retro's client, post v1.29.1
+	if strings.HasPrefix(pkt, "GІ") {
+		ok = true
+		id = GameGetExtraInformations
+	}
+
 	for _, v := range MsgCliIds {
 		if strings.HasPrefix(pkt, string(v)) {
 			ok = true
