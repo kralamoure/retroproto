@@ -1,6 +1,6 @@
 module github.com/kralamoure/d1proto
 
-go 1.15
+go 1.16
 
 require (
 	github.com/kralamoure/d1 v0.0.0-20201007013438-9eb50ef5ce7d
