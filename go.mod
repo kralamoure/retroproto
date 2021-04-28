@@ -6,7 +6,3 @@ require (
 	github.com/kralamoure/d1 v0.0.0-20210325215504-184ee80d8398
 	github.com/kralamoure/dofus v0.0.0-20200927021741-893c10151570
 )
-
-replace github.com/kralamoure/dofus => ../dofus
-
-replace github.com/kralamoure/d1 => ../d1
