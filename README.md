@@ -1,11 +1,6 @@
 # d1proto
 
-`d1proto` is a library for communication between Dofus 1 client and server.
-
-Some examples of what you can do with this library:
-
-- Deserialize client/server packets
-- Serialize messages
+`d1proto` is a library for serializing and deserializing packets between Dofus 1 client and server.
 
 ## Requirements:
 
@@ -18,7 +13,7 @@ Some examples of what you can do with this library:
 go get github.com/kralamoure/d1proto
 ```
 
-## Usage
+## Examples
 
 ### Deserialize a client packet
 
