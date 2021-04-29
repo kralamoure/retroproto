@@ -17,7 +17,7 @@ go get github.com/kralamoure/d1proto
 
 ## Examples
 
-### Deserialize a client packet
+### Deserialize a client message
 
 ```go
 package main
@@ -46,7 +46,7 @@ func main() {
 }
 ```
 
-### Deserialize a server packet
+### Deserialize a server message
 
 ```go
 package main
