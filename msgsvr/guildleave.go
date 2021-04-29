@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GuildLeave struct{}
 
-func (m GuildLeave) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.GuildLeave
+func (m GuildLeave) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.GuildLeave
 }
 
 func (m GuildLeave) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *GuildLeave) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

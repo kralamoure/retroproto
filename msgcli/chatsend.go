@@ -7,7 +7,7 @@ import (
 
 	"github.com/kralamoure/dofus/dofustyp"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ChatSend struct {
@@ -17,8 +17,8 @@ type ChatSend struct {
 	Params          string // TODO
 }
 
-func (m ChatSend) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.ChatSend
+func (m ChatSend) ProtocolId() d1proto.MsgCliId {
+	return d1proto.ChatSend
 }
 
 func (m ChatSend) Serialized() (string, error) {
@@ -33,11 +33,11 @@ func (m ChatSend) Serialized() (string, error) {
 func (m *ChatSend) Deserialize(extra string) error {
 	sli := strings.SplitN(extra, "|", 3)
 	if len(sli) != 3 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	if sli[0] == "" {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	var r rune
@@ -51,7 +51,7 @@ func (m *ChatSend) Deserialize(extra string) error {
 	case '¤':
 		chatChannel = dofustyp.ChatChannelNewbies
 	case dofustyp.ChatChannelPrivate:
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	if len(sli[0]) >= 2 {
@@ -61,7 +61,7 @@ func (m *ChatSend) Deserialize(extra string) error {
 
 	_, ok := dofustyp.ChatChannels[chatChannel]
 	if !ok {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	m.ChatChannel = chatChannel

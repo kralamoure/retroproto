@@ -6,15 +6,15 @@ import (
 
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeBigStoreType struct {
 	ItemType d1typ.ItemType
 }
 
-func (m ExchangeBigStoreType) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.ExchangeBigStoreType
+func (m ExchangeBigStoreType) ProtocolId() d1proto.MsgCliId {
+	return d1proto.ExchangeBigStoreType
 }
 
 func (m ExchangeBigStoreType) Serialized() (string, error) {

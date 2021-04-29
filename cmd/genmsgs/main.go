@@ -9,7 +9,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 func main() {
@@ -28,8 +28,8 @@ func main() {
 		panic(err)
 	}
 
-	for _, v := range d1encoding.MsgSvrIds {
-		name, _ := d1encoding.MsgSvrNameByID(v)
+	for _, v := range d1proto.MsgSvrIds {
+		name, _ := d1proto.MsgSvrNameByID(v)
 		buf := &bytes.Buffer{}
 		err := msgSvrTmpl.Execute(buf, name)
 		if err != nil {
@@ -49,8 +49,8 @@ func main() {
 		panic(err)
 	}
 
-	for _, v := range d1encoding.MsgCliIds {
-		name, _ := d1encoding.MsgCliNameByID(v)
+	for _, v := range d1proto.MsgCliIds {
+		name, _ := d1proto.MsgCliNameByID(v)
 		buf := &bytes.Buffer{}
 		err := msgCliTmpl.Execute(buf, name)
 		if err != nil {

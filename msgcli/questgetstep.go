@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type QuestGetStep struct{}
 
-func (m QuestGetStep) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.QuestGetStep
+func (m QuestGetStep) ProtocolId() d1proto.MsgCliId {
+	return d1proto.QuestGetStep
 }
 
 func (m QuestGetStep) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *QuestGetStep) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

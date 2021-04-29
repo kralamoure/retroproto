@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeBigStoreItemMiddlePriceInBigStore struct {
@@ -13,8 +13,8 @@ type ExchangeBigStoreItemMiddlePriceInBigStore struct {
 	Price      int
 }
 
-func (m ExchangeBigStoreItemMiddlePriceInBigStore) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ExchangeBigStoreItemMiddlePriceInBigStore
+func (m ExchangeBigStoreItemMiddlePriceInBigStore) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ExchangeBigStoreItemMiddlePriceInBigStore
 }
 
 func (m ExchangeBigStoreItemMiddlePriceInBigStore) Serialized() (string, error) {
@@ -24,7 +24,7 @@ func (m ExchangeBigStoreItemMiddlePriceInBigStore) Serialized() (string, error) 
 func (m *ExchangeBigStoreItemMiddlePriceInBigStore) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) != 2 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	templateId, err := strconv.ParseInt(sli[0], 10, 32)

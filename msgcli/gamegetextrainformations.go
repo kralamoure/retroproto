@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GameGetExtraInformations struct{}
 
-func (m GameGetExtraInformations) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.GameGetExtraInformations
+func (m GameGetExtraInformations) ProtocolId() d1proto.MsgCliId {
+	return d1proto.GameGetExtraInformations
 }
 
 func (m GameGetExtraInformations) Serialized() (string, error) {

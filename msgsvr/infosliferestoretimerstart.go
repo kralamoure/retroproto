@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type InfosLifeRestoreTimerStart struct {
 	Interval time.Duration
 }
 
-func (m InfosLifeRestoreTimerStart) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.InfosLifeRestoreTimerStart
+func (m InfosLifeRestoreTimerStart) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.InfosLifeRestoreTimerStart
 }
 
 func (m InfosLifeRestoreTimerStart) Serialized() (string, error) {

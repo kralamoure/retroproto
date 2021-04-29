@@ -1,5 +1,5 @@
-// Package d1encoding is a library for serializing and deserializing packets between Dofus 1 client and server.
-package d1encoding
+// Package d1proto is a library for serializing and deserializing packets between Dofus 1 client and server.
+package d1proto
 
 import "errors"
 

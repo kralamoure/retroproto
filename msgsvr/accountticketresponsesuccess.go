@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AccountTicketResponseSuccess struct {
 	KeyId int
 }
 
-func (m AccountTicketResponseSuccess) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AccountTicketResponseSuccess
+func (m AccountTicketResponseSuccess) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AccountTicketResponseSuccess
 }
 
 func (m AccountTicketResponseSuccess) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m AccountTicketResponseSuccess) Serialized() (string, error) {
 
 func (m *AccountTicketResponseSuccess) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	keyId, err := strconv.ParseInt(extra, 10, 32)

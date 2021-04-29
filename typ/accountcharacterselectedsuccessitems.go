@@ -7,7 +7,7 @@ import (
 	"github.com/kralamoure/d1"
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AccountCharacterSelectedSuccessItem struct {
@@ -25,5 +25,5 @@ func (m AccountCharacterSelectedSuccessItem) Serialized() (string, error) {
 // TODO
 func (m *AccountCharacterSelectedSuccessItem) Deserialize(extra string) error {
 	// sli := strings.Split(extra, "~")
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

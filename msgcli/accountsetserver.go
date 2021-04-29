@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AccountSetServer struct {
 	Id int
 }
 
-func (m AccountSetServer) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.AccountSetServer
+func (m AccountSetServer) ProtocolId() d1proto.MsgCliId {
+	return d1proto.AccountSetServer
 }
 
 func (m AccountSetServer) Serialized() (string, error) {

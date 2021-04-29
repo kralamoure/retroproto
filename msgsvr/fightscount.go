@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type FightsCount struct {
 	Value int
 }
 
-func (m FightsCount) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.FightsCount
+func (m FightsCount) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.FightsCount
 }
 
 func (m FightsCount) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m FightsCount) Serialized() (string, error) {
 
 func (m *FightsCount) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	value, err := strconv.ParseInt(extra, 10, 32)

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type SpellsUpgradeSpellSuccess struct {
@@ -13,8 +13,8 @@ type SpellsUpgradeSpellSuccess struct {
 	Level int
 }
 
-func (m SpellsUpgradeSpellSuccess) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.SpellsUpgradeSpellSuccess
+func (m SpellsUpgradeSpellSuccess) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.SpellsUpgradeSpellSuccess
 }
 
 func (m SpellsUpgradeSpellSuccess) Serialized() (string, error) {
@@ -24,7 +24,7 @@ func (m SpellsUpgradeSpellSuccess) Serialized() (string, error) {
 func (m *SpellsUpgradeSpellSuccess) Deserialize(extra string) error {
 	sli := strings.Split(extra, "~")
 	if len(sli) != 2 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)

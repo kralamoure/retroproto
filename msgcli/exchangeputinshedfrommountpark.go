@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ExchangePutInShedFromMountPark struct {
 	MountId int
 }
 
-func (m ExchangePutInShedFromMountPark) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.ExchangePutInShedFromMountPark
+func (m ExchangePutInShedFromMountPark) ProtocolId() d1proto.MsgCliId {
+	return d1proto.ExchangePutInShedFromMountPark
 }
 
 func (m ExchangePutInShedFromMountPark) Serialized() (string, error) {

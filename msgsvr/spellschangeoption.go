@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type SpellsChangeOption struct {
 	CanUseSeeAllSpell bool
 }
 
-func (m SpellsChangeOption) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.SpellsChangeOption
+func (m SpellsChangeOption) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.SpellsChangeOption
 }
 
 func (m SpellsChangeOption) Serialized() (string, error) {

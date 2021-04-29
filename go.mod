@@ -1,4 +1,4 @@
-module github.com/kralamoure/d1encoding
+module github.com/kralamoure/d1proto
 
 go 1.16
 

@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AccountLoginSuccess struct {
 	Authorized bool
 }
 
-func (m AccountLoginSuccess) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AccountLoginSuccess
+func (m AccountLoginSuccess) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AccountLoginSuccess
 }
 
 func (m AccountLoginSuccess) Serialized() (string, error) {
@@ -26,7 +26,7 @@ func (m AccountLoginSuccess) Serialized() (string, error) {
 
 func (m *AccountLoginSuccess) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	authorized, err := strconv.ParseBool(extra)

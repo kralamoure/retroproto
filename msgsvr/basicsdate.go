@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type BasicsDate struct {
@@ -14,8 +14,8 @@ type BasicsDate struct {
 	Day   int
 }
 
-func (m BasicsDate) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.BasicsDate
+func (m BasicsDate) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.BasicsDate
 }
 
 func (m BasicsDate) Serialized() (string, error) {
@@ -25,7 +25,7 @@ func (m BasicsDate) Serialized() (string, error) {
 func (m *BasicsDate) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 3 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	year, err := strconv.ParseInt(sli[0], 10, 32)

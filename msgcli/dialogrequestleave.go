@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type DialogRequestLeave struct{}
 
-func (m DialogRequestLeave) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.DialogRequestLeave
+func (m DialogRequestLeave) ProtocolId() d1proto.MsgCliId {
+	return d1proto.DialogRequestLeave
 }
 
 func (m DialogRequestLeave) Serialized() (string, error) {

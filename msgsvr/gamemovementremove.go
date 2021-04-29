@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GameMovementRemove struct {
 	Id int
 }
 
-func (m GameMovementRemove) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.GameMovementRemove
+func (m GameMovementRemove) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.GameMovementRemove
 }
 
 func (m GameMovementRemove) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m GameMovementRemove) Serialized() (string, error) {
 
 func (m *GameMovementRemove) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(extra, 10, 32)

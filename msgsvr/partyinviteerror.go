@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type PartyInviteError struct{}
 
-func (m PartyInviteError) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.PartyInviteError
+func (m PartyInviteError) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.PartyInviteError
 }
 
 func (m PartyInviteError) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *PartyInviteError) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

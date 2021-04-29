@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kralamoure/d1encoding"
-	"github.com/kralamoure/d1encoding/enum"
-	"github.com/kralamoure/d1encoding/typ"
+	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1proto/enum"
+	"github.com/kralamoure/d1proto/typ"
 )
 
 type GameMovement struct {
@@ -237,8 +237,8 @@ type GameMovementGFXData struct {
 	GFXs  []string
 }
 
-func (m GameMovement) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.GameMovement
+func (m GameMovement) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.GameMovement
 }
 
 func (m GameMovement) Serialized() (string, error) {
@@ -1368,7 +1368,7 @@ func (m *GameMovement) Deserialize(extra string) error {
 			templateIdAndNameSli := strings.Split(sli[4], "~")
 
 			if len(templateIdAndNameSli) < 2 {
-				return d1encoding.ErrInvalidMsg
+				return d1proto.ErrInvalidMsg
 			}
 
 			if templateIdAndNameSli[0] != "" {

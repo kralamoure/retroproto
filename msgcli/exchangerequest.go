@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeRequest struct {
@@ -14,8 +14,8 @@ type ExchangeRequest struct {
 	Cell int
 }
 
-func (m ExchangeRequest) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.ExchangeRequest
+func (m ExchangeRequest) ProtocolId() d1proto.MsgCliId {
+	return d1proto.ExchangeRequest
 }
 
 func (m ExchangeRequest) Serialized() (string, error) {
@@ -37,7 +37,7 @@ func (m *ExchangeRequest) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 
 	if len(sli) < 2 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	requestType, err := strconv.ParseInt(sli[0], 10, 32)

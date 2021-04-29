@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeLocalDistantError struct{}
 
-func (m ExchangeLocalDistantError) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ExchangeLocalDistantError
+func (m ExchangeLocalDistantError) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ExchangeLocalDistantError
 }
 
 func (m ExchangeLocalDistantError) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *ExchangeLocalDistantError) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type EnemiesGetEnemiesList struct{}
 
-func (m EnemiesGetEnemiesList) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.EnemiesGetEnemiesList
+func (m EnemiesGetEnemiesList) ProtocolId() d1proto.MsgCliId {
+	return d1proto.EnemiesGetEnemiesList
 }
 
 func (m EnemiesGetEnemiesList) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *EnemiesGetEnemiesList) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

@@ -5,15 +5,15 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GameCreate struct {
 	Type int
 }
 
-func (m GameCreate) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.GameCreate
+func (m GameCreate) ProtocolId() d1proto.MsgCliId {
+	return d1proto.GameCreate
 }
 
 func (m GameCreate) Serialized() (string, error) {

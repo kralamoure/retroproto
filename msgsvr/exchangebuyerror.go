@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeBuyError struct{}
 
-func (m ExchangeBuyError) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ExchangeBuyError
+func (m ExchangeBuyError) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ExchangeBuyError
 }
 
 func (m ExchangeBuyError) Serialized() (string, error) {

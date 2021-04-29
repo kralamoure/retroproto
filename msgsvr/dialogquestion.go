@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type DialogQuestion struct {
@@ -14,8 +14,8 @@ type DialogQuestion struct {
 	Answers        []int
 }
 
-func (m DialogQuestion) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.DialogQuestion
+func (m DialogQuestion) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.DialogQuestion
 }
 
 func (m DialogQuestion) Serialized() (string, error) {
@@ -39,7 +39,7 @@ func (m DialogQuestion) Serialized() (string, error) {
 
 func (m *DialogQuestion) Deserialize(extra string) error {
 	if extra == "" {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	sli := strings.Split(extra, "|")

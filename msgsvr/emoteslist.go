@@ -6,15 +6,15 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type EmotesList struct {
 	Emotes []int
 }
 
-func (m EmotesList) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.EmotesList
+func (m EmotesList) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.EmotesList
 }
 
 func (m EmotesList) Serialized() (string, error) {
@@ -22,7 +22,7 @@ func (m EmotesList) Serialized() (string, error) {
 
 	for _, v := range m.Emotes {
 		if v == 0 || v >= 32 {
-			return "", d1encoding.ErrInvalidMsg
+			return "", d1proto.ErrInvalidMsg
 		}
 		emotes += 1 << (v - 1)
 	}
@@ -33,7 +33,7 @@ func (m EmotesList) Serialized() (string, error) {
 func (m *EmotesList) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 2 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	emotesMap := make(map[int]struct{})

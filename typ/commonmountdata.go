@@ -7,7 +7,7 @@ import (
 	"github.com/kralamoure/d1"
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type CommonMountData struct {
@@ -108,5 +108,5 @@ func (m CommonMountData) Serialized() (string, error) {
 }
 
 func (m *CommonMountData) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

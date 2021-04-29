@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type SubareasAlignmentModification struct{}
 
-func (m SubareasAlignmentModification) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.SubareasAlignmentModification
+func (m SubareasAlignmentModification) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.SubareasAlignmentModification
 }
 
 func (m SubareasAlignmentModification) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *SubareasAlignmentModification) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

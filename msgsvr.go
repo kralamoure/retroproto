@@ -1,4 +1,4 @@
-package d1encoding
+package d1proto
 
 import "strings"
 

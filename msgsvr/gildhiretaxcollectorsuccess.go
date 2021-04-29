@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GildHireTaxCollectorSuccess struct{}
 
-func (m GildHireTaxCollectorSuccess) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.GildHireTaxCollectorSuccess
+func (m GildHireTaxCollectorSuccess) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.GildHireTaxCollectorSuccess
 }
 
 func (m GildHireTaxCollectorSuccess) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *GildHireTaxCollectorSuccess) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

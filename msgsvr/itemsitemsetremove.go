@@ -5,15 +5,15 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ItemsItemSetRemove struct {
 	Id int
 }
 
-func (m ItemsItemSetRemove) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ItemsItemSetRemove
+func (m ItemsItemSetRemove) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ItemsItemSetRemove
 }
 
 func (m ItemsItemSetRemove) Serialized() (string, error) {

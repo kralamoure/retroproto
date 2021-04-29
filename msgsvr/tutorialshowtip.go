@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type TutorialShowTip struct {
 	Id int
 }
 
-func (m TutorialShowTip) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.TutorialShowTip
+func (m TutorialShowTip) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.TutorialShowTip
 }
 
 func (m TutorialShowTip) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m TutorialShowTip) Serialized() (string, error) {
 
 func (m *TutorialShowTip) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(extra, 10, 32)

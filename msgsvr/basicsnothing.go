@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type BasicsNothing struct{}
 
-func (m BasicsNothing) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.BasicsNothing
+func (m BasicsNothing) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.BasicsNothing
 }
 
 func (m BasicsNothing) Serialized() (string, error) {

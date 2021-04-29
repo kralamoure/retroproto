@@ -1,7 +1,7 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AksServerMessage struct {
@@ -9,8 +9,8 @@ type AksServerMessage struct {
 	Value string
 }
 
-func (m AksServerMessage) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AksServerMessage
+func (m AksServerMessage) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AksServerMessage
 }
 
 func (m AksServerMessage) Serialized() (string, error) {

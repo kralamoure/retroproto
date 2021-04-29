@@ -7,7 +7,7 @@ import (
 
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeBigStoreTypeItemsList struct {
@@ -15,8 +15,8 @@ type ExchangeBigStoreTypeItemsList struct {
 	ItemTemplateIds []int
 }
 
-func (m ExchangeBigStoreTypeItemsList) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ExchangeBigStoreTypeItemsList
+func (m ExchangeBigStoreTypeItemsList) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ExchangeBigStoreTypeItemsList
 }
 
 func (m ExchangeBigStoreTypeItemsList) Serialized() (string, error) {
@@ -31,7 +31,7 @@ func (m ExchangeBigStoreTypeItemsList) Serialized() (string, error) {
 func (m *ExchangeBigStoreTypeItemsList) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) != 2 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	itemType, err := strconv.ParseInt(sli[0], 10, 32)

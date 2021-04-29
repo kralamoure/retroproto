@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type MountEquipError struct {
 	Reason rune
 }
 
-func (m MountEquipError) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.MountEquipError
+func (m MountEquipError) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.MountEquipError
 }
 
 func (m MountEquipError) Serialized() (string, error) {

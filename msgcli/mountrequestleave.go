@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type MountRequestLeave struct{}
 
-func (m MountRequestLeave) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.MountRequestLeave
+func (m MountRequestLeave) ProtocolId() d1proto.MsgCliId {
+	return d1proto.MountRequestLeave
 }
 
 func (m MountRequestLeave) Serialized() (string, error) {

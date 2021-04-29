@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ConquestWorldData struct{}
 
-func (m ConquestWorldData) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ConquestWorldData
+func (m ConquestWorldData) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ConquestWorldData
 }
 
 func (m ConquestWorldData) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *ConquestWorldData) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

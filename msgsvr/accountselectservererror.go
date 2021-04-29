@@ -1,7 +1,7 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AccountSelectServerError struct {
@@ -9,8 +9,8 @@ type AccountSelectServerError struct {
 	Extra  string
 }
 
-func (m AccountSelectServerError) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AccountSelectServerError
+func (m AccountSelectServerError) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AccountSelectServerError
 }
 
 func (m AccountSelectServerError) Serialized() (string, error) {
@@ -19,7 +19,7 @@ func (m AccountSelectServerError) Serialized() (string, error) {
 
 func (m *AccountSelectServerError) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	m.Reason = rune(extra[0])

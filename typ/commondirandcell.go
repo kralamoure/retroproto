@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type CommonDirAndCell struct {
@@ -17,15 +17,15 @@ func (m CommonDirAndCell) Serialized() (string, error) {
 	n2 := (m.CellId & 4032) >> 6
 	n3 := m.CellId & 63
 
-	ch1, err := d1encoding.Encode64(n1)
+	ch1, err := d1proto.Encode64(n1)
 	if err != nil {
 		return "", err
 	}
-	ch2, err := d1encoding.Encode64(n2)
+	ch2, err := d1proto.Encode64(n2)
 	if err != nil {
 		return "", err
 	}
-	ch3, err := d1encoding.Encode64(n3)
+	ch3, err := d1proto.Encode64(n3)
 	if err != nil {
 		return "", err
 	}
@@ -49,17 +49,17 @@ func (m *CommonDirAndCell) Deserialize(extra string) error {
 		return err
 	}
 
-	dirId, err := d1encoding.Decode64(ch1)
+	dirId, err := d1proto.Decode64(ch1)
 	if err != nil {
 		return err
 	}
 	m.DirId = dirId
 
-	n2, err := d1encoding.Decode64(ch2)
+	n2, err := d1proto.Decode64(ch2)
 	if err != nil {
 		return err
 	}
-	n3, err := d1encoding.Decode64(ch3)
+	n3, err := d1proto.Decode64(ch3)
 	if err != nil {
 		return err
 	}

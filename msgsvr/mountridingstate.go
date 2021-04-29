@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type MountRidingState struct {
 	Riding bool
 }
 
-func (m MountRidingState) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.MountRidingState
+func (m MountRidingState) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.MountRidingState
 }
 
 func (m MountRidingState) Serialized() (string, error) {
@@ -30,7 +30,7 @@ func (m *MountRidingState) Deserialize(extra string) error {
 	case "-":
 		m.Riding = false
 	default:
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	return nil

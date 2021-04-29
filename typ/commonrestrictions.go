@@ -3,7 +3,7 @@ package typ
 import (
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type CommonRestrictions struct {
@@ -87,7 +87,7 @@ func (m CommonRestrictions) Serialized() (string, error) {
 
 func (m *CommonRestrictions) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	restrictionsN, err := strconv.ParseInt(extra, 36, 32)

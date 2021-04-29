@@ -8,7 +8,7 @@ import (
 	"github.com/kralamoure/d1"
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ItemsItemSetAdd struct {
@@ -17,8 +17,8 @@ type ItemsItemSetAdd struct {
 	Effects           []d1typ.Effect
 }
 
-func (m ItemsItemSetAdd) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ItemsItemSetAdd
+func (m ItemsItemSetAdd) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ItemsItemSetAdd
 }
 
 func (m ItemsItemSetAdd) Serialized() (string, error) {
@@ -33,7 +33,7 @@ func (m ItemsItemSetAdd) Serialized() (string, error) {
 func (m *ItemsItemSetAdd) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 3 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

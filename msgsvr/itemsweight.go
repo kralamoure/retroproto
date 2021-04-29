@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ItemsWeight struct {
@@ -13,8 +13,8 @@ type ItemsWeight struct {
 	Max     int
 }
 
-func (m ItemsWeight) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ItemsWeight
+func (m ItemsWeight) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ItemsWeight
 }
 
 func (m ItemsWeight) Serialized() (string, error) {
@@ -24,7 +24,7 @@ func (m ItemsWeight) Serialized() (string, error) {
 func (m *ItemsWeight) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 2 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

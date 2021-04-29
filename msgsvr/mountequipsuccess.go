@@ -1,16 +1,16 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
-	"github.com/kralamoure/d1encoding/typ"
+	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1proto/typ"
 )
 
 type MountEquipSuccess struct {
 	Data typ.CommonMountData
 }
 
-func (m MountEquipSuccess) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.MountEquipSuccess
+func (m MountEquipSuccess) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.MountEquipSuccess
 }
 
 func (m MountEquipSuccess) Serialized() (string, error) {

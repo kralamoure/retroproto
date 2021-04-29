@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GameMapLoaded struct{}
 
-func (m GameMapLoaded) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.GameMapLoaded
+func (m GameMapLoaded) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.GameMapLoaded
 }
 
 func (m GameMapLoaded) Serialized() (string, error) {

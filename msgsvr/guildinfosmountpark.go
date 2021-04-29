@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GuildInfosMountPark struct{}
 
-func (m GuildInfosMountPark) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.GuildInfosMountPark
+func (m GuildInfosMountPark) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.GuildInfosMountPark
 }
 
 func (m GuildInfosMountPark) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *GuildInfosMountPark) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

@@ -7,8 +7,8 @@ import (
 
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1encoding"
-	"github.com/kralamoure/d1encoding/typ"
+	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1proto/typ"
 )
 
 type AccountCharacterSelectedSuccess struct {
@@ -24,8 +24,8 @@ type AccountCharacterSelectedSuccess struct {
 	Items   []typ.AccountCharacterSelectedSuccessItem
 }
 
-func (m AccountCharacterSelectedSuccess) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AccountCharacterSelectedSuccess
+func (m AccountCharacterSelectedSuccess) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AccountCharacterSelectedSuccess
 }
 
 func (m AccountCharacterSelectedSuccess) Serialized() (string, error) {
@@ -45,7 +45,7 @@ func (m AccountCharacterSelectedSuccess) Serialized() (string, error) {
 func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 10 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

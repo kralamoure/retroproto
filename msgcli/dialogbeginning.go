@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type DialogBeginning struct {
 	NPCId int
 }
 
-func (m DialogBeginning) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.DialogBeginning
+func (m DialogBeginning) ProtocolId() d1proto.MsgCliId {
+	return d1proto.DialogBeginning
 }
 
 func (m DialogBeginning) Serialized() (string, error) {

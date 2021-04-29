@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GameAskDisablePVPMode struct{}
 
-func (m GameAskDisablePVPMode) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.GameAskDisablePVPMode
+func (m GameAskDisablePVPMode) ProtocolId() d1proto.MsgCliId {
+	return d1proto.GameAskDisablePVPMode
 }
 
 func (m GameAskDisablePVPMode) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *GameAskDisablePVPMode) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

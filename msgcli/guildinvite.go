@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GuildInvite struct{}
 
-func (m GuildInvite) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.GuildInvite
+func (m GuildInvite) ProtocolId() d1proto.MsgCliId {
+	return d1proto.GuildInvite
 }
 
 func (m GuildInvite) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *GuildInvite) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

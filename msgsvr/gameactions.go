@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
-	"github.com/kralamoure/d1encoding/enum"
-	"github.com/kralamoure/d1encoding/typ"
+	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1proto/enum"
+	"github.com/kralamoure/d1proto/typ"
 )
 
 type GameActions struct {
@@ -50,8 +50,8 @@ type GameActionsActionChallengeJoin struct {
 	ErrorReason  rune
 }
 
-func (m GameActions) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.GameActions
+func (m GameActions) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.GameActions
 }
 
 func (m GameActions) Serialized() (string, error) {
@@ -70,15 +70,15 @@ func (m GameActions) Serialized() (string, error) {
 			n2 := (v.CellId & 4032) >> 6
 			n3 := v.CellId & 63
 
-			ch1, err := d1encoding.Encode64(n1)
+			ch1, err := d1proto.Encode64(n1)
 			if err != nil {
 				return "", err
 			}
-			ch2, err := d1encoding.Encode64(n2)
+			ch2, err := d1proto.Encode64(n2)
 			if err != nil {
 				return "", err
 			}
-			ch3, err := d1encoding.Encode64(n3)
+			ch3, err := d1proto.Encode64(n3)
 			if err != nil {
 				return "", err
 			}

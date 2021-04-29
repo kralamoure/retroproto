@@ -7,21 +7,21 @@ import (
 
 	"github.com/kralamoure/d1"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type SpellsList struct {
 	Spells []d1.CharacterSpell
 }
 
-func (m SpellsList) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.SpellsList
+func (m SpellsList) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.SpellsList
 }
 
 func (m SpellsList) Serialized() (string, error) {
 	spells := make([]string, len(m.Spells))
 	for i, v := range m.Spells {
-		position, err := d1encoding.Encode64(v.Position)
+		position, err := d1proto.Encode64(v.Position)
 		if err != nil {
 			return "", err
 		}
@@ -45,7 +45,7 @@ func (m *SpellsList) Deserialize(extra string) error {
 
 		sli2 := strings.Split(v, "~")
 		if len(sli2) != 3 {
-			return d1encoding.ErrInvalidMsg
+			return d1proto.ErrInvalidMsg
 		}
 
 		id, err := strconv.ParseInt(sli2[0], 10, 32)
@@ -61,7 +61,7 @@ func (m *SpellsList) Deserialize(extra string) error {
 		spell.Level = int(level)
 
 		for _, v := range sli2[2] {
-			position, err := d1encoding.Decode64(v)
+			position, err := d1proto.Decode64(v)
 			if err != nil {
 				return err
 			}

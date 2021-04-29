@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AksHelloConnect struct {
 	Salt string
 }
 
-func (m AksHelloConnect) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AksHelloConnect
+func (m AksHelloConnect) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AksHelloConnect
 }
 
 func (m AksHelloConnect) Serialized() (string, error) {

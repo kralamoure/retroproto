@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1encoding"
-	"github.com/kralamoure/d1encoding/typ"
+	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1proto/typ"
 )
 
 type ExchangeBigStoreItemsList struct {
@@ -14,8 +14,8 @@ type ExchangeBigStoreItemsList struct {
 	Items      []typ.ExchangeBigStoreItemsListItem
 }
 
-func (m ExchangeBigStoreItemsList) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ExchangeBigStoreItemsList
+func (m ExchangeBigStoreItemsList) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ExchangeBigStoreItemsList
 }
 
 func (m ExchangeBigStoreItemsList) Serialized() (string, error) {
@@ -33,7 +33,7 @@ func (m ExchangeBigStoreItemsList) Serialized() (string, error) {
 
 func (m *ExchangeBigStoreItemsList) Deserialize(extra string) error {
 	if extra == "" {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	sli := strings.Split(extra, "|")

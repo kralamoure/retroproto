@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AksPong struct{}
 
-func (m AksPong) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AksPong
+func (m AksPong) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AksPong
 }
 
 func (m AksPong) Serialized() (string, error) {

@@ -1,16 +1,16 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
-	"github.com/kralamoure/d1encoding/enum"
+	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1proto/enum"
 )
 
 type ExchangeRequestError struct {
 	Reason rune
 }
 
-func (m ExchangeRequestError) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ExchangeRequestError
+func (m ExchangeRequestError) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ExchangeRequestError
 }
 
 func (m ExchangeRequestError) Serialized() (string, error) {

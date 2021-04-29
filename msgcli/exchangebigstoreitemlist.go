@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ExchangeBigStoreItemList struct {
 	ItemTemplateId int
 }
 
-func (m ExchangeBigStoreItemList) ProtocolId() d1encoding.MsgCliId {
-	return d1encoding.ExchangeBigStoreItemList
+func (m ExchangeBigStoreItemList) ProtocolId() d1proto.MsgCliId {
+	return d1proto.ExchangeBigStoreItemList
 }
 
 func (m ExchangeBigStoreItemList) Serialized() (string, error) {

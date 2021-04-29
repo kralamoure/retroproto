@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ChatServerMessage struct {
 	Message string
 }
 
-func (m ChatServerMessage) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ChatServerMessage
+func (m ChatServerMessage) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ChatServerMessage
 }
 
 func (m ChatServerMessage) Serialized() (string, error) {

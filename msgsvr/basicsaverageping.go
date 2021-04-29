@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type BasicsAveragePing struct{}
 
-func (m BasicsAveragePing) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.BasicsAveragePing
+func (m BasicsAveragePing) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.BasicsAveragePing
 }
 
 func (m BasicsAveragePing) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *BasicsAveragePing) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

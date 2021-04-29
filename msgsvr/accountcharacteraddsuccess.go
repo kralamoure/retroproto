@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AccountCharacterAddSuccess struct{}
 
-func (m AccountCharacterAddSuccess) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AccountCharacterAddSuccess
+func (m AccountCharacterAddSuccess) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AccountCharacterAddSuccess
 }
 
 func (m AccountCharacterAddSuccess) Serialized() (string, error) {

@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type AccountQueue struct {
 	Position int
 }
 
-func (m AccountQueue) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.AccountQueue
+func (m AccountQueue) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.AccountQueue
 }
 
 func (m AccountQueue) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m AccountQueue) Serialized() (string, error) {
 
 func (m *AccountQueue) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	position, err := strconv.ParseInt(extra, 10, 32)

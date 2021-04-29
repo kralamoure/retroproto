@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type GameJoin struct{}
 
-func (m GameJoin) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.GameJoin
+func (m GameJoin) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.GameJoin
 }
 
 func (m GameJoin) Serialized() (string, error) {
-	return "", d1encoding.ErrNotImplemented
+	return "", d1proto.ErrNotImplemented
 }
 
 func (m *GameJoin) Deserialize(extra string) error {
-	return d1encoding.ErrNotImplemented
+	return d1proto.ErrNotImplemented
 }

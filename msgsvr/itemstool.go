@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1proto"
 )
 
 type ItemsTool struct {
 	JobId int
 }
 
-func (m ItemsTool) ProtocolId() d1encoding.MsgSvrId {
-	return d1encoding.ItemsTool
+func (m ItemsTool) ProtocolId() d1proto.MsgSvrId {
+	return d1proto.ItemsTool
 }
 
 func (m ItemsTool) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m ItemsTool) Serialized() (string, error) {
 
 func (m *ItemsTool) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1encoding.ErrInvalidMsg
+		return d1proto.ErrInvalidMsg
 	}
 
 	jobId, err := strconv.ParseInt(extra, 10, 32)
