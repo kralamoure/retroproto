@@ -1,4 +1,4 @@
-// Package d1proto is a library of the network protocol of Dofus 1. It can serialize and deserialize messages for server and client communication.
+// Package d1proto is a library for the network protocol of Dofus 1. It can serialize and deserialize messages for server and client communication.
 package d1proto
 
 import "errors"
