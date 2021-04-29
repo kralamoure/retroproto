@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type SubwayPrismCreate struct{}
 
-func (m SubwayPrismCreate) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.SubwayPrismCreate
+func (m SubwayPrismCreate) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.SubwayPrismCreate
 }
 
 func (m SubwayPrismCreate) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *SubwayPrismCreate) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

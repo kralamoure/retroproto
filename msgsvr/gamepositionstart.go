@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type GamePositionStart struct{}
 
-func (m GamePositionStart) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GamePositionStart
+func (m GamePositionStart) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.GamePositionStart
 }
 
 func (m GamePositionStart) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *GamePositionStart) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

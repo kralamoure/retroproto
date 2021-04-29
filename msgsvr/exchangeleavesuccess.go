@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ExchangeLeaveSuccess struct {
 	TypePlayerExchange bool
 }
 
-func (m ExchangeLeaveSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeLeaveSuccess
+func (m ExchangeLeaveSuccess) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.ExchangeLeaveSuccess
 }
 
 func (m ExchangeLeaveSuccess) Serialized() (string, error) {

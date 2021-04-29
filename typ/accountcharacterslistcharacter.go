@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountCharactersListCharacter struct {
@@ -61,7 +61,7 @@ func (m AccountCharactersListCharacter) Serialized() (string, error) {
 func (m *AccountCharactersListCharacter) Deserialize(extra string) error {
 	sli := strings.Split(extra, ";")
 	if len(sli) < 13 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

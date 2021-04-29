@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountCharacterMigrationAskConfirm struct{}
 
-func (m AccountCharacterMigrationAskConfirm) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountCharacterMigrationAskConfirm
+func (m AccountCharacterMigrationAskConfirm) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.AccountCharacterMigrationAskConfirm
 }
 
 func (m AccountCharacterMigrationAskConfirm) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *AccountCharacterMigrationAskConfirm) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

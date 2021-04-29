@@ -7,7 +7,7 @@ import (
 
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountStats struct {
@@ -33,8 +33,8 @@ type AccountStats struct {
 	Characteristics  map[d1typ.CharacteristicId]d1typ.Characteristic
 }
 
-func (m AccountStats) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountStats
+func (m AccountStats) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.AccountStats
 }
 
 func (m AccountStats) Serialized() (string, error) {
@@ -105,12 +105,12 @@ func (m AccountStats) Serialized() (string, error) {
 func (m *AccountStats) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 51 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	sli2 := strings.Split(sli[0], ",")
 	if len(sli2) < 3 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	if sli2[0] != "" {
@@ -163,13 +163,13 @@ func (m *AccountStats) Deserialize(extra string) error {
 
 	sli3 := strings.Split(sli[4], ",")
 	if len(sli3) < 6 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	if sli3[0] != "" {
 		sli4 := strings.Split(sli3[0], "~")
 		if len(sli4) < 2 {
-			return d1proto.ErrInvalidMsg
+			return d1encoding.ErrInvalidMsg
 		}
 
 		alignment, err := strconv.ParseInt(sli4[0], 10, 32)
@@ -227,7 +227,7 @@ func (m *AccountStats) Deserialize(extra string) error {
 
 	sli4 := strings.Split(sli[5], ",")
 	if len(sli4) < 2 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	if sli4[0] != "" {
@@ -248,7 +248,7 @@ func (m *AccountStats) Deserialize(extra string) error {
 
 	sli5 := strings.Split(sli[6], ",")
 	if len(sli5) < 2 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	if sli5[0] != "" {
@@ -332,7 +332,7 @@ func (m *AccountStats) Deserialize(extra string) error {
 	for i, v := range order {
 		sli2 := strings.Split(sli[i+9], ",")
 		if len(sli2) < 4 {
-			return d1proto.ErrInvalidMsg
+			return d1encoding.ErrInvalidMsg
 		}
 
 		base, err := strconv.ParseInt(sli2[0], 10, 32)

@@ -1,6 +1,6 @@
-# d1proto
+# d1encoding
 
-`d1proto` is a library for serializing and deserializing packets between Dofus 1 client and server.
+`d1encoding` is a library for serializing and deserializing packets between Dofus 1 client and server.
 
 ## Requirements:
 
@@ -10,7 +10,7 @@
 ## Installation
 
 ```sh
-go get github.com/kralamoure/d1proto
+go get github.com/kralamoure/d1encoding
 ```
 
 ## Examples
@@ -24,18 +24,18 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/msgcli"
+	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1encoding/msgcli"
 )
 
 func main() {
 	packet := "AAXxRamboPLxX|1|0|3635424|855309|16053493"
 
-	id, _ := d1proto.MsgCliIdByPkt(packet)          // "AA"
+	id, _ := d1encoding.MsgCliIdByPkt(packet)       // "AA"
 	extra := strings.TrimPrefix(packet, string(id)) // "XxRamboPLxX|1|0|3635424|855309|16053493"
 
 	switch id {
-	case d1proto.AccountAddCharacter:
+	case d1encoding.AccountAddCharacter:
 		message := &msgcli.AccountAddCharacter{}
 		message.Deserialize(extra)
 
@@ -53,18 +53,18 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/msgsvr"
+	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1encoding/msgsvr"
 )
 
 func main() {
 	packet := "HCfdbijergrfklvdnsdfgviojsidesokpm"
 
-	id, _ := d1proto.MsgSvrIdByPkt(packet)          // "HC"
+	id, _ := d1encoding.MsgSvrIdByPkt(packet)       // "HC"
 	extra := strings.TrimPrefix(packet, string(id)) // "fdbijergrfklvdnsdfgviojsidesokpm"
 
 	switch id {
-	case d1proto.AksHelloConnect:
+	case d1encoding.AksHelloConnect:
 		message := &msgsvr.AksHelloConnect{}
 		message.Deserialize(extra)
 
@@ -81,7 +81,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/kralamoure/d1proto/msgcli"
+	"github.com/kralamoure/d1encoding/msgcli"
 )
 
 func main() {
@@ -111,7 +111,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/kralamoure/d1proto/msgsvr"
+	"github.com/kralamoure/d1encoding/msgsvr"
 )
 
 func main() {

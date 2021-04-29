@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type MountName struct {
 	Name string
 }
 
-func (m MountName) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.MountName
+func (m MountName) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.MountName
 }
 
 func (m MountName) Serialized() (string, error) {

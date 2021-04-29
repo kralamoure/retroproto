@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountValidCharacterMigration struct{}
 
-func (m AccountValidCharacterMigration) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountValidCharacterMigration
+func (m AccountValidCharacterMigration) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.AccountValidCharacterMigration
 }
 
 func (m AccountValidCharacterMigration) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *AccountValidCharacterMigration) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

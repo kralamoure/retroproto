@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type BasicsSubscriberRestrictionRemove struct{}
 
-func (m BasicsSubscriberRestrictionRemove) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.BasicsSubscriberRestrictionRemove
+func (m BasicsSubscriberRestrictionRemove) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.BasicsSubscriberRestrictionRemove
 }
 
 func (m BasicsSubscriberRestrictionRemove) Serialized() (string, error) {

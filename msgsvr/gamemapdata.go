@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type GameMapData struct {
@@ -14,8 +14,8 @@ type GameMapData struct {
 	Key  string
 }
 
-func (m GameMapData) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameMapData
+func (m GameMapData) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.GameMapData
 }
 
 func (m GameMapData) Serialized() (string, error) {
@@ -27,7 +27,7 @@ func (m *GameMapData) Deserialize(extra string) error {
 
 	sli := strings.Split(extra, "|")
 	if len(sli) < 3 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

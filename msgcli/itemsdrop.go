@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ItemsDrop struct {
@@ -13,8 +13,8 @@ type ItemsDrop struct {
 	Quantity int
 }
 
-func (m ItemsDrop) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ItemsDrop
+func (m ItemsDrop) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.ItemsDrop
 }
 
 func (m ItemsDrop) Serialized() (string, error) {
@@ -24,7 +24,7 @@ func (m ItemsDrop) Serialized() (string, error) {
 func (m *ItemsDrop) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) != 2 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)

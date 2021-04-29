@@ -8,8 +8,8 @@ import (
 	"github.com/kralamoure/d1"
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/enum"
+	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1encoding/enum"
 )
 
 type ItemsAddSuccess struct {
@@ -30,8 +30,8 @@ type ItemsAddSuccessItemObject struct {
 	Effects    []d1typ.Effect
 }
 
-func (m ItemsAddSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ItemsAddSuccess
+func (m ItemsAddSuccess) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.ItemsAddSuccess
 }
 
 func (m ItemsAddSuccess) Serialized() (string, error) {
@@ -48,7 +48,7 @@ func (m ItemsAddSuccess) Serialized() (string, error) {
 			}
 			items[i] = fmt.Sprintf("%s%s", string(v.ItemType), strings.Join(objects, ";"))
 		default:
-			return "", d1proto.ErrInvalidMsg
+			return "", d1encoding.ErrInvalidMsg
 		}
 	}
 	return strings.Join(items, "*"), nil
@@ -59,7 +59,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 	m.Items = make([]ItemsAddSuccessItem, len(items))
 	for i, v := range items {
 		if len([]rune(v)) < 2 {
-			return d1proto.ErrInvalidMsg
+			return d1encoding.ErrInvalidMsg
 		}
 
 		item := ItemsAddSuccessItem{
@@ -74,7 +74,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 			for i, v := range objects {
 				sli := strings.Split(v, "~")
 				if len(sli) < 5 {
-					return d1proto.ErrInvalidMsg
+					return d1encoding.ErrInvalidMsg
 				}
 
 				var object ItemsAddSuccessItemObject
@@ -115,7 +115,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 				item.Objects[i] = object
 			}
 		default:
-			return d1proto.ErrInvalidMsg
+			return d1encoding.ErrInvalidMsg
 		}
 		m.Items[i] = item
 	}

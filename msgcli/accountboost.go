@@ -6,15 +6,15 @@ import (
 
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountBoost struct {
 	CharacteristicId d1typ.CharacteristicId
 }
 
-func (m AccountBoost) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountBoost
+func (m AccountBoost) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.AccountBoost
 }
 
 func (m AccountBoost) Serialized() (string, error) {

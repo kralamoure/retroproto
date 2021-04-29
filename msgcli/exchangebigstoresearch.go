@@ -7,7 +7,7 @@ import (
 
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ExchangeBigStoreSearch struct {
@@ -15,8 +15,8 @@ type ExchangeBigStoreSearch struct {
 	TemplateId int
 }
 
-func (m ExchangeBigStoreSearch) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeBigStoreSearch
+func (m ExchangeBigStoreSearch) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.ExchangeBigStoreSearch
 }
 
 func (m ExchangeBigStoreSearch) Serialized() (string, error) {
@@ -26,7 +26,7 @@ func (m ExchangeBigStoreSearch) Serialized() (string, error) {
 func (m *ExchangeBigStoreSearch) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 2 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	itemType, err := strconv.ParseInt(sli[0], 10, 32)

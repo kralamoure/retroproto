@@ -1,15 +1,15 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountSendTicket struct {
 	Ticket string
 }
 
-func (m AccountSendTicket) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountSendTicket
+func (m AccountSendTicket) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.AccountSendTicket
 }
 
 func (m AccountSendTicket) Serialized() (string, error) {

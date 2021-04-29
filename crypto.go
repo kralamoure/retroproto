@@ -1,4 +1,4 @@
-package d1proto
+package d1encoding
 
 import (
 	"errors"

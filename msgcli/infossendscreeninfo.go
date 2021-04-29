@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type InfosSendScreenInfo struct {
@@ -14,8 +14,8 @@ type InfosSendScreenInfo struct {
 	DisplayState int
 }
 
-func (m InfosSendScreenInfo) ProtocolId() d1proto.MsgCliId {
-	return d1proto.InfosSendScreenInfo
+func (m InfosSendScreenInfo) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.InfosSendScreenInfo
 }
 
 func (m InfosSendScreenInfo) Serialized() (string, error) {
@@ -25,7 +25,7 @@ func (m InfosSendScreenInfo) Serialized() (string, error) {
 func (m *InfosSendScreenInfo) Deserialize(extra string) error {
 	sli := strings.Split(extra, ";")
 	if len(sli) < 3 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	width, err := strconv.ParseInt(sli[0], 10, 32)

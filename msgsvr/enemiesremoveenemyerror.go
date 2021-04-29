@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type EnemiesRemoveEnemyError struct{}
 
-func (m EnemiesRemoveEnemyError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.EnemiesRemoveEnemyError
+func (m EnemiesRemoveEnemyError) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.EnemiesRemoveEnemyError
 }
 
 func (m EnemiesRemoveEnemyError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *EnemiesRemoveEnemyError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

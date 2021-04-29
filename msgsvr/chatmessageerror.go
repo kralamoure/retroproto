@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ChatMessageError struct {
 	Reason rune
 }
 
-func (m ChatMessageError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ChatMessageError
+func (m ChatMessageError) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.ChatMessageError
 }
 
 func (m ChatMessageError) Serialized() (string, error) {
@@ -18,7 +18,7 @@ func (m ChatMessageError) Serialized() (string, error) {
 
 func (m *ChatMessageError) Deserialize(extra string) error {
 	if len(extra) != 1 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	for _, v := range extra {

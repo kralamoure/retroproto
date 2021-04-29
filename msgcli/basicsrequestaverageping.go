@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type BasicsRequestAveragePing struct{}
 
-func (m BasicsRequestAveragePing) ProtocolId() d1proto.MsgCliId {
-	return d1proto.BasicsRequestAveragePing
+func (m BasicsRequestAveragePing) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.BasicsRequestAveragePing
 }
 
 func (m BasicsRequestAveragePing) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *BasicsRequestAveragePing) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

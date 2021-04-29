@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type InfosCompass struct{}
 
-func (m InfosCompass) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.InfosCompass
+func (m InfosCompass) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.InfosCompass
 }
 
 func (m InfosCompass) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *InfosCompass) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

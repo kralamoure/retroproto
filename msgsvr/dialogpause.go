@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type DialogPause struct{}
 
-func (m DialogPause) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.DialogPause
+func (m DialogPause) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.DialogPause
 }
 
 func (m DialogPause) Serialized() (string, error) {

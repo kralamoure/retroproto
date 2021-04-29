@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type GameActionCancel struct {
@@ -13,8 +13,8 @@ type GameActionCancel struct {
 	Params string
 }
 
-func (m GameActionCancel) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GameActionCancel
+func (m GameActionCancel) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.GameActionCancel
 }
 
 func (m GameActionCancel) Serialized() (string, error) {
@@ -25,7 +25,7 @@ func (m *GameActionCancel) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 
 	if sli[0] == "" {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)

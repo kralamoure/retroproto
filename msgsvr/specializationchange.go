@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type SpecializationChange struct {
 	Value int
 }
 
-func (m SpecializationChange) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.SpecializationChange
+func (m SpecializationChange) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.SpecializationChange
 }
 
 func (m SpecializationChange) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m SpecializationChange) Serialized() (string, error) {
 
 func (m *SpecializationChange) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	value, err := strconv.ParseInt(extra, 10, 32)

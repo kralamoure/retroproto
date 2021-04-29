@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountGetCharactersForced struct{}
 
-func (m AccountGetCharactersForced) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountGetCharactersForced
+func (m AccountGetCharactersForced) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.AccountGetCharactersForced
 }
 
 func (m AccountGetCharactersForced) Serialized() (string, error) {

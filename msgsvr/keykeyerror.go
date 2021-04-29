@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type KeyKeyError struct{}
 
-func (m KeyKeyError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.KeyKeyError
+func (m KeyKeyError) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.KeyKeyError
 }
 
 func (m KeyKeyError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *KeyKeyError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

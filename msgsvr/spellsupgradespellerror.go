@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type SpellsUpgradeSpellError struct{}
 
-func (m SpellsUpgradeSpellError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.SpellsUpgradeSpellError
+func (m SpellsUpgradeSpellError) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.SpellsUpgradeSpellError
 }
 
 func (m SpellsUpgradeSpellError) Serialized() (string, error) {

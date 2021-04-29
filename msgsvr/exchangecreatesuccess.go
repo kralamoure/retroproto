@@ -7,8 +7,8 @@ import (
 
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1encoding/typ"
 )
 
 type ExchangeCreateSuccess struct {
@@ -34,8 +34,8 @@ type ExchangeCreateSuccessPaddock struct {
 	Paddock []typ.CommonMountData
 }
 
-func (m ExchangeCreateSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeCreateSuccess
+func (m ExchangeCreateSuccess) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.ExchangeCreateSuccess
 }
 
 func (m ExchangeCreateSuccess) Serialized() (string, error) {
@@ -75,7 +75,7 @@ func (m ExchangeCreateSuccess) Serialized() (string, error) {
 
 		s = fmt.Sprintf("%s~%s", strings.Join(shed, ";"), strings.Join(paddock, ";"))
 	default:
-		return "", d1proto.ErrNotImplemented
+		return "", d1encoding.ErrNotImplemented
 	}
 
 	return fmt.Sprintf("%d|%s", m.Type, s), nil
@@ -92,19 +92,19 @@ func (m *ExchangeCreateSuccess) Deserialize(extra string) error {
 	switch d1typ.Exchange(exchangeType) {
 	case d1typ.ExchangeNPCBuy:
 		if len(sli) < 2 {
-			return d1proto.ErrInvalidMsg
+			return d1encoding.ErrInvalidMsg
 		}
 
 		var t ExchangeCreateSuccessNPCBuy
 
 		sli := strings.Split(sli[1], ";")
 		if len(sli) < 7 {
-			return d1proto.ErrInvalidMsg
+			return d1encoding.ErrInvalidMsg
 		}
 
 		sli2 := strings.Split(sli[0], ",")
 		if len(sli2) < 3 {
-			return d1proto.ErrInvalidMsg
+			return d1encoding.ErrInvalidMsg
 		}
 
 		quantity1, err := strconv.ParseInt(sli2[0], 10, 32)
@@ -167,7 +167,7 @@ func (m *ExchangeCreateSuccess) Deserialize(extra string) error {
 
 		m.NPCBuy = t
 	default:
-		return d1proto.ErrNotImplemented
+		return d1encoding.ErrNotImplemented
 	}
 
 	return nil

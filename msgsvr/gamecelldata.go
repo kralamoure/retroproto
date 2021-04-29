@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type GameCellData struct{}
 
-func (m GameCellData) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameCellData
+func (m GameCellData) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.GameCellData
 }
 
 func (m GameCellData) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *GameCellData) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

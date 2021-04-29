@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountNewQueue struct {
@@ -16,8 +16,8 @@ type AccountNewQueue struct {
 	QueueId     int
 }
 
-func (m AccountNewQueue) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountNewQueue
+func (m AccountNewQueue) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.AccountNewQueue
 }
 
 func (m AccountNewQueue) Serialized() (string, error) {
@@ -32,7 +32,7 @@ func (m AccountNewQueue) Serialized() (string, error) {
 func (m *AccountNewQueue) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 5 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

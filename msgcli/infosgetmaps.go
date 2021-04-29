@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type InfosGetMaps struct{}
 
-func (m InfosGetMaps) ProtocolId() d1proto.MsgCliId {
-	return d1proto.InfosGetMaps
+func (m InfosGetMaps) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.InfosGetMaps
 }
 
 func (m InfosGetMaps) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *InfosGetMaps) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

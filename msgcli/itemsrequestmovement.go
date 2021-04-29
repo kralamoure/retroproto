@@ -7,7 +7,7 @@ import (
 
 	"github.com/kralamoure/d1/d1typ"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ItemsRequestMovement struct {
@@ -16,8 +16,8 @@ type ItemsRequestMovement struct {
 	Quantity int
 }
 
-func (m ItemsRequestMovement) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ItemsRequestMovement
+func (m ItemsRequestMovement) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.ItemsRequestMovement
 }
 
 func (m ItemsRequestMovement) Serialized() (string, error) {
@@ -31,7 +31,7 @@ func (m ItemsRequestMovement) Serialized() (string, error) {
 func (m *ItemsRequestMovement) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 2 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)
@@ -52,7 +52,7 @@ func (m *ItemsRequestMovement) Deserialize(extra string) error {
 			return err
 		}
 		if quantity <= 0 {
-			return d1proto.ErrInvalidMsg
+			return d1encoding.ErrInvalidMsg
 		}
 		m.Quantity = int(quantity)
 	} else {

@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type SubwayCreate struct{}
 
-func (m SubwayCreate) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.SubwayCreate
+func (m SubwayCreate) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.SubwayCreate
 }
 
 func (m SubwayCreate) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *SubwayCreate) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

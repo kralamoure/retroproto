@@ -7,7 +7,7 @@ import (
 
 	"github.com/kralamoure/dofus/dofustyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ChatMessageSuccess struct {
@@ -19,8 +19,8 @@ type ChatMessageSuccess struct {
 	Params      string // TODO
 }
 
-func (m ChatMessageSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ChatMessageSuccess
+func (m ChatMessageSuccess) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.ChatMessageSuccess
 }
 
 func (m ChatMessageSuccess) Serialized() (string, error) {
@@ -42,7 +42,7 @@ func (m ChatMessageSuccess) Serialized() (string, error) {
 func (m *ChatMessageSuccess) Deserialize(extra string) error {
 	sli := strings.SplitN(extra, "|", 5)
 	if len(sli) != 5 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	switch sli[0] {

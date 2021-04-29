@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountVersion struct {
@@ -17,8 +17,8 @@ type AccountVersion struct {
 	Electron  bool
 }
 
-func (m AccountVersion) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountVersion
+func (m AccountVersion) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.AccountVersion
 }
 
 func (m AccountVersion) Serialized() (string, error) {
@@ -54,7 +54,7 @@ func (m *AccountVersion) Deserialize(extra string) error {
 	sli := strings.Split(extra, ".")
 	switch len(sli) {
 	default:
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	case 4:
 		beta, err := strconv.ParseInt(sli[3], 10, 32)
 		if err != nil {

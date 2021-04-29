@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type MountFree struct{}
 
-func (m MountFree) ProtocolId() d1proto.MsgCliId {
-	return d1proto.MountFree
+func (m MountFree) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.MountFree
 }
 
 func (m MountFree) Serialized() (string, error) {

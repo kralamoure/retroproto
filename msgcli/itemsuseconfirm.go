@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ItemsUseConfirm struct {
@@ -14,8 +14,8 @@ type ItemsUseConfirm struct {
 	Cell     int
 }
 
-func (m ItemsUseConfirm) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ItemsUseConfirm
+func (m ItemsUseConfirm) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.ItemsUseConfirm
 }
 
 func (m ItemsUseConfirm) Serialized() (string, error) {

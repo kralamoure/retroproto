@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type CommonGuildEmblem struct {
@@ -55,7 +55,7 @@ func (m *CommonGuildEmblem) Deserialize(extra string) error {
 
 	sli := strings.Split(extra, ",")
 	if len(sli) < 4 {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ConquestRequestBalance struct{}
 
-func (m ConquestRequestBalance) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ConquestRequestBalance
+func (m ConquestRequestBalance) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.ConquestRequestBalance
 }
 
 func (m ConquestRequestBalance) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *ConquestRequestBalance) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

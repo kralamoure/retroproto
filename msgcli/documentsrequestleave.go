@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type DocumentsRequestLeave struct{}
 
-func (m DocumentsRequestLeave) ProtocolId() d1proto.MsgCliId {
-	return d1proto.DocumentsRequestLeave
+func (m DocumentsRequestLeave) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.DocumentsRequestLeave
 }
 
 func (m DocumentsRequestLeave) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *DocumentsRequestLeave) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

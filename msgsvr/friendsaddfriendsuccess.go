@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type FriendsAddFriendSuccess struct{}
 
-func (m FriendsAddFriendSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.FriendsAddFriendSuccess
+func (m FriendsAddFriendSuccess) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.FriendsAddFriendSuccess
 }
 
 func (m FriendsAddFriendSuccess) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *FriendsAddFriendSuccess) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

@@ -3,16 +3,16 @@ package msgsvr
 import (
 	"strings"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1encoding/typ"
 )
 
 type AccountHosts struct {
 	Value []typ.AccountHostsHost
 }
 
-func (m AccountHosts) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountHosts
+func (m AccountHosts) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.AccountHosts
 }
 
 func (m AccountHosts) Serialized() (string, error) {

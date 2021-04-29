@@ -3,15 +3,15 @@ package msgsvr
 import (
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ChatSubscribeChannelAdd struct {
 	Channels []rune
 }
 
-func (m ChatSubscribeChannelAdd) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ChatSubscribeChannelAdd
+func (m ChatSubscribeChannelAdd) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.ChatSubscribeChannelAdd
 }
 
 func (m ChatSubscribeChannelAdd) Serialized() (string, error) {

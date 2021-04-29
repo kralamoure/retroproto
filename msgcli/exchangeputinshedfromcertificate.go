@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type ExchangePutInShedFromCertificate struct {
 	CertificateId int
 }
 
-func (m ExchangePutInShedFromCertificate) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangePutInShedFromCertificate
+func (m ExchangePutInShedFromCertificate) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.ExchangePutInShedFromCertificate
 }
 
 func (m ExchangePutInShedFromCertificate) Serialized() (string, error) {

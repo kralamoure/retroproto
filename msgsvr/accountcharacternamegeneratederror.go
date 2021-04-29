@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountCharacterNameGeneratedError struct {
 	Reason int
 }
 
-func (m AccountCharacterNameGeneratedError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountCharacterNameGeneratedError
+func (m AccountCharacterNameGeneratedError) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.AccountCharacterNameGeneratedError
 }
 
 func (m AccountCharacterNameGeneratedError) Serialized() (string, error) {

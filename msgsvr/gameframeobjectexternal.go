@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type GameFrameObjectExternal struct{}
 
-func (m GameFrameObjectExternal) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameFrameObjectExternal
+func (m GameFrameObjectExternal) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.GameFrameObjectExternal
 }
 
 func (m GameFrameObjectExternal) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *GameFrameObjectExternal) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

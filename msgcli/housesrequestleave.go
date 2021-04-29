@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type HousesRequestLeave struct{}
 
-func (m HousesRequestLeave) ProtocolId() d1proto.MsgCliId {
-	return d1proto.HousesRequestLeave
+func (m HousesRequestLeave) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.HousesRequestLeave
 }
 
 func (m HousesRequestLeave) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *HousesRequestLeave) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

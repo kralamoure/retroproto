@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type GildUserInterfaceOpen struct{}
 
-func (m GildUserInterfaceOpen) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GildUserInterfaceOpen
+func (m GildUserInterfaceOpen) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.GildUserInterfaceOpen
 }
 
 func (m GildUserInterfaceOpen) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *GildUserInterfaceOpen) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

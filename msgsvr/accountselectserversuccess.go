@@ -3,7 +3,7 @@ package msgsvr
 import (
 	"fmt"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AccountSelectServerSuccess struct {
@@ -12,21 +12,21 @@ type AccountSelectServerSuccess struct {
 	Ticket string
 }
 
-func (m AccountSelectServerSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountSelectServerSuccess
+func (m AccountSelectServerSuccess) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.AccountSelectServerSuccess
 }
 
 // TODO
 func (m AccountSelectServerSuccess) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *AccountSelectServerSuccess) Deserialize(extra string) error {
 	if extra == "" {
-		return d1proto.ErrInvalidMsg
+		return d1encoding.ErrInvalidMsg
 	}
 
-	host, port, ticket, err := d1proto.SplitEncodedHostPortTicket(extra)
+	host, port, ticket, err := d1encoding.SplitEncodedHostPortTicket(extra)
 	if err != nil {
 		return err
 	}

@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type GuildGetInfosBoosts struct{}
 
-func (m GuildGetInfosBoosts) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GuildGetInfosBoosts
+func (m GuildGetInfosBoosts) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.GuildGetInfosBoosts
 }
 
 func (m GuildGetInfosBoosts) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *GuildGetInfosBoosts) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

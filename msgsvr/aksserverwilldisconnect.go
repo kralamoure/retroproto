@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type AksServerWillDisconnect struct{}
 
-func (m AksServerWillDisconnect) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AksServerWillDisconnect
+func (m AksServerWillDisconnect) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.AksServerWillDisconnect
 }
 
 func (m AksServerWillDisconnect) Serialized() (string, error) {

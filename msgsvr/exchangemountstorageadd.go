@@ -1,8 +1,8 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/d1encoding"
+	"github.com/kralamoure/d1encoding/typ"
 )
 
 type ExchangeMountStorageAdd struct {
@@ -10,8 +10,8 @@ type ExchangeMountStorageAdd struct {
 	NewBorn bool
 }
 
-func (m ExchangeMountStorageAdd) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeMountStorageAdd
+func (m ExchangeMountStorageAdd) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.ExchangeMountStorageAdd
 }
 
 func (m ExchangeMountStorageAdd) Serialized() (string, error) {
@@ -29,5 +29,5 @@ func (m ExchangeMountStorageAdd) Serialized() (string, error) {
 }
 
 func (m *ExchangeMountStorageAdd) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type MountMountParkSell struct{}
 
-func (m MountMountParkSell) ProtocolId() d1proto.MsgCliId {
-	return d1proto.MountMountParkSell
+func (m MountMountParkSell) ProtocolId() d1encoding.MsgCliId {
+	return d1encoding.MountMountParkSell
 }
 
 func (m MountMountParkSell) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", d1encoding.ErrNotImplemented
 }
 
 func (m *MountMountParkSell) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return d1encoding.ErrNotImplemented
 }

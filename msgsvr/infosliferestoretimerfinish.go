@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/d1encoding"
 )
 
 type InfosLifeRestoreTimerFinish struct {
 	Restored int
 }
 
-func (m InfosLifeRestoreTimerFinish) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.InfosLifeRestoreTimerFinish
+func (m InfosLifeRestoreTimerFinish) ProtocolId() d1encoding.MsgSvrId {
+	return d1encoding.InfosLifeRestoreTimerFinish
 }
 
 func (m InfosLifeRestoreTimerFinish) Serialized() (string, error) {
