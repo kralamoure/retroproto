@@ -1,4 +1,5 @@
 // generated (unrevised)
+
 package msgcli
 
 import (
