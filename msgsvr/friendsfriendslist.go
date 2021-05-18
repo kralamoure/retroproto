@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type FriendsFriendsList struct{}
 
-func (m FriendsFriendsList) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.FriendsFriendsList
+func (m FriendsFriendsList) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.FriendsFriendsList
 }
 
 func (m FriendsFriendsList) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *FriendsFriendsList) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

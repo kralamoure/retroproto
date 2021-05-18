@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeBigStoreItemsMovementRemove struct{}
 
-func (m ExchangeBigStoreItemsMovementRemove) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeBigStoreItemsMovementRemove
+func (m ExchangeBigStoreItemsMovementRemove) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ExchangeBigStoreItemsMovementRemove
 }
 
 func (m ExchangeBigStoreItemsMovementRemove) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeBigStoreItemsMovementRemove) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

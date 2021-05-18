@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountTicketResponseError struct{}
 
-func (m AccountTicketResponseError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountTicketResponseError
+func (m AccountTicketResponseError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountTicketResponseError
 }
 
 func (m AccountTicketResponseError) Serialized() (string, error) {

@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GildHireTaxCollectorSuccess struct{}
 
-func (m GildHireTaxCollectorSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GildHireTaxCollectorSuccess
+func (m GildHireTaxCollectorSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GildHireTaxCollectorSuccess
 }
 
 func (m GildHireTaxCollectorSuccess) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GildHireTaxCollectorSuccess) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type MountUnequip struct{}
 
-func (m MountUnequip) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.MountUnequip
+func (m MountUnequip) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.MountUnequip
 }
 
 func (m MountUnequip) Serialized() (string, error) {

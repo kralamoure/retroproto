@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type InfosInfoCoordinatesPHighlight struct{}
 
-func (m InfosInfoCoordinatesPHighlight) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.InfosInfoCoordinatesPHighlight
+func (m InfosInfoCoordinatesPHighlight) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.InfosInfoCoordinatesPHighlight
 }
 
 func (m InfosInfoCoordinatesPHighlight) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *InfosInfoCoordinatesPHighlight) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

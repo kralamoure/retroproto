@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeMovementPay struct{}
 
-func (m ExchangeMovementPay) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeMovementPay
+func (m ExchangeMovementPay) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeMovementPay
 }
 
 func (m ExchangeMovementPay) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeMovementPay) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

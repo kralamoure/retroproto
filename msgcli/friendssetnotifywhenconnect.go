@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type FriendsSetNotifyWhenConnect struct{}
 
-func (m FriendsSetNotifyWhenConnect) ProtocolId() d1proto.MsgCliId {
-	return d1proto.FriendsSetNotifyWhenConnect
+func (m FriendsSetNotifyWhenConnect) ProtocolId() retroproto.MsgCliId {
+	return retroproto.FriendsSetNotifyWhenConnect
 }
 
 func (m FriendsSetNotifyWhenConnect) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *FriendsSetNotifyWhenConnect) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

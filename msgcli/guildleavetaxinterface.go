@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GuildLeaveTaxInterface struct{}
 
-func (m GuildLeaveTaxInterface) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GuildLeaveTaxInterface
+func (m GuildLeaveTaxInterface) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GuildLeaveTaxInterface
 }
 
 func (m GuildLeaveTaxInterface) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GuildLeaveTaxInterface) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

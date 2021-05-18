@@ -5,11 +5,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1"
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/enum"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/enum"
 )
 
 type ItemsAddSuccess struct {
@@ -26,12 +26,12 @@ type ItemsAddSuccessItemObject struct {
 	Id         int
 	TemplateId int
 	Quantity   int
-	Position   d1typ.CharacterItemPosition
-	Effects    []d1typ.Effect
+	Position   retrotyp.CharacterItemPosition
+	Effects    []retrotyp.Effect
 }
 
-func (m ItemsAddSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ItemsAddSuccess
+func (m ItemsAddSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ItemsAddSuccess
 }
 
 func (m ItemsAddSuccess) Serialized() (string, error) {
@@ -43,12 +43,12 @@ func (m ItemsAddSuccess) Serialized() (string, error) {
 		case enum.ItemsAddSuccessItemType.Objects:
 			objects := make([]string, len(v.Objects))
 			for i, v := range v.Objects {
-				effects := d1.EncodeItemEffects(v.Effects)
+				effects := retro.EncodeItemEffects(v.Effects)
 				objects[i] = fmt.Sprintf("%x~%x~%x~%x~%s", v.Id, v.TemplateId, v.Quantity, int(v.Position), strings.Join(effects, ","))
 			}
 			items[i] = fmt.Sprintf("%s%s", string(v.ItemType), strings.Join(objects, ";"))
 		default:
-			return "", d1proto.ErrInvalidMsg
+			return "", retroproto.ErrInvalidMsg
 		}
 	}
 	return strings.Join(items, "*"), nil
@@ -59,7 +59,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 	m.Items = make([]ItemsAddSuccessItem, len(items))
 	for i, v := range items {
 		if len([]rune(v)) < 2 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		item := ItemsAddSuccessItem{
@@ -74,7 +74,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 			for i, v := range objects {
 				sli := strings.Split(v, "~")
 				if len(sli) < 5 {
-					return d1proto.ErrInvalidMsg
+					return retroproto.ErrInvalidMsg
 				}
 
 				var object ItemsAddSuccessItemObject
@@ -104,9 +104,9 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 					if err != nil {
 						return err
 					}
-					object.Position = d1typ.CharacterItemPosition(position)
+					object.Position = retrotyp.CharacterItemPosition(position)
 				}
-				effects, err := d1.DecodeItemEffects(strings.Split(sli[4], ","))
+				effects, err := retro.DecodeItemEffects(strings.Split(sli[4], ","))
 				if err != nil {
 					return err
 				}
@@ -115,7 +115,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 				item.Objects[i] = object
 			}
 		default:
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 		m.Items[i] = item
 	}

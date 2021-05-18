@@ -3,15 +3,15 @@ package msgsvr
 import (
 	"fmt"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountCharacterNameGeneratedSuccess struct {
 	Name string
 }
 
-func (m AccountCharacterNameGeneratedSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountCharacterNameGeneratedSuccess
+func (m AccountCharacterNameGeneratedSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountCharacterNameGeneratedSuccess
 }
 
 func (m AccountCharacterNameGeneratedSuccess) Serialized() (string, error) {

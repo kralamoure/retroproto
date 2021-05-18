@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountConfiguredPort struct {
 	Port int
 }
 
-func (m AccountConfiguredPort) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountConfiguredPort
+func (m AccountConfiguredPort) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountConfiguredPort
 }
 
 func (m AccountConfiguredPort) Serialized() (string, error) {

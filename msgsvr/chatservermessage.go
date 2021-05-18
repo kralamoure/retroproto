@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ChatServerMessage struct {
 	Message string
 }
 
-func (m ChatServerMessage) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ChatServerMessage
+func (m ChatServerMessage) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ChatServerMessage
 }
 
 func (m ChatServerMessage) Serialized() (string, error) {

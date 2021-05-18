@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type MountRequestLeave struct{}
 
-func (m MountRequestLeave) ProtocolId() d1proto.MsgCliId {
-	return d1proto.MountRequestLeave
+func (m MountRequestLeave) ProtocolId() retroproto.MsgCliId {
+	return retroproto.MountRequestLeave
 }
 
 func (m MountRequestLeave) Serialized() (string, error) {

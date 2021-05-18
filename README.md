@@ -1,8 +1,8 @@
-# d1proto
+# retroproto
 
-`d1proto` is a library that implements the network protocol of Dofus 1, for communication between server and client. It
-defines the id and structure of the protocol messages, and it provides functionality for their serialization and
-deserialization.
+`retroproto` is a library that implements the network protocol of Dofus Retro, for communication between server and
+client. It defines the id and structure of the protocol messages, and it provides functionality for their serialization
+and deserialization.
 
 ## Requirements:
 
@@ -12,7 +12,7 @@ deserialization.
 ## Installation
 
 ```sh
-go get github.com/kralamoure/d1proto
+go get github.com/kralamoure/retroproto
 ```
 
 ## Examples
@@ -26,18 +26,18 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/msgcli"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/msgcli"
 )
 
 func main() {
 	packet := "AAXxRamboPLxX|1|0|3635424|855309|16053493"
 
-	id, _ := d1proto.MsgCliIdByPkt(packet)          // "AA"
+	id, _ := retroproto.MsgCliIdByPkt(packet)       // "AA"
 	extra := strings.TrimPrefix(packet, string(id)) // "XxRamboPLxX|1|0|3635424|855309|16053493"
 
 	switch id {
-	case d1proto.AccountAddCharacter:
+	case retroproto.AccountAddCharacter:
 		message := &msgcli.AccountAddCharacter{}
 		message.Deserialize(extra)
 
@@ -55,18 +55,18 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/msgsvr"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/msgsvr"
 )
 
 func main() {
 	packet := "HCfdbijergrfklvdnsdfgviojsidesokpm"
 
-	id, _ := d1proto.MsgSvrIdByPkt(packet)          // "HC"
+	id, _ := retroproto.MsgSvrIdByPkt(packet)       // "HC"
 	extra := strings.TrimPrefix(packet, string(id)) // "fdbijergrfklvdnsdfgviojsidesokpm"
 
 	switch id {
-	case d1proto.AksHelloConnect:
+	case retroproto.AksHelloConnect:
 		message := &msgsvr.AksHelloConnect{}
 		message.Deserialize(extra)
 
@@ -83,7 +83,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/kralamoure/d1proto/msgcli"
+	"github.com/kralamoure/retroproto/msgcli"
 )
 
 func main() {
@@ -113,7 +113,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/kralamoure/d1proto/msgsvr"
+	"github.com/kralamoure/retroproto/msgsvr"
 )
 
 func main() {

@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ItemsTool struct {
 	JobId int
 }
 
-func (m ItemsTool) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ItemsTool
+func (m ItemsTool) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ItemsTool
 }
 
 func (m ItemsTool) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m ItemsTool) Serialized() (string, error) {
 
 func (m *ItemsTool) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	jobId, err := strconv.ParseInt(extra, 10, 32)

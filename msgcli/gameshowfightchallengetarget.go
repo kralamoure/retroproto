@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameShowFightChallengeTarget struct{}
 
-func (m GameShowFightChallengeTarget) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GameShowFightChallengeTarget
+func (m GameShowFightChallengeTarget) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GameShowFightChallengeTarget
 }
 
 func (m GameShowFightChallengeTarget) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameShowFightChallengeTarget) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

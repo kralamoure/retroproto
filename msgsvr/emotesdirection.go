@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type EmotesDirection struct {
@@ -13,8 +13,8 @@ type EmotesDirection struct {
 	Dir int
 }
 
-func (m EmotesDirection) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.EmotesDirection
+func (m EmotesDirection) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.EmotesDirection
 }
 
 func (m EmotesDirection) Serialized() (string, error) {
@@ -25,7 +25,7 @@ func (m *EmotesDirection) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 
 	if len(sli) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)

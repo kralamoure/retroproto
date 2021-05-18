@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type SpellsForget struct {
 	Id int
 }
 
-func (m SpellsForget) ProtocolId() d1proto.MsgCliId {
-	return d1proto.SpellsForget
+func (m SpellsForget) ProtocolId() retroproto.MsgCliId {
+	return retroproto.SpellsForget
 }
 
 func (m SpellsForget) Serialized() (string, error) {

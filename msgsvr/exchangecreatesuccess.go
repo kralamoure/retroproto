@@ -5,14 +5,14 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/typ"
 )
 
 type ExchangeCreateSuccess struct {
-	Type    d1typ.Exchange
+	Type    retrotyp.Exchange
 	NPCBuy  ExchangeCreateSuccessNPCBuy
 	Paddock ExchangeCreateSuccessPaddock
 }
@@ -21,7 +21,7 @@ type ExchangeCreateSuccessNPCBuy struct {
 	Quantity1     int
 	Quantity2     int
 	Quantity3     int
-	Types         []d1typ.ItemType
+	Types         []retrotyp.ItemType
 	Fee           float32
 	MaxLevel      int
 	MaxPerAccount int
@@ -34,14 +34,14 @@ type ExchangeCreateSuccessPaddock struct {
 	Paddock []typ.CommonMountData
 }
 
-func (m ExchangeCreateSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeCreateSuccess
+func (m ExchangeCreateSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ExchangeCreateSuccess
 }
 
 func (m ExchangeCreateSuccess) Serialized() (string, error) {
 	var s string
 	switch m.Type {
-	case d1typ.ExchangeNPCBuy:
+	case retrotyp.ExchangeNPCBuy:
 		t := m.NPCBuy
 
 		itemTypes := make([]string, len(t.Types))
@@ -52,7 +52,7 @@ func (m ExchangeCreateSuccess) Serialized() (string, error) {
 		s = fmt.Sprintf("%d,%d,%d;%s;%f;%d;%d;%d;%d",
 			t.Quantity1, t.Quantity2, t.Quantity3, strings.Join(itemTypes, ","), t.Fee, t.MaxLevel, t.MaxPerAccount,
 			t.NPCId, t.MaxHours)
-	case d1typ.ExchangePaddock: // TODO
+	case retrotyp.ExchangePaddock: // TODO
 		t := m.Paddock
 
 		shed := make([]string, len(t.Shed))
@@ -75,7 +75,7 @@ func (m ExchangeCreateSuccess) Serialized() (string, error) {
 
 		s = fmt.Sprintf("%s~%s", strings.Join(shed, ";"), strings.Join(paddock, ";"))
 	default:
-		return "", d1proto.ErrNotImplemented
+		return "", retroproto.ErrNotImplemented
 	}
 
 	return fmt.Sprintf("%d|%s", m.Type, s), nil
@@ -89,22 +89,22 @@ func (m *ExchangeCreateSuccess) Deserialize(extra string) error {
 		return err
 	}
 
-	switch d1typ.Exchange(exchangeType) {
-	case d1typ.ExchangeNPCBuy:
+	switch retrotyp.Exchange(exchangeType) {
+	case retrotyp.ExchangeNPCBuy:
 		if len(sli) < 2 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		var t ExchangeCreateSuccessNPCBuy
 
 		sli := strings.Split(sli[1], ";")
 		if len(sli) < 7 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		sli2 := strings.Split(sli[0], ",")
 		if len(sli2) < 3 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		quantity1, err := strconv.ParseInt(sli2[0], 10, 32)
@@ -126,13 +126,13 @@ func (m *ExchangeCreateSuccess) Deserialize(extra string) error {
 		t.Quantity3 = int(quantity3)
 
 		sli2 = strings.Split(sli[1], ",")
-		t.Types = make([]d1typ.ItemType, len(sli2))
+		t.Types = make([]retrotyp.ItemType, len(sli2))
 		for i, v := range sli2 {
 			itemType, err := strconv.ParseInt(v, 10, 32)
 			if err != nil {
 				return err
 			}
-			t.Types[i] = d1typ.ItemType(itemType)
+			t.Types[i] = retrotyp.ItemType(itemType)
 		}
 
 		fee, err := strconv.ParseFloat(sli[2], 32)
@@ -167,7 +167,7 @@ func (m *ExchangeCreateSuccess) Deserialize(extra string) error {
 
 		m.NPCBuy = t
 	default:
-		return d1proto.ErrNotImplemented
+		return retroproto.ErrNotImplemented
 	}
 
 	return nil

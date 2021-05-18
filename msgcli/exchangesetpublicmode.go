@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeSetPublicMode struct{}
 
-func (m ExchangeSetPublicMode) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeSetPublicMode
+func (m ExchangeSetPublicMode) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeSetPublicMode
 }
 
 func (m ExchangeSetPublicMode) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeSetPublicMode) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

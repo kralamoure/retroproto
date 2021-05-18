@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type DocumentsCreateError struct{}
 
-func (m DocumentsCreateError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.DocumentsCreateError
+func (m DocumentsCreateError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.DocumentsCreateError
 }
 
 func (m DocumentsCreateError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *DocumentsCreateError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

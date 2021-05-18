@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsAveragePing struct{}
 
-func (m BasicsAveragePing) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.BasicsAveragePing
+func (m BasicsAveragePing) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.BasicsAveragePing
 }
 
 func (m BasicsAveragePing) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *BasicsAveragePing) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

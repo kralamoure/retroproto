@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeAskOfflineExchange struct{}
 
-func (m ExchangeAskOfflineExchange) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeAskOfflineExchange
+func (m ExchangeAskOfflineExchange) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ExchangeAskOfflineExchange
 }
 
 func (m ExchangeAskOfflineExchange) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeAskOfflineExchange) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

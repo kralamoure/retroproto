@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GuildGetInfosMountPark struct{}
 
-func (m GuildGetInfosMountPark) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GuildGetInfosMountPark
+func (m GuildGetInfosMountPark) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GuildGetInfosMountPark
 }
 
 func (m GuildGetInfosMountPark) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GuildGetInfosMountPark) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

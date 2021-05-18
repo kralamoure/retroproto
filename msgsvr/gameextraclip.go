@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameExtraClip struct{}
 
-func (m GameExtraClip) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameExtraClip
+func (m GameExtraClip) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameExtraClip
 }
 
 func (m GameExtraClip) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameExtraClip) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

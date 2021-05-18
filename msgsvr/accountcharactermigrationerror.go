@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountCharacterMigrationError struct{}
 
-func (m AccountCharacterMigrationError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountCharacterMigrationError
+func (m AccountCharacterMigrationError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountCharacterMigrationError
 }
 
 func (m AccountCharacterMigrationError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *AccountCharacterMigrationError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

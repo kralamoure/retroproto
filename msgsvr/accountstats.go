@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountStats struct {
@@ -30,11 +30,11 @@ type AccountStats struct {
 	EnergyMax        int
 	Initiative       int
 	Discernment      int
-	Characteristics  map[d1typ.CharacteristicId]d1typ.Characteristic
+	Characteristics  map[retrotyp.CharacteristicId]retrotyp.Characteristic
 }
 
-func (m AccountStats) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountStats
+func (m AccountStats) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountStats
 }
 
 func (m AccountStats) Serialized() (string, error) {
@@ -43,49 +43,49 @@ func (m AccountStats) Serialized() (string, error) {
 		alignmentEnabled = 1
 	}
 
-	order := []d1typ.CharacteristicId{
-		d1typ.CharacteristicIdAP,
-		d1typ.CharacteristicIdMP,
-		d1typ.CharacteristicIdStrength,
-		d1typ.CharacteristicIdVitality,
-		d1typ.CharacteristicIdWisdom,
-		d1typ.CharacteristicIdChance,
-		d1typ.CharacteristicIdAgility,
-		d1typ.CharacteristicIdIntelligence,
-		d1typ.CharacteristicIdRange,
-		d1typ.CharacteristicIdMaxSummonedCreaturesBoost,
-		d1typ.CharacteristicIdDamages,
-		d1typ.CharacteristicIdPhysicalDamages,
-		d1typ.CharacteristicIdWeaponDamagesPercent,
-		d1typ.CharacteristicIdDamagesPercent,
-		d1typ.CharacteristicIdHeals,
-		d1typ.CharacteristicIdTrapDamages,
-		d1typ.CharacteristicIdTrapDamagesPercent,
-		d1typ.CharacteristicIdDamagesReflection,
-		d1typ.CharacteristicIdCriticalHits,
-		d1typ.CharacteristicIdCriticalFailures,
-		d1typ.CharacteristicIdDodgeAP,
-		d1typ.CharacteristicIdDodgeMP,
-		d1typ.CharacteristicIdNeutralResistance,
-		d1typ.CharacteristicIdNeutralResistancePercent,
-		d1typ.CharacteristicIdNeutralResistancePVP,
-		d1typ.CharacteristicIdNeutralResistancePercentPVP,
-		d1typ.CharacteristicIdEarthResistance,
-		d1typ.CharacteristicIdEarthResistancePercent,
-		d1typ.CharacteristicIdEarthResistancePVP,
-		d1typ.CharacteristicIdEarthResistancePercentPVP,
-		d1typ.CharacteristicIdWaterResistance,
-		d1typ.CharacteristicIdWaterResistancePercent,
-		d1typ.CharacteristicIdWaterResistancePVP,
-		d1typ.CharacteristicIdWaterResistancePercentPVP,
-		d1typ.CharacteristicIdAirResistance,
-		d1typ.CharacteristicIdAirResistancePercent,
-		d1typ.CharacteristicIdAirResistancePVP,
-		d1typ.CharacteristicIdAirResistancePercentPVP,
-		d1typ.CharacteristicIdFireResistance,
-		d1typ.CharacteristicIdFireResistancePercent,
-		d1typ.CharacteristicIdFireResistancePVP,
-		d1typ.CharacteristicIdFireResistancePercentPVP,
+	order := []retrotyp.CharacteristicId{
+		retrotyp.CharacteristicIdAP,
+		retrotyp.CharacteristicIdMP,
+		retrotyp.CharacteristicIdStrength,
+		retrotyp.CharacteristicIdVitality,
+		retrotyp.CharacteristicIdWisdom,
+		retrotyp.CharacteristicIdChance,
+		retrotyp.CharacteristicIdAgility,
+		retrotyp.CharacteristicIdIntelligence,
+		retrotyp.CharacteristicIdRange,
+		retrotyp.CharacteristicIdMaxSummonedCreaturesBoost,
+		retrotyp.CharacteristicIdDamages,
+		retrotyp.CharacteristicIdPhysicalDamages,
+		retrotyp.CharacteristicIdWeaponDamagesPercent,
+		retrotyp.CharacteristicIdDamagesPercent,
+		retrotyp.CharacteristicIdHeals,
+		retrotyp.CharacteristicIdTrapDamages,
+		retrotyp.CharacteristicIdTrapDamagesPercent,
+		retrotyp.CharacteristicIdDamagesReflection,
+		retrotyp.CharacteristicIdCriticalHits,
+		retrotyp.CharacteristicIdCriticalFailures,
+		retrotyp.CharacteristicIdDodgeAP,
+		retrotyp.CharacteristicIdDodgeMP,
+		retrotyp.CharacteristicIdNeutralResistance,
+		retrotyp.CharacteristicIdNeutralResistancePercent,
+		retrotyp.CharacteristicIdNeutralResistancePVP,
+		retrotyp.CharacteristicIdNeutralResistancePercentPVP,
+		retrotyp.CharacteristicIdEarthResistance,
+		retrotyp.CharacteristicIdEarthResistancePercent,
+		retrotyp.CharacteristicIdEarthResistancePVP,
+		retrotyp.CharacteristicIdEarthResistancePercentPVP,
+		retrotyp.CharacteristicIdWaterResistance,
+		retrotyp.CharacteristicIdWaterResistancePercent,
+		retrotyp.CharacteristicIdWaterResistancePVP,
+		retrotyp.CharacteristicIdWaterResistancePercentPVP,
+		retrotyp.CharacteristicIdAirResistance,
+		retrotyp.CharacteristicIdAirResistancePercent,
+		retrotyp.CharacteristicIdAirResistancePVP,
+		retrotyp.CharacteristicIdAirResistancePercentPVP,
+		retrotyp.CharacteristicIdFireResistance,
+		retrotyp.CharacteristicIdFireResistancePercent,
+		retrotyp.CharacteristicIdFireResistancePVP,
+		retrotyp.CharacteristicIdFireResistancePercentPVP,
 	}
 
 	stats := make([]string, len(order))
@@ -105,12 +105,12 @@ func (m AccountStats) Serialized() (string, error) {
 func (m *AccountStats) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 51 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	sli2 := strings.Split(sli[0], ",")
 	if len(sli2) < 3 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli2[0] != "" {
@@ -163,13 +163,13 @@ func (m *AccountStats) Deserialize(extra string) error {
 
 	sli3 := strings.Split(sli[4], ",")
 	if len(sli3) < 6 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli3[0] != "" {
 		sli4 := strings.Split(sli3[0], "~")
 		if len(sli4) < 2 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		alignment, err := strconv.ParseInt(sli4[0], 10, 32)
@@ -227,7 +227,7 @@ func (m *AccountStats) Deserialize(extra string) error {
 
 	sli4 := strings.Split(sli[5], ",")
 	if len(sli4) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli4[0] != "" {
@@ -248,7 +248,7 @@ func (m *AccountStats) Deserialize(extra string) error {
 
 	sli5 := strings.Split(sli[6], ",")
 	if len(sli5) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli5[0] != "" {
@@ -283,56 +283,56 @@ func (m *AccountStats) Deserialize(extra string) error {
 		m.Discernment = int(discernment)
 	}
 
-	order := []d1typ.CharacteristicId{
-		d1typ.CharacteristicIdAP,
-		d1typ.CharacteristicIdMP,
-		d1typ.CharacteristicIdStrength,
-		d1typ.CharacteristicIdVitality,
-		d1typ.CharacteristicIdWisdom,
-		d1typ.CharacteristicIdChance,
-		d1typ.CharacteristicIdAgility,
-		d1typ.CharacteristicIdIntelligence,
-		d1typ.CharacteristicIdRange,
-		d1typ.CharacteristicIdMaxSummonedCreaturesBoost,
-		d1typ.CharacteristicIdDamages,
-		d1typ.CharacteristicIdPhysicalDamages,
-		d1typ.CharacteristicIdWeaponDamagesPercent,
-		d1typ.CharacteristicIdDamagesPercent,
-		d1typ.CharacteristicIdHeals,
-		d1typ.CharacteristicIdTrapDamages,
-		d1typ.CharacteristicIdTrapDamagesPercent,
-		d1typ.CharacteristicIdDamagesReflection,
-		d1typ.CharacteristicIdCriticalHits,
-		d1typ.CharacteristicIdCriticalFailures,
-		d1typ.CharacteristicIdDodgeAP,
-		d1typ.CharacteristicIdDodgeMP,
-		d1typ.CharacteristicIdNeutralResistance,
-		d1typ.CharacteristicIdNeutralResistancePercent,
-		d1typ.CharacteristicIdNeutralResistancePVP,
-		d1typ.CharacteristicIdNeutralResistancePercentPVP,
-		d1typ.CharacteristicIdEarthResistance,
-		d1typ.CharacteristicIdEarthResistancePercent,
-		d1typ.CharacteristicIdEarthResistancePVP,
-		d1typ.CharacteristicIdEarthResistancePercentPVP,
-		d1typ.CharacteristicIdWaterResistance,
-		d1typ.CharacteristicIdWaterResistancePercent,
-		d1typ.CharacteristicIdWaterResistancePVP,
-		d1typ.CharacteristicIdWaterResistancePercentPVP,
-		d1typ.CharacteristicIdAirResistance,
-		d1typ.CharacteristicIdAirResistancePercent,
-		d1typ.CharacteristicIdAirResistancePVP,
-		d1typ.CharacteristicIdAirResistancePercentPVP,
-		d1typ.CharacteristicIdFireResistance,
-		d1typ.CharacteristicIdFireResistancePercent,
-		d1typ.CharacteristicIdFireResistancePVP,
-		d1typ.CharacteristicIdFireResistancePercentPVP,
+	order := []retrotyp.CharacteristicId{
+		retrotyp.CharacteristicIdAP,
+		retrotyp.CharacteristicIdMP,
+		retrotyp.CharacteristicIdStrength,
+		retrotyp.CharacteristicIdVitality,
+		retrotyp.CharacteristicIdWisdom,
+		retrotyp.CharacteristicIdChance,
+		retrotyp.CharacteristicIdAgility,
+		retrotyp.CharacteristicIdIntelligence,
+		retrotyp.CharacteristicIdRange,
+		retrotyp.CharacteristicIdMaxSummonedCreaturesBoost,
+		retrotyp.CharacteristicIdDamages,
+		retrotyp.CharacteristicIdPhysicalDamages,
+		retrotyp.CharacteristicIdWeaponDamagesPercent,
+		retrotyp.CharacteristicIdDamagesPercent,
+		retrotyp.CharacteristicIdHeals,
+		retrotyp.CharacteristicIdTrapDamages,
+		retrotyp.CharacteristicIdTrapDamagesPercent,
+		retrotyp.CharacteristicIdDamagesReflection,
+		retrotyp.CharacteristicIdCriticalHits,
+		retrotyp.CharacteristicIdCriticalFailures,
+		retrotyp.CharacteristicIdDodgeAP,
+		retrotyp.CharacteristicIdDodgeMP,
+		retrotyp.CharacteristicIdNeutralResistance,
+		retrotyp.CharacteristicIdNeutralResistancePercent,
+		retrotyp.CharacteristicIdNeutralResistancePVP,
+		retrotyp.CharacteristicIdNeutralResistancePercentPVP,
+		retrotyp.CharacteristicIdEarthResistance,
+		retrotyp.CharacteristicIdEarthResistancePercent,
+		retrotyp.CharacteristicIdEarthResistancePVP,
+		retrotyp.CharacteristicIdEarthResistancePercentPVP,
+		retrotyp.CharacteristicIdWaterResistance,
+		retrotyp.CharacteristicIdWaterResistancePercent,
+		retrotyp.CharacteristicIdWaterResistancePVP,
+		retrotyp.CharacteristicIdWaterResistancePercentPVP,
+		retrotyp.CharacteristicIdAirResistance,
+		retrotyp.CharacteristicIdAirResistancePercent,
+		retrotyp.CharacteristicIdAirResistancePVP,
+		retrotyp.CharacteristicIdAirResistancePercentPVP,
+		retrotyp.CharacteristicIdFireResistance,
+		retrotyp.CharacteristicIdFireResistancePercent,
+		retrotyp.CharacteristicIdFireResistancePVP,
+		retrotyp.CharacteristicIdFireResistancePercentPVP,
 	}
 
-	m.Characteristics = make(map[d1typ.CharacteristicId]d1typ.Characteristic, len(order))
+	m.Characteristics = make(map[retrotyp.CharacteristicId]retrotyp.Characteristic, len(order))
 	for i, v := range order {
 		sli2 := strings.Split(sli[i+9], ",")
 		if len(sli2) < 4 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		base, err := strconv.ParseInt(sli2[0], 10, 32)
@@ -352,7 +352,7 @@ func (m *AccountStats) Deserialize(extra string) error {
 			return err
 		}
 
-		m.Characteristics[v] = d1typ.Characteristic{
+		m.Characteristics[v] = retrotyp.Characteristic{
 			Id:        v,
 			Base:      int(base),
 			Equipment: int(equipment),

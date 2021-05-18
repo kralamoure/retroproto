@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type MountRequestData struct {
@@ -14,8 +14,8 @@ type MountRequestData struct {
 	Validity time.Time
 }
 
-func (m MountRequestData) ProtocolId() d1proto.MsgCliId {
-	return d1proto.MountRequestData
+func (m MountRequestData) ProtocolId() retroproto.MsgCliId {
+	return retroproto.MountRequestData
 }
 
 func (m MountRequestData) Serialized() (string, error) {
@@ -25,7 +25,7 @@ func (m MountRequestData) Serialized() (string, error) {
 func (m *MountRequestData) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) != 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli[0] != "undefined" {

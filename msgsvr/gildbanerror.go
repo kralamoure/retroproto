@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GildBanError struct{}
 
-func (m GildBanError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GildBanError
+func (m GildBanError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GildBanError
 }
 
 func (m GildBanError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GildBanError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

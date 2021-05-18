@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountCharacterDeleteError struct{}
 
-func (m AccountCharacterDeleteError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountCharacterDeleteError
+func (m AccountCharacterDeleteError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountCharacterDeleteError
 }
 
 func (m AccountCharacterDeleteError) Serialized() (string, error) {

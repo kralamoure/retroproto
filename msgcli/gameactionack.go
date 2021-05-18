@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameActionAck struct {
 	Id int
 }
 
-func (m GameActionAck) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GameActionAck
+func (m GameActionAck) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GameActionAck
 }
 
 func (m GameActionAck) Serialized() (string, error) {

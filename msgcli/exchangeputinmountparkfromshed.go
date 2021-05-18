@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangePutInMountParkFromShed struct {
 	MountId int
 }
 
-func (m ExchangePutInMountParkFromShed) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangePutInMountParkFromShed
+func (m ExchangePutInMountParkFromShed) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangePutInMountParkFromShed
 }
 
 func (m ExchangePutInMountParkFromShed) Serialized() (string, error) {

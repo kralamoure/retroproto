@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/typ"
 )
 
 type ItemsAccessories struct {
@@ -14,8 +14,8 @@ type ItemsAccessories struct {
 	Accessories typ.CommonAccessories
 }
 
-func (m ItemsAccessories) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ItemsAccessories
+func (m ItemsAccessories) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ItemsAccessories
 }
 
 func (m ItemsAccessories) Serialized() (string, error) {
@@ -30,7 +30,7 @@ func (m ItemsAccessories) Serialized() (string, error) {
 func (m *ItemsAccessories) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)

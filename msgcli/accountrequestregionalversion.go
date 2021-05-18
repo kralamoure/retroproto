@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountRequestRegionalVersion struct{}
 
-func (m AccountRequestRegionalVersion) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountRequestRegionalVersion
+func (m AccountRequestRegionalVersion) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountRequestRegionalVersion
 }
 
 func (m AccountRequestRegionalVersion) Serialized() (string, error) {

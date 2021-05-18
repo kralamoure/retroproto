@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeCraftError struct{}
 
-func (m ExchangeCraftError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeCraftError
+func (m ExchangeCraftError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ExchangeCraftError
 }
 
 func (m ExchangeCraftError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeCraftError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

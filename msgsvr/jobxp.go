@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type JobXP struct{}
 
-func (m JobXP) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.JobXP
+func (m JobXP) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.JobXP
 }
 
 func (m JobXP) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *JobXP) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

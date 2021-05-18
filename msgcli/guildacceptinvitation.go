@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GuildAcceptInvitation struct{}
 
-func (m GuildAcceptInvitation) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GuildAcceptInvitation
+func (m GuildAcceptInvitation) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GuildAcceptInvitation
 }
 
 func (m GuildAcceptInvitation) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GuildAcceptInvitation) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

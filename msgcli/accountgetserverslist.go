@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountGetServersList struct{}
 
-func (m AccountGetServersList) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountGetServersList
+func (m AccountGetServersList) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountGetServersList
 }
 
 func (m AccountGetServersList) Serialized() (string, error) {

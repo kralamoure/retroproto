@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type DialogCreateSuccess struct {
 	NPCId int
 }
 
-func (m DialogCreateSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.DialogCreateSuccess
+func (m DialogCreateSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.DialogCreateSuccess
 }
 
 func (m DialogCreateSuccess) Serialized() (string, error) {

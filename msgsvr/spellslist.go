@@ -5,23 +5,23 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1"
+	"github.com/kralamoure/retro"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type SpellsList struct {
-	Spells []d1.CharacterSpell
+	Spells []retro.CharacterSpell
 }
 
-func (m SpellsList) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.SpellsList
+func (m SpellsList) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.SpellsList
 }
 
 func (m SpellsList) Serialized() (string, error) {
 	spells := make([]string, len(m.Spells))
 	for i, v := range m.Spells {
-		position, err := d1proto.Encode64(v.Position)
+		position, err := retroproto.Encode64(v.Position)
 		if err != nil {
 			return "", err
 		}
@@ -39,13 +39,13 @@ func (m *SpellsList) Deserialize(extra string) error {
 	}
 
 	sli := strings.Split(extra, ";")
-	m.Spells = make([]d1.CharacterSpell, len(sli))
+	m.Spells = make([]retro.CharacterSpell, len(sli))
 	for i, v := range sli {
-		var spell d1.CharacterSpell
+		var spell retro.CharacterSpell
 
 		sli2 := strings.Split(v, "~")
 		if len(sli2) != 3 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		id, err := strconv.ParseInt(sli2[0], 10, 32)
@@ -61,7 +61,7 @@ func (m *SpellsList) Deserialize(extra string) error {
 		spell.Level = int(level)
 
 		for _, v := range sli2[2] {
-			position, err := d1proto.Decode64(v)
+			position, err := retroproto.Decode64(v)
 			if err != nil {
 				return err
 			}

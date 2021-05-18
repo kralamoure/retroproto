@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type SubwayPrismLeave struct{}
 
-func (m SubwayPrismLeave) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.SubwayPrismLeave
+func (m SubwayPrismLeave) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.SubwayPrismLeave
 }
 
 func (m SubwayPrismLeave) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *SubwayPrismLeave) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

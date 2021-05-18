@@ -3,15 +3,15 @@ package msgsvr
 import (
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ChatSubscribeChannelRemove struct {
 	Channels []rune
 }
 
-func (m ChatSubscribeChannelRemove) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ChatSubscribeChannelRemove
+func (m ChatSubscribeChannelRemove) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ChatSubscribeChannelRemove
 }
 
 func (m ChatSubscribeChannelRemove) Serialized() (string, error) {

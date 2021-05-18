@@ -5,18 +5,18 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ItemsMovement struct {
 	Id       int
-	Position d1typ.CharacterItemPosition
+	Position retrotyp.CharacterItemPosition
 }
 
-func (m ItemsMovement) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ItemsMovement
+func (m ItemsMovement) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ItemsMovement
 }
 
 func (m ItemsMovement) Serialized() (string, error) {
@@ -26,7 +26,7 @@ func (m ItemsMovement) Serialized() (string, error) {
 func (m *ItemsMovement) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 1 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)
@@ -40,7 +40,7 @@ func (m *ItemsMovement) Deserialize(extra string) error {
 		if err != nil {
 			return err
 		}
-		m.Position = d1typ.CharacterItemPosition(position)
+		m.Position = retrotyp.CharacterItemPosition(position)
 	}
 
 	return nil

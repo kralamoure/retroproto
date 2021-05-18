@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountGiftStoredError struct{}
 
-func (m AccountGiftStoredError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountGiftStoredError
+func (m AccountGiftStoredError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountGiftStoredError
 }
 
 func (m AccountGiftStoredError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *AccountGiftStoredError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

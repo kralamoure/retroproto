@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeBigStoreItemList struct {
 	ItemTemplateId int
 }
 
-func (m ExchangeBigStoreItemList) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeBigStoreItemList
+func (m ExchangeBigStoreItemList) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeBigStoreItemList
 }
 
 func (m ExchangeBigStoreItemList) Serialized() (string, error) {

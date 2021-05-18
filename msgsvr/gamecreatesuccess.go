@@ -5,15 +5,15 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameCreateSuccess struct {
 	Type int
 }
 
-func (m GameCreateSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameCreateSuccess
+func (m GameCreateSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameCreateSuccess
 }
 
 func (m GameCreateSuccess) Serialized() (string, error) {
@@ -23,7 +23,7 @@ func (m GameCreateSuccess) Serialized() (string, error) {
 func (m *GameCreateSuccess) Deserialize(extra string) error {
 	extra = strings.TrimPrefix(extra, "|")
 	if len(extra) < 1 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	typeValue, err := strconv.ParseInt(extra, 10, 32)

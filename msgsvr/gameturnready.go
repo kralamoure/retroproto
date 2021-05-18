@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameTurnReady struct{}
 
-func (m GameTurnReady) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameTurnReady
+func (m GameTurnReady) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameTurnReady
 }
 
 func (m GameTurnReady) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameTurnReady) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

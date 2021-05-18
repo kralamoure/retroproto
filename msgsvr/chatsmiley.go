@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ChatSmiley struct{}
 
-func (m ChatSmiley) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ChatSmiley
+func (m ChatSmiley) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ChatSmiley
 }
 
 func (m ChatSmiley) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ChatSmiley) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

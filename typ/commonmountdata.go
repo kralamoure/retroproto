@@ -4,19 +4,19 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/d1"
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type CommonMountData struct {
 	Id               int
 	ModelId          int
 	Ancestors        [14]int
-	Capacities       []d1typ.MountCapacityId
+	Capacities       []retrotyp.MountCapacityId
 	Name             string
-	Sex              d1typ.Sex
+	Sex              retrotyp.Sex
 	XP               int
 	XPMin            int
 	XPMax            int
@@ -37,7 +37,7 @@ type CommonMountData struct {
 	LoveMax          int
 	Fecundation      int
 	Fecundable       bool
-	Effects          []d1typ.Effect
+	Effects          []retrotyp.Effect
 	Tiredness        int
 	TirednessMax     int
 	Reproductions    int
@@ -70,7 +70,7 @@ func (m CommonMountData) Serialized() (string, error) {
 		fecundable = 1
 	}
 
-	effects := d1.EncodeItemEffects(m.Effects)
+	effects := retro.EncodeItemEffects(m.Effects)
 
 	return fmt.Sprintf("%d:%d:%s:%s:%s:%d:%d,%d,%d:%d:%d:%d:%d:%d,%d:%d,%d:%d,%d:%d,%d,%d:%d,%d:%d:%d:%s:%d,%d:%d,%d",
 		m.Id,
@@ -108,5 +108,5 @@ func (m CommonMountData) Serialized() (string, error) {
 }
 
 func (m *CommonMountData) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

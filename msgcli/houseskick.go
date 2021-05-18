@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type HousesKick struct{}
 
-func (m HousesKick) ProtocolId() d1proto.MsgCliId {
-	return d1proto.HousesKick
+func (m HousesKick) ProtocolId() retroproto.MsgCliId {
+	return retroproto.HousesKick
 }
 
 func (m HousesKick) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *HousesKick) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

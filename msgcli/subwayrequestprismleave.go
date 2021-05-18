@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type SubwayRequestPrismLeave struct{}
 
-func (m SubwayRequestPrismLeave) ProtocolId() d1proto.MsgCliId {
-	return d1proto.SubwayRequestPrismLeave
+func (m SubwayRequestPrismLeave) ProtocolId() retroproto.MsgCliId {
+	return retroproto.SubwayRequestPrismLeave
 }
 
 func (m SubwayRequestPrismLeave) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *SubwayRequestPrismLeave) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

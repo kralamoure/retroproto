@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameClearAllEffect struct{}
 
-func (m GameClearAllEffect) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameClearAllEffect
+func (m GameClearAllEffect) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameClearAllEffect
 }
 
 func (m GameClearAllEffect) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameClearAllEffect) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

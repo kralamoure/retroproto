@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeBigStoreType struct {
-	ItemType d1typ.ItemType
+	ItemType retrotyp.ItemType
 }
 
-func (m ExchangeBigStoreType) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeBigStoreType
+func (m ExchangeBigStoreType) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeBigStoreType
 }
 
 func (m ExchangeBigStoreType) Serialized() (string, error) {
@@ -26,6 +26,6 @@ func (m *ExchangeBigStoreType) Deserialize(extra string) error {
 	if err != nil {
 		return err
 	}
-	m.ItemType = d1typ.ItemType(v)
+	m.ItemType = retrotyp.ItemType(v)
 	return nil
 }

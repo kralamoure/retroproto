@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AksRPing struct {
 	Value string
 }
 
-func (m AksRPing) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AksRPing
+func (m AksRPing) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AksRPing
 }
 
 func (m AksRPing) Serialized() (string, error) {

@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/typ"
 )
 
 type AccountServersListSuccess struct {
@@ -14,8 +14,8 @@ type AccountServersListSuccess struct {
 	ServersCharacters []typ.AccountServersListServerCharacters
 }
 
-func (m AccountServersListSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountServersListSuccess
+func (m AccountServersListSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountServersListSuccess
 }
 
 func (m AccountServersListSuccess) Serialized() (string, error) {

@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameZoneData struct{}
 
-func (m GameZoneData) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameZoneData
+func (m GameZoneData) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameZoneData
 }
 
 func (m GameZoneData) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameZoneData) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

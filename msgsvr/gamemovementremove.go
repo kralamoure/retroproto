@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameMovementRemove struct {
 	Id int
 }
 
-func (m GameMovementRemove) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameMovementRemove
+func (m GameMovementRemove) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameMovementRemove
 }
 
 func (m GameMovementRemove) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m GameMovementRemove) Serialized() (string, error) {
 
 func (m *GameMovementRemove) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(extra, 10, 32)

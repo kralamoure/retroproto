@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeRequestAskOfflineExchange struct{}
 
-func (m ExchangeRequestAskOfflineExchange) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeRequestAskOfflineExchange
+func (m ExchangeRequestAskOfflineExchange) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeRequestAskOfflineExchange
 }
 
 func (m ExchangeRequestAskOfflineExchange) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeRequestAskOfflineExchange) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

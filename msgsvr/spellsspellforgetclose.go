@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type SpellsSpellForgetClose struct{}
 
-func (m SpellsSpellForgetClose) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.SpellsSpellForgetClose
+func (m SpellsSpellForgetClose) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.SpellsSpellForgetClose
 }
 
 func (m SpellsSpellForgetClose) Serialized() (string, error) {

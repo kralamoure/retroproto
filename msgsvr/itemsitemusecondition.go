@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ItemsItemUseCondition struct{}
 
-func (m ItemsItemUseCondition) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ItemsItemUseCondition
+func (m ItemsItemUseCondition) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ItemsItemUseCondition
 }
 
 func (m ItemsItemUseCondition) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ItemsItemUseCondition) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

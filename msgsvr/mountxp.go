@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type MountXP struct {
 	Percent int
 }
 
-func (m MountXP) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.MountXP
+func (m MountXP) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.MountXP
 }
 
 func (m MountXP) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m MountXP) Serialized() (string, error) {
 
 func (m *MountXP) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	percent, err := strconv.ParseInt(extra, 10, 32)

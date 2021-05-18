@@ -1,16 +1,16 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/typ"
 )
 
 type MountData struct {
 	Data typ.CommonMountData
 }
 
-func (m MountData) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.MountData
+func (m MountData) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.MountData
 }
 
 func (m MountData) Serialized() (string, error) {

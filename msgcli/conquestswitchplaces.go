@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ConquestSwitchPlaces struct{}
 
-func (m ConquestSwitchPlaces) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ConquestSwitchPlaces
+func (m ConquestSwitchPlaces) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ConquestSwitchPlaces
 }
 
 func (m ConquestSwitchPlaces) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ConquestSwitchPlaces) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

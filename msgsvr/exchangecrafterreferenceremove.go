@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeCrafterReferenceRemove struct{}
 
-func (m ExchangeCrafterReferenceRemove) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeCrafterReferenceRemove
+func (m ExchangeCrafterReferenceRemove) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ExchangeCrafterReferenceRemove
 }
 
 func (m ExchangeCrafterReferenceRemove) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeCrafterReferenceRemove) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

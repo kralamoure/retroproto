@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountAddCharacter struct {
@@ -17,8 +17,8 @@ type AccountAddCharacter struct {
 	Color3 string
 }
 
-func (m AccountAddCharacter) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountAddCharacter
+func (m AccountAddCharacter) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountAddCharacter
 }
 
 func (m AccountAddCharacter) Serialized() (string, error) {
@@ -57,7 +57,7 @@ func (m AccountAddCharacter) Serialized() (string, error) {
 func (m *AccountAddCharacter) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 6 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	m.Name = sli[0]

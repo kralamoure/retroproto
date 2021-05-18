@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ConquestPrismSurvived struct{}
 
-func (m ConquestPrismSurvived) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ConquestPrismSurvived
+func (m ConquestPrismSurvived) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ConquestPrismSurvived
 }
 
 func (m ConquestPrismSurvived) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ConquestPrismSurvived) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

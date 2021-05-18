@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountTicketResponseSuccess struct {
 	KeyId int
 }
 
-func (m AccountTicketResponseSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountTicketResponseSuccess
+func (m AccountTicketResponseSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountTicketResponseSuccess
 }
 
 func (m AccountTicketResponseSuccess) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m AccountTicketResponseSuccess) Serialized() (string, error) {
 
 func (m *AccountTicketResponseSuccess) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	keyId, err := strconv.ParseInt(extra, 10, 32)

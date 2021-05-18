@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ItemsUseNoConfirm struct {
@@ -14,8 +14,8 @@ type ItemsUseNoConfirm struct {
 	Cell     int
 }
 
-func (m ItemsUseNoConfirm) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ItemsUseNoConfirm
+func (m ItemsUseNoConfirm) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ItemsUseNoConfirm
 }
 
 func (m ItemsUseNoConfirm) Serialized() (string, error) {

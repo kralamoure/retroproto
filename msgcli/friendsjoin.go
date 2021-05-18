@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type FriendsJoin struct{}
 
-func (m FriendsJoin) ProtocolId() d1proto.MsgCliId {
-	return d1proto.FriendsJoin
+func (m FriendsJoin) ProtocolId() retroproto.MsgCliId {
+	return retroproto.FriendsJoin
 }
 
 func (m FriendsJoin) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *FriendsJoin) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

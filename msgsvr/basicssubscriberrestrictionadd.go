@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsSubscriberRestrictionAdd struct {
 	DialogId int
 }
 
-func (m BasicsSubscriberRestrictionAdd) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.BasicsSubscriberRestrictionAdd
+func (m BasicsSubscriberRestrictionAdd) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.BasicsSubscriberRestrictionAdd
 }
 
 func (m BasicsSubscriberRestrictionAdd) Serialized() (string, error) {

@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type TutorialShowTip struct {
 	Id int
 }
 
-func (m TutorialShowTip) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.TutorialShowTip
+func (m TutorialShowTip) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.TutorialShowTip
 }
 
 func (m TutorialShowTip) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m TutorialShowTip) Serialized() (string, error) {
 
 func (m *TutorialShowTip) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(extra, 10, 32)

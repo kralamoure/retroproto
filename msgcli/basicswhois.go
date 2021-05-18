@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsWhoIs struct{}
 
-func (m BasicsWhoIs) ProtocolId() d1proto.MsgCliId {
-	return d1proto.BasicsWhoIs
+func (m BasicsWhoIs) ProtocolId() retroproto.MsgCliId {
+	return retroproto.BasicsWhoIs
 }
 
 func (m BasicsWhoIs) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *BasicsWhoIs) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

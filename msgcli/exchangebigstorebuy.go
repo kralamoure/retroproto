@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeBigStoreBuy struct {
@@ -14,8 +14,8 @@ type ExchangeBigStoreBuy struct {
 	Price         int
 }
 
-func (m ExchangeBigStoreBuy) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeBigStoreBuy
+func (m ExchangeBigStoreBuy) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeBigStoreBuy
 }
 
 func (m ExchangeBigStoreBuy) Serialized() (string, error) {
@@ -25,7 +25,7 @@ func (m ExchangeBigStoreBuy) Serialized() (string, error) {
 func (m *ExchangeBigStoreBuy) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) != 3 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	itemId, err := strconv.ParseInt(sli[0], 10, 32)

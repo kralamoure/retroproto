@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsGetDate struct{}
 
-func (m BasicsGetDate) ProtocolId() d1proto.MsgCliId {
-	return d1proto.BasicsGetDate
+func (m BasicsGetDate) ProtocolId() retroproto.MsgCliId {
+	return retroproto.BasicsGetDate
 }
 
 func (m BasicsGetDate) Serialized() (string, error) {

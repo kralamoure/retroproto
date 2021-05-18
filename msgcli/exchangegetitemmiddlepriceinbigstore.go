@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeGetItemMiddlePriceInBigStore struct {
 	TemplateId int
 }
 
-func (m ExchangeGetItemMiddlePriceInBigStore) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeGetItemMiddlePriceInBigStore
+func (m ExchangeGetItemMiddlePriceInBigStore) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeGetItemMiddlePriceInBigStore
 }
 
 func (m ExchangeGetItemMiddlePriceInBigStore) Serialized() (string, error) {

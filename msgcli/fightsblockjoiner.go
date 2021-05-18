@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type FightsBlockJoiner struct{}
 
-func (m FightsBlockJoiner) ProtocolId() d1proto.MsgCliId {
-	return d1proto.FightsBlockJoiner
+func (m FightsBlockJoiner) ProtocolId() retroproto.MsgCliId {
+	return retroproto.FightsBlockJoiner
 }
 
 func (m FightsBlockJoiner) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *FightsBlockJoiner) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

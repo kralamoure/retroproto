@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type EnemiesRemoveEnemy struct{}
 
-func (m EnemiesRemoveEnemy) ProtocolId() d1proto.MsgCliId {
-	return d1proto.EnemiesRemoveEnemy
+func (m EnemiesRemoveEnemy) ProtocolId() retroproto.MsgCliId {
+	return retroproto.EnemiesRemoveEnemy
 }
 
 func (m EnemiesRemoveEnemy) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *EnemiesRemoveEnemy) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

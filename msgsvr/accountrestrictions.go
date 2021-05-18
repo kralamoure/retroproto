@@ -1,16 +1,16 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/typ"
 )
 
 type AccountRestrictions struct {
 	Restrictions typ.CommonRestrictions
 }
 
-func (m AccountRestrictions) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountRestrictions
+func (m AccountRestrictions) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountRestrictions
 }
 
 func (m AccountRestrictions) Serialized() (string, error) {

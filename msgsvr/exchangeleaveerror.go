@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeLeaveError struct{}
 
-func (m ExchangeLeaveError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangeLeaveError
+func (m ExchangeLeaveError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ExchangeLeaveError
 }
 
 func (m ExchangeLeaveError) Serialized() (string, error) {

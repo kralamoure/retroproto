@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountDeleteCharacter struct {
@@ -15,8 +15,8 @@ type AccountDeleteCharacter struct {
 	SecretAnswer string
 }
 
-func (m AccountDeleteCharacter) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountDeleteCharacter
+func (m AccountDeleteCharacter) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountDeleteCharacter
 }
 
 func (m AccountDeleteCharacter) Serialized() (string, error) {
@@ -26,7 +26,7 @@ func (m AccountDeleteCharacter) Serialized() (string, error) {
 func (m *AccountDeleteCharacter) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)

@@ -3,15 +3,15 @@ package msgcli
 import (
 	"fmt"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountSearchForFriend struct {
 	Pseudo string
 }
 
-func (m AccountSearchForFriend) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountSearchForFriend
+func (m AccountSearchForFriend) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountSearchForFriend
 }
 
 func (m AccountSearchForFriend) Serialized() (string, error) {

@@ -5,21 +5,21 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsTime struct {
 	Value time.Time
 }
 
-func (m BasicsTime) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.BasicsTime
+func (m BasicsTime) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.BasicsTime
 }
 
 func (m BasicsTime) Serialized() (string, error) {
 	valueN := m.Value.Unix()
 	if valueN < 0 {
-		return "", d1proto.ErrInvalidMsg
+		return "", retroproto.ErrInvalidMsg
 	}
 	valueN *= 1000
 
@@ -32,7 +32,7 @@ func (m *BasicsTime) Deserialize(extra string) error {
 		return err
 	}
 	if valueN < 0 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 	valueN /= 1000
 

@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ConquestPrismInfosClosing struct{}
 
-func (m ConquestPrismInfosClosing) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ConquestPrismInfosClosing
+func (m ConquestPrismInfosClosing) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ConquestPrismInfosClosing
 }
 
 func (m ConquestPrismInfosClosing) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ConquestPrismInfosClosing) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

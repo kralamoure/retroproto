@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangePlayerShopMovementError struct{}
 
-func (m ExchangePlayerShopMovementError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ExchangePlayerShopMovementError
+func (m ExchangePlayerShopMovementError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ExchangePlayerShopMovementError
 }
 
 func (m ExchangePlayerShopMovementError) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangePlayerShopMovementError) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

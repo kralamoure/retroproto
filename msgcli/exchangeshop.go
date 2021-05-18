@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeShop struct{}
 
-func (m ExchangeShop) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeShop
+func (m ExchangeShop) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeShop
 }
 
 func (m ExchangeShop) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeShop) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

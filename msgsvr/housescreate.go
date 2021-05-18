@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type HousesCreate struct{}
 
-func (m HousesCreate) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.HousesCreate
+func (m HousesCreate) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.HousesCreate
 }
 
 func (m HousesCreate) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *HousesCreate) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

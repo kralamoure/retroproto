@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameSetFlag struct{}
 
-func (m GameSetFlag) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GameSetFlag
+func (m GameSetFlag) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GameSetFlag
 }
 
 func (m GameSetFlag) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameSetFlag) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

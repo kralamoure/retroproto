@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameTurnFinish struct{}
 
-func (m GameTurnFinish) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameTurnFinish
+func (m GameTurnFinish) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameTurnFinish
 }
 
 func (m GameTurnFinish) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameTurnFinish) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

@@ -5,19 +5,19 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ItemsRequestMovement struct {
 	Id       int
-	Position d1typ.CharacterItemPosition
+	Position retrotyp.CharacterItemPosition
 	Quantity int
 }
 
-func (m ItemsRequestMovement) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ItemsRequestMovement
+func (m ItemsRequestMovement) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ItemsRequestMovement
 }
 
 func (m ItemsRequestMovement) Serialized() (string, error) {
@@ -31,7 +31,7 @@ func (m ItemsRequestMovement) Serialized() (string, error) {
 func (m *ItemsRequestMovement) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)
@@ -44,7 +44,7 @@ func (m *ItemsRequestMovement) Deserialize(extra string) error {
 	if err != nil {
 		return err
 	}
-	m.Position = d1typ.CharacterItemPosition(position)
+	m.Position = retrotyp.CharacterItemPosition(position)
 
 	if len(sli) >= 3 {
 		quantity, err := strconv.ParseInt(sli[2], 10, 32)
@@ -52,7 +52,7 @@ func (m *ItemsRequestMovement) Deserialize(extra string) error {
 			return err
 		}
 		if quantity <= 0 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 		m.Quantity = int(quantity)
 	} else {

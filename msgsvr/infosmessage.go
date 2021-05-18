@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/typ"
 )
 
 type InfosMessage struct {
@@ -14,8 +14,8 @@ type InfosMessage struct {
 	Messages []typ.InfosMessageMessage
 }
 
-func (m InfosMessage) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.InfosMessage
+func (m InfosMessage) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.InfosMessage
 }
 
 func (m InfosMessage) Serialized() (string, error) {
@@ -33,7 +33,7 @@ func (m InfosMessage) Serialized() (string, error) {
 
 func (m *InfosMessage) Deserialize(extra string) error {
 	if len(extra) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	chatID, err := strconv.ParseInt(extra[:1], 10, 32)

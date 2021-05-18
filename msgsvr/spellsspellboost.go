@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type SpellsSpellBoost struct{}
 
-func (m SpellsSpellBoost) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.SpellsSpellBoost
+func (m SpellsSpellBoost) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.SpellsSpellBoost
 }
 
 func (m SpellsSpellBoost) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *SpellsSpellBoost) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

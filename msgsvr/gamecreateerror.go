@@ -1,13 +1,13 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameCreateError struct{}
 
-func (m GameCreateError) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameCreateError
+func (m GameCreateError) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameCreateError
 }
 
 func (m GameCreateError) Serialized() (string, error) {

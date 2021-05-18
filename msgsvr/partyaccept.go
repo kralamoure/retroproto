@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type PartyAccept struct{}
 
-func (m PartyAccept) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.PartyAccept
+func (m PartyAccept) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.PartyAccept
 }
 
 func (m PartyAccept) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *PartyAccept) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

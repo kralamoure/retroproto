@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type SpellsBoost struct {
 	Id int
 }
 
-func (m SpellsBoost) ProtocolId() d1proto.MsgCliId {
-	return d1proto.SpellsBoost
+func (m SpellsBoost) ProtocolId() retroproto.MsgCliId {
+	return retroproto.SpellsBoost
 }
 
 func (m SpellsBoost) Serialized() (string, error) {

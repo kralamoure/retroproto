@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountNewLevel struct {
 	Level int
 }
 
-func (m AccountNewLevel) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountNewLevel
+func (m AccountNewLevel) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountNewLevel
 }
 
 func (m AccountNewLevel) Serialized() (string, error) {

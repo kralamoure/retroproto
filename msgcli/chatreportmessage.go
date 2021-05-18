@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ChatReportMessage struct{}
 
-func (m ChatReportMessage) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ChatReportMessage
+func (m ChatReportMessage) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ChatReportMessage
 }
 
 func (m ChatReportMessage) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ChatReportMessage) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

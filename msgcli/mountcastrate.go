@@ -1,13 +1,13 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type MountCastrate struct{}
 
-func (m MountCastrate) ProtocolId() d1proto.MsgCliId {
-	return d1proto.MountCastrate
+func (m MountCastrate) ProtocolId() retroproto.MsgCliId {
+	return retroproto.MountCastrate
 }
 
 func (m MountCastrate) Serialized() (string, error) {

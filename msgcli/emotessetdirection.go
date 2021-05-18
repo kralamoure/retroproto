@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type EmotesSetDirection struct {
 	Dir int
 }
 
-func (m EmotesSetDirection) ProtocolId() d1proto.MsgCliId {
-	return d1proto.EmotesSetDirection
+func (m EmotesSetDirection) ProtocolId() retroproto.MsgCliId {
+	return retroproto.EmotesSetDirection
 }
 
 func (m EmotesSetDirection) Serialized() (string, error) {

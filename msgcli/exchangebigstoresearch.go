@@ -5,18 +5,18 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeBigStoreSearch struct {
-	ItemType   d1typ.ItemType
+	ItemType   retrotyp.ItemType
 	TemplateId int
 }
 
-func (m ExchangeBigStoreSearch) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeBigStoreSearch
+func (m ExchangeBigStoreSearch) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeBigStoreSearch
 }
 
 func (m ExchangeBigStoreSearch) Serialized() (string, error) {
@@ -26,14 +26,14 @@ func (m ExchangeBigStoreSearch) Serialized() (string, error) {
 func (m *ExchangeBigStoreSearch) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	itemType, err := strconv.ParseInt(sli[0], 10, 32)
 	if err != nil {
 		return err
 	}
-	m.ItemType = d1typ.ItemType(itemType)
+	m.ItemType = retrotyp.ItemType(itemType)
 
 	templateId, err := strconv.ParseInt(sli[1], 10, 32)
 	if err != nil {

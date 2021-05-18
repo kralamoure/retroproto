@@ -5,20 +5,20 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1"
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ItemsItemSetAdd struct {
 	Id                int
 	ItemsTemplatesIds []int
-	Effects           []d1typ.Effect
+	Effects           []retrotyp.Effect
 }
 
-func (m ItemsItemSetAdd) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.ItemsItemSetAdd
+func (m ItemsItemSetAdd) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.ItemsItemSetAdd
 }
 
 func (m ItemsItemSetAdd) Serialized() (string, error) {
@@ -27,13 +27,13 @@ func (m ItemsItemSetAdd) Serialized() (string, error) {
 		itemsTemplatesIds[i] = fmt.Sprintf("%d", v)
 	}
 
-	return fmt.Sprintf("%d|%s|%s", m.Id, strings.Join(itemsTemplatesIds, ";"), strings.Join(d1.EncodeItemEffects(m.Effects), ",")), nil
+	return fmt.Sprintf("%d|%s|%s", m.Id, strings.Join(itemsTemplatesIds, ";"), strings.Join(retro.EncodeItemEffects(m.Effects), ",")), nil
 }
 
 func (m *ItemsItemSetAdd) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 3 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {
@@ -57,7 +57,7 @@ func (m *ItemsItemSetAdd) Deserialize(extra string) error {
 	}
 
 	effectsStr := sli[2]
-	effects, err := d1.DecodeItemEffects(strings.Split(effectsStr, ","))
+	effects, err := retro.DecodeItemEffects(strings.Split(effectsStr, ","))
 	if err != nil {
 		return err
 	}

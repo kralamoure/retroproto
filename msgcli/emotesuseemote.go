@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type EmotesUseEmote struct{}
 
-func (m EmotesUseEmote) ProtocolId() d1proto.MsgCliId {
-	return d1proto.EmotesUseEmote
+func (m EmotesUseEmote) ProtocolId() retroproto.MsgCliId {
+	return retroproto.EmotesUseEmote
 }
 
 func (m EmotesUseEmote) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *EmotesUseEmote) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

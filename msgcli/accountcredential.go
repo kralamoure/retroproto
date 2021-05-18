@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountCredential struct {
@@ -14,8 +14,8 @@ type AccountCredential struct {
 	CryptoMethod int
 }
 
-func (m AccountCredential) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountCredential
+func (m AccountCredential) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountCredential
 }
 
 func (m AccountCredential) Serialized() (string, error) {
@@ -26,17 +26,17 @@ func (m *AccountCredential) Deserialize(extra string) error {
 	sli := strings.Split(extra, "\n")
 
 	if len(sli) < 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	m.Username = sli[0]
 
 	if len(sli[1]) < 3 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli[1][0] != '#' {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	cryptoMethod := sli[1][1]

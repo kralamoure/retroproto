@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type SpellsMoveToUsed struct {
@@ -13,8 +13,8 @@ type SpellsMoveToUsed struct {
 	Position int
 }
 
-func (m SpellsMoveToUsed) ProtocolId() d1proto.MsgCliId {
-	return d1proto.SpellsMoveToUsed
+func (m SpellsMoveToUsed) ProtocolId() retroproto.MsgCliId {
+	return retroproto.SpellsMoveToUsed
 }
 
 func (m SpellsMoveToUsed) Serialized() (string, error) {
@@ -24,7 +24,7 @@ func (m SpellsMoveToUsed) Serialized() (string, error) {
 func (m *SpellsMoveToUsed) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) != 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	id, err := strconv.ParseInt(sli[0], 10, 32)

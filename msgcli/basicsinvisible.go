@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsInvisible struct{}
 
-func (m BasicsInvisible) ProtocolId() d1proto.MsgCliId {
-	return d1proto.BasicsInvisible
+func (m BasicsInvisible) ProtocolId() retroproto.MsgCliId {
+	return retroproto.BasicsInvisible
 }
 
 func (m BasicsInvisible) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *BasicsInvisible) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

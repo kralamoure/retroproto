@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type CommonResistances struct {
@@ -30,7 +30,7 @@ func (m CommonResistances) Serialized() (string, error) {
 func (m *CommonResistances) Deserialize(extra string) error {
 	sli := strings.Split(extra, ";")
 	if len(sli) < 7 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

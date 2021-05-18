@@ -1,15 +1,15 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type FriendsNotifyChange struct {
 	Notify bool
 }
 
-func (m FriendsNotifyChange) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.FriendsNotifyChange
+func (m FriendsNotifyChange) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.FriendsNotifyChange
 }
 
 func (m FriendsNotifyChange) Serialized() (string, error) {

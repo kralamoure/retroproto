@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameRequestLeave struct{}
 
-func (m GameRequestLeave) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GameRequestLeave
+func (m GameRequestLeave) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GameRequestLeave
 }
 
 func (m GameRequestLeave) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameRequestLeave) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

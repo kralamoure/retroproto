@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/enum"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/enum"
+	"github.com/kralamoure/retroproto/typ"
 )
 
 type GameActionsSendActions struct {
@@ -34,17 +34,17 @@ type GameActionsSendActionsActionChallengeRefuse struct {
 	ChallengerId int
 }
 
-func (m GameActionsSendActions) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GameActionsSendActions
+func (m GameActionsSendActions) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GameActionsSendActions
 }
 
 func (m GameActionsSendActions) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameActionsSendActions) Deserialize(extra string) error {
 	if len(extra) < 3 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	actionType := extra[:3]
@@ -59,7 +59,7 @@ func (m *GameActionsSendActions) Deserialize(extra string) error {
 	switch m.ActionType {
 	case enum.GameActionType.Movement:
 		if extra == "" || len(extra)%3 != 0 {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		for i := 0; i < len(extra); i += 3 {
@@ -74,7 +74,7 @@ func (m *GameActionsSendActions) Deserialize(extra string) error {
 		}
 	case enum.GameActionType.Challenge:
 		if extra == "" {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		id, err := strconv.ParseInt(extra, 10, 32)
@@ -84,7 +84,7 @@ func (m *GameActionsSendActions) Deserialize(extra string) error {
 		m.ActionChallenge.ChallengedId = int(id)
 	case enum.GameActionType.ChallengeAccept:
 		if extra == "" {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		id, err := strconv.ParseInt(extra, 10, 32)
@@ -94,7 +94,7 @@ func (m *GameActionsSendActions) Deserialize(extra string) error {
 		m.ActionChallengeAccept.ChallengerId = int(id)
 	case enum.GameActionType.ChallengeRefuse:
 		if extra == "" {
-			return d1proto.ErrInvalidMsg
+			return retroproto.ErrInvalidMsg
 		}
 
 		id, err := strconv.ParseInt(extra, 10, 32)
@@ -103,7 +103,7 @@ func (m *GameActionsSendActions) Deserialize(extra string) error {
 		}
 		m.ActionChallengeRefuse.ChallengerId = int(id)
 	default:
-		return d1proto.ErrNotImplemented
+		return retroproto.ErrNotImplemented
 	}
 
 	return nil

@@ -5,17 +5,17 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
-	"github.com/kralamoure/d1proto/typ"
+	"github.com/kralamoure/retroproto"
+	"github.com/kralamoure/retroproto/typ"
 )
 
 type AccountCharacterSelectedSuccess struct {
 	Id      int
 	Name    string
 	Level   int
-	ClassId d1typ.ClassId // "guild" in client sources, but it's actually class
+	ClassId retrotyp.ClassId // "guild" in client sources, but it's actually class
 	Sex     int
 	GFXId   int
 	Color1  string
@@ -24,8 +24,8 @@ type AccountCharacterSelectedSuccess struct {
 	Items   []typ.AccountCharacterSelectedSuccessItem
 }
 
-func (m AccountCharacterSelectedSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountCharacterSelectedSuccess
+func (m AccountCharacterSelectedSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountCharacterSelectedSuccess
 }
 
 func (m AccountCharacterSelectedSuccess) Serialized() (string, error) {
@@ -45,7 +45,7 @@ func (m AccountCharacterSelectedSuccess) Serialized() (string, error) {
 func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
 	if len(sli) < 10 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {
@@ -71,7 +71,7 @@ func (m *AccountCharacterSelectedSuccess) Deserialize(extra string) error {
 		if err != nil {
 			return err
 		}
-		m.ClassId = d1typ.ClassId(classId)
+		m.ClassId = retrotyp.ClassId(classId)
 	}
 
 	if sli[4] != "" {

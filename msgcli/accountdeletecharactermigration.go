@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountDeleteCharacterMigration struct{}
 
-func (m AccountDeleteCharacterMigration) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountDeleteCharacterMigration
+func (m AccountDeleteCharacterMigration) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountDeleteCharacterMigration
 }
 
 func (m AccountDeleteCharacterMigration) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *AccountDeleteCharacterMigration) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeKillMount struct{}
 
-func (m ExchangeKillMount) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeKillMount
+func (m ExchangeKillMount) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeKillMount
 }
 
 func (m ExchangeKillMount) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeKillMount) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

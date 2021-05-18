@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameFightChallenge struct{}
 
-func (m GameFightChallenge) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GameFightChallenge
+func (m GameFightChallenge) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GameFightChallenge
 }
 
 func (m GameFightChallenge) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameFightChallenge) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

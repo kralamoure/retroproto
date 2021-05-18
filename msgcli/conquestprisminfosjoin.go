@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ConquestPrismInfosJoin struct{}
 
-func (m ConquestPrismInfosJoin) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ConquestPrismInfosJoin
+func (m ConquestPrismInfosJoin) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ConquestPrismInfosJoin
 }
 
 func (m ConquestPrismInfosJoin) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ConquestPrismInfosJoin) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

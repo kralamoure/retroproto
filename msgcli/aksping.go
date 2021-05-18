@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AksPing struct{}
 
-func (m AksPing) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AksPing
+func (m AksPing) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AksPing
 }
 
 func (m AksPing) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *AksPing) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

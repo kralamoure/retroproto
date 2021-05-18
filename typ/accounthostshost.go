@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountHostsHost struct {
@@ -27,7 +27,7 @@ func (m AccountHostsHost) Serialized() (string, error) {
 func (m *AccountHostsHost) Deserialize(extra string) error {
 	sli := strings.Split(extra, ";")
 	if len(sli) < 4 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	if sli[0] != "" {

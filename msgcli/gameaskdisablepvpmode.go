@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GameAskDisablePVPMode struct{}
 
-func (m GameAskDisablePVPMode) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GameAskDisablePVPMode
+func (m GameAskDisablePVPMode) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GameAskDisablePVPMode
 }
 
 func (m GameAskDisablePVPMode) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GameAskDisablePVPMode) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

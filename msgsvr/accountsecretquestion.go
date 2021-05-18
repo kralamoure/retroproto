@@ -3,15 +3,15 @@ package msgsvr
 import (
 	"net/url"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountSecretQuestion struct {
 	Value string
 }
 
-func (m AccountSecretQuestion) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountSecretQuestion
+func (m AccountSecretQuestion) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountSecretQuestion
 }
 
 func (m AccountSecretQuestion) Serialized() (string, error) {

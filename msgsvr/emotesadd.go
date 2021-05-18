@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type EmotesAdd struct{}
 
-func (m EmotesAdd) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.EmotesAdd
+func (m EmotesAdd) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.EmotesAdd
 }
 
 func (m EmotesAdd) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *EmotesAdd) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

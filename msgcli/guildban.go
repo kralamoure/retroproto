@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GuildBan struct{}
 
-func (m GuildBan) ProtocolId() d1proto.MsgCliId {
-	return d1proto.GuildBan
+func (m GuildBan) ProtocolId() retroproto.MsgCliId {
+	return retroproto.GuildBan
 }
 
 func (m GuildBan) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GuildBan) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

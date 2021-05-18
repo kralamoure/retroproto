@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type GuildInfosBoosts struct{}
 
-func (m GuildInfosBoosts) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.GuildInfosBoosts
+func (m GuildInfosBoosts) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.GuildInfosBoosts
 }
 
 func (m GuildInfosBoosts) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *GuildInfosBoosts) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

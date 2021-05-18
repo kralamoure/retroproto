@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsAuthorizedKickCommand struct{}
 
-func (m BasicsAuthorizedKickCommand) ProtocolId() d1proto.MsgCliId {
-	return d1proto.BasicsAuthorizedKickCommand
+func (m BasicsAuthorizedKickCommand) ProtocolId() retroproto.MsgCliId {
+	return retroproto.BasicsAuthorizedKickCommand
 }
 
 func (m BasicsAuthorizedKickCommand) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *BasicsAuthorizedKickCommand) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

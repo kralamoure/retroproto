@@ -3,15 +3,15 @@ package msgcli
 import (
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ChatRequestSubscribeChannelRemove struct {
 	Channels []rune
 }
 
-func (m ChatRequestSubscribeChannelRemove) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ChatRequestSubscribeChannelRemove
+func (m ChatRequestSubscribeChannelRemove) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ChatRequestSubscribeChannelRemove
 }
 
 func (m ChatRequestSubscribeChannelRemove) Serialized() (string, error) {

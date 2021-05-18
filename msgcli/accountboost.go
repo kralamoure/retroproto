@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1/d1typ"
+	"github.com/kralamoure/retro/retrotyp"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountBoost struct {
-	CharacteristicId d1typ.CharacteristicId
+	CharacteristicId retrotyp.CharacteristicId
 }
 
-func (m AccountBoost) ProtocolId() d1proto.MsgCliId {
-	return d1proto.AccountBoost
+func (m AccountBoost) ProtocolId() retroproto.MsgCliId {
+	return retroproto.AccountBoost
 }
 
 func (m AccountBoost) Serialized() (string, error) {
@@ -26,7 +26,7 @@ func (m *AccountBoost) Deserialize(extra string) error {
 	if err != nil {
 		return err
 	}
-	m.CharacteristicId = d1typ.CharacteristicId(characteristicId)
+	m.CharacteristicId = retrotyp.CharacteristicId(characteristicId)
 
 	return nil
 }

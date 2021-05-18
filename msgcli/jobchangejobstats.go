@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type JobChangeJobStats struct{}
 
-func (m JobChangeJobStats) ProtocolId() d1proto.MsgCliId {
-	return d1proto.JobChangeJobStats
+func (m JobChangeJobStats) ProtocolId() retroproto.MsgCliId {
+	return retroproto.JobChangeJobStats
 }
 
 func (m JobChangeJobStats) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *JobChangeJobStats) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

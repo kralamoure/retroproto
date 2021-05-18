@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountQueue struct {
 	Position int
 }
 
-func (m AccountQueue) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountQueue
+func (m AccountQueue) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountQueue
 }
 
 func (m AccountQueue) Serialized() (string, error) {
@@ -21,7 +21,7 @@ func (m AccountQueue) Serialized() (string, error) {
 
 func (m *AccountQueue) Deserialize(extra string) error {
 	if len(extra) < 1 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	position, err := strconv.ParseInt(extra, 10, 32)

@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsFileCheckAnswer struct{}
 
-func (m BasicsFileCheckAnswer) ProtocolId() d1proto.MsgCliId {
-	return d1proto.BasicsFileCheckAnswer
+func (m BasicsFileCheckAnswer) ProtocolId() retroproto.MsgCliId {
+	return retroproto.BasicsFileCheckAnswer
 }
 
 func (m BasicsFileCheckAnswer) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *BasicsFileCheckAnswer) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

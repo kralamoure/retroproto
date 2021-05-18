@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountKey struct{}
 
-func (m AccountKey) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountKey
+func (m AccountKey) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountKey
 }
 
 func (m AccountKey) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *AccountKey) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

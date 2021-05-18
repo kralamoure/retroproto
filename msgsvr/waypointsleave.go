@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type WaypointsLeave struct{}
 
-func (m WaypointsLeave) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.WaypointsLeave
+func (m WaypointsLeave) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.WaypointsLeave
 }
 
 func (m WaypointsLeave) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *WaypointsLeave) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

@@ -2,19 +2,19 @@
 package msgsvr
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type BasicsAuthorizedCommandSuccess struct{}
 
-func (m BasicsAuthorizedCommandSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.BasicsAuthorizedCommandSuccess
+func (m BasicsAuthorizedCommandSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.BasicsAuthorizedCommandSuccess
 }
 
 func (m BasicsAuthorizedCommandSuccess) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *BasicsAuthorizedCommandSuccess) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }

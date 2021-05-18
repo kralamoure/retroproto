@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type AccountSelectServerPlainSuccess struct {
@@ -13,8 +13,8 @@ type AccountSelectServerPlainSuccess struct {
 	Ticket string
 }
 
-func (m AccountSelectServerPlainSuccess) ProtocolId() d1proto.MsgSvrId {
-	return d1proto.AccountSelectServerPlainSuccess
+func (m AccountSelectServerPlainSuccess) ProtocolId() retroproto.MsgSvrId {
+	return retroproto.AccountSelectServerPlainSuccess
 }
 
 func (m AccountSelectServerPlainSuccess) Serialized() (string, error) {
@@ -23,12 +23,12 @@ func (m AccountSelectServerPlainSuccess) Serialized() (string, error) {
 
 func (m *AccountSelectServerPlainSuccess) Deserialize(extra string) error {
 	if extra == "" {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	data := strings.Split(extra, ";")
 	if len(data) != 2 {
-		return d1proto.ErrInvalidMsg
+		return retroproto.ErrInvalidMsg
 	}
 
 	addr := strings.Split(data[0], ":")

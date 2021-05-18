@@ -2,19 +2,19 @@
 package msgcli
 
 import (
-	"github.com/kralamoure/d1proto"
+	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeGetCrafterForJob struct{}
 
-func (m ExchangeGetCrafterForJob) ProtocolId() d1proto.MsgCliId {
-	return d1proto.ExchangeGetCrafterForJob
+func (m ExchangeGetCrafterForJob) ProtocolId() retroproto.MsgCliId {
+	return retroproto.ExchangeGetCrafterForJob
 }
 
 func (m ExchangeGetCrafterForJob) Serialized() (string, error) {
-	return "", d1proto.ErrNotImplemented
+	return "", retroproto.ErrNotImplemented
 }
 
 func (m *ExchangeGetCrafterForJob) Deserialize(extra string) error {
-	return d1proto.ErrNotImplemented
+	return retroproto.ErrNotImplemented
 }
