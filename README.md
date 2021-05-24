@@ -1,7 +1,7 @@
 # retroproto
 
-`retroproto` is a library that implements the network protocol of Dofus Retro, for communication between server and
-client. It defines the id and structure of the protocol messages, and it provides functionality for their serialization
+`retroproto` is a library that implements the network protocol of Dofus Retro, for the communication between client and
+server. It defines the id and structure of the protocol messages, and it provides functionality for their serialization
 and deserialization.
 
 ## Requirements:
