@@ -3,6 +3,7 @@ package msgcli
 import (
 	"fmt"
 	"strconv"
+	"strings"
 
 	"github.com/kralamoure/retro/retrotyp"
 
@@ -11,6 +12,7 @@ import (
 
 type AccountBoost struct {
 	CharacteristicId retrotyp.CharacteristicId
+	Amount           int
 }
 
 func (m AccountBoost) ProtocolId() retroproto.MsgCliId {
@@ -18,15 +20,27 @@ func (m AccountBoost) ProtocolId() retroproto.MsgCliId {
 }
 
 func (m AccountBoost) Serialized() (string, error) {
-	return fmt.Sprintf("%d", m.CharacteristicId), nil
+	return fmt.Sprintf("%d|%d", m.CharacteristicId, m.Amount), nil
 }
 
 func (m *AccountBoost) Deserialize(extra string) error {
-	characteristicId, err := strconv.ParseInt(extra, 10, 32)
+	sli := strings.Split(extra, "|")
+
+	characteristicId, err := strconv.ParseInt(sli[0], 10, 32)
 	if err != nil {
 		return err
 	}
 	m.CharacteristicId = retrotyp.CharacteristicId(characteristicId)
+
+	if len(sli) >= 2 {
+		amount, err := strconv.ParseInt(sli[1], 10, 32)
+		if err != nil {
+			return err
+		}
+		m.Amount = int(amount)
+	} else {
+		m.Amount = 1
+	}
 
 	return nil
 }
