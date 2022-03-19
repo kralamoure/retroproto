@@ -1,6 +1,6 @@
 module github.com/kralamoure/retroproto
 
-go 1.16
+go 1.18
 
 require (
 	github.com/kralamoure/dofus v0.0.0-20210518144341-d3028d888930
