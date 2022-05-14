@@ -1,12 +1,24 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 	"github.com/kralamoure/retroproto/enum"
 )
 
 type ExchangeRequestError struct {
 	Reason rune
+}
+
+func NewExchangeRequestError(extra string) (ExchangeRequestError, error) {
+	var m ExchangeRequestError
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeRequestError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m ExchangeRequestError) MessageId() retroproto.MsgSvrId {

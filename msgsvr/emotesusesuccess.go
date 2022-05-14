@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type EmotesUseSuccess struct{}
+
+func NewEmotesUseSuccess(extra string) (EmotesUseSuccess, error) {
+	var m EmotesUseSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return EmotesUseSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m EmotesUseSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesUseSuccess

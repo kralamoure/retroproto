@@ -10,6 +10,16 @@ type AccountSearchForFriend struct {
 	Pseudo string
 }
 
+func NewAccountSearchForFriend(extra string) (AccountSearchForFriend, error) {
+	var m AccountSearchForFriend
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountSearchForFriend{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountSearchForFriend) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSearchForFriend
 }

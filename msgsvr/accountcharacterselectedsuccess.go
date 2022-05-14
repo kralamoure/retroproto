@@ -24,6 +24,16 @@ type AccountCharacterSelectedSuccess struct {
 	Items   []typ.AccountCharacterSelectedSuccessItem
 }
 
+func NewAccountCharacterSelectedSuccess(extra string) (AccountCharacterSelectedSuccess, error) {
+	var m AccountCharacterSelectedSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountCharacterSelectedSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountCharacterSelectedSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterSelectedSuccess
 }

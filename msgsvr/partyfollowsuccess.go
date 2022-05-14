@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type PartyFollowSuccess struct{}
+
+func NewPartyFollowSuccess(extra string) (PartyFollowSuccess, error) {
+	var m PartyFollowSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return PartyFollowSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m PartyFollowSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.PartyFollowSuccess

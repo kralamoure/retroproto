@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GameEnabledPVPMode struct{}
+
+func NewGameEnabledPVPMode(extra string) (GameEnabledPVPMode, error) {
+	var m GameEnabledPVPMode
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameEnabledPVPMode{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GameEnabledPVPMode) MessageId() retroproto.MsgCliId {
 	return retroproto.GameEnabledPVPMode

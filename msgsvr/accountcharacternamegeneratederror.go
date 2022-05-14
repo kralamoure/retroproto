@@ -11,6 +11,16 @@ type AccountCharacterNameGeneratedError struct {
 	Reason int
 }
 
+func NewAccountCharacterNameGeneratedError(extra string) (AccountCharacterNameGeneratedError, error) {
+	var m AccountCharacterNameGeneratedError
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountCharacterNameGeneratedError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountCharacterNameGeneratedError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterNameGeneratedError
 }

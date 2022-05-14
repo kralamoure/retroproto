@@ -19,6 +19,16 @@ type ChatMessageSuccess struct {
 	Params      string // TODO
 }
 
+func NewChatMessageSuccess(extra string) (ChatMessageSuccess, error) {
+	var m ChatMessageSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return ChatMessageSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ChatMessageSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ChatMessageSuccess
 }

@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type FightsBlockSpectators struct{}
+
+func NewFightsBlockSpectators(extra string) (FightsBlockSpectators, error) {
+	var m FightsBlockSpectators
+
+	if err := m.Deserialize(extra); err != nil {
+		return FightsBlockSpectators{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m FightsBlockSpectators) MessageId() retroproto.MsgCliId {
 	return retroproto.FightsBlockSpectators

@@ -1,6 +1,7 @@
 package msgsvr
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/kralamoure/retroproto"
@@ -8,6 +9,16 @@ import (
 
 type ChatSubscribeChannelAdd struct {
 	Channels []rune
+}
+
+func NewChatSubscribeChannelAdd(extra string) (ChatSubscribeChannelAdd, error) {
+	var m ChatSubscribeChannelAdd
+
+	if err := m.Deserialize(extra); err != nil {
+		return ChatSubscribeChannelAdd{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m ChatSubscribeChannelAdd) MessageId() retroproto.MsgSvrId {

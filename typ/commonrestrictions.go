@@ -1,6 +1,7 @@
 package typ
 
 import (
+	"fmt"
 	"strconv"
 
 	"github.com/kralamoure/retroproto"
@@ -21,6 +22,16 @@ type CommonRestrictions struct {
 	CantMoveInAllDirections              bool
 	CantAttackMonstersAnywhereWhenMutant bool
 	CantInteractWithPrism                bool
+}
+
+func NewCommonRestrictions(extra string) (CommonRestrictions, error) {
+	var m CommonRestrictions
+
+	if err := m.Deserialize(extra); err != nil {
+		return CommonRestrictions{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m CommonRestrictions) Serialized() (string, error) {

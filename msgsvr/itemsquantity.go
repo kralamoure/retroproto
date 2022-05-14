@@ -13,6 +13,16 @@ type ItemsQuantity struct {
 	Quantity int
 }
 
+func NewItemsQuantity(extra string) (ItemsQuantity, error) {
+	var m ItemsQuantity
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsQuantity{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsQuantity) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsQuantity
 }

@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type HousesCreate struct{}
+
+func NewHousesCreate(extra string) (HousesCreate, error) {
+	var m HousesCreate
+
+	if err := m.Deserialize(extra); err != nil {
+		return HousesCreate{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m HousesCreate) MessageId() retroproto.MsgSvrId {
 	return retroproto.HousesCreate

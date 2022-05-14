@@ -16,6 +16,16 @@ type AccountNewQueue struct {
 	QueueId     int
 }
 
+func NewAccountNewQueue(extra string) (AccountNewQueue, error) {
+	var m AccountNewQueue
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountNewQueue{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountNewQueue) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountNewQueue
 }

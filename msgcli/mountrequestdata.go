@@ -14,6 +14,16 @@ type MountRequestData struct {
 	Validity time.Time
 }
 
+func NewMountRequestData(extra string) (MountRequestData, error) {
+	var m MountRequestData
+
+	if err := m.Deserialize(extra); err != nil {
+		return MountRequestData{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m MountRequestData) MessageId() retroproto.MsgCliId {
 	return retroproto.MountRequestData
 }

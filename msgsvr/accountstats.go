@@ -33,6 +33,16 @@ type AccountStats struct {
 	Characteristics  map[retrotyp.CharacteristicId]retrotyp.Characteristic
 }
 
+func NewAccountStats(extra string) (AccountStats, error) {
+	var m AccountStats
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountStats{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountStats) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountStats
 }

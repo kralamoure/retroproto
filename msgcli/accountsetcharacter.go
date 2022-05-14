@@ -11,6 +11,16 @@ type AccountSetCharacter struct {
 	Id int
 }
 
+func NewAccountSetCharacter(extra string) (AccountSetCharacter, error) {
+	var m AccountSetCharacter
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountSetCharacter{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountSetCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSetCharacter
 }

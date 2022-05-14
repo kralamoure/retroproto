@@ -1,6 +1,8 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 	"github.com/kralamoure/retroproto/typ"
 )
@@ -8,6 +10,16 @@ import (
 type ExchangeMountStorageAdd struct {
 	Data    typ.CommonMountData
 	NewBorn bool
+}
+
+func NewExchangeMountStorageAdd(extra string) (ExchangeMountStorageAdd, error) {
+	var m ExchangeMountStorageAdd
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeMountStorageAdd{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m ExchangeMountStorageAdd) MessageId() retroproto.MsgSvrId {

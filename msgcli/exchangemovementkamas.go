@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeMovementKamas struct{}
+
+func NewExchangeMovementKamas(extra string) (ExchangeMovementKamas, error) {
+	var m ExchangeMovementKamas
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeMovementKamas{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ExchangeMovementKamas) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeMovementKamas

@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type FriendsSetNotifyWhenConnect struct{}
+
+func NewFriendsSetNotifyWhenConnect(extra string) (FriendsSetNotifyWhenConnect, error) {
+	var m FriendsSetNotifyWhenConnect
+
+	if err := m.Deserialize(extra); err != nil {
+		return FriendsSetNotifyWhenConnect{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m FriendsSetNotifyWhenConnect) MessageId() retroproto.MsgCliId {
 	return retroproto.FriendsSetNotifyWhenConnect

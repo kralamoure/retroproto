@@ -18,6 +18,16 @@ type CommonResistances struct {
 	DodgeMP           int
 }
 
+func NewCommonResistances(extra string) (CommonResistances, error) {
+	var m CommonResistances
+
+	if err := m.Deserialize(extra); err != nil {
+		return CommonResistances{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m CommonResistances) Serialized() (string, error) {
 	resistances := fmt.Sprintf("%d;%d;%d;%d;%d;%d;%d",
 		m.ResistanceNeutral, m.ResistanceEarth, m.ResistanceWater, m.ResistanceAir, m.ResistanceFire,

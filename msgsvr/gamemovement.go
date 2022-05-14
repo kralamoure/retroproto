@@ -237,6 +237,16 @@ type GameMovementGFXData struct {
 	GFXs  []string
 }
 
+func NewGameMovement(extra string) (GameMovement, error) {
+	var m GameMovement
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameMovement{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m GameMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMovement
 }

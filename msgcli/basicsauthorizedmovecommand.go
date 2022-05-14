@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type BasicsAuthorizedMoveCommand struct{}
+
+func NewBasicsAuthorizedMoveCommand(extra string) (BasicsAuthorizedMoveCommand, error) {
+	var m BasicsAuthorizedMoveCommand
+
+	if err := m.Deserialize(extra); err != nil {
+		return BasicsAuthorizedMoveCommand{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m BasicsAuthorizedMoveCommand) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsAuthorizedMoveCommand

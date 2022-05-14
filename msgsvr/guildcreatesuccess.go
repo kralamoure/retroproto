@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GuildCreateSuccess struct{}
+
+func NewGuildCreateSuccess(extra string) (GuildCreateSuccess, error) {
+	var m GuildCreateSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return GuildCreateSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GuildCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildCreateSuccess

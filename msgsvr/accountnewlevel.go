@@ -11,6 +11,16 @@ type AccountNewLevel struct {
 	Level int
 }
 
+func NewAccountNewLevel(extra string) (AccountNewLevel, error) {
+	var m AccountNewLevel
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountNewLevel{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountNewLevel) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountNewLevel
 }

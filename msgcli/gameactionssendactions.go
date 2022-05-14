@@ -2,6 +2,7 @@
 package msgcli
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -32,6 +33,16 @@ type GameActionsSendActionsActionChallengeAccept struct {
 
 type GameActionsSendActionsActionChallengeRefuse struct {
 	ChallengerId int
+}
+
+func NewGameActionsSendActions(extra string) (GameActionsSendActions, error) {
+	var m GameActionsSendActions
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameActionsSendActions{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m GameActionsSendActions) MessageId() retroproto.MsgCliId {

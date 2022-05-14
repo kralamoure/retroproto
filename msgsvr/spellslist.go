@@ -14,6 +14,16 @@ type SpellsList struct {
 	Spells []retro.CharacterSpell
 }
 
+func NewSpellsList(extra string) (SpellsList, error) {
+	var m SpellsList
+
+	if err := m.Deserialize(extra); err != nil {
+		return SpellsList{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m SpellsList) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsList
 }

@@ -1,11 +1,23 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ItemsAddError struct {
 	Reason rune
+}
+
+func NewItemsAddError(extra string) (ItemsAddError, error) {
+	var m ItemsAddError
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsAddError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m ItemsAddError) MessageId() retroproto.MsgSvrId {

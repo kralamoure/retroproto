@@ -14,6 +14,16 @@ type BasicsDate struct {
 	Day   int
 }
 
+func NewBasicsDate(extra string) (BasicsDate, error) {
+	var m BasicsDate
+
+	if err := m.Deserialize(extra); err != nil {
+		return BasicsDate{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m BasicsDate) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsDate
 }

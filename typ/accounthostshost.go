@@ -15,6 +15,16 @@ type AccountHostsHost struct {
 	CanLog     bool
 }
 
+func NewAccountHostsHost(extra string) (AccountHostsHost, error) {
+	var m AccountHostsHost
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountHostsHost{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountHostsHost) Serialized() (string, error) {
 	var canLog int
 	if m.CanLog {

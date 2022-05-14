@@ -11,6 +11,16 @@ type DialogCreateSuccess struct {
 	NPCId int
 }
 
+func NewDialogCreateSuccess(extra string) (DialogCreateSuccess, error) {
+	var m DialogCreateSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return DialogCreateSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m DialogCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogCreateSuccess
 }

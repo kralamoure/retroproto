@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type BasicsAuthorizedCommandClear struct{}
+
+func NewBasicsAuthorizedCommandClear(extra string) (BasicsAuthorizedCommandClear, error) {
+	var m BasicsAuthorizedCommandClear
+
+	if err := m.Deserialize(extra); err != nil {
+		return BasicsAuthorizedCommandClear{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m BasicsAuthorizedCommandClear) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsAuthorizedCommandClear

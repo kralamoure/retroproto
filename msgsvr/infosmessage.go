@@ -14,6 +14,16 @@ type InfosMessage struct {
 	Messages []typ.InfosMessageMessage
 }
 
+func NewInfosMessage(extra string) (InfosMessage, error) {
+	var m InfosMessage
+
+	if err := m.Deserialize(extra); err != nil {
+		return InfosMessage{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m InfosMessage) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosMessage
 }

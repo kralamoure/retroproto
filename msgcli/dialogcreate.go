@@ -11,6 +11,16 @@ type DialogCreate struct {
 	NPCId int
 }
 
+func NewDialogCreate(extra string) (DialogCreate, error) {
+	var m DialogCreate
+
+	if err := m.Deserialize(extra); err != nil {
+		return DialogCreate{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m DialogCreate) MessageId() retroproto.MsgCliId {
 	return retroproto.DialogCreate
 }

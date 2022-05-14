@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeRequestAskOfflineExchange struct{}
+
+func NewExchangeRequestAskOfflineExchange(extra string) (ExchangeRequestAskOfflineExchange, error) {
+	var m ExchangeRequestAskOfflineExchange
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeRequestAskOfflineExchange{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ExchangeRequestAskOfflineExchange) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeRequestAskOfflineExchange

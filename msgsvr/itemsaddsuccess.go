@@ -30,6 +30,16 @@ type ItemsAddSuccessItemObject struct {
 	Effects    []retrotyp.Effect
 }
 
+func NewItemsAddSuccess(extra string) (ItemsAddSuccess, error) {
+	var m ItemsAddSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsAddSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsAddSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsAddSuccess
 }

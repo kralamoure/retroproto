@@ -11,6 +11,16 @@ type ExchangeGetItemMiddlePriceInBigStore struct {
 	TemplateId int
 }
 
+func NewExchangeGetItemMiddlePriceInBigStore(extra string) (ExchangeGetItemMiddlePriceInBigStore, error) {
+	var m ExchangeGetItemMiddlePriceInBigStore
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeGetItemMiddlePriceInBigStore{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangeGetItemMiddlePriceInBigStore) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeGetItemMiddlePriceInBigStore
 }

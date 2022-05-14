@@ -12,6 +12,16 @@ type GameCreate struct {
 	Type int
 }
 
+func NewGameCreate(extra string) (GameCreate, error) {
+	var m GameCreate
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameCreate{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m GameCreate) MessageId() retroproto.MsgCliId {
 	return retroproto.GameCreate
 }

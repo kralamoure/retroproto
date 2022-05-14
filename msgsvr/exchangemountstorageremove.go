@@ -11,6 +11,16 @@ type ExchangeMountStorageRemove struct {
 	MountId int
 }
 
+func NewExchangeMountStorageRemove(extra string) (ExchangeMountStorageRemove, error) {
+	var m ExchangeMountStorageRemove
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeMountStorageRemove{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangeMountStorageRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeMountStorageRemove
 }

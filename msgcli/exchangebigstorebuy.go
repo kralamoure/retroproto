@@ -14,6 +14,16 @@ type ExchangeBigStoreBuy struct {
 	Price         int
 }
 
+func NewExchangeBigStoreBuy(extra string) (ExchangeBigStoreBuy, error) {
+	var m ExchangeBigStoreBuy
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeBigStoreBuy{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangeBigStoreBuy) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeBigStoreBuy
 }

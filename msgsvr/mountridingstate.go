@@ -1,11 +1,23 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type MountRidingState struct {
 	Riding bool
+}
+
+func NewMountRidingState(extra string) (MountRidingState, error) {
+	var m MountRidingState
+
+	if err := m.Deserialize(extra); err != nil {
+		return MountRidingState{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m MountRidingState) MessageId() retroproto.MsgSvrId {

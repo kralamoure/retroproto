@@ -1,10 +1,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type DialogPause struct{}
+
+func NewDialogPause(extra string) (DialogPause, error) {
+	var m DialogPause
+
+	if err := m.Deserialize(extra); err != nil {
+		return DialogPause{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m DialogPause) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogPause

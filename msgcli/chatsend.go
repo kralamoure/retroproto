@@ -17,6 +17,16 @@ type ChatSend struct {
 	Params          string // TODO
 }
 
+func NewChatSend(extra string) (ChatSend, error) {
+	var m ChatSend
+
+	if err := m.Deserialize(extra); err != nil {
+		return ChatSend{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ChatSend) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatSend
 }

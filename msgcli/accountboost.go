@@ -15,6 +15,16 @@ type AccountBoost struct {
 	Amount           int
 }
 
+func NewAccountBoost(extra string) (AccountBoost, error) {
+	var m AccountBoost
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountBoost{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountBoost) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountBoost
 }

@@ -11,6 +11,16 @@ type BasicsSubscriberRestrictionAdd struct {
 	DialogId int
 }
 
+func NewBasicsSubscriberRestrictionAdd(extra string) (BasicsSubscriberRestrictionAdd, error) {
+	var m BasicsSubscriberRestrictionAdd
+
+	if err := m.Deserialize(extra); err != nil {
+		return BasicsSubscriberRestrictionAdd{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m BasicsSubscriberRestrictionAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsSubscriberRestrictionAdd
 }

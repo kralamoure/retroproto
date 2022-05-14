@@ -11,6 +11,16 @@ type ExchangePutInShedFromCertificate struct {
 	CertificateId int
 }
 
+func NewExchangePutInShedFromCertificate(extra string) (ExchangePutInShedFromCertificate, error) {
+	var m ExchangePutInShedFromCertificate
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangePutInShedFromCertificate{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangePutInShedFromCertificate) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangePutInShedFromCertificate
 }

@@ -12,6 +12,16 @@ type BasicsTime struct {
 	Value time.Time
 }
 
+func NewBasicsTime(extra string) (BasicsTime, error) {
+	var m BasicsTime
+
+	if err := m.Deserialize(extra); err != nil {
+		return BasicsTime{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m BasicsTime) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsTime
 }

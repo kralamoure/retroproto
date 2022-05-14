@@ -13,6 +13,16 @@ type EmotesList struct {
 	Emotes []int
 }
 
+func NewEmotesList(extra string) (EmotesList, error) {
+	var m EmotesList
+
+	if err := m.Deserialize(extra); err != nil {
+		return EmotesList{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m EmotesList) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesList
 }

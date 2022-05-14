@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GameLeave struct{}
+
+func NewGameLeave(extra string) (GameLeave, error) {
+	var m GameLeave
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameLeave{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GameLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameLeave

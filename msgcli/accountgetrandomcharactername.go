@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AccountGetRandomCharacterName struct{}
+
+func NewAccountGetRandomCharacterName(extra string) (AccountGetRandomCharacterName, error) {
+	var m AccountGetRandomCharacterName
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountGetRandomCharacterName{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m AccountGetRandomCharacterName) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountGetRandomCharacterName

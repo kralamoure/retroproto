@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type FightsBlockJoinerExceptParty struct{}
+
+func NewFightsBlockJoinerExceptParty(extra string) (FightsBlockJoinerExceptParty, error) {
+	var m FightsBlockJoinerExceptParty
+
+	if err := m.Deserialize(extra); err != nil {
+		return FightsBlockJoinerExceptParty{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m FightsBlockJoinerExceptParty) MessageId() retroproto.MsgCliId {
 	return retroproto.FightsBlockJoinerExceptParty

@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AccountRequestRescue struct{}
+
+func NewAccountRequestRescue(extra string) (AccountRequestRescue, error) {
+	var m AccountRequestRescue
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountRequestRescue{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m AccountRequestRescue) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountRequestRescue

@@ -17,6 +17,16 @@ type ItemsItemSetAdd struct {
 	Effects           []retrotyp.Effect
 }
 
+func NewItemsItemSetAdd(extra string) (ItemsItemSetAdd, error) {
+	var m ItemsItemSetAdd
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsItemSetAdd{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsItemSetAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsItemSetAdd
 }

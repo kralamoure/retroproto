@@ -11,6 +11,16 @@ type AccountConfiguredPort struct {
 	Port int
 }
 
+func NewAccountConfiguredPort(extra string) (AccountConfiguredPort, error) {
+	var m AccountConfiguredPort
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountConfiguredPort{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountConfiguredPort) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountConfiguredPort
 }

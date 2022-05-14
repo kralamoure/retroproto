@@ -13,6 +13,16 @@ type SpellsMoveToUsed struct {
 	Position int
 }
 
+func NewSpellsMoveToUsed(extra string) (SpellsMoveToUsed, error) {
+	var m SpellsMoveToUsed
+
+	if err := m.Deserialize(extra); err != nil {
+		return SpellsMoveToUsed{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m SpellsMoveToUsed) MessageId() retroproto.MsgCliId {
 	return retroproto.SpellsMoveToUsed
 }

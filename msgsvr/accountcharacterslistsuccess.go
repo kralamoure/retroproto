@@ -16,6 +16,16 @@ type AccountCharactersListSuccess struct {
 	Characters      []typ.AccountCharactersListCharacter
 }
 
+func NewAccountCharactersListSuccess(extra string) (AccountCharactersListSuccess, error) {
+	var m AccountCharactersListSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountCharactersListSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountCharactersListSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharactersListSuccess
 }

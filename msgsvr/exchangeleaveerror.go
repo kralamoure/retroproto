@@ -1,10 +1,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeLeaveError struct{}
+
+func NewExchangeLeaveError(extra string) (ExchangeLeaveError, error) {
+	var m ExchangeLeaveError
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeLeaveError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ExchangeLeaveError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeLeaveError

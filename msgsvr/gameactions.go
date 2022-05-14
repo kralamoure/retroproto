@@ -50,6 +50,16 @@ type GameActionsActionChallengeJoin struct {
 	ErrorReason  rune
 }
 
+func NewGameActions(extra string) (GameActions, error) {
+	var m GameActions
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameActions{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m GameActions) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameActions
 }

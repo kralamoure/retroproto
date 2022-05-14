@@ -1,11 +1,23 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AksRPing struct {
 	Value string
+}
+
+func NewAksRPing(extra string) (AksRPing, error) {
+	var m AksRPing
+
+	if err := m.Deserialize(extra); err != nil {
+		return AksRPing{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m AksRPing) MessageId() retroproto.MsgSvrId {

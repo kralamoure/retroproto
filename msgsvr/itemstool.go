@@ -11,6 +11,16 @@ type ItemsTool struct {
 	JobId int
 }
 
+func NewItemsTool(extra string) (ItemsTool, error) {
+	var m ItemsTool
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsTool{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsTool) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsTool
 }

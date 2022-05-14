@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeList struct{}
+
+func NewExchangeList(extra string) (ExchangeList, error) {
+	var m ExchangeList
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeList{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ExchangeList) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeList

@@ -11,6 +11,16 @@ type SpellsForget struct {
 	Id int
 }
 
+func NewSpellsForget(extra string) (SpellsForget, error) {
+	var m SpellsForget
+
+	if err := m.Deserialize(extra); err != nil {
+		return SpellsForget{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m SpellsForget) MessageId() retroproto.MsgCliId {
 	return retroproto.SpellsForget
 }

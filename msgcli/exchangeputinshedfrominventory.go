@@ -11,6 +11,16 @@ type ExchangePutInShedFromInventory struct {
 	MountId int
 }
 
+func NewExchangePutInShedFromInventory(extra string) (ExchangePutInShedFromInventory, error) {
+	var m ExchangePutInShedFromInventory
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangePutInShedFromInventory{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangePutInShedFromInventory) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangePutInShedFromInventory
 }

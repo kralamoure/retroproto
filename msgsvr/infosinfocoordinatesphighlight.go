@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type InfosInfoCoordinatesPHighlight struct{}
+
+func NewInfosInfoCoordinatesPHighlight(extra string) (InfosInfoCoordinatesPHighlight, error) {
+	var m InfosInfoCoordinatesPHighlight
+
+	if err := m.Deserialize(extra); err != nil {
+		return InfosInfoCoordinatesPHighlight{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m InfosInfoCoordinatesPHighlight) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosInfoCoordinatesPHighlight

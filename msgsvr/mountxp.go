@@ -11,6 +11,16 @@ type MountXP struct {
 	Percent int
 }
 
+func NewMountXP(extra string) (MountXP, error) {
+	var m MountXP
+
+	if err := m.Deserialize(extra); err != nil {
+		return MountXP{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m MountXP) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountXP
 }

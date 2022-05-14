@@ -11,6 +11,16 @@ type ItemsRemove struct {
 	Id int
 }
 
+func NewItemsRemove(extra string) (ItemsRemove, error) {
+	var m ItemsRemove
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsRemove{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsRemove
 }

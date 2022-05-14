@@ -11,6 +11,16 @@ type GameActionAck struct {
 	Id int
 }
 
+func NewGameActionAck(extra string) (GameActionAck, error) {
+	var m GameActionAck
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameActionAck{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m GameActionAck) MessageId() retroproto.MsgCliId {
 	return retroproto.GameActionAck
 }

@@ -17,6 +17,16 @@ type AccountVersion struct {
 	Electron  bool
 }
 
+func NewAccountVersion(extra string) (AccountVersion, error) {
+	var m AccountVersion
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountVersion{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountVersion) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountVersion
 }

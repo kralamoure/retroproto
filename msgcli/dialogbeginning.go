@@ -11,6 +11,16 @@ type DialogBeginning struct {
 	NPCId int
 }
 
+func NewDialogBeginning(extra string) (DialogBeginning, error) {
+	var m DialogBeginning
+
+	if err := m.Deserialize(extra); err != nil {
+		return DialogBeginning{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m DialogBeginning) MessageId() retroproto.MsgCliId {
 	return retroproto.DialogBeginning
 }

@@ -11,6 +11,16 @@ type AccountUseKey struct {
 	Id int
 }
 
+func NewAccountUseKey(extra string) (AccountUseKey, error) {
+	var m AccountUseKey
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountUseKey{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountUseKey) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountUseKey
 }

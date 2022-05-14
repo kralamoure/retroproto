@@ -11,6 +11,16 @@ type GameMovementRemove struct {
 	Id int
 }
 
+func NewGameMovementRemove(extra string) (GameMovementRemove, error) {
+	var m GameMovementRemove
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameMovementRemove{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m GameMovementRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMovementRemove
 }

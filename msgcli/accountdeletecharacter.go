@@ -15,6 +15,16 @@ type AccountDeleteCharacter struct {
 	SecretAnswer string
 }
 
+func NewAccountDeleteCharacter(extra string) (AccountDeleteCharacter, error) {
+	var m AccountDeleteCharacter
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountDeleteCharacter{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountDeleteCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountDeleteCharacter
 }

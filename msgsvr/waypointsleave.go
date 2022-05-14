@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type WaypointsLeave struct{}
+
+func NewWaypointsLeave(extra string) (WaypointsLeave, error) {
+	var m WaypointsLeave
+
+	if err := m.Deserialize(extra); err != nil {
+		return WaypointsLeave{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m WaypointsLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.WaypointsLeave

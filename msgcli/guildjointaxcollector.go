@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GuildJoinTaxCollector struct{}
+
+func NewGuildJoinTaxCollector(extra string) (GuildJoinTaxCollector, error) {
+	var m GuildJoinTaxCollector
+
+	if err := m.Deserialize(extra); err != nil {
+		return GuildJoinTaxCollector{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GuildJoinTaxCollector) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildJoinTaxCollector

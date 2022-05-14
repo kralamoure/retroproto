@@ -1,10 +1,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type MountFree struct{}
+
+func NewMountFree(extra string) (MountFree, error) {
+	var m MountFree
+
+	if err := m.Deserialize(extra); err != nil {
+		return MountFree{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m MountFree) MessageId() retroproto.MsgCliId {
 	return retroproto.MountFree

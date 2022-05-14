@@ -14,6 +14,16 @@ type DialogQuestion struct {
 	Answers        []int
 }
 
+func NewDialogQuestion(extra string) (DialogQuestion, error) {
+	var m DialogQuestion
+
+	if err := m.Deserialize(extra); err != nil {
+		return DialogQuestion{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m DialogQuestion) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogQuestion
 }

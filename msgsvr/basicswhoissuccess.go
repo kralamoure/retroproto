@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type BasicsWhoIsSuccess struct{}
+
+func NewBasicsWhoIsSuccess(extra string) (BasicsWhoIsSuccess, error) {
+	var m BasicsWhoIsSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return BasicsWhoIsSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m BasicsWhoIsSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsWhoIsSuccess

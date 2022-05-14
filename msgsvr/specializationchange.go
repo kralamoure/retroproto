@@ -11,6 +11,16 @@ type SpecializationChange struct {
 	Value int
 }
 
+func NewSpecializationChange(extra string) (SpecializationChange, error) {
+	var m SpecializationChange
+
+	if err := m.Deserialize(extra); err != nil {
+		return SpecializationChange{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m SpecializationChange) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpecializationChange
 }

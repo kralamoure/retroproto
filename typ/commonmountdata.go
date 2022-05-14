@@ -44,6 +44,16 @@ type CommonMountData struct {
 	ReproductionsMax int
 }
 
+func NewCommonMountData(extra string) (CommonMountData, error) {
+	var m CommonMountData
+
+	if err := m.Deserialize(extra); err != nil {
+		return CommonMountData{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m CommonMountData) Serialized() (string, error) {
 	ancestors := make([]string, len(m.Ancestors))
 	for i := range m.Ancestors {

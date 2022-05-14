@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type DocumentsLeave struct{}
+
+func NewDocumentsLeave(extra string) (DocumentsLeave, error) {
+	var m DocumentsLeave
+
+	if err := m.Deserialize(extra); err != nil {
+		return DocumentsLeave{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m DocumentsLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.DocumentsLeave

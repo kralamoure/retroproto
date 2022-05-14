@@ -13,6 +13,16 @@ type ItemsDrop struct {
 	Quantity int
 }
 
+func NewItemsDrop(extra string) (ItemsDrop, error) {
+	var m ItemsDrop
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsDrop{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsDrop) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsDrop
 }

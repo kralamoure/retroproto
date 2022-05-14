@@ -13,6 +13,16 @@ type DialogResponse struct {
 	Answer   int
 }
 
+func NewDialogResponse(extra string) (DialogResponse, error) {
+	var m DialogResponse
+
+	if err := m.Deserialize(extra); err != nil {
+		return DialogResponse{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m DialogResponse) MessageId() retroproto.MsgCliId {
 	return retroproto.DialogResponse
 }

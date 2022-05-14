@@ -11,6 +11,16 @@ type EmotesSetDirection struct {
 	Dir int
 }
 
+func NewEmotesSetDirection(extra string) (EmotesSetDirection, error) {
+	var m EmotesSetDirection
+
+	if err := m.Deserialize(extra); err != nil {
+		return EmotesSetDirection{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m EmotesSetDirection) MessageId() retroproto.MsgCliId {
 	return retroproto.EmotesSetDirection
 }

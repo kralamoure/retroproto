@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GameTurnStart struct{}
+
+func NewGameTurnStart(extra string) (GameTurnStart, error) {
+	var m GameTurnStart
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameTurnStart{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GameTurnStart) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameTurnStart

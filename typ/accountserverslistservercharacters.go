@@ -13,6 +13,16 @@ type AccountServersListServerCharacters struct {
 	Qty int
 }
 
+func NewAccountServersListServerCharacters(extra string) (AccountServersListServerCharacters, error) {
+	var m AccountServersListServerCharacters
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountServersListServerCharacters{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountServersListServerCharacters) Serialized() (string, error) {
 	return fmt.Sprintf("%d,%d", m.Id, m.Qty), nil
 }

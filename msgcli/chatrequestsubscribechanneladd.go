@@ -1,6 +1,7 @@
 package msgcli
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/kralamoure/retroproto"
@@ -8,6 +9,16 @@ import (
 
 type ChatRequestSubscribeChannelAdd struct {
 	Channels []rune
+}
+
+func NewChatRequestSubscribeChannelAdd(extra string) (ChatRequestSubscribeChannelAdd, error) {
+	var m ChatRequestSubscribeChannelAdd
+
+	if err := m.Deserialize(extra); err != nil {
+		return ChatRequestSubscribeChannelAdd{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m ChatRequestSubscribeChannelAdd) MessageId() retroproto.MsgCliId {

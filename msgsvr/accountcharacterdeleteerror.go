@@ -1,10 +1,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AccountCharacterDeleteError struct{}
+
+func NewAccountCharacterDeleteError(extra string) (AccountCharacterDeleteError, error) {
+	var m AccountCharacterDeleteError
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountCharacterDeleteError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m AccountCharacterDeleteError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterDeleteError

@@ -14,6 +14,16 @@ type ExchangeBigStoreItemsList struct {
 	Items      []typ.ExchangeBigStoreItemsListItem
 }
 
+func NewExchangeBigStoreItemsList(extra string) (ExchangeBigStoreItemsList, error) {
+	var m ExchangeBigStoreItemsList
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeBigStoreItemsList{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangeBigStoreItemsList) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeBigStoreItemsList
 }

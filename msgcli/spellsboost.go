@@ -11,6 +11,16 @@ type SpellsBoost struct {
 	Id int
 }
 
+func NewSpellsBoost(extra string) (SpellsBoost, error) {
+	var m SpellsBoost
+
+	if err := m.Deserialize(extra); err != nil {
+		return SpellsBoost{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m SpellsBoost) MessageId() retroproto.MsgCliId {
 	return retroproto.SpellsBoost
 }

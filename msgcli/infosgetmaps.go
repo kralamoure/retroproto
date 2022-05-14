@@ -3,10 +3,22 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type InfosGetMaps struct{}
+
+func NewInfosGetMaps(extra string) (InfosGetMaps, error) {
+	var m InfosGetMaps
+
+	if err := m.Deserialize(extra); err != nil {
+		return InfosGetMaps{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m InfosGetMaps) MessageId() retroproto.MsgCliId {
 	return retroproto.InfosGetMaps

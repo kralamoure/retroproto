@@ -1,11 +1,23 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeLeaveSuccess struct {
 	TypePlayerExchange bool
+}
+
+func NewExchangeLeaveSuccess(extra string) (ExchangeLeaveSuccess, error) {
+	var m ExchangeLeaveSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeLeaveSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m ExchangeLeaveSuccess) MessageId() retroproto.MsgSvrId {

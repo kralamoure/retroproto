@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GameJoin struct{}
+
+func NewGameJoin(extra string) (GameJoin, error) {
+	var m GameJoin
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameJoin{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GameJoin) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameJoin

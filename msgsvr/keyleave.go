@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type KeyLeave struct{}
+
+func NewKeyLeave(extra string) (KeyLeave, error) {
+	var m KeyLeave
+
+	if err := m.Deserialize(extra); err != nil {
+		return KeyLeave{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m KeyLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.KeyLeave

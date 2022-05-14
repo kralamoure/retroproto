@@ -14,6 +14,16 @@ type ExchangeRequest struct {
 	Cell int
 }
 
+func NewExchangeRequest(extra string) (ExchangeRequest, error) {
+	var m ExchangeRequest
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeRequest{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangeRequest) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeRequest
 }

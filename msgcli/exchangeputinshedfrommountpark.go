@@ -11,6 +11,16 @@ type ExchangePutInShedFromMountPark struct {
 	MountId int
 }
 
+func NewExchangePutInShedFromMountPark(extra string) (ExchangePutInShedFromMountPark, error) {
+	var m ExchangePutInShedFromMountPark
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangePutInShedFromMountPark{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangePutInShedFromMountPark) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangePutInShedFromMountPark
 }

@@ -13,6 +13,16 @@ type AccountSelectServerPlainSuccess struct {
 	Ticket string
 }
 
+func NewAccountSelectServerPlainSuccess(extra string) (AccountSelectServerPlainSuccess, error) {
+	var m AccountSelectServerPlainSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountSelectServerPlainSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountSelectServerPlainSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountSelectServerPlainSuccess
 }

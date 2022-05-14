@@ -1,11 +1,23 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ChatServerMessage struct {
 	Message string
+}
+
+func NewChatServerMessage(extra string) (ChatServerMessage, error) {
+	var m ChatServerMessage
+
+	if err := m.Deserialize(extra); err != nil {
+		return ChatServerMessage{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m ChatServerMessage) MessageId() retroproto.MsgSvrId {

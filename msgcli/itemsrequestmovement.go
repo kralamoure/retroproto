@@ -16,6 +16,16 @@ type ItemsRequestMovement struct {
 	Quantity int
 }
 
+func NewItemsRequestMovement(extra string) (ItemsRequestMovement, error) {
+	var m ItemsRequestMovement
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsRequestMovement{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsRequestMovement) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsRequestMovement
 }

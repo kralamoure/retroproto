@@ -14,6 +14,16 @@ type InfosSendScreenInfo struct {
 	DisplayState int
 }
 
+func NewInfosSendScreenInfo(extra string) (InfosSendScreenInfo, error) {
+	var m InfosSendScreenInfo
+
+	if err := m.Deserialize(extra); err != nil {
+		return InfosSendScreenInfo{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m InfosSendScreenInfo) MessageId() retroproto.MsgCliId {
 	return retroproto.InfosSendScreenInfo
 }

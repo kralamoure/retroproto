@@ -15,6 +15,16 @@ type ItemsMovement struct {
 	Position retrotyp.CharacterItemPosition
 }
 
+func NewItemsMovement(extra string) (ItemsMovement, error) {
+	var m ItemsMovement
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsMovement{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsMovement
 }

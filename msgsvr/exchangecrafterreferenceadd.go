@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeCrafterReferenceAdd struct{}
+
+func NewExchangeCrafterReferenceAdd(extra string) (ExchangeCrafterReferenceAdd, error) {
+	var m ExchangeCrafterReferenceAdd
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeCrafterReferenceAdd{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ExchangeCrafterReferenceAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCrafterReferenceAdd

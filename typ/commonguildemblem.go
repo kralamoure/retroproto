@@ -15,6 +15,16 @@ type CommonGuildEmblem struct {
 	UpColor   string
 }
 
+func NewCommonGuildEmblem(extra string) (CommonGuildEmblem, error) {
+	var m CommonGuildEmblem
+
+	if err := m.Deserialize(extra); err != nil {
+		return CommonGuildEmblem{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m CommonGuildEmblem) Serialized() (string, error) {
 	if m.BackId == 0 && m.UpId == 0 && m.BackColor == "" && m.UpColor == "" {
 		return "", nil

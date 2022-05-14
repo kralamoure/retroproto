@@ -34,6 +34,16 @@ type ExchangeCreateSuccessPaddock struct {
 	Paddock []typ.CommonMountData
 }
 
+func NewExchangeCreateSuccess(extra string) (ExchangeCreateSuccess, error) {
+	var m ExchangeCreateSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeCreateSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangeCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCreateSuccess
 }

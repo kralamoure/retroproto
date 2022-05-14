@@ -1,11 +1,23 @@
 package msgcli
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AccountSendIdentity struct {
 	Id string
+}
+
+func NewAccountSendIdentity(extra string) (AccountSendIdentity, error) {
+	var m AccountSendIdentity
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountSendIdentity{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m AccountSendIdentity) MessageId() retroproto.MsgCliId {

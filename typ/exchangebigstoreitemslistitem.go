@@ -16,6 +16,16 @@ type ExchangeBigStoreItemsListItem struct {
 	PriceSet3 int
 }
 
+func NewExchangeBigStoreItemsListItem(extra string) (ExchangeBigStoreItemsListItem, error) {
+	var m ExchangeBigStoreItemsListItem
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeBigStoreItemsListItem{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangeBigStoreItemsListItem) Serialized() (string, error) {
 	effects := strings.Join(m.Effects, ",")
 

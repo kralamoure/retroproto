@@ -1,12 +1,24 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AccountLoginError struct {
 	Reason rune
 	Extra  string
+}
+
+func NewAccountLoginError(extra string) (AccountLoginError, error) {
+	var m AccountLoginError
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountLoginError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m AccountLoginError) MessageId() retroproto.MsgSvrId {

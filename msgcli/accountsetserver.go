@@ -11,6 +11,16 @@ type AccountSetServer struct {
 	Id int
 }
 
+func NewAccountSetServer(extra string) (AccountSetServer, error) {
+	var m AccountSetServer
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountSetServer{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountSetServer) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSetServer
 }

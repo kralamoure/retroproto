@@ -24,6 +24,16 @@ type AccountCharactersListCharacter struct {
 	LvlMax      int
 }
 
+func NewAccountCharactersListCharacter(extra string) (AccountCharactersListCharacter, error) {
+	var m AccountCharactersListCharacter
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountCharactersListCharacter{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountCharactersListCharacter) Serialized() (string, error) {
 	var merchant int
 	if m.Merchant {

@@ -11,6 +11,16 @@ type InfosLifeRestoreTimerFinish struct {
 	Restored int
 }
 
+func NewInfosLifeRestoreTimerFinish(extra string) (InfosLifeRestoreTimerFinish, error) {
+	var m InfosLifeRestoreTimerFinish
+
+	if err := m.Deserialize(extra); err != nil {
+		return InfosLifeRestoreTimerFinish{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m InfosLifeRestoreTimerFinish) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosLifeRestoreTimerFinish
 }

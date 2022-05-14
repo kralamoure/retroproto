@@ -15,6 +15,16 @@ type ExchangeBigStoreSearch struct {
 	TemplateId int
 }
 
+func NewExchangeBigStoreSearch(extra string) (ExchangeBigStoreSearch, error) {
+	var m ExchangeBigStoreSearch
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeBigStoreSearch{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ExchangeBigStoreSearch) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeBigStoreSearch
 }

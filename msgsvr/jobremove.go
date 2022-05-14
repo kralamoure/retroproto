@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type JobRemove struct{}
+
+func NewJobRemove(extra string) (JobRemove, error) {
+	var m JobRemove
+
+	if err := m.Deserialize(extra); err != nil {
+		return JobRemove{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m JobRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.JobRemove

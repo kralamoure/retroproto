@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type BasicsFileCheck struct{}
+
+func NewBasicsFileCheck(extra string) (BasicsFileCheck, error) {
+	var m BasicsFileCheck
+
+	if err := m.Deserialize(extra); err != nil {
+		return BasicsFileCheck{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m BasicsFileCheck) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsFileCheck

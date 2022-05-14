@@ -13,6 +13,16 @@ type ItemsWeight struct {
 	Max     int
 }
 
+func NewItemsWeight(extra string) (ItemsWeight, error) {
+	var m ItemsWeight
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsWeight{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsWeight) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsWeight
 }

@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AccountGiftsList struct{}
+
+func NewAccountGiftsList(extra string) (AccountGiftsList, error) {
+	var m AccountGiftsList
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountGiftsList{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m AccountGiftsList) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountGiftsList

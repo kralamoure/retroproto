@@ -12,6 +12,16 @@ type CommonDirAndCell struct {
 	CellId int
 }
 
+func NewCommonDirAndCell(extra string) (CommonDirAndCell, error) {
+	var m CommonDirAndCell
+
+	if err := m.Deserialize(extra); err != nil {
+		return CommonDirAndCell{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m CommonDirAndCell) Serialized() (string, error) {
 	n1 := m.DirId & 7
 	n2 := (m.CellId & 4032) >> 6

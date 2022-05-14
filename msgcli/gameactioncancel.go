@@ -13,6 +13,16 @@ type GameActionCancel struct {
 	Params string
 }
 
+func NewGameActionCancel(extra string) (GameActionCancel, error) {
+	var m GameActionCancel
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameActionCancel{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m GameActionCancel) MessageId() retroproto.MsgCliId {
 	return retroproto.GameActionCancel
 }

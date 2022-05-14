@@ -11,6 +11,16 @@ type CommonTitle struct {
 	Param string
 }
 
+func NewCommonTitle(extra string) (CommonTitle, error) {
+	var m CommonTitle
+
+	if err := m.Deserialize(extra); err != nil {
+		return CommonTitle{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m CommonTitle) Serialized() (string, error) {
 	sb := &strings.Builder{}
 

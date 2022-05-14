@@ -11,6 +11,16 @@ type AccountRegionalVersion struct {
 	Value int
 }
 
+func NewAccountRegionalVersion(extra string) (AccountRegionalVersion, error) {
+	var m AccountRegionalVersion
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountRegionalVersion{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountRegionalVersion) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountRegionalVersion
 }

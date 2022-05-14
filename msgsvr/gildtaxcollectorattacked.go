@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GildTaxCollectorAttacked struct{}
+
+func NewGildTaxCollectorAttacked(extra string) (GildTaxCollectorAttacked, error) {
+	var m GildTaxCollectorAttacked
+
+	if err := m.Deserialize(extra); err != nil {
+		return GildTaxCollectorAttacked{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GildTaxCollectorAttacked) MessageId() retroproto.MsgSvrId {
 	return retroproto.GildTaxCollectorAttacked

@@ -11,6 +11,16 @@ type AccountLoginSuccess struct {
 	Authorized bool
 }
 
+func NewAccountLoginSuccess(extra string) (AccountLoginSuccess, error) {
+	var m AccountLoginSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountLoginSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountLoginSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountLoginSuccess
 }

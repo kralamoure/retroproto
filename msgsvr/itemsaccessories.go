@@ -14,6 +14,16 @@ type ItemsAccessories struct {
 	Accessories typ.CommonAccessories
 }
 
+func NewItemsAccessories(extra string) (ItemsAccessories, error) {
+	var m ItemsAccessories
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsAccessories{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsAccessories) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsAccessories
 }

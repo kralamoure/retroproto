@@ -1,10 +1,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AccountTicketResponseError struct{}
+
+func NewAccountTicketResponseError(extra string) (AccountTicketResponseError, error) {
+	var m AccountTicketResponseError
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountTicketResponseError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m AccountTicketResponseError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountTicketResponseError

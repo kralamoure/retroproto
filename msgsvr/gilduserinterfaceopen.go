@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GildUserInterfaceOpen struct{}
+
+func NewGildUserInterfaceOpen(extra string) (GildUserInterfaceOpen, error) {
+	var m GildUserInterfaceOpen
+
+	if err := m.Deserialize(extra); err != nil {
+		return GildUserInterfaceOpen{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GildUserInterfaceOpen) MessageId() retroproto.MsgSvrId {
 	return retroproto.GildUserInterfaceOpen

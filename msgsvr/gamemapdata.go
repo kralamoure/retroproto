@@ -14,6 +14,16 @@ type GameMapData struct {
 	Key  string
 }
 
+func NewGameMapData(extra string) (GameMapData, error) {
+	var m GameMapData
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameMapData{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m GameMapData) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMapData
 }

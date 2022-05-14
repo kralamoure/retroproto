@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type InfosQuantity struct{}
+
+func NewInfosQuantity(extra string) (InfosQuantity, error) {
+	var m InfosQuantity
+
+	if err := m.Deserialize(extra); err != nil {
+		return InfosQuantity{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m InfosQuantity) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosQuantity

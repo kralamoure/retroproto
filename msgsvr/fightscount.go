@@ -11,6 +11,16 @@ type FightsCount struct {
 	Value int
 }
 
+func NewFightsCount(extra string) (FightsCount, error) {
+	var m FightsCount
+
+	if err := m.Deserialize(extra); err != nil {
+		return FightsCount{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m FightsCount) MessageId() retroproto.MsgSvrId {
 	return retroproto.FightsCount
 }

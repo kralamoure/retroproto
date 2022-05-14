@@ -20,6 +20,16 @@ type CommonAccessoriesAccessory struct {
 	Frame      int
 }
 
+func NewCommonAccessories(extra string) (CommonAccessories, error) {
+	var m CommonAccessories
+
+	if err := m.Deserialize(extra); err != nil {
+		return CommonAccessories{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m CommonAccessories) Serialized() (string, error) {
 	var weapon string
 	if m.Weapon.TemplateId != 0 {

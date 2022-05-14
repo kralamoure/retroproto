@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ExchangePlayerShopMovementError struct{}
+
+func NewExchangePlayerShopMovementError(extra string) (ExchangePlayerShopMovementError, error) {
+	var m ExchangePlayerShopMovementError
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangePlayerShopMovementError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ExchangePlayerShopMovementError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangePlayerShopMovementError

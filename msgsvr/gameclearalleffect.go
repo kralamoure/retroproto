@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type GameClearAllEffect struct{}
+
+func NewGameClearAllEffect(extra string) (GameClearAllEffect, error) {
+	var m GameClearAllEffect
+
+	if err := m.Deserialize(extra); err != nil {
+		return GameClearAllEffect{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m GameClearAllEffect) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameClearAllEffect

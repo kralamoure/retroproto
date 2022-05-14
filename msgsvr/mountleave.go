@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type MountLeave struct{}
+
+func NewMountLeave(extra string) (MountLeave, error) {
+	var m MountLeave
+
+	if err := m.Deserialize(extra); err != nil {
+		return MountLeave{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m MountLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountLeave

@@ -13,6 +13,16 @@ type InfosMessageMessage struct {
 	Args []string
 }
 
+func NewInfosMessageMessage(extra string) (InfosMessageMessage, error) {
+	var m InfosMessageMessage
+
+	if err := m.Deserialize(extra); err != nil {
+		return InfosMessageMessage{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m InfosMessageMessage) Serialized() (string, error) {
 	return fmt.Sprintf("%d;%s", m.Id, strings.Join(m.Args, "~")), nil
 }

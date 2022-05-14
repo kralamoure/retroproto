@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ConquestPrismAttacked struct{}
+
+func NewConquestPrismAttacked(extra string) (ConquestPrismAttacked, error) {
+	var m ConquestPrismAttacked
+
+	if err := m.Deserialize(extra); err != nil {
+		return ConquestPrismAttacked{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ConquestPrismAttacked) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestPrismAttacked

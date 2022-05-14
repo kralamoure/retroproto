@@ -11,6 +11,16 @@ type AccountCommunity struct {
 	Id int
 }
 
+func NewAccountCommunity(extra string) (AccountCommunity, error) {
+	var m AccountCommunity
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountCommunity{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountCommunity) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCommunity
 }

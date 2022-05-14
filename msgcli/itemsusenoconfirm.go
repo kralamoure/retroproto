@@ -14,6 +14,16 @@ type ItemsUseNoConfirm struct {
 	Cell     int
 }
 
+func NewItemsUseNoConfirm(extra string) (ItemsUseNoConfirm, error) {
+	var m ItemsUseNoConfirm
+
+	if err := m.Deserialize(extra); err != nil {
+		return ItemsUseNoConfirm{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m ItemsUseNoConfirm) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsUseNoConfirm
 }

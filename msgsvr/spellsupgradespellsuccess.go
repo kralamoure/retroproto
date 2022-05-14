@@ -13,6 +13,16 @@ type SpellsUpgradeSpellSuccess struct {
 	Level int
 }
 
+func NewSpellsUpgradeSpellSuccess(extra string) (SpellsUpgradeSpellSuccess, error) {
+	var m SpellsUpgradeSpellSuccess
+
+	if err := m.Deserialize(extra); err != nil {
+		return SpellsUpgradeSpellSuccess{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m SpellsUpgradeSpellSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsUpgradeSpellSuccess
 }

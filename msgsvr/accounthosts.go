@@ -1,6 +1,7 @@
 package msgsvr
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/kralamoure/retroproto"
@@ -9,6 +10,16 @@ import (
 
 type AccountHosts struct {
 	Value []typ.AccountHostsHost
+}
+
+func NewAccountHosts(extra string) (AccountHosts, error) {
+	var m AccountHosts
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountHosts{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m AccountHosts) MessageId() retroproto.MsgSvrId {

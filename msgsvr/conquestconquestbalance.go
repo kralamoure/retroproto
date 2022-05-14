@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ConquestConquestBalance struct{}
+
+func NewConquestConquestBalance(extra string) (ConquestConquestBalance, error) {
+	var m ConquestConquestBalance
+
+	if err := m.Deserialize(extra); err != nil {
+		return ConquestConquestBalance{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ConquestConquestBalance) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestConquestBalance

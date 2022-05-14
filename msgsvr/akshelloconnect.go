@@ -1,11 +1,23 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type AksHelloConnect struct {
 	Salt string
+}
+
+func NewAksHelloConnect(extra string) (AksHelloConnect, error) {
+	var m AksHelloConnect
+
+	if err := m.Deserialize(extra); err != nil {
+		return AksHelloConnect{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
 }
 
 func (m AksHelloConnect) MessageId() retroproto.MsgSvrId {

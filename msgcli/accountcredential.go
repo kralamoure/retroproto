@@ -14,6 +14,16 @@ type AccountCredential struct {
 	CryptoMethod int
 }
 
+func NewAccountCredential(extra string) (AccountCredential, error) {
+	var m AccountCredential
+
+	if err := m.Deserialize(extra); err != nil {
+		return AccountCredential{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
+
 func (m AccountCredential) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountCredential
 }

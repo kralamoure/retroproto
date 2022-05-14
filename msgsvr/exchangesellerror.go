@@ -3,10 +3,22 @@
 package msgsvr
 
 import (
+	"fmt"
+
 	"github.com/kralamoure/retroproto"
 )
 
 type ExchangeSellError struct{}
+
+func NewExchangeSellError(extra string) (ExchangeSellError, error) {
+	var m ExchangeSellError
+
+	if err := m.Deserialize(extra); err != nil {
+		return ExchangeSellError{}, fmt.Errorf("could not deserialize message: %w", err)
+	}
+
+	return m, nil
+}
 
 func (m ExchangeSellError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeSellError
