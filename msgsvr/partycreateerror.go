@@ -8,7 +8,7 @@ import (
 
 type PartyCreateError struct{}
 
-func (m PartyCreateError) ProtocolId() retroproto.MsgSvrId {
+func (m PartyCreateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.PartyCreateError
 }
 

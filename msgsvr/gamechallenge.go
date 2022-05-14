@@ -8,7 +8,7 @@ import (
 
 type GameChallenge struct{}
 
-func (m GameChallenge) ProtocolId() retroproto.MsgSvrId {
+func (m GameChallenge) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameChallenge
 }
 

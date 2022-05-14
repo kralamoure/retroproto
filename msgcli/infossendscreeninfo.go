@@ -14,7 +14,7 @@ type InfosSendScreenInfo struct {
 	DisplayState int
 }
 
-func (m InfosSendScreenInfo) ProtocolId() retroproto.MsgCliId {
+func (m InfosSendScreenInfo) MessageId() retroproto.MsgCliId {
 	return retroproto.InfosSendScreenInfo
 }
 

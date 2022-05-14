@@ -8,7 +8,7 @@ import (
 
 type GildHireTaxCollectorError struct{}
 
-func (m GildHireTaxCollectorError) ProtocolId() retroproto.MsgSvrId {
+func (m GildHireTaxCollectorError) MessageId() retroproto.MsgSvrId {
 	return retroproto.GildHireTaxCollectorError
 }
 

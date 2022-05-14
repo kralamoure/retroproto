@@ -8,7 +8,7 @@ type AksHelloConnect struct {
 	Salt string
 }
 
-func (m AksHelloConnect) ProtocolId() retroproto.MsgSvrId {
+func (m AksHelloConnect) MessageId() retroproto.MsgSvrId {
 	return retroproto.AksHelloConnect
 }
 

@@ -8,7 +8,7 @@ import (
 
 type GuildInfosTaxCollectorsMovement struct{}
 
-func (m GuildInfosTaxCollectorsMovement) ProtocolId() retroproto.MsgSvrId {
+func (m GuildInfosTaxCollectorsMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildInfosTaxCollectorsMovement
 }
 

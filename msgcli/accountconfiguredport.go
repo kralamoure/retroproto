@@ -11,7 +11,7 @@ type AccountConfiguredPort struct {
 	Port int
 }
 
-func (m AccountConfiguredPort) ProtocolId() retroproto.MsgCliId {
+func (m AccountConfiguredPort) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountConfiguredPort
 }
 

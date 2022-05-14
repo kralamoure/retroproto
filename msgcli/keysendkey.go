@@ -8,7 +8,7 @@ import (
 
 type KeySendKey struct{}
 
-func (m KeySendKey) ProtocolId() retroproto.MsgCliId {
+func (m KeySendKey) MessageId() retroproto.MsgCliId {
 	return retroproto.KeySendKey
 }
 

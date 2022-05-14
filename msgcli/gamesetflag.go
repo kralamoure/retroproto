@@ -8,7 +8,7 @@ import (
 
 type GameSetFlag struct{}
 
-func (m GameSetFlag) ProtocolId() retroproto.MsgCliId {
+func (m GameSetFlag) MessageId() retroproto.MsgCliId {
 	return retroproto.GameSetFlag
 }
 

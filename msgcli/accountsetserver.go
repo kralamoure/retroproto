@@ -11,7 +11,7 @@ type AccountSetServer struct {
 	Id int
 }
 
-func (m AccountSetServer) ProtocolId() retroproto.MsgCliId {
+func (m AccountSetServer) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSetServer
 }
 

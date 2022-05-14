@@ -8,7 +8,7 @@ type ItemsAddError struct {
 	Reason rune
 }
 
-func (m ItemsAddError) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsAddError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsAddError
 }
 

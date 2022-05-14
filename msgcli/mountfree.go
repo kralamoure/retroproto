@@ -6,7 +6,7 @@ import (
 
 type MountFree struct{}
 
-func (m MountFree) ProtocolId() retroproto.MsgCliId {
+func (m MountFree) MessageId() retroproto.MsgCliId {
 	return retroproto.MountFree
 }
 

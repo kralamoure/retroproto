@@ -8,7 +8,7 @@ import (
 
 type MountLeave struct{}
 
-func (m MountLeave) ProtocolId() retroproto.MsgSvrId {
+func (m MountLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountLeave
 }
 

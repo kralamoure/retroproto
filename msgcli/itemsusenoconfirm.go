@@ -14,7 +14,7 @@ type ItemsUseNoConfirm struct {
 	Cell     int
 }
 
-func (m ItemsUseNoConfirm) ProtocolId() retroproto.MsgCliId {
+func (m ItemsUseNoConfirm) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsUseNoConfirm
 }
 

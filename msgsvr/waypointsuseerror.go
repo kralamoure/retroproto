@@ -8,7 +8,7 @@ import (
 
 type WaypointsUseError struct{}
 
-func (m WaypointsUseError) ProtocolId() retroproto.MsgSvrId {
+func (m WaypointsUseError) MessageId() retroproto.MsgSvrId {
 	return retroproto.WaypointsUseError
 }
 

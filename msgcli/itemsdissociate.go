@@ -8,7 +8,7 @@ import (
 
 type ItemsDissociate struct{}
 
-func (m ItemsDissociate) ProtocolId() retroproto.MsgCliId {
+func (m ItemsDissociate) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsDissociate
 }
 

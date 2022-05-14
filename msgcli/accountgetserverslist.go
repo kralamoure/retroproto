@@ -6,7 +6,7 @@ import (
 
 type AccountGetServersList struct{}
 
-func (m AccountGetServersList) ProtocolId() retroproto.MsgCliId {
+func (m AccountGetServersList) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountGetServersList
 }
 

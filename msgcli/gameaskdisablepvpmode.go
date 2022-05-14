@@ -8,7 +8,7 @@ import (
 
 type GameAskDisablePVPMode struct{}
 
-func (m GameAskDisablePVPMode) ProtocolId() retroproto.MsgCliId {
+func (m GameAskDisablePVPMode) MessageId() retroproto.MsgCliId {
 	return retroproto.GameAskDisablePVPMode
 }
 

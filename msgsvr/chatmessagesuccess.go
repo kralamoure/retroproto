@@ -19,7 +19,7 @@ type ChatMessageSuccess struct {
 	Params      string // TODO
 }
 
-func (m ChatMessageSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m ChatMessageSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ChatMessageSuccess
 }
 

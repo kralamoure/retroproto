@@ -8,7 +8,7 @@ import (
 
 type AccountCharacterDeleteSuccess struct{}
 
-func (m AccountCharacterDeleteSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharacterDeleteSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterDeleteSuccess
 }
 

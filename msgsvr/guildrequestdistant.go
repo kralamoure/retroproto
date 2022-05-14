@@ -8,7 +8,7 @@ import (
 
 type GuildRequestDistant struct{}
 
-func (m GuildRequestDistant) ProtocolId() retroproto.MsgSvrId {
+func (m GuildRequestDistant) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildRequestDistant
 }
 

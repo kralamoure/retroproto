@@ -8,7 +8,7 @@ import (
 
 type AccountValidCharacterMigration struct{}
 
-func (m AccountValidCharacterMigration) ProtocolId() retroproto.MsgCliId {
+func (m AccountValidCharacterMigration) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountValidCharacterMigration
 }
 

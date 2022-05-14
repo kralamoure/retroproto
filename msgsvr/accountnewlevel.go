@@ -11,7 +11,7 @@ type AccountNewLevel struct {
 	Level int
 }
 
-func (m AccountNewLevel) ProtocolId() retroproto.MsgSvrId {
+func (m AccountNewLevel) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountNewLevel
 }
 

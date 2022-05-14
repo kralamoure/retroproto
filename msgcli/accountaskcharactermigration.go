@@ -8,7 +8,7 @@ import (
 
 type AccountAskCharacterMigration struct{}
 
-func (m AccountAskCharacterMigration) ProtocolId() retroproto.MsgCliId {
+func (m AccountAskCharacterMigration) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountAskCharacterMigration
 }
 

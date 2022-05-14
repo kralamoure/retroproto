@@ -15,7 +15,7 @@ type ExchangeBigStoreSearch struct {
 	TemplateId int
 }
 
-func (m ExchangeBigStoreSearch) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeBigStoreSearch) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeBigStoreSearch
 }
 

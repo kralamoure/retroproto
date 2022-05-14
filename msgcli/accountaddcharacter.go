@@ -17,7 +17,7 @@ type AccountAddCharacter struct {
 	Color3 string
 }
 
-func (m AccountAddCharacter) ProtocolId() retroproto.MsgCliId {
+func (m AccountAddCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountAddCharacter
 }
 

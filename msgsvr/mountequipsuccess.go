@@ -9,7 +9,7 @@ type MountEquipSuccess struct {
 	Data typ.CommonMountData
 }
 
-func (m MountEquipSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m MountEquipSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountEquipSuccess
 }
 

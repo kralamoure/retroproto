@@ -6,7 +6,7 @@ import (
 
 type DialogCreateError struct{}
 
-func (m DialogCreateError) ProtocolId() retroproto.MsgSvrId {
+func (m DialogCreateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogCreateError
 }
 

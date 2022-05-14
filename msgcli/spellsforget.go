@@ -11,7 +11,7 @@ type SpellsForget struct {
 	Id int
 }
 
-func (m SpellsForget) ProtocolId() retroproto.MsgCliId {
+func (m SpellsForget) MessageId() retroproto.MsgCliId {
 	return retroproto.SpellsForget
 }
 

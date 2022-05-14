@@ -8,7 +8,7 @@ import (
 
 type SubwayPrismCreate struct{}
 
-func (m SubwayPrismCreate) ProtocolId() retroproto.MsgSvrId {
+func (m SubwayPrismCreate) MessageId() retroproto.MsgSvrId {
 	return retroproto.SubwayPrismCreate
 }
 

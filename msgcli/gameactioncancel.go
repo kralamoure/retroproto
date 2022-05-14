@@ -13,7 +13,7 @@ type GameActionCancel struct {
 	Params string
 }
 
-func (m GameActionCancel) ProtocolId() retroproto.MsgCliId {
+func (m GameActionCancel) MessageId() retroproto.MsgCliId {
 	return retroproto.GameActionCancel
 }
 

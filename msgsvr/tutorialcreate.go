@@ -8,7 +8,7 @@ import (
 
 type TutorialCreate struct{}
 
-func (m TutorialCreate) ProtocolId() retroproto.MsgSvrId {
+func (m TutorialCreate) MessageId() retroproto.MsgSvrId {
 	return retroproto.TutorialCreate
 }
 

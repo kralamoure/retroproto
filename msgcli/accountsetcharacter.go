@@ -11,7 +11,7 @@ type AccountSetCharacter struct {
 	Id int
 }
 
-func (m AccountSetCharacter) ProtocolId() retroproto.MsgCliId {
+func (m AccountSetCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSetCharacter
 }
 

@@ -8,7 +8,7 @@ type ExchangeLeaveSuccess struct {
 	TypePlayerExchange bool
 }
 
-func (m ExchangeLeaveSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeLeaveSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeLeaveSuccess
 }
 

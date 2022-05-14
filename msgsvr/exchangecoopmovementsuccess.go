@@ -8,7 +8,7 @@ import (
 
 type ExchangeCoopMovementSuccess struct{}
 
-func (m ExchangeCoopMovementSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeCoopMovementSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCoopMovementSuccess
 }
 

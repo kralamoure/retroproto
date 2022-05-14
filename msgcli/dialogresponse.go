@@ -13,7 +13,7 @@ type DialogResponse struct {
 	Answer   int
 }
 
-func (m DialogResponse) ProtocolId() retroproto.MsgCliId {
+func (m DialogResponse) MessageId() retroproto.MsgCliId {
 	return retroproto.DialogResponse
 }
 

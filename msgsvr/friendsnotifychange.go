@@ -8,7 +8,7 @@ type FriendsNotifyChange struct {
 	Notify bool
 }
 
-func (m FriendsNotifyChange) ProtocolId() retroproto.MsgSvrId {
+func (m FriendsNotifyChange) MessageId() retroproto.MsgSvrId {
 	return retroproto.FriendsNotifyChange
 }
 

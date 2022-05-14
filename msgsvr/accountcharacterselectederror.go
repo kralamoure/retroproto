@@ -6,7 +6,7 @@ import (
 
 type AccountCharacterSelectedError struct{}
 
-func (m AccountCharacterSelectedError) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharacterSelectedError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterSelectedError
 }
 

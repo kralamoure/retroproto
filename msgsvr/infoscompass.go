@@ -8,7 +8,7 @@ import (
 
 type InfosCompass struct{}
 
-func (m InfosCompass) ProtocolId() retroproto.MsgSvrId {
+func (m InfosCompass) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosCompass
 }
 

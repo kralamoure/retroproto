@@ -16,7 +16,7 @@ type ItemsRequestMovement struct {
 	Quantity int
 }
 
-func (m ItemsRequestMovement) ProtocolId() retroproto.MsgCliId {
+func (m ItemsRequestMovement) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsRequestMovement
 }
 

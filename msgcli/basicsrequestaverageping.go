@@ -8,7 +8,7 @@ import (
 
 type BasicsRequestAveragePing struct{}
 
-func (m BasicsRequestAveragePing) ProtocolId() retroproto.MsgCliId {
+func (m BasicsRequestAveragePing) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsRequestAveragePing
 }
 

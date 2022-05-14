@@ -6,7 +6,7 @@ import (
 
 type MountUnequip struct{}
 
-func (m MountUnequip) ProtocolId() retroproto.MsgSvrId {
+func (m MountUnequip) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountUnequip
 }
 

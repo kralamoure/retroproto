@@ -8,7 +8,7 @@ import (
 
 type AccountKey struct{}
 
-func (m AccountKey) ProtocolId() retroproto.MsgSvrId {
+func (m AccountKey) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountKey
 }
 

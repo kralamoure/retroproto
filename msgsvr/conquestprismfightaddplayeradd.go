@@ -8,7 +8,7 @@ import (
 
 type ConquestPrismFightAddPlayerAdd struct{}
 
-func (m ConquestPrismFightAddPlayerAdd) ProtocolId() retroproto.MsgSvrId {
+func (m ConquestPrismFightAddPlayerAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestPrismFightAddPlayerAdd
 }
 

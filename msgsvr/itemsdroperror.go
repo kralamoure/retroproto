@@ -8,7 +8,7 @@ import (
 
 type ItemsDropError struct{}
 
-func (m ItemsDropError) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsDropError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsDropError
 }
 

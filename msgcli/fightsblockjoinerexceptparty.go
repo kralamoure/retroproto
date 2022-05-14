@@ -8,7 +8,7 @@ import (
 
 type FightsBlockJoinerExceptParty struct{}
 
-func (m FightsBlockJoinerExceptParty) ProtocolId() retroproto.MsgCliId {
+func (m FightsBlockJoinerExceptParty) MessageId() retroproto.MsgCliId {
 	return retroproto.FightsBlockJoinerExceptParty
 }
 

@@ -8,7 +8,7 @@ import (
 
 type GuildTeleportToGuildFarm struct{}
 
-func (m GuildTeleportToGuildFarm) ProtocolId() retroproto.MsgCliId {
+func (m GuildTeleportToGuildFarm) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildTeleportToGuildFarm
 }
 

@@ -8,7 +8,7 @@ import (
 
 type MountRequestMountParkBuy struct{}
 
-func (m MountRequestMountParkBuy) ProtocolId() retroproto.MsgCliId {
+func (m MountRequestMountParkBuy) MessageId() retroproto.MsgCliId {
 	return retroproto.MountRequestMountParkBuy
 }
 

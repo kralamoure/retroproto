@@ -8,7 +8,7 @@ import (
 
 type WaypointsUse struct{}
 
-func (m WaypointsUse) ProtocolId() retroproto.MsgCliId {
+func (m WaypointsUse) MessageId() retroproto.MsgCliId {
 	return retroproto.WaypointsUse
 }
 

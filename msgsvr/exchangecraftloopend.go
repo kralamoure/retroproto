@@ -8,7 +8,7 @@ import (
 
 type ExchangeCraftLoopEnd struct{}
 
-func (m ExchangeCraftLoopEnd) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeCraftLoopEnd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCraftLoopEnd
 }
 

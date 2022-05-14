@@ -8,7 +8,7 @@ import (
 
 type ConquestPrismInfosLeave struct{}
 
-func (m ConquestPrismInfosLeave) ProtocolId() retroproto.MsgCliId {
+func (m ConquestPrismInfosLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestPrismInfosLeave
 }
 

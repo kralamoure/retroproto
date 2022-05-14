@@ -6,7 +6,7 @@ import (
 
 type ExchangeCreateError struct{}
 
-func (m ExchangeCreateError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeCreateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCreateError
 }
 

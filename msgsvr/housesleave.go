@@ -8,7 +8,7 @@ import (
 
 type HousesLeave struct{}
 
-func (m HousesLeave) ProtocolId() retroproto.MsgSvrId {
+func (m HousesLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.HousesLeave
 }
 

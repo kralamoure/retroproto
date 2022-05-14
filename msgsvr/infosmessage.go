@@ -14,7 +14,7 @@ type InfosMessage struct {
 	Messages []typ.InfosMessageMessage
 }
 
-func (m InfosMessage) ProtocolId() retroproto.MsgSvrId {
+func (m InfosMessage) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosMessage
 }
 

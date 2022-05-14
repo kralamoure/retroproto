@@ -8,7 +8,7 @@ import (
 
 type ExchangeList struct{}
 
-func (m ExchangeList) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeList) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeList
 }
 

@@ -11,7 +11,7 @@ type ExchangeGetItemMiddlePriceInBigStore struct {
 	TemplateId int
 }
 
-func (m ExchangeGetItemMiddlePriceInBigStore) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeGetItemMiddlePriceInBigStore) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeGetItemMiddlePriceInBigStore
 }
 

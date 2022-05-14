@@ -10,7 +10,7 @@ type AccountSecretQuestion struct {
 	Value string
 }
 
-func (m AccountSecretQuestion) ProtocolId() retroproto.MsgSvrId {
+func (m AccountSecretQuestion) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountSecretQuestion
 }
 

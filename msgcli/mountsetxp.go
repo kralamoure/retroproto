@@ -8,7 +8,7 @@ import (
 
 type MountSetXP struct{}
 
-func (m MountSetXP) ProtocolId() retroproto.MsgCliId {
+func (m MountSetXP) MessageId() retroproto.MsgCliId {
 	return retroproto.MountSetXP
 }
 

@@ -10,7 +10,7 @@ type ChatRequestSubscribeChannelAdd struct {
 	Channels []rune
 }
 
-func (m ChatRequestSubscribeChannelAdd) ProtocolId() retroproto.MsgCliId {
+func (m ChatRequestSubscribeChannelAdd) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatRequestSubscribeChannelAdd
 }
 

@@ -6,7 +6,7 @@ import (
 
 type BasicsAuthorizedCommandError struct{}
 
-func (m BasicsAuthorizedCommandError) ProtocolId() retroproto.MsgSvrId {
+func (m BasicsAuthorizedCommandError) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsAuthorizedCommandError
 }
 

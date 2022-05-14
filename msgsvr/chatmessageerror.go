@@ -8,7 +8,7 @@ type ChatMessageError struct {
 	Reason rune
 }
 
-func (m ChatMessageError) ProtocolId() retroproto.MsgSvrId {
+func (m ChatMessageError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ChatMessageError
 }
 

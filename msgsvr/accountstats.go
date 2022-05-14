@@ -33,7 +33,7 @@ type AccountStats struct {
 	Characteristics  map[retrotyp.CharacteristicId]retrotyp.Characteristic
 }
 
-func (m AccountStats) ProtocolId() retroproto.MsgSvrId {
+func (m AccountStats) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountStats
 }
 

@@ -8,7 +8,7 @@ import (
 
 type GuildLeave struct{}
 
-func (m GuildLeave) ProtocolId() retroproto.MsgSvrId {
+func (m GuildLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildLeave
 }
 

@@ -10,7 +10,7 @@ type AccountCharacterNameGeneratedSuccess struct {
 	Name string
 }
 
-func (m AccountCharacterNameGeneratedSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharacterNameGeneratedSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterNameGeneratedSuccess
 }
 

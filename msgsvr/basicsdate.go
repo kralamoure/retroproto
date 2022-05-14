@@ -14,7 +14,7 @@ type BasicsDate struct {
 	Day   int
 }
 
-func (m BasicsDate) ProtocolId() retroproto.MsgSvrId {
+func (m BasicsDate) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsDate
 }
 

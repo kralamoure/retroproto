@@ -34,7 +34,7 @@ type ExchangeCreateSuccessPaddock struct {
 	Paddock []typ.CommonMountData
 }
 
-func (m ExchangeCreateSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCreateSuccess
 }
 

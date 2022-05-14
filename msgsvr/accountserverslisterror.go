@@ -8,7 +8,7 @@ import (
 
 type AccountServersListError struct{}
 
-func (m AccountServersListError) ProtocolId() retroproto.MsgSvrId {
+func (m AccountServersListError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountServersListError
 }
 

@@ -8,7 +8,7 @@ import (
 
 type ExchangeLocalDistantError struct{}
 
-func (m ExchangeLocalDistantError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeLocalDistantError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeLocalDistantError
 }
 

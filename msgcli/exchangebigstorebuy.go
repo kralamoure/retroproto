@@ -14,7 +14,7 @@ type ExchangeBigStoreBuy struct {
 	Price         int
 }
 
-func (m ExchangeBigStoreBuy) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeBigStoreBuy) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeBigStoreBuy
 }
 

@@ -6,7 +6,7 @@ import (
 
 type AccountRequestRegionalVersion struct{}
 
-func (m AccountRequestRegionalVersion) ProtocolId() retroproto.MsgCliId {
+func (m AccountRequestRegionalVersion) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountRequestRegionalVersion
 }
 

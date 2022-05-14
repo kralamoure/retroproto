@@ -8,7 +8,7 @@ import (
 
 type GameTurnEnd struct{}
 
-func (m GameTurnEnd) ProtocolId() retroproto.MsgCliId {
+func (m GameTurnEnd) MessageId() retroproto.MsgCliId {
 	return retroproto.GameTurnEnd
 }
 

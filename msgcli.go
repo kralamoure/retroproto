@@ -6,7 +6,7 @@ import (
 )
 
 type MsgCli interface {
-	ProtocolId() (id MsgCliId)
+	MessageId() (id MsgCliId)
 	Serialized() (extra string, err error)
 	Deserialize(extra string) error
 }

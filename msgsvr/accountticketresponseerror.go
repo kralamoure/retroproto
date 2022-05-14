@@ -6,7 +6,7 @@ import (
 
 type AccountTicketResponseError struct{}
 
-func (m AccountTicketResponseError) ProtocolId() retroproto.MsgSvrId {
+func (m AccountTicketResponseError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountTicketResponseError
 }
 

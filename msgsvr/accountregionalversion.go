@@ -11,7 +11,7 @@ type AccountRegionalVersion struct {
 	Value int
 }
 
-func (m AccountRegionalVersion) ProtocolId() retroproto.MsgSvrId {
+func (m AccountRegionalVersion) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountRegionalVersion
 }
 

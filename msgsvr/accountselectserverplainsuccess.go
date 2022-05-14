@@ -13,7 +13,7 @@ type AccountSelectServerPlainSuccess struct {
 	Ticket string
 }
 
-func (m AccountSelectServerPlainSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m AccountSelectServerPlainSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountSelectServerPlainSuccess
 }
 

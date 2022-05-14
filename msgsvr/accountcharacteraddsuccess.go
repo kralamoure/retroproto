@@ -6,7 +6,7 @@ import (
 
 type AccountCharacterAddSuccess struct{}
 
-func (m AccountCharacterAddSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharacterAddSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterAddSuccess
 }
 

@@ -8,7 +8,7 @@ import (
 
 type PartyInvite struct{}
 
-func (m PartyInvite) ProtocolId() retroproto.MsgCliId {
+func (m PartyInvite) MessageId() retroproto.MsgCliId {
 	return retroproto.PartyInvite
 }
 

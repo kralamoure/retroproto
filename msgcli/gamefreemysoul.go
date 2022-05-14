@@ -8,7 +8,7 @@ import (
 
 type GameFreeMySoul struct{}
 
-func (m GameFreeMySoul) ProtocolId() retroproto.MsgCliId {
+func (m GameFreeMySoul) MessageId() retroproto.MsgCliId {
 	return retroproto.GameFreeMySoul
 }
 

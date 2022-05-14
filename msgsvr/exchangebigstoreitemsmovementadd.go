@@ -8,7 +8,7 @@ import (
 
 type ExchangeBigStoreItemsMovementAdd struct{}
 
-func (m ExchangeBigStoreItemsMovementAdd) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeBigStoreItemsMovementAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeBigStoreItemsMovementAdd
 }
 

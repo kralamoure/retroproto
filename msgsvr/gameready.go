@@ -8,7 +8,7 @@ import (
 
 type GameReady struct{}
 
-func (m GameReady) ProtocolId() retroproto.MsgSvrId {
+func (m GameReady) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameReady
 }
 

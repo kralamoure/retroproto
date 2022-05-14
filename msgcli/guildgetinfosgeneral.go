@@ -8,7 +8,7 @@ import (
 
 type GuildGetInfosGeneral struct{}
 
-func (m GuildGetInfosGeneral) ProtocolId() retroproto.MsgCliId {
+func (m GuildGetInfosGeneral) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildGetInfosGeneral
 }
 

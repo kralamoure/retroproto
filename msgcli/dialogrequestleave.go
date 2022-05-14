@@ -6,7 +6,7 @@ import (
 
 type DialogRequestLeave struct{}
 
-func (m DialogRequestLeave) ProtocolId() retroproto.MsgCliId {
+func (m DialogRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.DialogRequestLeave
 }
 

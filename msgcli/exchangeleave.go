@@ -8,7 +8,7 @@ import (
 
 type ExchangeLeave struct{}
 
-func (m ExchangeLeave) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeLeave
 }
 

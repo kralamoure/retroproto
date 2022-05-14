@@ -11,7 +11,7 @@ type AccountTicketResponseSuccess struct {
 	KeyId int
 }
 
-func (m AccountTicketResponseSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m AccountTicketResponseSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountTicketResponseSuccess
 }
 

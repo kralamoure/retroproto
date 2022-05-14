@@ -14,7 +14,7 @@ type DialogQuestion struct {
 	Answers        []int
 }
 
-func (m DialogQuestion) ProtocolId() retroproto.MsgSvrId {
+func (m DialogQuestion) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogQuestion
 }
 

@@ -8,7 +8,7 @@ import (
 
 type ExchangeAskOfflineExchange struct{}
 
-func (m ExchangeAskOfflineExchange) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeAskOfflineExchange) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeAskOfflineExchange
 }
 

@@ -8,7 +8,7 @@ import (
 
 type ConquestPrismFightLeave struct{}
 
-func (m ConquestPrismFightLeave) ProtocolId() retroproto.MsgCliId {
+func (m ConquestPrismFightLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestPrismFightLeave
 }
 

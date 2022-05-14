@@ -9,7 +9,7 @@ type ExchangeRequestError struct {
 	Reason rune
 }
 
-func (m ExchangeRequestError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeRequestError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeRequestError
 }
 

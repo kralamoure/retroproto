@@ -11,7 +11,7 @@ type SpecializationChange struct {
 	Value int
 }
 
-func (m SpecializationChange) ProtocolId() retroproto.MsgSvrId {
+func (m SpecializationChange) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpecializationChange
 }
 

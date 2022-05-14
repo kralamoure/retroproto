@@ -8,7 +8,7 @@ import (
 
 type GuildBan struct{}
 
-func (m GuildBan) ProtocolId() retroproto.MsgCliId {
+func (m GuildBan) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildBan
 }
 

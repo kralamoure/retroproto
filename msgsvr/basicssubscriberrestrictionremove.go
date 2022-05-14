@@ -6,7 +6,7 @@ import (
 
 type BasicsSubscriberRestrictionRemove struct{}
 
-func (m BasicsSubscriberRestrictionRemove) ProtocolId() retroproto.MsgSvrId {
+func (m BasicsSubscriberRestrictionRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsSubscriberRestrictionRemove
 }
 

@@ -11,7 +11,7 @@ type AccountQueue struct {
 	Position int
 }
 
-func (m AccountQueue) ProtocolId() retroproto.MsgSvrId {
+func (m AccountQueue) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountQueue
 }
 

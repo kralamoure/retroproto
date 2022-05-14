@@ -8,7 +8,7 @@ import (
 
 type ConquestWorldInfosLave struct{}
 
-func (m ConquestWorldInfosLave) ProtocolId() retroproto.MsgCliId {
+func (m ConquestWorldInfosLave) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestWorldInfosLave
 }
 

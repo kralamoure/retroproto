@@ -15,7 +15,7 @@ type AccountDeleteCharacter struct {
 	SecretAnswer string
 }
 
-func (m AccountDeleteCharacter) ProtocolId() retroproto.MsgCliId {
+func (m AccountDeleteCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountDeleteCharacter
 }
 

@@ -8,7 +8,7 @@ import (
 
 type ConquestGetAlignedBonus struct{}
 
-func (m ConquestGetAlignedBonus) ProtocolId() retroproto.MsgCliId {
+func (m ConquestGetAlignedBonus) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestGetAlignedBonus
 }
 

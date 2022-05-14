@@ -11,7 +11,7 @@ type InfosLifeRestoreTimerFinish struct {
 	Restored int
 }
 
-func (m InfosLifeRestoreTimerFinish) ProtocolId() retroproto.MsgSvrId {
+func (m InfosLifeRestoreTimerFinish) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosLifeRestoreTimerFinish
 }
 

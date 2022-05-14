@@ -8,7 +8,7 @@ type SpellsChangeOption struct {
 	CanUseSeeAllSpell bool
 }
 
-func (m SpellsChangeOption) ProtocolId() retroproto.MsgSvrId {
+func (m SpellsChangeOption) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsChangeOption
 }
 

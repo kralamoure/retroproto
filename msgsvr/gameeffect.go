@@ -8,7 +8,7 @@ import (
 
 type GameEffect struct{}
 
-func (m GameEffect) ProtocolId() retroproto.MsgSvrId {
+func (m GameEffect) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameEffect
 }
 

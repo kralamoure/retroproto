@@ -15,7 +15,7 @@ type AccountBoost struct {
 	Amount           int
 }
 
-func (m AccountBoost) ProtocolId() retroproto.MsgCliId {
+func (m AccountBoost) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountBoost
 }
 

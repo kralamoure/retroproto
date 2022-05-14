@@ -8,7 +8,7 @@ type AccountGetGifts struct {
 	Lang string
 }
 
-func (m AccountGetGifts) ProtocolId() retroproto.MsgCliId {
+func (m AccountGetGifts) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountGetGifts
 }
 

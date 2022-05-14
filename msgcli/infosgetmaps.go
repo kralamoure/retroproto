@@ -8,7 +8,7 @@ import (
 
 type InfosGetMaps struct{}
 
-func (m InfosGetMaps) ProtocolId() retroproto.MsgCliId {
+func (m InfosGetMaps) MessageId() retroproto.MsgCliId {
 	return retroproto.InfosGetMaps
 }
 

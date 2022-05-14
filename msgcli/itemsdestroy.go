@@ -13,7 +13,7 @@ type ItemsDestroy struct {
 	Quantity int
 }
 
-func (m ItemsDestroy) ProtocolId() retroproto.MsgCliId {
+func (m ItemsDestroy) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsDestroy
 }
 

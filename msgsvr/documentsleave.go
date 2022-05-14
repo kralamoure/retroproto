@@ -8,7 +8,7 @@ import (
 
 type DocumentsLeave struct{}
 
-func (m DocumentsLeave) ProtocolId() retroproto.MsgSvrId {
+func (m DocumentsLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.DocumentsLeave
 }
 

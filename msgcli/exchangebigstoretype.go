@@ -13,7 +13,7 @@ type ExchangeBigStoreType struct {
 	ItemType retrotyp.ItemType
 }
 
-func (m ExchangeBigStoreType) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeBigStoreType) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeBigStoreType
 }
 

@@ -8,7 +8,7 @@ import (
 
 type JobXP struct{}
 
-func (m JobXP) ProtocolId() retroproto.MsgSvrId {
+func (m JobXP) MessageId() retroproto.MsgSvrId {
 	return retroproto.JobXP
 }
 

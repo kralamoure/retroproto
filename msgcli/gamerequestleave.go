@@ -8,7 +8,7 @@ import (
 
 type GameRequestLeave struct{}
 
-func (m GameRequestLeave) ProtocolId() retroproto.MsgCliId {
+func (m GameRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.GameRequestLeave
 }
 

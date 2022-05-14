@@ -8,7 +8,7 @@ type AccountSendTicket struct {
 	Ticket string
 }
 
-func (m AccountSendTicket) ProtocolId() retroproto.MsgCliId {
+func (m AccountSendTicket) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSendTicket
 }
 

@@ -6,7 +6,7 @@ import (
 
 type AksHelloGame struct{}
 
-func (m AksHelloGame) ProtocolId() retroproto.MsgSvrId {
+func (m AksHelloGame) MessageId() retroproto.MsgSvrId {
 	return retroproto.AksHelloGame
 }
 

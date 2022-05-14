@@ -8,7 +8,7 @@ import (
 
 type ExchangeMountPods struct{}
 
-func (m ExchangeMountPods) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeMountPods) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeMountPods
 }
 

@@ -8,7 +8,7 @@ import (
 
 type QuestGetList struct{}
 
-func (m QuestGetList) ProtocolId() retroproto.MsgCliId {
+func (m QuestGetList) MessageId() retroproto.MsgCliId {
 	return retroproto.QuestGetList
 }
 

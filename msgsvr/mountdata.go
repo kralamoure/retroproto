@@ -9,7 +9,7 @@ type MountData struct {
 	Data typ.CommonMountData
 }
 
-func (m MountData) ProtocolId() retroproto.MsgSvrId {
+func (m MountData) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountData
 }
 

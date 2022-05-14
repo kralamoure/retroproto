@@ -17,7 +17,7 @@ type ItemsItemSetAdd struct {
 	Effects           []retrotyp.Effect
 }
 
-func (m ItemsItemSetAdd) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsItemSetAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsItemSetAdd
 }
 

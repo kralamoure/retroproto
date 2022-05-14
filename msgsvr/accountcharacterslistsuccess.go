@@ -16,7 +16,7 @@ type AccountCharactersListSuccess struct {
 	Characters      []typ.AccountCharactersListCharacter
 }
 
-func (m AccountCharactersListSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharactersListSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharactersListSuccess
 }
 

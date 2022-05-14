@@ -8,7 +8,7 @@ import (
 
 type EmotesRemove struct{}
 
-func (m EmotesRemove) ProtocolId() retroproto.MsgSvrId {
+func (m EmotesRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesRemove
 }
 

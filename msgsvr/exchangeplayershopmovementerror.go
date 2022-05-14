@@ -8,7 +8,7 @@ import (
 
 type ExchangePlayerShopMovementError struct{}
 
-func (m ExchangePlayerShopMovementError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangePlayerShopMovementError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangePlayerShopMovementError
 }
 

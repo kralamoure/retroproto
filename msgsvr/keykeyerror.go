@@ -8,7 +8,7 @@ import (
 
 type KeyKeyError struct{}
 
-func (m KeyKeyError) ProtocolId() retroproto.MsgSvrId {
+func (m KeyKeyError) MessageId() retroproto.MsgSvrId {
 	return retroproto.KeyKeyError
 }
 

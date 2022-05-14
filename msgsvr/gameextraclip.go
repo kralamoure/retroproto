@@ -8,7 +8,7 @@ import (
 
 type GameExtraClip struct{}
 
-func (m GameExtraClip) ProtocolId() retroproto.MsgSvrId {
+func (m GameExtraClip) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameExtraClip
 }
 

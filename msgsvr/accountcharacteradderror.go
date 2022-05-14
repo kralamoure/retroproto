@@ -8,7 +8,7 @@ type AccountCharacterAddError struct {
 	Reason rune
 }
 
-func (m AccountCharacterAddError) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharacterAddError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterAddError
 }
 

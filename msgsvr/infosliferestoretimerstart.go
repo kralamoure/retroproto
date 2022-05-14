@@ -11,7 +11,7 @@ type InfosLifeRestoreTimerStart struct {
 	Interval time.Duration
 }
 
-func (m InfosLifeRestoreTimerStart) ProtocolId() retroproto.MsgSvrId {
+func (m InfosLifeRestoreTimerStart) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosLifeRestoreTimerStart
 }
 

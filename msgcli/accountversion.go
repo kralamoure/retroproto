@@ -17,7 +17,7 @@ type AccountVersion struct {
 	Electron  bool
 }
 
-func (m AccountVersion) ProtocolId() retroproto.MsgCliId {
+func (m AccountVersion) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountVersion
 }
 

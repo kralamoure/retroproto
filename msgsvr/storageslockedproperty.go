@@ -8,7 +8,7 @@ import (
 
 type StoragesLockedProperty struct{}
 
-func (m StoragesLockedProperty) ProtocolId() retroproto.MsgSvrId {
+func (m StoragesLockedProperty) MessageId() retroproto.MsgSvrId {
 	return retroproto.StoragesLockedProperty
 }
 

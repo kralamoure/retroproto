@@ -14,7 +14,7 @@ type ItemsAccessories struct {
 	Accessories typ.CommonAccessories
 }
 
-func (m ItemsAccessories) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsAccessories) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsAccessories
 }
 

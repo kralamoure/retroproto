@@ -8,7 +8,7 @@ type AccountPseudo struct {
 	Value string
 }
 
-func (m AccountPseudo) ProtocolId() retroproto.MsgSvrId {
+func (m AccountPseudo) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountPseudo
 }
 

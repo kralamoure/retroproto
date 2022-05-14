@@ -8,7 +8,7 @@ import (
 
 type GameClearAllEffect struct{}
 
-func (m GameClearAllEffect) ProtocolId() retroproto.MsgSvrId {
+func (m GameClearAllEffect) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameClearAllEffect
 }
 

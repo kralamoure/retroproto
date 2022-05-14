@@ -6,7 +6,7 @@ import (
 
 type BasicsGetDate struct{}
 
-func (m BasicsGetDate) ProtocolId() retroproto.MsgCliId {
+func (m BasicsGetDate) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsGetDate
 }
 

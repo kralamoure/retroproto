@@ -8,7 +8,7 @@ import (
 
 type ConquestPrismInfosClosing struct{}
 
-func (m ConquestPrismInfosClosing) ProtocolId() retroproto.MsgSvrId {
+func (m ConquestPrismInfosClosing) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestPrismInfosClosing
 }
 

@@ -8,7 +8,7 @@ import (
 
 type DocumentsCreateSuccess struct{}
 
-func (m DocumentsCreateSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m DocumentsCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.DocumentsCreateSuccess
 }
 

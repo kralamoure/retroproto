@@ -10,7 +10,7 @@ type ExchangeMountStorageAdd struct {
 	NewBorn bool
 }
 
-func (m ExchangeMountStorageAdd) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeMountStorageAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeMountStorageAdd
 }
 

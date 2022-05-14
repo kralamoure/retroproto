@@ -8,7 +8,7 @@ import (
 
 type ExchangeSellError struct{}
 
-func (m ExchangeSellError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeSellError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeSellError
 }
 

@@ -8,7 +8,7 @@ import (
 
 type BasicsAuthorizedKickCommand struct{}
 
-func (m BasicsAuthorizedKickCommand) ProtocolId() retroproto.MsgCliId {
+func (m BasicsAuthorizedKickCommand) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsAuthorizedKickCommand
 }
 

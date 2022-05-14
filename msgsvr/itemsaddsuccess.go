@@ -30,7 +30,7 @@ type ItemsAddSuccessItemObject struct {
 	Effects    []retrotyp.Effect
 }
 
-func (m ItemsAddSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsAddSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsAddSuccess
 }
 

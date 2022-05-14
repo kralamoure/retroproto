@@ -11,7 +11,7 @@ type AccountHosts struct {
 	Value []typ.AccountHostsHost
 }
 
-func (m AccountHosts) ProtocolId() retroproto.MsgSvrId {
+func (m AccountHosts) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountHosts
 }
 

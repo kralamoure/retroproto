@@ -8,7 +8,7 @@ import (
 
 type ConquestWorldInfosJoin struct{}
 
-func (m ConquestWorldInfosJoin) ProtocolId() retroproto.MsgCliId {
+func (m ConquestWorldInfosJoin) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestWorldInfosJoin
 }
 

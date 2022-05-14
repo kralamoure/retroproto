@@ -8,7 +8,7 @@ import (
 
 type ExchangeAccept struct{}
 
-func (m ExchangeAccept) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeAccept) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeAccept
 }
 

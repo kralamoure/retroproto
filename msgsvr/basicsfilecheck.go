@@ -8,7 +8,7 @@ import (
 
 type BasicsFileCheck struct{}
 
-func (m BasicsFileCheck) ProtocolId() retroproto.MsgSvrId {
+func (m BasicsFileCheck) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsFileCheck
 }
 

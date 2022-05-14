@@ -8,7 +8,7 @@ import (
 
 type PartyAccept struct{}
 
-func (m PartyAccept) ProtocolId() retroproto.MsgSvrId {
+func (m PartyAccept) MessageId() retroproto.MsgSvrId {
 	return retroproto.PartyAccept
 }
 

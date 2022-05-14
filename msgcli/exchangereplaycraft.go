@@ -8,7 +8,7 @@ import (
 
 type ExchangeReplayCraft struct{}
 
-func (m ExchangeReplayCraft) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeReplayCraft) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeReplayCraft
 }
 

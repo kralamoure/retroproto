@@ -12,7 +12,7 @@ type GameCreateSuccess struct {
 	Type int
 }
 
-func (m GameCreateSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m GameCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameCreateSuccess
 }
 

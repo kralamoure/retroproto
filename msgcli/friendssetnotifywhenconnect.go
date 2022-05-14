@@ -8,7 +8,7 @@ import (
 
 type FriendsSetNotifyWhenConnect struct{}
 
-func (m FriendsSetNotifyWhenConnect) ProtocolId() retroproto.MsgCliId {
+func (m FriendsSetNotifyWhenConnect) MessageId() retroproto.MsgCliId {
 	return retroproto.FriendsSetNotifyWhenConnect
 }
 

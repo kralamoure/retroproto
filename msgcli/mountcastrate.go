@@ -6,7 +6,7 @@ import (
 
 type MountCastrate struct{}
 
-func (m MountCastrate) ProtocolId() retroproto.MsgCliId {
+func (m MountCastrate) MessageId() retroproto.MsgCliId {
 	return retroproto.MountCastrate
 }
 

@@ -8,7 +8,7 @@ import (
 
 type SubareasList struct{}
 
-func (m SubareasList) ProtocolId() retroproto.MsgSvrId {
+func (m SubareasList) MessageId() retroproto.MsgSvrId {
 	return retroproto.SubareasList
 }
 

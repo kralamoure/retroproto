@@ -11,7 +11,7 @@ type ExchangePutInInventoryFromShed struct {
 	MountId int
 }
 
-func (m ExchangePutInInventoryFromShed) ProtocolId() retroproto.MsgCliId {
+func (m ExchangePutInInventoryFromShed) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangePutInInventoryFromShed
 }
 

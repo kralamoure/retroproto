@@ -8,7 +8,7 @@ import (
 
 type JobLevel struct{}
 
-func (m JobLevel) ProtocolId() retroproto.MsgSvrId {
+func (m JobLevel) MessageId() retroproto.MsgSvrId {
 	return retroproto.JobLevel
 }
 

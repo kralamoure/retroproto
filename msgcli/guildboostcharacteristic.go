@@ -8,7 +8,7 @@ import (
 
 type GuildBoostCharacteristic struct{}
 
-func (m GuildBoostCharacteristic) ProtocolId() retroproto.MsgCliId {
+func (m GuildBoostCharacteristic) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildBoostCharacteristic
 }
 

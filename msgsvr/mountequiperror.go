@@ -8,7 +8,7 @@ type MountEquipError struct {
 	Reason rune
 }
 
-func (m MountEquipError) ProtocolId() retroproto.MsgSvrId {
+func (m MountEquipError) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountEquipError
 }
 

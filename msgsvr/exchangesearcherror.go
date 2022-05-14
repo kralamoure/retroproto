@@ -6,7 +6,7 @@ import (
 
 type ExchangeSearchError struct{}
 
-func (m ExchangeSearchError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeSearchError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeSearchError
 }
 

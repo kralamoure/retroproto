@@ -8,7 +8,7 @@ import (
 
 type AccountRescue struct{}
 
-func (m AccountRescue) ProtocolId() retroproto.MsgSvrId {
+func (m AccountRescue) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountRescue
 }
 

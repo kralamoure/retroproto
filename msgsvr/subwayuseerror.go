@@ -8,7 +8,7 @@ import (
 
 type SubwayUseError struct{}
 
-func (m SubwayUseError) ProtocolId() retroproto.MsgSvrId {
+func (m SubwayUseError) MessageId() retroproto.MsgSvrId {
 	return retroproto.SubwayUseError
 }
 

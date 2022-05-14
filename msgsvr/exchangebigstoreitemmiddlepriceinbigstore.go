@@ -13,7 +13,7 @@ type ExchangeBigStoreItemMiddlePriceInBigStore struct {
 	Price      int
 }
 
-func (m ExchangeBigStoreItemMiddlePriceInBigStore) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeBigStoreItemMiddlePriceInBigStore) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeBigStoreItemMiddlePriceInBigStore
 }
 

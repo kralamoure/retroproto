@@ -8,7 +8,7 @@ import (
 
 type GameCellData struct{}
 
-func (m GameCellData) ProtocolId() retroproto.MsgSvrId {
+func (m GameCellData) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameCellData
 }
 

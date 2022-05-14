@@ -8,7 +8,7 @@ import (
 
 type GuildCreateError struct{}
 
-func (m GuildCreateError) ProtocolId() retroproto.MsgSvrId {
+func (m GuildCreateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildCreateError
 }
 

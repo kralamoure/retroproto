@@ -17,7 +17,7 @@ type ChatSend struct {
 	Params          string // TODO
 }
 
-func (m ChatSend) ProtocolId() retroproto.MsgCliId {
+func (m ChatSend) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatSend
 }
 

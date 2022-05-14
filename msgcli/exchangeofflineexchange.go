@@ -8,7 +8,7 @@ import (
 
 type ExchangeOfflineExchange struct{}
 
-func (m ExchangeOfflineExchange) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeOfflineExchange) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeOfflineExchange
 }
 

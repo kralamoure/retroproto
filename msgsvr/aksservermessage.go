@@ -9,7 +9,7 @@ type AksServerMessage struct {
 	Value string
 }
 
-func (m AksServerMessage) ProtocolId() retroproto.MsgSvrId {
+func (m AksServerMessage) MessageId() retroproto.MsgSvrId {
 	return retroproto.AksServerMessage
 }
 

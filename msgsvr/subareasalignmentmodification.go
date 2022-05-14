@@ -8,7 +8,7 @@ import (
 
 type SubareasAlignmentModification struct{}
 
-func (m SubareasAlignmentModification) ProtocolId() retroproto.MsgSvrId {
+func (m SubareasAlignmentModification) MessageId() retroproto.MsgSvrId {
 	return retroproto.SubareasAlignmentModification
 }
 

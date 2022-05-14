@@ -11,7 +11,7 @@ type EmotesSetDirection struct {
 	Dir int
 }
 
-func (m EmotesSetDirection) ProtocolId() retroproto.MsgCliId {
+func (m EmotesSetDirection) MessageId() retroproto.MsgCliId {
 	return retroproto.EmotesSetDirection
 }
 

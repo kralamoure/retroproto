@@ -8,7 +8,7 @@ import (
 
 type BasicsInvisible struct{}
 
-func (m BasicsInvisible) ProtocolId() retroproto.MsgCliId {
+func (m BasicsInvisible) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsInvisible
 }
 

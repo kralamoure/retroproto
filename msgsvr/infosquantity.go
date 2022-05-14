@@ -8,7 +8,7 @@ import (
 
 type InfosQuantity struct{}
 
-func (m InfosQuantity) ProtocolId() retroproto.MsgSvrId {
+func (m InfosQuantity) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosQuantity
 }
 

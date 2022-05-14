@@ -10,7 +10,7 @@ type AccountSearchForFriend struct {
 	Pseudo string
 }
 
-func (m AccountSearchForFriend) ProtocolId() retroproto.MsgCliId {
+func (m AccountSearchForFriend) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSearchForFriend
 }
 

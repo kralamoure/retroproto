@@ -8,7 +8,7 @@ import (
 
 type ExchangeGetCrafterForJob struct{}
 
-func (m ExchangeGetCrafterForJob) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeGetCrafterForJob) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeGetCrafterForJob
 }
 

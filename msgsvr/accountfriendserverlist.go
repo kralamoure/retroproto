@@ -11,7 +11,7 @@ type AccountFriendServerList struct {
 	ServersCharacters []typ.AccountServersListServerCharacters
 }
 
-func (m AccountFriendServerList) ProtocolId() retroproto.MsgSvrId {
+func (m AccountFriendServerList) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountFriendServerList
 }
 

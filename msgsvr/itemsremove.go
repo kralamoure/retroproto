@@ -11,7 +11,7 @@ type ItemsRemove struct {
 	Id int
 }
 
-func (m ItemsRemove) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsRemove
 }
 

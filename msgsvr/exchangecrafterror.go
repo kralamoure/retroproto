@@ -8,7 +8,7 @@ import (
 
 type ExchangeCraftError struct{}
 
-func (m ExchangeCraftError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeCraftError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCraftError
 }
 

@@ -8,7 +8,7 @@ import (
 
 type InfosInfoCoordinatesPHighlight struct{}
 
-func (m InfosInfoCoordinatesPHighlight) ProtocolId() retroproto.MsgSvrId {
+func (m InfosInfoCoordinatesPHighlight) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosInfoCoordinatesPHighlight
 }
 

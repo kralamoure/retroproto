@@ -12,7 +12,7 @@ type BasicsTime struct {
 	Value time.Time
 }
 
-func (m BasicsTime) ProtocolId() retroproto.MsgSvrId {
+func (m BasicsTime) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsTime
 }
 

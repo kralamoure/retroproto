@@ -8,7 +8,7 @@ import (
 
 type ConquestRequestBalance struct{}
 
-func (m ConquestRequestBalance) ProtocolId() retroproto.MsgCliId {
+func (m ConquestRequestBalance) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestRequestBalance
 }
 

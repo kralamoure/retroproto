@@ -11,7 +11,7 @@ type MountXP struct {
 	Percent int
 }
 
-func (m MountXP) ProtocolId() retroproto.MsgSvrId {
+func (m MountXP) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountXP
 }
 

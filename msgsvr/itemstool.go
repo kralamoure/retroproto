@@ -11,7 +11,7 @@ type ItemsTool struct {
 	JobId int
 }
 
-func (m ItemsTool) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsTool) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsTool
 }
 

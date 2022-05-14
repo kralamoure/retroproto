@@ -8,7 +8,7 @@ import (
 
 type SubwayRequestLeave struct{}
 
-func (m SubwayRequestLeave) ProtocolId() retroproto.MsgCliId {
+func (m SubwayRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.SubwayRequestLeave
 }
 

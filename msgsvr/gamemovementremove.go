@@ -11,7 +11,7 @@ type GameMovementRemove struct {
 	Id int
 }
 
-func (m GameMovementRemove) ProtocolId() retroproto.MsgSvrId {
+func (m GameMovementRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMovementRemove
 }
 

@@ -11,7 +11,7 @@ type AccountCommunity struct {
 	Id int
 }
 
-func (m AccountCommunity) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCommunity) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCommunity
 }
 

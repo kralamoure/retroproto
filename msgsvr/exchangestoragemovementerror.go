@@ -8,7 +8,7 @@ import (
 
 type ExchangeStorageMovementError struct{}
 
-func (m ExchangeStorageMovementError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeStorageMovementError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeStorageMovementError
 }
 

@@ -6,7 +6,7 @@ import (
 
 type GameGetExtraInformations struct{}
 
-func (m GameGetExtraInformations) ProtocolId() retroproto.MsgCliId {
+func (m GameGetExtraInformations) MessageId() retroproto.MsgCliId {
 	return retroproto.GameGetExtraInformations
 }
 

@@ -8,7 +8,7 @@ import (
 
 type ItemsItemFound struct{}
 
-func (m ItemsItemFound) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsItemFound) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsItemFound
 }
 

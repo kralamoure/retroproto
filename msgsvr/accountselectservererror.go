@@ -9,7 +9,7 @@ type AccountSelectServerError struct {
 	Extra  string
 }
 
-func (m AccountSelectServerError) ProtocolId() retroproto.MsgSvrId {
+func (m AccountSelectServerError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountSelectServerError
 }
 

@@ -8,7 +8,7 @@ import (
 
 type PartyMovement struct{}
 
-func (m PartyMovement) ProtocolId() retroproto.MsgSvrId {
+func (m PartyMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.PartyMovement
 }
 

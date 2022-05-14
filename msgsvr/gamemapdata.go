@@ -14,7 +14,7 @@ type GameMapData struct {
 	Key  string
 }
 
-func (m GameMapData) ProtocolId() retroproto.MsgSvrId {
+func (m GameMapData) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMapData
 }
 

@@ -6,7 +6,7 @@ import (
 
 type SpellsSpellForgetShow struct{}
 
-func (m SpellsSpellForgetShow) ProtocolId() retroproto.MsgSvrId {
+func (m SpellsSpellForgetShow) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsSpellForgetShow
 }
 

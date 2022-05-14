@@ -8,7 +8,7 @@ import (
 
 type ChatReportMessage struct{}
 
-func (m ChatReportMessage) ProtocolId() retroproto.MsgCliId {
+func (m ChatReportMessage) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatReportMessage
 }
 

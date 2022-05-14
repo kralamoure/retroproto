@@ -8,7 +8,7 @@ import (
 
 type StoragesListRemove struct{}
 
-func (m StoragesListRemove) ProtocolId() retroproto.MsgSvrId {
+func (m StoragesListRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.StoragesListRemove
 }
 

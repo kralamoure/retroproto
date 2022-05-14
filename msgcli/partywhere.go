@@ -8,7 +8,7 @@ import (
 
 type PartyWhere struct{}
 
-func (m PartyWhere) ProtocolId() retroproto.MsgCliId {
+func (m PartyWhere) MessageId() retroproto.MsgCliId {
 	return retroproto.PartyWhere
 }
 

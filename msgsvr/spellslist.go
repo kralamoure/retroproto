@@ -14,7 +14,7 @@ type SpellsList struct {
 	Spells []retro.CharacterSpell
 }
 
-func (m SpellsList) ProtocolId() retroproto.MsgSvrId {
+func (m SpellsList) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsList
 }
 

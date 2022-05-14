@@ -237,7 +237,7 @@ type GameMovementGFXData struct {
 	GFXs  []string
 }
 
-func (m GameMovement) ProtocolId() retroproto.MsgSvrId {
+func (m GameMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMovement
 }
 

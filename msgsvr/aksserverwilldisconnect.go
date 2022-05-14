@@ -6,7 +6,7 @@ import (
 
 type AksServerWillDisconnect struct{}
 
-func (m AksServerWillDisconnect) ProtocolId() retroproto.MsgSvrId {
+func (m AksServerWillDisconnect) MessageId() retroproto.MsgSvrId {
 	return retroproto.AksServerWillDisconnect
 }
 

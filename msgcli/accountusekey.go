@@ -11,7 +11,7 @@ type AccountUseKey struct {
 	Id int
 }
 
-func (m AccountUseKey) ProtocolId() retroproto.MsgCliId {
+func (m AccountUseKey) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountUseKey
 }
 

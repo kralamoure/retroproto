@@ -8,7 +8,7 @@ import (
 
 type GuildRequestLocal struct{}
 
-func (m GuildRequestLocal) ProtocolId() retroproto.MsgSvrId {
+func (m GuildRequestLocal) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildRequestLocal
 }
 

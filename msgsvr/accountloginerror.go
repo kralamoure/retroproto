@@ -9,7 +9,7 @@ type AccountLoginError struct {
 	Extra  string
 }
 
-func (m AccountLoginError) ProtocolId() retroproto.MsgSvrId {
+func (m AccountLoginError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountLoginError
 }
 

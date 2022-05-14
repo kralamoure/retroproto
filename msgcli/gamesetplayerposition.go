@@ -8,7 +8,7 @@ import (
 
 type GameSetPlayerPosition struct{}
 
-func (m GameSetPlayerPosition) ProtocolId() retroproto.MsgCliId {
+func (m GameSetPlayerPosition) MessageId() retroproto.MsgCliId {
 	return retroproto.GameSetPlayerPosition
 }
 

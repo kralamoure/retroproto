@@ -8,7 +8,7 @@ import (
 
 type ConquestPrismSurvived struct{}
 
-func (m ConquestPrismSurvived) ProtocolId() retroproto.MsgSvrId {
+func (m ConquestPrismSurvived) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestPrismSurvived
 }
 

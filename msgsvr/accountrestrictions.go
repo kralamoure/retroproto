@@ -9,7 +9,7 @@ type AccountRestrictions struct {
 	Restrictions typ.CommonRestrictions
 }
 
-func (m AccountRestrictions) ProtocolId() retroproto.MsgSvrId {
+func (m AccountRestrictions) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountRestrictions
 }
 

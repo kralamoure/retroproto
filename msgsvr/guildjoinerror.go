@@ -8,7 +8,7 @@ import (
 
 type GuildJoinError struct{}
 
-func (m GuildJoinError) ProtocolId() retroproto.MsgSvrId {
+func (m GuildJoinError) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildJoinError
 }
 

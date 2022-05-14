@@ -6,7 +6,7 @@ import (
 
 type GameMapLoaded struct{}
 
-func (m GameMapLoaded) ProtocolId() retroproto.MsgSvrId {
+func (m GameMapLoaded) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMapLoaded
 }
 

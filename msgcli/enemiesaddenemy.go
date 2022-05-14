@@ -8,7 +8,7 @@ import (
 
 type EnemiesAddEnemy struct{}
 
-func (m EnemiesAddEnemy) ProtocolId() retroproto.MsgCliId {
+func (m EnemiesAddEnemy) MessageId() retroproto.MsgCliId {
 	return retroproto.EnemiesAddEnemy
 }
 

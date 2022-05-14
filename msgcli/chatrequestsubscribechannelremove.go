@@ -10,7 +10,7 @@ type ChatRequestSubscribeChannelRemove struct {
 	Channels []rune
 }
 
-func (m ChatRequestSubscribeChannelRemove) ProtocolId() retroproto.MsgCliId {
+func (m ChatRequestSubscribeChannelRemove) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatRequestSubscribeChannelRemove
 }
 

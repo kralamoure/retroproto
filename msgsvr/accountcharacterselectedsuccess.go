@@ -24,7 +24,7 @@ type AccountCharacterSelectedSuccess struct {
 	Items   []typ.AccountCharacterSelectedSuccessItem
 }
 
-func (m AccountCharacterSelectedSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharacterSelectedSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterSelectedSuccess
 }
 

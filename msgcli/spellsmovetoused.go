@@ -13,7 +13,7 @@ type SpellsMoveToUsed struct {
 	Position int
 }
 
-func (m SpellsMoveToUsed) ProtocolId() retroproto.MsgCliId {
+func (m SpellsMoveToUsed) MessageId() retroproto.MsgCliId {
 	return retroproto.SpellsMoveToUsed
 }
 

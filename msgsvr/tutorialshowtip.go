@@ -11,7 +11,7 @@ type TutorialShowTip struct {
 	Id int
 }
 
-func (m TutorialShowTip) ProtocolId() retroproto.MsgSvrId {
+func (m TutorialShowTip) MessageId() retroproto.MsgSvrId {
 	return retroproto.TutorialShowTip
 }
 

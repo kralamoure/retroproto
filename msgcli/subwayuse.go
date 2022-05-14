@@ -8,7 +8,7 @@ import (
 
 type SubwayUse struct{}
 
-func (m SubwayUse) ProtocolId() retroproto.MsgCliId {
+func (m SubwayUse) MessageId() retroproto.MsgCliId {
 	return retroproto.SubwayUse
 }
 

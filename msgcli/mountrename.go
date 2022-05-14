@@ -8,7 +8,7 @@ type MountRename struct {
 	Name string
 }
 
-func (m MountRename) ProtocolId() retroproto.MsgCliId {
+func (m MountRename) MessageId() retroproto.MsgCliId {
 	return retroproto.MountRename
 }
 

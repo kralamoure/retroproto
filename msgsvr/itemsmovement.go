@@ -15,7 +15,7 @@ type ItemsMovement struct {
 	Position retrotyp.CharacterItemPosition
 }
 
-func (m ItemsMovement) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsMovement
 }
 

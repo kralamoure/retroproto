@@ -8,7 +8,7 @@ import (
 
 type ItemsFeed struct{}
 
-func (m ItemsFeed) ProtocolId() retroproto.MsgCliId {
+func (m ItemsFeed) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsFeed
 }
 

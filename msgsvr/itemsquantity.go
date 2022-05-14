@@ -13,7 +13,7 @@ type ItemsQuantity struct {
 	Quantity int
 }
 
-func (m ItemsQuantity) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsQuantity) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsQuantity
 }
 

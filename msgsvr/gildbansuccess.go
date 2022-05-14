@@ -8,7 +8,7 @@ import (
 
 type GildBanSuccess struct{}
 
-func (m GildBanSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m GildBanSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.GildBanSuccess
 }
 

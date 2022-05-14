@@ -8,7 +8,7 @@ type AccountSendIdentity struct {
 	Id string
 }
 
-func (m AccountSendIdentity) ProtocolId() retroproto.MsgCliId {
+func (m AccountSendIdentity) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSendIdentity
 }
 

@@ -8,7 +8,7 @@ import (
 
 type EmotesUseError struct{}
 
-func (m EmotesUseError) ProtocolId() retroproto.MsgSvrId {
+func (m EmotesUseError) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesUseError
 }
 

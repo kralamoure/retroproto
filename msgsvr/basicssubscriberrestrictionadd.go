@@ -11,7 +11,7 @@ type BasicsSubscriberRestrictionAdd struct {
 	DialogId int
 }
 
-func (m BasicsSubscriberRestrictionAdd) ProtocolId() retroproto.MsgSvrId {
+func (m BasicsSubscriberRestrictionAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsSubscriberRestrictionAdd
 }
 

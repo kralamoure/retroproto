@@ -8,7 +8,7 @@ type AksRPing struct {
 	Value string
 }
 
-func (m AksRPing) ProtocolId() retroproto.MsgSvrId {
+func (m AksRPing) MessageId() retroproto.MsgSvrId {
 	return retroproto.AksRPing
 }
 

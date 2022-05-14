@@ -11,7 +11,7 @@ type AccountLoginSuccess struct {
 	Authorized bool
 }
 
-func (m AccountLoginSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m AccountLoginSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountLoginSuccess
 }
 

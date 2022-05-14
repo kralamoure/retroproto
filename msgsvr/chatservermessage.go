@@ -8,7 +8,7 @@ type ChatServerMessage struct {
 	Message string
 }
 
-func (m ChatServerMessage) ProtocolId() retroproto.MsgSvrId {
+func (m ChatServerMessage) MessageId() retroproto.MsgSvrId {
 	return retroproto.ChatServerMessage
 }
 

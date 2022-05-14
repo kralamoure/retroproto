@@ -8,7 +8,7 @@ import (
 
 type MountMountPark struct{}
 
-func (m MountMountPark) ProtocolId() retroproto.MsgSvrId {
+func (m MountMountPark) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountMountPark
 }
 

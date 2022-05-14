@@ -8,7 +8,7 @@ import (
 
 type AccountGetRandomCharacterName struct{}
 
-func (m AccountGetRandomCharacterName) ProtocolId() retroproto.MsgCliId {
+func (m AccountGetRandomCharacterName) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountGetRandomCharacterName
 }
 

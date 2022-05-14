@@ -8,7 +8,7 @@ import (
 
 type ExchangeReady struct{}
 
-func (m ExchangeReady) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeReady) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeReady
 }
 

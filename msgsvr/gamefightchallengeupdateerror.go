@@ -8,7 +8,7 @@ import (
 
 type GameFightChallengeUpdateError struct{}
 
-func (m GameFightChallengeUpdateError) ProtocolId() retroproto.MsgSvrId {
+func (m GameFightChallengeUpdateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameFightChallengeUpdateError
 }
 

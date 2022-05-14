@@ -8,7 +8,7 @@ import (
 
 type AccountAttributeGiftToCharacter struct{}
 
-func (m AccountAttributeGiftToCharacter) ProtocolId() retroproto.MsgCliId {
+func (m AccountAttributeGiftToCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountAttributeGiftToCharacter
 }
 

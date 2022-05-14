@@ -50,7 +50,7 @@ type GameActionsActionChallengeJoin struct {
 	ErrorReason  rune
 }
 
-func (m GameActions) ProtocolId() retroproto.MsgSvrId {
+func (m GameActions) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameActions
 }
 

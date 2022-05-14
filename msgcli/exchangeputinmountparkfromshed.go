@@ -11,7 +11,7 @@ type ExchangePutInMountParkFromShed struct {
 	MountId int
 }
 
-func (m ExchangePutInMountParkFromShed) ProtocolId() retroproto.MsgCliId {
+func (m ExchangePutInMountParkFromShed) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangePutInMountParkFromShed
 }
 

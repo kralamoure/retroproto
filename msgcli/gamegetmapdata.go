@@ -8,7 +8,7 @@ import (
 
 type GameGetMapData struct{}
 
-func (m GameGetMapData) ProtocolId() retroproto.MsgCliId {
+func (m GameGetMapData) MessageId() retroproto.MsgCliId {
 	return retroproto.GameGetMapData
 }
 

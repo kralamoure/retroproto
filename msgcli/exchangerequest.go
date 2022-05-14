@@ -14,7 +14,7 @@ type ExchangeRequest struct {
 	Cell int
 }
 
-func (m ExchangeRequest) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeRequest) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeRequest
 }
 

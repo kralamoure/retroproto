@@ -11,7 +11,7 @@ type ExchangePutInCertificateFromShed struct {
 	MountId int
 }
 
-func (m ExchangePutInCertificateFromShed) ProtocolId() retroproto.MsgCliId {
+func (m ExchangePutInCertificateFromShed) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangePutInCertificateFromShed
 }
 

@@ -6,7 +6,7 @@ import (
 
 type AccountCharacterDeleteError struct{}
 
-func (m AccountCharacterDeleteError) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharacterDeleteError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterDeleteError
 }
 

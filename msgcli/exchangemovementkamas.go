@@ -8,7 +8,7 @@ import (
 
 type ExchangeMovementKamas struct{}
 
-func (m ExchangeMovementKamas) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeMovementKamas) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeMovementKamas
 }
 

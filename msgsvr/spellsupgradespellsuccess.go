@@ -13,7 +13,7 @@ type SpellsUpgradeSpellSuccess struct {
 	Level int
 }
 
-func (m SpellsUpgradeSpellSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m SpellsUpgradeSpellSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsUpgradeSpellSuccess
 }
 

@@ -8,7 +8,7 @@ import (
 
 type BasicsWhoIsError struct{}
 
-func (m BasicsWhoIsError) ProtocolId() retroproto.MsgSvrId {
+func (m BasicsWhoIsError) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsWhoIsError
 }
 

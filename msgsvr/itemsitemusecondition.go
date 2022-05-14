@@ -8,7 +8,7 @@ import (
 
 type ItemsItemUseCondition struct{}
 
-func (m ItemsItemUseCondition) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsItemUseCondition) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsItemUseCondition
 }
 

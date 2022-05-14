@@ -8,7 +8,7 @@ import (
 
 type DialogCustomAction struct{}
 
-func (m DialogCustomAction) ProtocolId() retroproto.MsgSvrId {
+func (m DialogCustomAction) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogCustomAction
 }
 

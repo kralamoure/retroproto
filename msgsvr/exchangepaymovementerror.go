@@ -8,7 +8,7 @@ import (
 
 type ExchangePayMovementError struct{}
 
-func (m ExchangePayMovementError) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangePayMovementError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangePayMovementError
 }
 

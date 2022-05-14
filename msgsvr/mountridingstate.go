@@ -8,7 +8,7 @@ type MountRidingState struct {
 	Riding bool
 }
 
-func (m MountRidingState) ProtocolId() retroproto.MsgSvrId {
+func (m MountRidingState) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountRidingState
 }
 

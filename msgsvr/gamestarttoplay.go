@@ -8,7 +8,7 @@ import (
 
 type GameStartToPlay struct{}
 
-func (m GameStartToPlay) ProtocolId() retroproto.MsgSvrId {
+func (m GameStartToPlay) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameStartToPlay
 }
 

@@ -11,7 +11,7 @@ type ExchangeMountStorageRemove struct {
 	MountId int
 }
 
-func (m ExchangeMountStorageRemove) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeMountStorageRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeMountStorageRemove
 }
 

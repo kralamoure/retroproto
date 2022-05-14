@@ -8,7 +8,7 @@ import (
 
 type AccountResetCharacter struct{}
 
-func (m AccountResetCharacter) ProtocolId() retroproto.MsgCliId {
+func (m AccountResetCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountResetCharacter
 }
 

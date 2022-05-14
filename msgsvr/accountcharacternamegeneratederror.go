@@ -11,7 +11,7 @@ type AccountCharacterNameGeneratedError struct {
 	Reason int
 }
 
-func (m AccountCharacterNameGeneratedError) ProtocolId() retroproto.MsgSvrId {
+func (m AccountCharacterNameGeneratedError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterNameGeneratedError
 }
 

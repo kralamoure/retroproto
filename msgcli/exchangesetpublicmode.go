@@ -8,7 +8,7 @@ import (
 
 type ExchangeSetPublicMode struct{}
 
-func (m ExchangeSetPublicMode) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeSetPublicMode) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeSetPublicMode
 }
 

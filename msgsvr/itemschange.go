@@ -8,7 +8,7 @@ import (
 
 type ItemsChange struct{}
 
-func (m ItemsChange) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsChange) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsChange
 }
 

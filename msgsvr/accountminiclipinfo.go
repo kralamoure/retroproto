@@ -8,7 +8,7 @@ import (
 
 type AccountMiniClipInfo struct{}
 
-func (m AccountMiniClipInfo) ProtocolId() retroproto.MsgSvrId {
+func (m AccountMiniClipInfo) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountMiniClipInfo
 }
 

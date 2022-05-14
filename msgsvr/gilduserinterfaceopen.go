@@ -8,7 +8,7 @@ import (
 
 type GildUserInterfaceOpen struct{}
 
-func (m GildUserInterfaceOpen) ProtocolId() retroproto.MsgSvrId {
+func (m GildUserInterfaceOpen) MessageId() retroproto.MsgSvrId {
 	return retroproto.GildUserInterfaceOpen
 }
 

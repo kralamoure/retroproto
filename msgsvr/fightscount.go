@@ -11,7 +11,7 @@ type FightsCount struct {
 	Value int
 }
 
-func (m FightsCount) ProtocolId() retroproto.MsgSvrId {
+func (m FightsCount) MessageId() retroproto.MsgSvrId {
 	return retroproto.FightsCount
 }
 

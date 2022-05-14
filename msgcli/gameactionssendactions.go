@@ -34,7 +34,7 @@ type GameActionsSendActionsActionChallengeRefuse struct {
 	ChallengerId int
 }
 
-func (m GameActionsSendActions) ProtocolId() retroproto.MsgCliId {
+func (m GameActionsSendActions) MessageId() retroproto.MsgCliId {
 	return retroproto.GameActionsSendActions
 }
 

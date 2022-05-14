@@ -8,7 +8,7 @@ import (
 
 type ExchangeCrafterReferenceRemove struct{}
 
-func (m ExchangeCrafterReferenceRemove) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeCrafterReferenceRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCrafterReferenceRemove
 }
 

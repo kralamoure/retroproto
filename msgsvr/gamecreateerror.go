@@ -6,7 +6,7 @@ import (
 
 type GameCreateError struct{}
 
-func (m GameCreateError) ProtocolId() retroproto.MsgSvrId {
+func (m GameCreateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameCreateError
 }
 

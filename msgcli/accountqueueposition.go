@@ -6,7 +6,7 @@ import (
 
 type AccountQueuePosition struct{}
 
-func (m AccountQueuePosition) ProtocolId() retroproto.MsgCliId {
+func (m AccountQueuePosition) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountQueuePosition
 }
 

@@ -13,7 +13,7 @@ type EmotesList struct {
 	Emotes []int
 }
 
-func (m EmotesList) ProtocolId() retroproto.MsgSvrId {
+func (m EmotesList) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesList
 }
 

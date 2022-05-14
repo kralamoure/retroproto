@@ -14,7 +14,7 @@ type AccountCredential struct {
 	CryptoMethod int
 }
 
-func (m AccountCredential) ProtocolId() retroproto.MsgCliId {
+func (m AccountCredential) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountCredential
 }
 

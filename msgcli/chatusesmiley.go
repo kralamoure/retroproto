@@ -8,7 +8,7 @@ import (
 
 type ChatUseSmiley struct{}
 
-func (m ChatUseSmiley) ProtocolId() retroproto.MsgCliId {
+func (m ChatUseSmiley) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatUseSmiley
 }
 

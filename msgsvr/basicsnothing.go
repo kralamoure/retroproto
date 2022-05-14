@@ -6,7 +6,7 @@ import (
 
 type BasicsNothing struct{}
 
-func (m BasicsNothing) ProtocolId() retroproto.MsgSvrId {
+func (m BasicsNothing) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsNothing
 }
 

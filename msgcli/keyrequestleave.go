@@ -8,7 +8,7 @@ import (
 
 type KeyRequestLeave struct{}
 
-func (m KeyRequestLeave) ProtocolId() retroproto.MsgCliId {
+func (m KeyRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.KeyRequestLeave
 }
 

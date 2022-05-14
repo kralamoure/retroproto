@@ -8,7 +8,7 @@ import (
 
 type BasicsWhoIs struct{}
 
-func (m BasicsWhoIs) ProtocolId() retroproto.MsgCliId {
+func (m BasicsWhoIs) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsWhoIs
 }
 

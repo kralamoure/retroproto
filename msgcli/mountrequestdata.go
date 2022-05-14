@@ -14,7 +14,7 @@ type MountRequestData struct {
 	Validity time.Time
 }
 
-func (m MountRequestData) ProtocolId() retroproto.MsgCliId {
+func (m MountRequestData) MessageId() retroproto.MsgCliId {
 	return retroproto.MountRequestData
 }
 

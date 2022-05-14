@@ -11,7 +11,7 @@ type ExchangeBigStoreItemList struct {
 	ItemTemplateId int
 }
 
-func (m ExchangeBigStoreItemList) ProtocolId() retroproto.MsgCliId {
+func (m ExchangeBigStoreItemList) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeBigStoreItemList
 }
 

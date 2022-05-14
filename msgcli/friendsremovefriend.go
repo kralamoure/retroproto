@@ -8,7 +8,7 @@ import (
 
 type FriendsRemoveFriend struct{}
 
-func (m FriendsRemoveFriend) ProtocolId() retroproto.MsgCliId {
+func (m FriendsRemoveFriend) MessageId() retroproto.MsgCliId {
 	return retroproto.FriendsRemoveFriend
 }
 

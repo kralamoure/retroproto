@@ -8,7 +8,7 @@ import (
 
 type ConquestWorldData struct{}
 
-func (m ConquestWorldData) ProtocolId() retroproto.MsgSvrId {
+func (m ConquestWorldData) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestWorldData
 }
 

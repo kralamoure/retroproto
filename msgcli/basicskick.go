@@ -8,7 +8,7 @@ import (
 
 type BasicsKick struct{}
 
-func (m BasicsKick) ProtocolId() retroproto.MsgCliId {
+func (m BasicsKick) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsKick
 }
 

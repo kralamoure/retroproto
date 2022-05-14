@@ -8,7 +8,7 @@ import (
 
 type EmotesUseSuccess struct{}
 
-func (m EmotesUseSuccess) ProtocolId() retroproto.MsgSvrId {
+func (m EmotesUseSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesUseSuccess
 }
 

@@ -11,7 +11,7 @@ type SpellsBoost struct {
 	Id int
 }
 
-func (m SpellsBoost) ProtocolId() retroproto.MsgCliId {
+func (m SpellsBoost) MessageId() retroproto.MsgCliId {
 	return retroproto.SpellsBoost
 }
 

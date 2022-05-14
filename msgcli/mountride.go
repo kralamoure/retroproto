@@ -6,7 +6,7 @@ import (
 
 type MountRide struct{}
 
-func (m MountRide) ProtocolId() retroproto.MsgCliId {
+func (m MountRide) MessageId() retroproto.MsgCliId {
 	return retroproto.MountRide
 }
 

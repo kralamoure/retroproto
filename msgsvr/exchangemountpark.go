@@ -8,7 +8,7 @@ import (
 
 type ExchangeMountPark struct{}
 
-func (m ExchangeMountPark) ProtocolId() retroproto.MsgSvrId {
+func (m ExchangeMountPark) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeMountPark
 }
 

@@ -13,7 +13,7 @@ type ItemsWeight struct {
 	Max     int
 }
 
-func (m ItemsWeight) ProtocolId() retroproto.MsgSvrId {
+func (m ItemsWeight) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsWeight
 }
 

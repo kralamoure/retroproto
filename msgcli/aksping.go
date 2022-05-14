@@ -8,7 +8,7 @@ import (
 
 type AksPing struct{}
 
-func (m AksPing) ProtocolId() retroproto.MsgCliId {
+func (m AksPing) MessageId() retroproto.MsgCliId {
 	return retroproto.AksPing
 }
 

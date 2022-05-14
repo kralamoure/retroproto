@@ -8,7 +8,7 @@ import (
 
 type FightsBlockSpectators struct{}
 
-func (m FightsBlockSpectators) ProtocolId() retroproto.MsgCliId {
+func (m FightsBlockSpectators) MessageId() retroproto.MsgCliId {
 	return retroproto.FightsBlockSpectators
 }
 

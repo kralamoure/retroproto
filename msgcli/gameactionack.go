@@ -11,7 +11,7 @@ type GameActionAck struct {
 	Id int
 }
 
-func (m GameActionAck) ProtocolId() retroproto.MsgCliId {
+func (m GameActionAck) MessageId() retroproto.MsgCliId {
 	return retroproto.GameActionAck
 }
 

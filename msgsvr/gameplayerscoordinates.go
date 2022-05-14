@@ -8,7 +8,7 @@ import (
 
 type GamePlayersCoordinates struct{}
 
-func (m GamePlayersCoordinates) ProtocolId() retroproto.MsgSvrId {
+func (m GamePlayersCoordinates) MessageId() retroproto.MsgSvrId {
 	return retroproto.GamePlayersCoordinates
 }
 

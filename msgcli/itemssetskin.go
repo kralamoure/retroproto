@@ -8,7 +8,7 @@ import (
 
 type ItemsSetSkin struct{}
 
-func (m ItemsSetSkin) ProtocolId() retroproto.MsgCliId {
+func (m ItemsSetSkin) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsSetSkin
 }
 

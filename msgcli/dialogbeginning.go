@@ -11,7 +11,7 @@ type DialogBeginning struct {
 	NPCId int
 }
 
-func (m DialogBeginning) ProtocolId() retroproto.MsgCliId {
+func (m DialogBeginning) MessageId() retroproto.MsgCliId {
 	return retroproto.DialogBeginning
 }
 

@@ -8,7 +8,7 @@ import (
 
 type ConquestSwitchPlaces struct{}
 
-func (m ConquestSwitchPlaces) ProtocolId() retroproto.MsgCliId {
+func (m ConquestSwitchPlaces) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestSwitchPlaces
 }
 

@@ -8,7 +8,7 @@ import (
 
 type ConquestAreaAlignmentChanged struct{}
 
-func (m ConquestAreaAlignmentChanged) ProtocolId() retroproto.MsgSvrId {
+func (m ConquestAreaAlignmentChanged) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestAreaAlignmentChanged
 }
 

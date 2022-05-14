@@ -6,7 +6,7 @@ import (
 
 type SpellsUpgradeSpellError struct{}
 
-func (m SpellsUpgradeSpellError) ProtocolId() retroproto.MsgSvrId {
+func (m SpellsUpgradeSpellError) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsUpgradeSpellError
 }
 
