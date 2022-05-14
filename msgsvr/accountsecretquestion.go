@@ -14,6 +14,10 @@ func (m AccountSecretQuestion) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountSecretQuestion
 }
 
+func (m AccountSecretQuestion) MessageName() string {
+	return "AccountSecretQuestion"
+}
+
 func (m AccountSecretQuestion) Serialized() (string, error) {
 	return url.QueryEscape(m.Value), nil
 }

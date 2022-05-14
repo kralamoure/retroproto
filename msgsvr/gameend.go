@@ -12,6 +12,10 @@ func (m GameEnd) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameEnd
 }
 
+func (m GameEnd) MessageName() string {
+	return "GameEnd"
+}
+
 func (m GameEnd) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

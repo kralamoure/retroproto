@@ -12,6 +12,10 @@ func (m GuildInvite) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildInvite
 }
 
+func (m GuildInvite) MessageName() string {
+	return "GuildInvite"
+}
+
 func (m GuildInvite) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

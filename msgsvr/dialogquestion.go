@@ -18,6 +18,10 @@ func (m DialogQuestion) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogQuestion
 }
 
+func (m DialogQuestion) MessageName() string {
+	return "DialogQuestion"
+}
+
 func (m DialogQuestion) Serialized() (string, error) {
 	var questionParams string
 	if len(m.QuestionParams) != 0 {

@@ -12,6 +12,10 @@ func (m ExchangeSellSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeSellSuccess
 }
 
+func (m ExchangeSellSuccess) MessageName() string {
+	return "ExchangeSellSuccess"
+}
+
 func (m ExchangeSellSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

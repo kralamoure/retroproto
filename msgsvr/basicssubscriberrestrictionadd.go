@@ -15,6 +15,10 @@ func (m BasicsSubscriberRestrictionAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsSubscriberRestrictionAdd
 }
 
+func (m BasicsSubscriberRestrictionAdd) MessageName() string {
+	return "BasicsSubscriberRestrictionAdd"
+}
+
 func (m BasicsSubscriberRestrictionAdd) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.DialogId), nil
 }

@@ -38,6 +38,10 @@ func (m ExchangeCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCreateSuccess
 }
 
+func (m ExchangeCreateSuccess) MessageName() string {
+	return "ExchangeCreateSuccess"
+}
+
 func (m ExchangeCreateSuccess) Serialized() (string, error) {
 	var s string
 	switch m.Type {

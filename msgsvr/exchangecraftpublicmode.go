@@ -12,6 +12,10 @@ func (m ExchangeCraftPublicMode) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCraftPublicMode
 }
 
+func (m ExchangeCraftPublicMode) MessageName() string {
+	return "ExchangeCraftPublicMode"
+}
+
 func (m ExchangeCraftPublicMode) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

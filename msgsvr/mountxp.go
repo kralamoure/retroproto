@@ -15,6 +15,10 @@ func (m MountXP) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountXP
 }
 
+func (m MountXP) MessageName() string {
+	return "MountXP"
+}
+
 func (m MountXP) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Percent), nil
 }

@@ -18,6 +18,10 @@ func (m ExchangeRequest) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeRequest
 }
 
+func (m ExchangeRequest) MessageName() string {
+	return "ExchangeRequest"
+}
+
 func (m ExchangeRequest) Serialized() (string, error) {
 	var id string
 	if m.Id != 0 {

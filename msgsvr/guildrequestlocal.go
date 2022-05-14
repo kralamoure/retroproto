@@ -12,6 +12,10 @@ func (m GuildRequestLocal) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildRequestLocal
 }
 
+func (m GuildRequestLocal) MessageName() string {
+	return "GuildRequestLocal"
+}
+
 func (m GuildRequestLocal) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

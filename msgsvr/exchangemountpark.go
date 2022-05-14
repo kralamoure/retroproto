@@ -12,6 +12,10 @@ func (m ExchangeMountPark) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeMountPark
 }
 
+func (m ExchangeMountPark) MessageName() string {
+	return "ExchangeMountPark"
+}
+
 func (m ExchangeMountPark) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

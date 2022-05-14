@@ -17,6 +17,10 @@ func (m EmotesDirection) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesDirection
 }
 
+func (m EmotesDirection) MessageName() string {
+	return "EmotesDirection"
+}
+
 func (m EmotesDirection) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d", m.Id, m.Dir), nil
 }

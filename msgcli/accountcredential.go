@@ -18,6 +18,10 @@ func (m AccountCredential) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountCredential
 }
 
+func (m AccountCredential) MessageName() string {
+	return "AccountCredential"
+}
+
 func (m AccountCredential) Serialized() (string, error) {
 	return fmt.Sprintf("%s\n#%d%s", m.Username, m.CryptoMethod, m.Hash), nil
 }

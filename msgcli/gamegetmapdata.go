@@ -12,6 +12,10 @@ func (m GameGetMapData) MessageId() retroproto.MsgCliId {
 	return retroproto.GameGetMapData
 }
 
+func (m GameGetMapData) MessageName() string {
+	return "GameGetMapData"
+}
+
 func (m GameGetMapData) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

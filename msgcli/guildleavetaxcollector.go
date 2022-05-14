@@ -12,6 +12,10 @@ func (m GuildLeaveTaxCollector) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildLeaveTaxCollector
 }
 
+func (m GuildLeaveTaxCollector) MessageName() string {
+	return "GuildLeaveTaxCollector"
+}
+
 func (m GuildLeaveTaxCollector) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

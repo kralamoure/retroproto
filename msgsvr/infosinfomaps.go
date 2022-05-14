@@ -12,6 +12,10 @@ func (m InfosInfoMaps) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosInfoMaps
 }
 
+func (m InfosInfoMaps) MessageName() string {
+	return "InfosInfoMaps"
+}
+
 func (m InfosInfoMaps) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m ExchangeMovementItems) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeMovementItems
 }
 
+func (m ExchangeMovementItems) MessageName() string {
+	return "ExchangeMovementItems"
+}
+
 func (m ExchangeMovementItems) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

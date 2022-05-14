@@ -18,6 +18,10 @@ func (m ExchangeBigStoreBuy) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeBigStoreBuy
 }
 
+func (m ExchangeBigStoreBuy) MessageName() string {
+	return "ExchangeBigStoreBuy"
+}
+
 func (m ExchangeBigStoreBuy) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d|%d", m.ItemId, m.QuantityIndex, m.Price), nil
 }

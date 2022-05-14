@@ -12,6 +12,10 @@ func (m PartyLeader) MessageId() retroproto.MsgSvrId {
 	return retroproto.PartyLeader
 }
 
+func (m PartyLeader) MessageName() string {
+	return "PartyLeader"
+}
+
 func (m PartyLeader) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

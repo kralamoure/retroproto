@@ -10,6 +10,10 @@ func (m AksPong) MessageId() retroproto.MsgSvrId {
 	return retroproto.AksPong
 }
 
+func (m AksPong) MessageName() string {
+	return "AksPong"
+}
+
 func (m AksPong) Serialized() (string, error) {
 	return "", nil
 }

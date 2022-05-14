@@ -12,6 +12,10 @@ func (m PartyAcceptInvitation) MessageId() retroproto.MsgCliId {
 	return retroproto.PartyAcceptInvitation
 }
 
+func (m PartyAcceptInvitation) MessageName() string {
+	return "PartyAcceptInvitation"
+}
+
 func (m PartyAcceptInvitation) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

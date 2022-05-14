@@ -12,6 +12,10 @@ func (m GameFightChallengeUpdateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameFightChallengeUpdateError
 }
 
+func (m GameFightChallengeUpdateError) MessageName() string {
+	return "GameFightChallengeUpdateError"
+}
+
 func (m GameFightChallengeUpdateError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

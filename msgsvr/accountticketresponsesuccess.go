@@ -15,6 +15,10 @@ func (m AccountTicketResponseSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountTicketResponseSuccess
 }
 
+func (m AccountTicketResponseSuccess) MessageName() string {
+	return "AccountTicketResponseSuccess"
+}
+
 func (m AccountTicketResponseSuccess) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.KeyId), nil
 }

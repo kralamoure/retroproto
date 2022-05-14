@@ -15,6 +15,10 @@ func (m SpecializationSet) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpecializationSet
 }
 
+func (m SpecializationSet) MessageName() string {
+	return "SpecializationSet"
+}
+
 func (m SpecializationSet) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Value), nil
 }

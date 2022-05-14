@@ -12,6 +12,10 @@ func (m FightsBlockJoiner) MessageId() retroproto.MsgCliId {
 	return retroproto.FightsBlockJoiner
 }
 
+func (m FightsBlockJoiner) MessageName() string {
+	return "FightsBlockJoiner"
+}
+
 func (m FightsBlockJoiner) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

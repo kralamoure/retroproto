@@ -12,6 +12,10 @@ func (m HousesRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.HousesRequestLeave
 }
 
+func (m HousesRequestLeave) MessageName() string {
+	return "HousesRequestLeave"
+}
+
 func (m HousesRequestLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

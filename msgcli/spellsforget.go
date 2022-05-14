@@ -15,6 +15,10 @@ func (m SpellsForget) MessageId() retroproto.MsgCliId {
 	return retroproto.SpellsForget
 }
 
+func (m SpellsForget) MessageName() string {
+	return "SpellsForget"
+}
+
 func (m SpellsForget) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Id), nil
 }

@@ -20,6 +20,10 @@ func (m AccountNewQueue) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountNewQueue
 }
 
+func (m AccountNewQueue) MessageName() string {
+	return "AccountNewQueue"
+}
+
 func (m AccountNewQueue) Serialized() (string, error) {
 	var subscriber string
 	if m.Subscriber {

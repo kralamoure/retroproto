@@ -12,6 +12,10 @@ func (m BasicsAuthorizedInterfaceOpen) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsAuthorizedInterfaceOpen
 }
 
+func (m BasicsAuthorizedInterfaceOpen) MessageName() string {
+	return "BasicsAuthorizedInterfaceOpen"
+}
+
 func (m BasicsAuthorizedInterfaceOpen) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

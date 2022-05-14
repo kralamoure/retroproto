@@ -17,6 +17,10 @@ func (m GameActionCancel) MessageId() retroproto.MsgCliId {
 	return retroproto.GameActionCancel
 }
 
+func (m GameActionCancel) MessageName() string {
+	return "GameActionCancel"
+}
+
 func (m GameActionCancel) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%s", m.Id, m.Params), nil
 }

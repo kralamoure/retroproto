@@ -16,6 +16,10 @@ func (m GameCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameCreateSuccess
 }
 
+func (m GameCreateSuccess) MessageName() string {
+	return "GameCreateSuccess"
+}
+
 func (m GameCreateSuccess) Serialized() (string, error) {
 	return fmt.Sprintf("|%d", m.Type), nil
 }

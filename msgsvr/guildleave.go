@@ -12,6 +12,10 @@ func (m GuildLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildLeave
 }
 
+func (m GuildLeave) MessageName() string {
+	return "GuildLeave"
+}
+
 func (m GuildLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

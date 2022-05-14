@@ -12,6 +12,10 @@ func (m FriendsCompass) MessageId() retroproto.MsgCliId {
 	return retroproto.FriendsCompass
 }
 
+func (m FriendsCompass) MessageName() string {
+	return "FriendsCompass"
+}
+
 func (m FriendsCompass) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

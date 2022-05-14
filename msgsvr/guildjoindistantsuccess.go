@@ -12,6 +12,10 @@ func (m GuildJoinDistantSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildJoinDistantSuccess
 }
 
+func (m GuildJoinDistantSuccess) MessageName() string {
+	return "GuildJoinDistantSuccess"
+}
+
 func (m GuildJoinDistantSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

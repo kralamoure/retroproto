@@ -10,6 +10,10 @@ func (m AksServerWillDisconnect) MessageId() retroproto.MsgSvrId {
 	return retroproto.AksServerWillDisconnect
 }
 
+func (m AksServerWillDisconnect) MessageName() string {
+	return "AksServerWillDisconnect"
+}
+
 func (m AksServerWillDisconnect) Serialized() (string, error) {
 	return "", nil
 }

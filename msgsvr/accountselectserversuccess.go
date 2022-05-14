@@ -16,6 +16,10 @@ func (m AccountSelectServerSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountSelectServerSuccess
 }
 
+func (m AccountSelectServerSuccess) MessageName() string {
+	return "AccountSelectServerSuccess"
+}
+
 // TODO
 func (m AccountSelectServerSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented

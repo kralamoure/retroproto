@@ -12,6 +12,10 @@ func (m ExchangeBigStoreTypeItemsMovementAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeBigStoreTypeItemsMovementAdd
 }
 
+func (m ExchangeBigStoreTypeItemsMovementAdd) MessageName() string {
+	return "ExchangeBigStoreTypeItemsMovementAdd"
+}
+
 func (m ExchangeBigStoreTypeItemsMovementAdd) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

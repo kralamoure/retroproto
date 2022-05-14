@@ -15,6 +15,10 @@ func (m InfosLifeRestoreTimerFinish) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosLifeRestoreTimerFinish
 }
 
+func (m InfosLifeRestoreTimerFinish) MessageName() string {
+	return "InfosLifeRestoreTimerFinish"
+}
+
 func (m InfosLifeRestoreTimerFinish) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Restored), nil
 }

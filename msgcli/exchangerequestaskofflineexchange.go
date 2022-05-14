@@ -12,6 +12,10 @@ func (m ExchangeRequestAskOfflineExchange) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeRequestAskOfflineExchange
 }
 
+func (m ExchangeRequestAskOfflineExchange) MessageName() string {
+	return "ExchangeRequestAskOfflineExchange"
+}
+
 func (m ExchangeRequestAskOfflineExchange) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

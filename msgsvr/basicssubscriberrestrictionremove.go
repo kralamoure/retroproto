@@ -10,6 +10,10 @@ func (m BasicsSubscriberRestrictionRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsSubscriberRestrictionRemove
 }
 
+func (m BasicsSubscriberRestrictionRemove) MessageName() string {
+	return "BasicsSubscriberRestrictionRemove"
+}
+
 func (m BasicsSubscriberRestrictionRemove) Serialized() (string, error) {
 	return "", nil
 }

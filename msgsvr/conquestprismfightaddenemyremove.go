@@ -12,6 +12,10 @@ func (m ConquestPrismFightAddEnemyRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestPrismFightAddEnemyRemove
 }
 
+func (m ConquestPrismFightAddEnemyRemove) MessageName() string {
+	return "ConquestPrismFightAddEnemyRemove"
+}
+
 func (m ConquestPrismFightAddEnemyRemove) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

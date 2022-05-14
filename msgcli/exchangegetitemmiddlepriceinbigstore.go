@@ -15,6 +15,10 @@ func (m ExchangeGetItemMiddlePriceInBigStore) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeGetItemMiddlePriceInBigStore
 }
 
+func (m ExchangeGetItemMiddlePriceInBigStore) MessageName() string {
+	return "ExchangeGetItemMiddlePriceInBigStore"
+}
+
 func (m ExchangeGetItemMiddlePriceInBigStore) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.TemplateId), nil
 }

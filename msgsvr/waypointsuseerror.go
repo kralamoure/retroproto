@@ -12,6 +12,10 @@ func (m WaypointsUseError) MessageId() retroproto.MsgSvrId {
 	return retroproto.WaypointsUseError
 }
 
+func (m WaypointsUseError) MessageName() string {
+	return "WaypointsUseError"
+}
+
 func (m WaypointsUseError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

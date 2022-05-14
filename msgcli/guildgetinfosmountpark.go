@@ -12,6 +12,10 @@ func (m GuildGetInfosMountPark) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildGetInfosMountPark
 }
 
+func (m GuildGetInfosMountPark) MessageName() string {
+	return "GuildGetInfosMountPark"
+}
+
 func (m GuildGetInfosMountPark) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

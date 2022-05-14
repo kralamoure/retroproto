@@ -10,6 +10,10 @@ func (m AccountQueuePosition) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountQueuePosition
 }
 
+func (m AccountQueuePosition) MessageName() string {
+	return "AccountQueuePosition"
+}
+
 func (m AccountQueuePosition) Serialized() (string, error) {
 	return "", nil
 }

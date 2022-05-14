@@ -12,6 +12,10 @@ func (m KeyCreate) MessageId() retroproto.MsgSvrId {
 	return retroproto.KeyCreate
 }
 
+func (m KeyCreate) MessageName() string {
+	return "KeyCreate"
+}
+
 func (m KeyCreate) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

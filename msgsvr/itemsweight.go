@@ -17,6 +17,10 @@ func (m ItemsWeight) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsWeight
 }
 
+func (m ItemsWeight) MessageName() string {
+	return "ItemsWeight"
+}
+
 func (m ItemsWeight) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d", m.Current, m.Max), nil
 }

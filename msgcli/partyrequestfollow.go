@@ -12,6 +12,10 @@ func (m PartyRequestFollow) MessageId() retroproto.MsgCliId {
 	return retroproto.PartyRequestFollow
 }
 
+func (m PartyRequestFollow) MessageName() string {
+	return "PartyRequestFollow"
+}
+
 func (m PartyRequestFollow) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -20,6 +20,10 @@ func (m ItemsRequestMovement) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsRequestMovement
 }
 
+func (m ItemsRequestMovement) MessageName() string {
+	return "ItemsRequestMovement"
+}
+
 func (m ItemsRequestMovement) Serialized() (string, error) {
 	quantity := ""
 	if m.Quantity != 1 {

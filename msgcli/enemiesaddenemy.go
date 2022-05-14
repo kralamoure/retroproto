@@ -12,6 +12,10 @@ func (m EnemiesAddEnemy) MessageId() retroproto.MsgCliId {
 	return retroproto.EnemiesAddEnemy
 }
 
+func (m EnemiesAddEnemy) MessageName() string {
+	return "EnemiesAddEnemy"
+}
+
 func (m EnemiesAddEnemy) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

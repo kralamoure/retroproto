@@ -15,6 +15,10 @@ func (m AccountConfiguredPort) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountConfiguredPort
 }
 
+func (m AccountConfiguredPort) MessageName() string {
+	return "AccountConfiguredPort"
+}
+
 func (m AccountConfiguredPort) Serialized() (string, error) {
 	return fmt.Sprint(m.Port), nil
 }

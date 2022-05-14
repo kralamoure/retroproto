@@ -12,6 +12,10 @@ func (m HousesBuySuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.HousesBuySuccess
 }
 
+func (m HousesBuySuccess) MessageName() string {
+	return "HousesBuySuccess"
+}
+
 func (m HousesBuySuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

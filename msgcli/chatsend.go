@@ -21,6 +21,10 @@ func (m ChatSend) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatSend
 }
 
+func (m ChatSend) MessageName() string {
+	return "ChatSend"
+}
+
 func (m ChatSend) Serialized() (string, error) {
 	dest := string(m.ChatChannel)
 	if m.ChatChannel == dofustyp.ChatChannelPrivate {

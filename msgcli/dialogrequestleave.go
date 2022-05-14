@@ -10,6 +10,10 @@ func (m DialogRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.DialogRequestLeave
 }
 
+func (m DialogRequestLeave) MessageName() string {
+	return "DialogRequestLeave"
+}
+
 func (m DialogRequestLeave) Serialized() (string, error) {
 	return "", nil
 }

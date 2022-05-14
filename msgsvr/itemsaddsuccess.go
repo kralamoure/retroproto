@@ -34,6 +34,10 @@ func (m ItemsAddSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsAddSuccess
 }
 
+func (m ItemsAddSuccess) MessageName() string {
+	return "ItemsAddSuccess"
+}
+
 func (m ItemsAddSuccess) Serialized() (string, error) {
 	items := make([]string, len(m.Items))
 	for i, v := range m.Items {

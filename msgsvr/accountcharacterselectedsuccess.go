@@ -28,6 +28,10 @@ func (m AccountCharacterSelectedSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterSelectedSuccess
 }
 
+func (m AccountCharacterSelectedSuccess) MessageName() string {
+	return "AccountCharacterSelectedSuccess"
+}
+
 func (m AccountCharacterSelectedSuccess) Serialized() (string, error) {
 	items := make([]string, len(m.Items))
 	for i, v := range m.Items {

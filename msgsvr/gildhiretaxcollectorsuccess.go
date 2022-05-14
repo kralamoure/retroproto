@@ -12,6 +12,10 @@ func (m GildHireTaxCollectorSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.GildHireTaxCollectorSuccess
 }
 
+func (m GildHireTaxCollectorSuccess) MessageName() string {
+	return "GildHireTaxCollectorSuccess"
+}
+
 func (m GildHireTaxCollectorSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

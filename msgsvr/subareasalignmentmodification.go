@@ -12,6 +12,10 @@ func (m SubareasAlignmentModification) MessageId() retroproto.MsgSvrId {
 	return retroproto.SubareasAlignmentModification
 }
 
+func (m SubareasAlignmentModification) MessageName() string {
+	return "SubareasAlignmentModification"
+}
+
 func (m SubareasAlignmentModification) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

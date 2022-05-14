@@ -14,6 +14,10 @@ func (m ExchangeMountStorageAdd) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeMountStorageAdd
 }
 
+func (m ExchangeMountStorageAdd) MessageName() string {
+	return "ExchangeMountStorageAdd"
+}
+
 func (m ExchangeMountStorageAdd) Serialized() (string, error) {
 	data, err := m.Data.Serialized()
 	if err != nil {

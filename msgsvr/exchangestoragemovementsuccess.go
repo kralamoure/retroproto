@@ -12,6 +12,10 @@ func (m ExchangeStorageMovementSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeStorageMovementSuccess
 }
 
+func (m ExchangeStorageMovementSuccess) MessageName() string {
+	return "ExchangeStorageMovementSuccess"
+}
+
 func (m ExchangeStorageMovementSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m AccountGiftStoredSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountGiftStoredSuccess
 }
 
+func (m AccountGiftStoredSuccess) MessageName() string {
+	return "AccountGiftStoredSuccess"
+}
+
 func (m AccountGiftStoredSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

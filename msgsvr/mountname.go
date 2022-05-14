@@ -12,6 +12,10 @@ func (m MountName) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountName
 }
 
+func (m MountName) MessageName() string {
+	return "MountName"
+}
+
 func (m MountName) Serialized() (string, error) {
 	return m.Name, nil
 }

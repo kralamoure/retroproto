@@ -12,6 +12,10 @@ func (m GameTurnStart) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameTurnStart
 }
 
+func (m GameTurnStart) MessageName() string {
+	return "GameTurnStart"
+}
+
 func (m GameTurnStart) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

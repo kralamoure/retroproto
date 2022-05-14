@@ -12,6 +12,10 @@ func (m AksHelloConnect) MessageId() retroproto.MsgSvrId {
 	return retroproto.AksHelloConnect
 }
 
+func (m AksHelloConnect) MessageName() string {
+	return "AksHelloConnect"
+}
+
 func (m AksHelloConnect) Serialized() (string, error) {
 	return m.Salt, nil
 }

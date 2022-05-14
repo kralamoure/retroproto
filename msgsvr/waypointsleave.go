@@ -12,6 +12,10 @@ func (m WaypointsLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.WaypointsLeave
 }
 
+func (m WaypointsLeave) MessageName() string {
+	return "WaypointsLeave"
+}
+
 func (m WaypointsLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

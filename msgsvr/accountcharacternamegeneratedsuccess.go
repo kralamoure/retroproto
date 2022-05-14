@@ -14,6 +14,10 @@ func (m AccountCharacterNameGeneratedSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterNameGeneratedSuccess
 }
 
+func (m AccountCharacterNameGeneratedSuccess) MessageName() string {
+	return "AccountCharacterNameGeneratedSuccess"
+}
+
 func (m AccountCharacterNameGeneratedSuccess) Serialized() (string, error) {
 	return fmt.Sprintf("%s", m.Name), nil
 }

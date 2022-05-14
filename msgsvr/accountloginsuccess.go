@@ -15,6 +15,10 @@ func (m AccountLoginSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountLoginSuccess
 }
 
+func (m AccountLoginSuccess) MessageName() string {
+	return "AccountLoginSuccess"
+}
+
 func (m AccountLoginSuccess) Serialized() (string, error) {
 	var authorized int
 	if m.Authorized {

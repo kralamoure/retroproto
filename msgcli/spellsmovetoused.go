@@ -17,6 +17,10 @@ func (m SpellsMoveToUsed) MessageId() retroproto.MsgCliId {
 	return retroproto.SpellsMoveToUsed
 }
 
+func (m SpellsMoveToUsed) MessageName() string {
+	return "SpellsMoveToUsed"
+}
+
 func (m SpellsMoveToUsed) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d", m.Id, m.Position), nil
 }

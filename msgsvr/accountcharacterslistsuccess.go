@@ -20,6 +20,10 @@ func (m AccountCharactersListSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharactersListSuccess
 }
 
+func (m AccountCharactersListSuccess) MessageName() string {
+	return "AccountCharactersListSuccess"
+}
+
 func (m AccountCharactersListSuccess) Serialized() (string, error) {
 	sb := &strings.Builder{}
 

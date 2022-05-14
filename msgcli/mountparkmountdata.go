@@ -12,6 +12,10 @@ func (m MountParkMountData) MessageId() retroproto.MsgCliId {
 	return retroproto.MountParkMountData
 }
 
+func (m MountParkMountData) MessageName() string {
+	return "MountParkMountData"
+}
+
 func (m MountParkMountData) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

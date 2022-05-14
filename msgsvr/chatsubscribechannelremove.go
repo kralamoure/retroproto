@@ -14,6 +14,10 @@ func (m ChatSubscribeChannelRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ChatSubscribeChannelRemove
 }
 
+func (m ChatSubscribeChannelRemove) MessageName() string {
+	return "ChatSubscribeChannelRemove"
+}
+
 func (m ChatSubscribeChannelRemove) Serialized() (string, error) {
 	sb := &strings.Builder{}
 	for _, channel := range m.Channels {

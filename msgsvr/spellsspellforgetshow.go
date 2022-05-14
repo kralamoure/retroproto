@@ -10,6 +10,10 @@ func (m SpellsSpellForgetShow) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsSpellForgetShow
 }
 
+func (m SpellsSpellForgetShow) MessageName() string {
+	return "SpellsSpellForgetShow"
+}
+
 func (m SpellsSpellForgetShow) Serialized() (string, error) {
 	return "", nil
 }

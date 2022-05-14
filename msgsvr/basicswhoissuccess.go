@@ -12,6 +12,10 @@ func (m BasicsWhoIsSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsWhoIsSuccess
 }
 
+func (m BasicsWhoIsSuccess) MessageName() string {
+	return "BasicsWhoIsSuccess"
+}
+
 func (m BasicsWhoIsSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

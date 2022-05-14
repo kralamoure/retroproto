@@ -15,6 +15,10 @@ func (m GameActionAck) MessageId() retroproto.MsgCliId {
 	return retroproto.GameActionAck
 }
 
+func (m GameActionAck) MessageName() string {
+	return "GameActionAck"
+}
+
 func (m GameActionAck) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Id), nil
 }

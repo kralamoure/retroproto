@@ -15,6 +15,10 @@ func (m InfosLifeRestoreTimerStart) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosLifeRestoreTimerStart
 }
 
+func (m InfosLifeRestoreTimerStart) MessageName() string {
+	return "InfosLifeRestoreTimerStart"
+}
+
 func (m InfosLifeRestoreTimerStart) Serialized() (string, error) {
 	interval := m.Interval.Milliseconds()
 	if interval < 0 {

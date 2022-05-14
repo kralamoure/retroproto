@@ -10,6 +10,10 @@ func (m AccountCharacterAddSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterAddSuccess
 }
 
+func (m AccountCharacterAddSuccess) MessageName() string {
+	return "AccountCharacterAddSuccess"
+}
+
 func (m AccountCharacterAddSuccess) Serialized() (string, error) {
 	return "", nil
 }

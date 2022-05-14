@@ -15,6 +15,10 @@ func (m AccountHosts) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountHosts
 }
 
+func (m AccountHosts) MessageName() string {
+	return "AccountHosts"
+}
+
 func (m AccountHosts) Serialized() (string, error) {
 	hosts := make([]string, len(m.Value))
 	for i, v := range m.Value {

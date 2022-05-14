@@ -18,6 +18,10 @@ func (m InfosSendScreenInfo) MessageId() retroproto.MsgCliId {
 	return retroproto.InfosSendScreenInfo
 }
 
+func (m InfosSendScreenInfo) MessageName() string {
+	return "InfosSendScreenInfo"
+}
+
 func (m InfosSendScreenInfo) Serialized() (string, error) {
 	return fmt.Sprintf("%d;%d;%d", m.Width, m.Height, m.DisplayState), nil
 }

@@ -12,6 +12,10 @@ func (m InfosInfoCoordinatesPHighlight) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosInfoCoordinatesPHighlight
 }
 
+func (m InfosInfoCoordinatesPHighlight) MessageName() string {
+	return "InfosInfoCoordinatesPHighlight"
+}
+
 func (m InfosInfoCoordinatesPHighlight) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

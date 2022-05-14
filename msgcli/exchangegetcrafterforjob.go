@@ -12,6 +12,10 @@ func (m ExchangeGetCrafterForJob) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeGetCrafterForJob
 }
 
+func (m ExchangeGetCrafterForJob) MessageName() string {
+	return "ExchangeGetCrafterForJob"
+}
+
 func (m ExchangeGetCrafterForJob) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

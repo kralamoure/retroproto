@@ -12,6 +12,10 @@ func (m ConquestPrismFightLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestPrismFightLeave
 }
 
+func (m ConquestPrismFightLeave) MessageName() string {
+	return "ConquestPrismFightLeave"
+}
+
 func (m ConquestPrismFightLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m ExchangeCoopMovementSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCoopMovementSuccess
 }
 
+func (m ExchangeCoopMovementSuccess) MessageName() string {
+	return "ExchangeCoopMovementSuccess"
+}
+
 func (m ExchangeCoopMovementSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

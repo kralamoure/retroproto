@@ -14,6 +14,10 @@ func (m AccountSearchForFriend) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSearchForFriend
 }
 
+func (m AccountSearchForFriend) MessageName() string {
+	return "AccountSearchForFriend"
+}
+
 func (m AccountSearchForFriend) Serialized() (string, error) {
 	return fmt.Sprintf("%s", m.Pseudo), nil
 }

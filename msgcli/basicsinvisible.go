@@ -12,6 +12,10 @@ func (m BasicsInvisible) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsInvisible
 }
 
+func (m BasicsInvisible) MessageName() string {
+	return "BasicsInvisible"
+}
+
 func (m BasicsInvisible) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

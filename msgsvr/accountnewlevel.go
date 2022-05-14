@@ -15,6 +15,10 @@ func (m AccountNewLevel) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountNewLevel
 }
 
+func (m AccountNewLevel) MessageName() string {
+	return "AccountNewLevel"
+}
+
 func (m AccountNewLevel) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Level), nil
 }

@@ -12,6 +12,10 @@ func (m DocumentsCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.DocumentsCreateSuccess
 }
 
+func (m DocumentsCreateSuccess) MessageName() string {
+	return "DocumentsCreateSuccess"
+}
+
 func (m DocumentsCreateSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m GameEnabledPVPMode) MessageId() retroproto.MsgCliId {
 	return retroproto.GameEnabledPVPMode
 }
 
+func (m GameEnabledPVPMode) MessageName() string {
+	return "GameEnabledPVPMode"
+}
+
 func (m GameEnabledPVPMode) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

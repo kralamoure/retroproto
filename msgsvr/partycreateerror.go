@@ -12,6 +12,10 @@ func (m PartyCreateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.PartyCreateError
 }
 
+func (m PartyCreateError) MessageName() string {
+	return "PartyCreateError"
+}
+
 func (m PartyCreateError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

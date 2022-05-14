@@ -12,6 +12,10 @@ func (m FriendsRemoveFriendSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.FriendsRemoveFriendSuccess
 }
 
+func (m FriendsRemoveFriendSuccess) MessageName() string {
+	return "FriendsRemoveFriendSuccess"
+}
+
 func (m FriendsRemoveFriendSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m KeyRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.KeyRequestLeave
 }
 
+func (m KeyRequestLeave) MessageName() string {
+	return "KeyRequestLeave"
+}
+
 func (m KeyRequestLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

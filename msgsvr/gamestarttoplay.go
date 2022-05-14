@@ -12,6 +12,10 @@ func (m GameStartToPlay) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameStartToPlay
 }
 
+func (m GameStartToPlay) MessageName() string {
+	return "GameStartToPlay"
+}
+
 func (m GameStartToPlay) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

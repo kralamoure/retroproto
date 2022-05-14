@@ -12,6 +12,10 @@ func (m SubwayPrismLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.SubwayPrismLeave
 }
 
+func (m SubwayPrismLeave) MessageName() string {
+	return "SubwayPrismLeave"
+}
+
 func (m SubwayPrismLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m AccountAttributeGiftToCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountAttributeGiftToCharacter
 }
 
+func (m AccountAttributeGiftToCharacter) MessageName() string {
+	return "AccountAttributeGiftToCharacter"
+}
+
 func (m AccountAttributeGiftToCharacter) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m BasicsSanctionMe) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsSanctionMe
 }
 
+func (m BasicsSanctionMe) MessageName() string {
+	return "BasicsSanctionMe"
+}
+
 func (m BasicsSanctionMe) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

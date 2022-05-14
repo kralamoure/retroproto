@@ -12,6 +12,10 @@ func (m AccountPseudo) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountPseudo
 }
 
+func (m AccountPseudo) MessageName() string {
+	return "AccountPseudo"
+}
+
 func (m AccountPseudo) Serialized() (string, error) {
 	return m.Value, nil
 }

@@ -18,6 +18,10 @@ func (m BasicsDate) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsDate
 }
 
+func (m BasicsDate) MessageName() string {
+	return "BasicsDate"
+}
+
 func (m BasicsDate) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d|%d", m.Year, m.Month-1, m.Day), nil
 }

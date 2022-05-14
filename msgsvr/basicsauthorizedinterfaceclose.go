@@ -12,6 +12,10 @@ func (m BasicsAuthorizedInterfaceClose) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsAuthorizedInterfaceClose
 }
 
+func (m BasicsAuthorizedInterfaceClose) MessageName() string {
+	return "BasicsAuthorizedInterfaceClose"
+}
+
 func (m BasicsAuthorizedInterfaceClose) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

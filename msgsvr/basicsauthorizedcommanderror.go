@@ -10,6 +10,10 @@ func (m BasicsAuthorizedCommandError) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsAuthorizedCommandError
 }
 
+func (m BasicsAuthorizedCommandError) MessageName() string {
+	return "BasicsAuthorizedCommandError"
+}
+
 func (m BasicsAuthorizedCommandError) Serialized() (string, error) {
 	return "", nil
 }

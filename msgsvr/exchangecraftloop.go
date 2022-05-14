@@ -12,6 +12,10 @@ func (m ExchangeCraftLoop) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCraftLoop
 }
 
+func (m ExchangeCraftLoop) MessageName() string {
+	return "ExchangeCraftLoop"
+}
+
 func (m ExchangeCraftLoop) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

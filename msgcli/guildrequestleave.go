@@ -12,6 +12,10 @@ func (m GuildRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildRequestLeave
 }
 
+func (m GuildRequestLeave) MessageName() string {
+	return "GuildRequestLeave"
+}
+
 func (m GuildRequestLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

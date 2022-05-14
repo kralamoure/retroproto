@@ -10,6 +10,10 @@ func (m DialogPause) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogPause
 }
 
+func (m DialogPause) MessageName() string {
+	return "DialogPause"
+}
+
 func (m DialogPause) Serialized() (string, error) {
 	return "", nil
 }

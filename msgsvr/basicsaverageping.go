@@ -12,6 +12,10 @@ func (m BasicsAveragePing) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsAveragePing
 }
 
+func (m BasicsAveragePing) MessageName() string {
+	return "BasicsAveragePing"
+}
+
 func (m BasicsAveragePing) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

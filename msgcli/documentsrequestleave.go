@@ -12,6 +12,10 @@ func (m DocumentsRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.DocumentsRequestLeave
 }
 
+func (m DocumentsRequestLeave) MessageName() string {
+	return "DocumentsRequestLeave"
+}
+
 func (m DocumentsRequestLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

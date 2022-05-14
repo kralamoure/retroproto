@@ -23,6 +23,10 @@ func (m ChatMessageSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ChatMessageSuccess
 }
 
+func (m ChatMessageSuccess) MessageName() string {
+	return "ChatMessageSuccess"
+}
+
 func (m ChatMessageSuccess) Serialized() (string, error) {
 	chatChannel := string(m.ChatChannel)
 	switch m.ChatChannel {

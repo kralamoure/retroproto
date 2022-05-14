@@ -21,6 +21,10 @@ func (m AccountVersion) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountVersion
 }
 
+func (m AccountVersion) MessageName() string {
+	return "AccountVersion"
+}
+
 func (m AccountVersion) Serialized() (string, error) {
 	var beta string
 	if m.Beta > 0 {

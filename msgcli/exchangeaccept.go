@@ -12,6 +12,10 @@ func (m ExchangeAccept) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeAccept
 }
 
+func (m ExchangeAccept) MessageName() string {
+	return "ExchangeAccept"
+}
+
 func (m ExchangeAccept) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

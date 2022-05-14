@@ -12,6 +12,10 @@ func (m ConquestWorldData) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestWorldData
 }
 
+func (m ConquestWorldData) MessageName() string {
+	return "ConquestWorldData"
+}
+
 func (m ConquestWorldData) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

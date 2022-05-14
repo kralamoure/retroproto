@@ -15,6 +15,10 @@ func (m AccountSetCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountSetCharacter
 }
 
+func (m AccountSetCharacter) MessageName() string {
+	return "AccountSetCharacter"
+}
+
 func (m AccountSetCharacter) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Id), nil
 }

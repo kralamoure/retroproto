@@ -10,6 +10,10 @@ func (m BasicsNothing) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsNothing
 }
 
+func (m BasicsNothing) MessageName() string {
+	return "BasicsNothing"
+}
+
 func (m BasicsNothing) Serialized() (string, error) {
 	return "", nil
 }

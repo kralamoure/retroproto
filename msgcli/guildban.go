@@ -12,6 +12,10 @@ func (m GuildBan) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildBan
 }
 
+func (m GuildBan) MessageName() string {
+	return "GuildBan"
+}
+
 func (m GuildBan) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

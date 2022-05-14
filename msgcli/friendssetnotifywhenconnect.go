@@ -12,6 +12,10 @@ func (m FriendsSetNotifyWhenConnect) MessageId() retroproto.MsgCliId {
 	return retroproto.FriendsSetNotifyWhenConnect
 }
 
+func (m FriendsSetNotifyWhenConnect) MessageName() string {
+	return "FriendsSetNotifyWhenConnect"
+}
+
 func (m FriendsSetNotifyWhenConnect) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m AccountDeleteCharacterMigration) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountDeleteCharacterMigration
 }
 
+func (m AccountDeleteCharacterMigration) MessageName() string {
+	return "AccountDeleteCharacterMigration"
+}
+
 func (m AccountDeleteCharacterMigration) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

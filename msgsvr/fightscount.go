@@ -15,6 +15,10 @@ func (m FightsCount) MessageId() retroproto.MsgSvrId {
 	return retroproto.FightsCount
 }
 
+func (m FightsCount) MessageName() string {
+	return "FightsCount"
+}
+
 func (m FightsCount) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Value), nil
 }

@@ -10,6 +10,10 @@ func (m ExchangeSearchError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeSearchError
 }
 
+func (m ExchangeSearchError) MessageName() string {
+	return "ExchangeSearchError"
+}
+
 func (m ExchangeSearchError) Serialized() (string, error) {
 	return "", nil
 }

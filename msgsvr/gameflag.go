@@ -12,6 +12,10 @@ func (m GameFlag) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameFlag
 }
 
+func (m GameFlag) MessageName() string {
+	return "GameFlag"
+}
+
 func (m GameFlag) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

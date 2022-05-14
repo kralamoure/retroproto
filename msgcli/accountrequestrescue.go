@@ -12,6 +12,10 @@ func (m AccountRequestRescue) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountRequestRescue
 }
 
+func (m AccountRequestRescue) MessageName() string {
+	return "AccountRequestRescue"
+}
+
 func (m AccountRequestRescue) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

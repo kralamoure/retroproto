@@ -12,6 +12,10 @@ func (m InfosCompass) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosCompass
 }
 
+func (m InfosCompass) MessageName() string {
+	return "InfosCompass"
+}
+
 func (m InfosCompass) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

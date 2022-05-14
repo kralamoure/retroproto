@@ -12,6 +12,10 @@ func (m ChatMessageError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ChatMessageError
 }
 
+func (m ChatMessageError) MessageName() string {
+	return "ChatMessageError"
+}
+
 func (m ChatMessageError) Serialized() (string, error) {
 	return string(m.Reason), nil
 }

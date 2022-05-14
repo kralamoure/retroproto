@@ -17,6 +17,10 @@ func (m ItemsDrop) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsDrop
 }
 
+func (m ItemsDrop) MessageName() string {
+	return "ItemsDrop"
+}
+
 func (m ItemsDrop) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d", m.Id, m.Quantity), nil
 }

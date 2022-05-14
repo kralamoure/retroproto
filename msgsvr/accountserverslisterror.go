@@ -12,6 +12,10 @@ func (m AccountServersListError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountServersListError
 }
 
+func (m AccountServersListError) MessageName() string {
+	return "AccountServersListError"
+}
+
 func (m AccountServersListError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

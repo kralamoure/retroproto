@@ -12,6 +12,10 @@ func (m GuildJoinError) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildJoinError
 }
 
+func (m GuildJoinError) MessageName() string {
+	return "GuildJoinError"
+}
+
 func (m GuildJoinError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

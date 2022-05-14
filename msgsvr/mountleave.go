@@ -12,6 +12,10 @@ func (m MountLeave) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountLeave
 }
 
+func (m MountLeave) MessageName() string {
+	return "MountLeave"
+}
+
 func (m MountLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

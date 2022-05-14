@@ -12,6 +12,10 @@ func (m ExchangeCraftError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCraftError
 }
 
+func (m ExchangeCraftError) MessageName() string {
+	return "ExchangeCraftError"
+}
+
 func (m ExchangeCraftError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

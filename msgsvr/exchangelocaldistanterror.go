@@ -12,6 +12,10 @@ func (m ExchangeLocalDistantError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeLocalDistantError
 }
 
+func (m ExchangeLocalDistantError) MessageName() string {
+	return "ExchangeLocalDistantError"
+}
+
 func (m ExchangeLocalDistantError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m GuildInfosGeneral) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildInfosGeneral
 }
 
+func (m GuildInfosGeneral) MessageName() string {
+	return "GuildInfosGeneral"
+}
+
 func (m GuildInfosGeneral) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

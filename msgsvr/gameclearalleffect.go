@@ -12,6 +12,10 @@ func (m GameClearAllEffect) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameClearAllEffect
 }
 
+func (m GameClearAllEffect) MessageName() string {
+	return "GameClearAllEffect"
+}
+
 func (m GameClearAllEffect) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m GameFrameObjectExternal) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameFrameObjectExternal
 }
 
+func (m GameFrameObjectExternal) MessageName() string {
+	return "GameFrameObjectExternal"
+}
+
 func (m GameFrameObjectExternal) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

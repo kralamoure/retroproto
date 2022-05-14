@@ -12,6 +12,10 @@ func (m AccountCharacterMigrationError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterMigrationError
 }
 
+func (m AccountCharacterMigrationError) MessageName() string {
+	return "AccountCharacterMigrationError"
+}
+
 func (m AccountCharacterMigrationError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

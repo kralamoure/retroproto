@@ -12,6 +12,10 @@ func (m ItemsSetSkin) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsSetSkin
 }
 
+func (m ItemsSetSkin) MessageName() string {
+	return "ItemsSetSkin"
+}
+
 func (m ItemsSetSkin) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

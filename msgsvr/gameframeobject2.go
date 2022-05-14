@@ -12,6 +12,10 @@ func (m GameFrameObject2) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameFrameObject2
 }
 
+func (m GameFrameObject2) MessageName() string {
+	return "GameFrameObject2"
+}
+
 func (m GameFrameObject2) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

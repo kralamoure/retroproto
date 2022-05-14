@@ -12,6 +12,10 @@ func (m ItemsDissociate) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsDissociate
 }
 
+func (m ItemsDissociate) MessageName() string {
+	return "ItemsDissociate"
+}
+
 func (m ItemsDissociate) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

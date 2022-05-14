@@ -12,6 +12,10 @@ func (m ExchangeShop) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeShop
 }
 
+func (m ExchangeShop) MessageName() string {
+	return "ExchangeShop"
+}
+
 func (m ExchangeShop) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

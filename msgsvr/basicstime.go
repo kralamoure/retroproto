@@ -16,6 +16,10 @@ func (m BasicsTime) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsTime
 }
 
+func (m BasicsTime) MessageName() string {
+	return "BasicsTime"
+}
+
 func (m BasicsTime) Serialized() (string, error) {
 	valueN := m.Value.Unix()
 	if valueN < 0 {

@@ -17,6 +17,10 @@ func (m SpellsUpgradeSpellSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsUpgradeSpellSuccess
 }
 
+func (m SpellsUpgradeSpellSuccess) MessageName() string {
+	return "SpellsUpgradeSpellSuccess"
+}
+
 func (m SpellsUpgradeSpellSuccess) Serialized() (string, error) {
 	return fmt.Sprintf("%d~%d", m.Id, m.Level), nil
 }

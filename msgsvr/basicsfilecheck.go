@@ -12,6 +12,10 @@ func (m BasicsFileCheck) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsFileCheck
 }
 
+func (m BasicsFileCheck) MessageName() string {
+	return "BasicsFileCheck"
+}
+
 func (m BasicsFileCheck) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

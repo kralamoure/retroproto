@@ -15,6 +15,10 @@ func (m ExchangePutInShedFromCertificate) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangePutInShedFromCertificate
 }
 
+func (m ExchangePutInShedFromCertificate) MessageName() string {
+	return "ExchangePutInShedFromCertificate"
+}
+
 func (m ExchangePutInShedFromCertificate) Serialized() (string, error) {
 	return fmt.Sprint(m.CertificateId), nil
 }

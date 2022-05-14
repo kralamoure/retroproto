@@ -12,6 +12,10 @@ func (m ExchangePlayerShopMovementError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangePlayerShopMovementError
 }
 
+func (m ExchangePlayerShopMovementError) MessageName() string {
+	return "ExchangePlayerShopMovementError"
+}
+
 func (m ExchangePlayerShopMovementError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

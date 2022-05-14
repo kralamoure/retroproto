@@ -12,6 +12,10 @@ func (m EmotesUseError) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesUseError
 }
 
+func (m EmotesUseError) MessageName() string {
+	return "EmotesUseError"
+}
+
 func (m EmotesUseError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

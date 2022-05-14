@@ -12,6 +12,10 @@ func (m SubwayUse) MessageId() retroproto.MsgCliId {
 	return retroproto.SubwayUse
 }
 
+func (m SubwayUse) MessageName() string {
+	return "SubwayUse"
+}
+
 func (m SubwayUse) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m AccountResetCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountResetCharacter
 }
 
+func (m AccountResetCharacter) MessageName() string {
+	return "AccountResetCharacter"
+}
+
 func (m AccountResetCharacter) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

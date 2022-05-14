@@ -12,6 +12,10 @@ func (m ConquestConquestBalance) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestConquestBalance
 }
 
+func (m ConquestConquestBalance) MessageName() string {
+	return "ConquestConquestBalance"
+}
+
 func (m ConquestConquestBalance) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m MountRidingState) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountRidingState
 }
 
+func (m MountRidingState) MessageName() string {
+	return "MountRidingState"
+}
+
 func (m MountRidingState) Serialized() (string, error) {
 	var riding string
 	if m.Riding {

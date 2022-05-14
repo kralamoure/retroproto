@@ -12,6 +12,10 @@ func (m ExchangeKillMountInPark) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeKillMountInPark
 }
 
+func (m ExchangeKillMountInPark) MessageName() string {
+	return "ExchangeKillMountInPark"
+}
+
 func (m ExchangeKillMountInPark) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

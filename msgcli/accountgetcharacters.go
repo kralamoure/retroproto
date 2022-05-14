@@ -10,6 +10,10 @@ func (m AccountGetCharacters) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountGetCharacters
 }
 
+func (m AccountGetCharacters) MessageName() string {
+	return "AccountGetCharacters"
+}
+
 func (m AccountGetCharacters) Serialized() (string, error) {
 	return "", nil
 }

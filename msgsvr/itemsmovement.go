@@ -19,6 +19,10 @@ func (m ItemsMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsMovement
 }
 
+func (m ItemsMovement) MessageName() string {
+	return "ItemsMovement"
+}
+
 func (m ItemsMovement) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d", m.Id, m.Position), nil
 }

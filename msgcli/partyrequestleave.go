@@ -12,6 +12,10 @@ func (m PartyRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.PartyRequestLeave
 }
 
+func (m PartyRequestLeave) MessageName() string {
+	return "PartyRequestLeave"
+}
+
 func (m PartyRequestLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

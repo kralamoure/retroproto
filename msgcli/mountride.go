@@ -10,6 +10,10 @@ func (m MountRide) MessageId() retroproto.MsgCliId {
 	return retroproto.MountRide
 }
 
+func (m MountRide) MessageName() string {
+	return "MountRide"
+}
+
 func (m MountRide) Serialized() (string, error) {
 	return "", nil
 }

@@ -12,6 +12,10 @@ func (m ItemsFeed) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsFeed
 }
 
+func (m ItemsFeed) MessageName() string {
+	return "ItemsFeed"
+}
+
 func (m ItemsFeed) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

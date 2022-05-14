@@ -10,6 +10,10 @@ func (m GameMapLoaded) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMapLoaded
 }
 
+func (m GameMapLoaded) MessageName() string {
+	return "GameMapLoaded"
+}
+
 func (m GameMapLoaded) Serialized() (string, error) {
 	return "", nil
 }

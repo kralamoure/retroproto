@@ -12,6 +12,10 @@ func (m GamePlayersCoordinates) MessageId() retroproto.MsgSvrId {
 	return retroproto.GamePlayersCoordinates
 }
 
+func (m GamePlayersCoordinates) MessageName() string {
+	return "GamePlayersCoordinates"
+}
+
 func (m GamePlayersCoordinates) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m BasicsKick) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsKick
 }
 
+func (m BasicsKick) MessageName() string {
+	return "BasicsKick"
+}
+
 func (m BasicsKick) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

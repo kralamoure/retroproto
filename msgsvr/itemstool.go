@@ -15,6 +15,10 @@ func (m ItemsTool) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsTool
 }
 
+func (m ItemsTool) MessageName() string {
+	return "ItemsTool"
+}
+
 func (m ItemsTool) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.JobId), nil
 }

@@ -12,6 +12,10 @@ func (m GuildRequestDistant) MessageId() retroproto.MsgSvrId {
 	return retroproto.GuildRequestDistant
 }
 
+func (m GuildRequestDistant) MessageName() string {
+	return "GuildRequestDistant"
+}
+
 func (m GuildRequestDistant) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

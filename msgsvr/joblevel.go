@@ -12,6 +12,10 @@ func (m JobLevel) MessageId() retroproto.MsgSvrId {
 	return retroproto.JobLevel
 }
 
+func (m JobLevel) MessageName() string {
+	return "JobLevel"
+}
+
 func (m JobLevel) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

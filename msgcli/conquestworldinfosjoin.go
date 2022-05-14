@@ -12,6 +12,10 @@ func (m ConquestWorldInfosJoin) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestWorldInfosJoin
 }
 
+func (m ConquestWorldInfosJoin) MessageName() string {
+	return "ConquestWorldInfosJoin"
+}
+
 func (m ConquestWorldInfosJoin) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

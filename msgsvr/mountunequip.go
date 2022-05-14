@@ -10,6 +10,10 @@ func (m MountUnequip) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountUnequip
 }
 
+func (m MountUnequip) MessageName() string {
+	return "MountUnequip"
+}
+
 func (m MountUnequip) Serialized() (string, error) {
 	return "", nil
 }

@@ -13,6 +13,10 @@ func (m AccountSelectServerError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountSelectServerError
 }
 
+func (m AccountSelectServerError) MessageName() string {
+	return "AccountSelectServerError"
+}
+
 func (m AccountSelectServerError) Serialized() (string, error) {
 	return string(m.Reason) + m.Extra, nil
 }

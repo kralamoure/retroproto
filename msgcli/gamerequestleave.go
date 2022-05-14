@@ -12,6 +12,10 @@ func (m GameRequestLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.GameRequestLeave
 }
 
+func (m GameRequestLeave) MessageName() string {
+	return "GameRequestLeave"
+}
+
 func (m GameRequestLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

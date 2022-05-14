@@ -12,6 +12,10 @@ func (m GuildTeleportToGuildFarm) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildTeleportToGuildFarm
 }
 
+func (m GuildTeleportToGuildFarm) MessageName() string {
+	return "GuildTeleportToGuildFarm"
+}
+
 func (m GuildTeleportToGuildFarm) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

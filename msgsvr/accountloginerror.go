@@ -13,6 +13,10 @@ func (m AccountLoginError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountLoginError
 }
 
+func (m AccountLoginError) MessageName() string {
+	return "AccountLoginError"
+}
+
 func (m AccountLoginError) Serialized() (string, error) {
 	return string(m.Reason) + m.Extra, nil
 }

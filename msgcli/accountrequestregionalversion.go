@@ -10,6 +10,10 @@ func (m AccountRequestRegionalVersion) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountRequestRegionalVersion
 }
 
+func (m AccountRequestRegionalVersion) MessageName() string {
+	return "AccountRequestRegionalVersion"
+}
+
 func (m AccountRequestRegionalVersion) Serialized() (string, error) {
 	return "", nil
 }

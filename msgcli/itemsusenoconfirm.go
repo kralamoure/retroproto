@@ -18,6 +18,10 @@ func (m ItemsUseNoConfirm) MessageId() retroproto.MsgCliId {
 	return retroproto.ItemsUseNoConfirm
 }
 
+func (m ItemsUseNoConfirm) MessageName() string {
+	return "ItemsUseNoConfirm"
+}
+
 func (m ItemsUseNoConfirm) Serialized() (string, error) {
 	spriteId := ""
 	if m.SpriteId != 0 {

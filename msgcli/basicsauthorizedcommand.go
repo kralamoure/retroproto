@@ -12,6 +12,10 @@ func (m BasicsAuthorizedCommand) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsAuthorizedCommand
 }
 
+func (m BasicsAuthorizedCommand) MessageName() string {
+	return "BasicsAuthorizedCommand"
+}
+
 func (m BasicsAuthorizedCommand) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

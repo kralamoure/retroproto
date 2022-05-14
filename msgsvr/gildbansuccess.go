@@ -12,6 +12,10 @@ func (m GildBanSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.GildBanSuccess
 }
 
+func (m GildBanSuccess) MessageName() string {
+	return "GildBanSuccess"
+}
+
 func (m GildBanSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

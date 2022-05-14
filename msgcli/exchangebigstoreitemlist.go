@@ -15,6 +15,10 @@ func (m ExchangeBigStoreItemList) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeBigStoreItemList
 }
 
+func (m ExchangeBigStoreItemList) MessageName() string {
+	return "ExchangeBigStoreItemList"
+}
+
 func (m ExchangeBigStoreItemList) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.ItemTemplateId), nil
 }

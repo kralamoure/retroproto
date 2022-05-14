@@ -12,6 +12,10 @@ func (m ExchangeOfflineExchange) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeOfflineExchange
 }
 
+func (m ExchangeOfflineExchange) MessageName() string {
+	return "ExchangeOfflineExchange"
+}
+
 func (m ExchangeOfflineExchange) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

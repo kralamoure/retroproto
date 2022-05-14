@@ -12,6 +12,10 @@ func (m GameChallenge) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameChallenge
 }
 
+func (m GameChallenge) MessageName() string {
+	return "GameChallenge"
+}
+
 func (m GameChallenge) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

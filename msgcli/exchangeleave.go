@@ -12,6 +12,10 @@ func (m ExchangeLeave) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeLeave
 }
 
+func (m ExchangeLeave) MessageName() string {
+	return "ExchangeLeave"
+}
+
 func (m ExchangeLeave) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

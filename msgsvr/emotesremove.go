@@ -12,6 +12,10 @@ func (m EmotesRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesRemove
 }
 
+func (m EmotesRemove) MessageName() string {
+	return "EmotesRemove"
+}
+
 func (m EmotesRemove) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -18,6 +18,10 @@ func (m GameMapData) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMapData
 }
 
+func (m GameMapData) MessageName() string {
+	return "GameMapData"
+}
+
 func (m GameMapData) Serialized() (string, error) {
 	return fmt.Sprintf("|%d|%s|%s", m.Id, m.Name, m.Key), nil
 }

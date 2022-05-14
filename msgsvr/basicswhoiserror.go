@@ -12,6 +12,10 @@ func (m BasicsWhoIsError) MessageId() retroproto.MsgSvrId {
 	return retroproto.BasicsWhoIsError
 }
 
+func (m BasicsWhoIsError) MessageName() string {
+	return "BasicsWhoIsError"
+}
+
 func (m BasicsWhoIsError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

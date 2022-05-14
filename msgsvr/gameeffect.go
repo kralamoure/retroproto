@@ -12,6 +12,10 @@ func (m GameEffect) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameEffect
 }
 
+func (m GameEffect) MessageName() string {
+	return "GameEffect"
+}
+
 func (m GameEffect) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

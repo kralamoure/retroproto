@@ -12,6 +12,10 @@ func (m ExchangeMovementKamas) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeMovementKamas
 }
 
+func (m ExchangeMovementKamas) MessageName() string {
+	return "ExchangeMovementKamas"
+}
+
 func (m ExchangeMovementKamas) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

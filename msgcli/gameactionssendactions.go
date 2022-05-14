@@ -38,6 +38,10 @@ func (m GameActionsSendActions) MessageId() retroproto.MsgCliId {
 	return retroproto.GameActionsSendActions
 }
 
+func (m GameActionsSendActions) MessageName() string {
+	return "GameActionsSendActions"
+}
+
 func (m GameActionsSendActions) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

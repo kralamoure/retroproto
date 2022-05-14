@@ -12,6 +12,10 @@ func (m FightsBlockSpectators) MessageId() retroproto.MsgCliId {
 	return retroproto.FightsBlockSpectators
 }
 
+func (m FightsBlockSpectators) MessageName() string {
+	return "FightsBlockSpectators"
+}
+
 func (m FightsBlockSpectators) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -37,6 +37,10 @@ func (m AccountStats) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountStats
 }
 
+func (m AccountStats) MessageName() string {
+	return "AccountStats"
+}
+
 func (m AccountStats) Serialized() (string, error) {
 	var alignmentEnabled int
 	if m.AlignmentEnabled {

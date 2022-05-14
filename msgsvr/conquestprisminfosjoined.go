@@ -12,6 +12,10 @@ func (m ConquestPrismInfosJoined) MessageId() retroproto.MsgSvrId {
 	return retroproto.ConquestPrismInfosJoined
 }
 
+func (m ConquestPrismInfosJoined) MessageName() string {
+	return "ConquestPrismInfosJoined"
+}
+
 func (m ConquestPrismInfosJoined) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

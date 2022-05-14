@@ -12,6 +12,10 @@ func (m MountRemoveObjectInPark) MessageId() retroproto.MsgCliId {
 	return retroproto.MountRemoveObjectInPark
 }
 
+func (m MountRemoveObjectInPark) MessageName() string {
+	return "MountRemoveObjectInPark"
+}
+
 func (m MountRemoveObjectInPark) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

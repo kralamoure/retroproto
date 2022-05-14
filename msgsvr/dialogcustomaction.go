@@ -12,6 +12,10 @@ func (m DialogCustomAction) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogCustomAction
 }
 
+func (m DialogCustomAction) MessageName() string {
+	return "DialogCustomAction"
+}
+
 func (m DialogCustomAction) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

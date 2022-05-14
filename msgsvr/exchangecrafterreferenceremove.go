@@ -12,6 +12,10 @@ func (m ExchangeCrafterReferenceRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeCrafterReferenceRemove
 }
 
+func (m ExchangeCrafterReferenceRemove) MessageName() string {
+	return "ExchangeCrafterReferenceRemove"
+}
+
 func (m ExchangeCrafterReferenceRemove) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

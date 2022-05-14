@@ -12,6 +12,10 @@ func (m HousesKick) MessageId() retroproto.MsgCliId {
 	return retroproto.HousesKick
 }
 
+func (m HousesKick) MessageName() string {
+	return "HousesKick"
+}
+
 func (m HousesKick) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

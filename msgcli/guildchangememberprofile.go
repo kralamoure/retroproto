@@ -12,6 +12,10 @@ func (m GuildChangeMemberProfile) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildChangeMemberProfile
 }
 
+func (m GuildChangeMemberProfile) MessageName() string {
+	return "GuildChangeMemberProfile"
+}
+
 func (m GuildChangeMemberProfile) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

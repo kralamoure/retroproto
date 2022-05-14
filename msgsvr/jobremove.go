@@ -12,6 +12,10 @@ func (m JobRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.JobRemove
 }
 
+func (m JobRemove) MessageName() string {
+	return "JobRemove"
+}
+
 func (m JobRemove) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -19,6 +19,10 @@ func (m AccountDeleteCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountDeleteCharacter
 }
 
+func (m AccountDeleteCharacter) MessageName() string {
+	return "AccountDeleteCharacter"
+}
+
 func (m AccountDeleteCharacter) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%s", m.Id, m.SecretAnswer), nil
 }

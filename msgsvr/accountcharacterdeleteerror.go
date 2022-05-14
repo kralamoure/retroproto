@@ -10,6 +10,10 @@ func (m AccountCharacterDeleteError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterDeleteError
 }
 
+func (m AccountCharacterDeleteError) MessageName() string {
+	return "AccountCharacterDeleteError"
+}
+
 func (m AccountCharacterDeleteError) Serialized() (string, error) {
 	return "", nil
 }

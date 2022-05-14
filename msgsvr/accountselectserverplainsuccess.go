@@ -17,6 +17,10 @@ func (m AccountSelectServerPlainSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountSelectServerPlainSuccess
 }
 
+func (m AccountSelectServerPlainSuccess) MessageName() string {
+	return "AccountSelectServerPlainSuccess"
+}
+
 func (m AccountSelectServerPlainSuccess) Serialized() (string, error) {
 	return fmt.Sprintf("%s:%s;%s", m.Host, m.Port, m.Ticket), nil
 }

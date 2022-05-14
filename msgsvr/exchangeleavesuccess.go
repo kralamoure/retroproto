@@ -12,6 +12,10 @@ func (m ExchangeLeaveSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeLeaveSuccess
 }
 
+func (m ExchangeLeaveSuccess) MessageName() string {
+	return "ExchangeLeaveSuccess"
+}
+
 func (m ExchangeLeaveSuccess) Serialized() (string, error) {
 	if m.TypePlayerExchange {
 		return "a", nil

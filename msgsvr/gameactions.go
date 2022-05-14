@@ -54,6 +54,10 @@ func (m GameActions) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameActions
 }
 
+func (m GameActions) MessageName() string {
+	return "GameActions"
+}
+
 func (m GameActions) Serialized() (string, error) {
 	sb := strings.Builder{}
 

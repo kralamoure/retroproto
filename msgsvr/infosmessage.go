@@ -18,6 +18,10 @@ func (m InfosMessage) MessageId() retroproto.MsgSvrId {
 	return retroproto.InfosMessage
 }
 
+func (m InfosMessage) MessageName() string {
+	return "InfosMessage"
+}
+
 func (m InfosMessage) Serialized() (string, error) {
 	messages := make([]string, len(m.Messages))
 	for i, v := range m.Messages {

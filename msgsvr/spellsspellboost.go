@@ -12,6 +12,10 @@ func (m SpellsSpellBoost) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsSpellBoost
 }
 
+func (m SpellsSpellBoost) MessageName() string {
+	return "SpellsSpellBoost"
+}
+
 func (m SpellsSpellBoost) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

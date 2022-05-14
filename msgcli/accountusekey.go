@@ -15,6 +15,10 @@ func (m AccountUseKey) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountUseKey
 }
 
+func (m AccountUseKey) MessageName() string {
+	return "AccountUseKey"
+}
+
 func (m AccountUseKey) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Id), nil
 }

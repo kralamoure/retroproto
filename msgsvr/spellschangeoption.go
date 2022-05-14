@@ -12,6 +12,10 @@ func (m SpellsChangeOption) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsChangeOption
 }
 
+func (m SpellsChangeOption) MessageName() string {
+	return "SpellsChangeOption"
+}
+
 func (m SpellsChangeOption) Serialized() (string, error) {
 	canUseSeeAllSpell := "-"
 	if m.CanUseSeeAllSpell {

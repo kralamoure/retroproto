@@ -15,6 +15,10 @@ func (m TutorialShowTip) MessageId() retroproto.MsgSvrId {
 	return retroproto.TutorialShowTip
 }
 
+func (m TutorialShowTip) MessageName() string {
+	return "TutorialShowTip"
+}
+
 func (m TutorialShowTip) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Id), nil
 }

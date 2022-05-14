@@ -12,6 +12,10 @@ func (m AccountGetRandomCharacterName) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountGetRandomCharacterName
 }
 
+func (m AccountGetRandomCharacterName) MessageName() string {
+	return "AccountGetRandomCharacterName"
+}
+
 func (m AccountGetRandomCharacterName) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

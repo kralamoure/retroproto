@@ -241,6 +241,10 @@ func (m GameMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameMovement
 }
 
+func (m GameMovement) MessageName() string {
+	return "GameMovement"
+}
+
 func (m GameMovement) Serialized() (string, error) {
 	spritesSli := make([]string, len(m.Sprites))
 

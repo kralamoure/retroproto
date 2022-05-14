@@ -12,6 +12,10 @@ func (m ConquestGetAlignedBonus) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestGetAlignedBonus
 }
 
+func (m ConquestGetAlignedBonus) MessageName() string {
+	return "ConquestGetAlignedBonus"
+}
+
 func (m ConquestGetAlignedBonus) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

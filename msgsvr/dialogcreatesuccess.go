@@ -15,6 +15,10 @@ func (m DialogCreateSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.DialogCreateSuccess
 }
 
+func (m DialogCreateSuccess) MessageName() string {
+	return "DialogCreateSuccess"
+}
+
 func (m DialogCreateSuccess) Serialized() (string, error) {
 	return fmt.Sprint(m.NPCId), nil
 }

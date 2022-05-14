@@ -15,6 +15,10 @@ func (m AccountFriendServerList) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountFriendServerList
 }
 
+func (m AccountFriendServerList) MessageName() string {
+	return "AccountFriendServerList"
+}
+
 func (m AccountFriendServerList) Serialized() (string, error) {
 	if len(m.ServersCharacters) == 0 {
 		return "null", nil

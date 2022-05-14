@@ -12,6 +12,10 @@ func (m ChatReportMessage) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatReportMessage
 }
 
+func (m ChatReportMessage) MessageName() string {
+	return "ChatReportMessage"
+}
+
 func (m ChatReportMessage) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

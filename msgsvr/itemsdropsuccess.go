@@ -12,6 +12,10 @@ func (m ItemsDropSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsDropSuccess
 }
 
+func (m ItemsDropSuccess) MessageName() string {
+	return "ItemsDropSuccess"
+}
+
 func (m ItemsDropSuccess) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

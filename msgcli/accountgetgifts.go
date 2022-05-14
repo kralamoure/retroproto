@@ -12,6 +12,10 @@ func (m AccountGetGifts) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountGetGifts
 }
 
+func (m AccountGetGifts) MessageName() string {
+	return "AccountGetGifts"
+}
+
 func (m AccountGetGifts) Serialized() (string, error) {
 	return m.Lang, nil
 }

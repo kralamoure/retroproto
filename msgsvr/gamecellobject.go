@@ -12,6 +12,10 @@ func (m GameCellObject) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameCellObject
 }
 
+func (m GameCellObject) MessageName() string {
+	return "GameCellObject"
+}
+
 func (m GameCellObject) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

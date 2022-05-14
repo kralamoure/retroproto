@@ -17,6 +17,10 @@ func (m EmotesList) MessageId() retroproto.MsgSvrId {
 	return retroproto.EmotesList
 }
 
+func (m EmotesList) MessageName() string {
+	return "EmotesList"
+}
+
 func (m EmotesList) Serialized() (string, error) {
 	var emotes int
 

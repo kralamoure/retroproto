@@ -10,6 +10,10 @@ func (m GameCreateError) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameCreateError
 }
 
+func (m GameCreateError) MessageName() string {
+	return "GameCreateError"
+}
+
 func (m GameCreateError) Serialized() (string, error) {
 	return "", nil
 }

@@ -12,6 +12,10 @@ func (m TutorialCreate) MessageId() retroproto.MsgSvrId {
 	return retroproto.TutorialCreate
 }
 
+func (m TutorialCreate) MessageName() string {
+	return "TutorialCreate"
+}
+
 func (m TutorialCreate) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

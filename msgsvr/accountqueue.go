@@ -15,6 +15,10 @@ func (m AccountQueue) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountQueue
 }
 
+func (m AccountQueue) MessageName() string {
+	return "AccountQueue"
+}
+
 func (m AccountQueue) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Position), nil
 }

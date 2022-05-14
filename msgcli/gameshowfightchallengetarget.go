@@ -12,6 +12,10 @@ func (m GameShowFightChallengeTarget) MessageId() retroproto.MsgCliId {
 	return retroproto.GameShowFightChallengeTarget
 }
 
+func (m GameShowFightChallengeTarget) MessageName() string {
+	return "GameShowFightChallengeTarget"
+}
+
 func (m GameShowFightChallengeTarget) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

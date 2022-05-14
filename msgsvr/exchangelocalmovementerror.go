@@ -12,6 +12,10 @@ func (m ExchangeLocalMovementError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeLocalMovementError
 }
 
+func (m ExchangeLocalMovementError) MessageName() string {
+	return "ExchangeLocalMovementError"
+}
+
 func (m ExchangeLocalMovementError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

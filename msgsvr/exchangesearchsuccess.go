@@ -10,6 +10,10 @@ func (m ExchangeSearchSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeSearchSuccess
 }
 
+func (m ExchangeSearchSuccess) MessageName() string {
+	return "ExchangeSearchSuccess"
+}
+
 func (m ExchangeSearchSuccess) Serialized() (string, error) {
 	return "", nil
 }

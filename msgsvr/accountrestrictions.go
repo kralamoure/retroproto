@@ -13,6 +13,10 @@ func (m AccountRestrictions) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountRestrictions
 }
 
+func (m AccountRestrictions) MessageName() string {
+	return "AccountRestrictions"
+}
+
 func (m AccountRestrictions) Serialized() (string, error) {
 	return m.Restrictions.Serialized()
 }

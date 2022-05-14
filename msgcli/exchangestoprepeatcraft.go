@@ -12,6 +12,10 @@ func (m ExchangeStopRepeatCraft) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeStopRepeatCraft
 }
 
+func (m ExchangeStopRepeatCraft) MessageName() string {
+	return "ExchangeStopRepeatCraft"
+}
+
 func (m ExchangeStopRepeatCraft) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

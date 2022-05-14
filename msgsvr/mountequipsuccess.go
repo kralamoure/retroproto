@@ -13,6 +13,10 @@ func (m MountEquipSuccess) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountEquipSuccess
 }
 
+func (m MountEquipSuccess) MessageName() string {
+	return "MountEquipSuccess"
+}
+
 func (m MountEquipSuccess) Serialized() (string, error) {
 	return m.Data.Serialized()
 }

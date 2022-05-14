@@ -3,7 +3,8 @@ package retroproto
 import "strings"
 
 type MsgSvr interface {
-	MessageId() (id MsgSvrId)
+	MessageId() MsgSvrId
+	MessageName() string
 	Serialized() (extra string, err error)
 	Deserialize(extra string) error
 }

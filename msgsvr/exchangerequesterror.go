@@ -13,6 +13,10 @@ func (m ExchangeRequestError) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeRequestError
 }
 
+func (m ExchangeRequestError) MessageName() string {
+	return "ExchangeRequestError"
+}
+
 func (m ExchangeRequestError) Serialized() (string, error) {
 	return string(m.Reason), nil
 }

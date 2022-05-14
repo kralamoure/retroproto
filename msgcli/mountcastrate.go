@@ -10,6 +10,10 @@ func (m MountCastrate) MessageId() retroproto.MsgCliId {
 	return retroproto.MountCastrate
 }
 
+func (m MountCastrate) MessageName() string {
+	return "MountCastrate"
+}
+
 func (m MountCastrate) Serialized() (string, error) {
 	return "", nil
 }

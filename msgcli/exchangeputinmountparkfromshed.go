@@ -15,6 +15,10 @@ func (m ExchangePutInMountParkFromShed) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangePutInMountParkFromShed
 }
 
+func (m ExchangePutInMountParkFromShed) MessageName() string {
+	return "ExchangePutInMountParkFromShed"
+}
+
 func (m ExchangePutInMountParkFromShed) Serialized() (string, error) {
 	return fmt.Sprint(m.MountId), nil
 }

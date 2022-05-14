@@ -15,6 +15,10 @@ func (m ExchangeMountStorageRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeMountStorageRemove
 }
 
+func (m ExchangeMountStorageRemove) MessageName() string {
+	return "ExchangeMountStorageRemove"
+}
+
 func (m ExchangeMountStorageRemove) Serialized() (string, error) {
 	return fmt.Sprint(m.MountId), nil
 }

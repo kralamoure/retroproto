@@ -12,6 +12,10 @@ func (m PartyMovement) MessageId() retroproto.MsgSvrId {
 	return retroproto.PartyMovement
 }
 
+func (m PartyMovement) MessageName() string {
+	return "PartyMovement"
+}
+
 func (m PartyMovement) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

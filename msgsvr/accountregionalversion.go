@@ -15,6 +15,10 @@ func (m AccountRegionalVersion) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountRegionalVersion
 }
 
+func (m AccountRegionalVersion) MessageName() string {
+	return "AccountRegionalVersion"
+}
+
 func (m AccountRegionalVersion) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Value), nil
 }

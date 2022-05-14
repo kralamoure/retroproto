@@ -18,6 +18,10 @@ func (m SpellsList) MessageId() retroproto.MsgSvrId {
 	return retroproto.SpellsList
 }
 
+func (m SpellsList) MessageName() string {
+	return "SpellsList"
+}
+
 func (m SpellsList) Serialized() (string, error) {
 	spells := make([]string, len(m.Spells))
 	for i, v := range m.Spells {

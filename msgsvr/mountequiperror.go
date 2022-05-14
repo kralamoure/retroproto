@@ -12,6 +12,10 @@ func (m MountEquipError) MessageId() retroproto.MsgSvrId {
 	return retroproto.MountEquipError
 }
 
+func (m MountEquipError) MessageName() string {
+	return "MountEquipError"
+}
+
 func (m MountEquipError) Serialized() (string, error) {
 	return string(m.Reason), nil
 }

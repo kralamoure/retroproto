@@ -12,6 +12,10 @@ func (m ChatUseSmiley) MessageId() retroproto.MsgCliId {
 	return retroproto.ChatUseSmiley
 }
 
+func (m ChatUseSmiley) MessageName() string {
+	return "ChatUseSmiley"
+}
+
 func (m ChatUseSmiley) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -19,6 +19,10 @@ func (m ExchangeBigStoreTypeItemsList) MessageId() retroproto.MsgSvrId {
 	return retroproto.ExchangeBigStoreTypeItemsList
 }
 
+func (m ExchangeBigStoreTypeItemsList) MessageName() string {
+	return "ExchangeBigStoreTypeItemsList"
+}
+
 func (m ExchangeBigStoreTypeItemsList) Serialized() (string, error) {
 	itemTemplateIds := make([]string, len(m.ItemTemplateIds))
 	for i, v := range m.ItemTemplateIds {

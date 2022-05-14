@@ -12,6 +12,10 @@ func (m AksQuickPing) MessageId() retroproto.MsgCliId {
 	return retroproto.AksQuickPing
 }
 
+func (m AksQuickPing) MessageName() string {
+	return "AksQuickPing"
+}
+
 func (m AksQuickPing) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m SubareasList) MessageId() retroproto.MsgSvrId {
 	return retroproto.SubareasList
 }
 
+func (m SubareasList) MessageName() string {
+	return "SubareasList"
+}
+
 func (m SubareasList) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

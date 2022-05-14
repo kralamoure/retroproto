@@ -10,6 +10,10 @@ func (m BasicsGetDate) MessageId() retroproto.MsgCliId {
 	return retroproto.BasicsGetDate
 }
 
+func (m BasicsGetDate) MessageName() string {
+	return "BasicsGetDate"
+}
+
 func (m BasicsGetDate) Serialized() (string, error) {
 	return "", nil
 }

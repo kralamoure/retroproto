@@ -12,6 +12,10 @@ func (m AccountCharacterAddError) MessageId() retroproto.MsgSvrId {
 	return retroproto.AccountCharacterAddError
 }
 
+func (m AccountCharacterAddError) MessageName() string {
+	return "AccountCharacterAddError"
+}
+
 func (m AccountCharacterAddError) Serialized() (string, error) {
 	return string(m.Reason), nil
 }

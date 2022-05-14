@@ -17,6 +17,10 @@ func (m DialogResponse) MessageId() retroproto.MsgCliId {
 	return retroproto.DialogResponse
 }
 
+func (m DialogResponse) MessageName() string {
+	return "DialogResponse"
+}
+
 func (m DialogResponse) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d", m.Question, m.Answer), nil
 }

@@ -12,6 +12,10 @@ func (m QuestGetStep) MessageId() retroproto.MsgCliId {
 	return retroproto.QuestGetStep
 }
 
+func (m QuestGetStep) MessageName() string {
+	return "QuestGetStep"
+}
+
 func (m QuestGetStep) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

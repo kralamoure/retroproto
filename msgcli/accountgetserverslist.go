@@ -10,6 +10,10 @@ func (m AccountGetServersList) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountGetServersList
 }
 
+func (m AccountGetServersList) MessageName() string {
+	return "AccountGetServersList"
+}
+
 func (m AccountGetServersList) Serialized() (string, error) {
 	return "", nil
 }

@@ -12,6 +12,10 @@ func (m GuildBoostCharacteristic) MessageId() retroproto.MsgCliId {
 	return retroproto.GuildBoostCharacteristic
 }
 
+func (m GuildBoostCharacteristic) MessageName() string {
+	return "GuildBoostCharacteristic"
+}
+
 func (m GuildBoostCharacteristic) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

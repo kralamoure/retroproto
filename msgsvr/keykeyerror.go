@@ -12,6 +12,10 @@ func (m KeyKeyError) MessageId() retroproto.MsgSvrId {
 	return retroproto.KeyKeyError
 }
 
+func (m KeyKeyError) MessageName() string {
+	return "KeyKeyError"
+}
+
 func (m KeyKeyError) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -18,6 +18,10 @@ func (m MountRequestData) MessageId() retroproto.MsgCliId {
 	return retroproto.MountRequestData
 }
 
+func (m MountRequestData) MessageName() string {
+	return "MountRequestData"
+}
+
 func (m MountRequestData) Serialized() (string, error) {
 	return fmt.Sprintf("%d|%d", m.Id, m.Validity.Unix()*1000), nil
 }

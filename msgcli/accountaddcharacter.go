@@ -21,6 +21,10 @@ func (m AccountAddCharacter) MessageId() retroproto.MsgCliId {
 	return retroproto.AccountAddCharacter
 }
 
+func (m AccountAddCharacter) MessageName() string {
+	return "AccountAddCharacter"
+}
+
 func (m AccountAddCharacter) Serialized() (string, error) {
 	color1 := -1
 	if m.Color1 != "" {

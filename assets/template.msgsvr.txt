@@ -12,6 +12,10 @@ func (m {{ . }}) ProtocolId() retroproto.MsgSvrId {
 	return retroproto.{{ . }}
 }
 
+func (m {{ . }}) MessageName() string {
+	return "{{ . }}"
+}
+
 func (m {{ . }}) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

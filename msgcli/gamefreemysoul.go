@@ -12,6 +12,10 @@ func (m GameFreeMySoul) MessageId() retroproto.MsgCliId {
 	return retroproto.GameFreeMySoul
 }
 
+func (m GameFreeMySoul) MessageName() string {
+	return "GameFreeMySoul"
+}
+
 func (m GameFreeMySoul) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

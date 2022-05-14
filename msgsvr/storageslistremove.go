@@ -12,6 +12,10 @@ func (m StoragesListRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.StoragesListRemove
 }
 
+func (m StoragesListRemove) MessageName() string {
+	return "StoragesListRemove"
+}
+
 func (m StoragesListRemove) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

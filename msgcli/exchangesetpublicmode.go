@@ -12,6 +12,10 @@ func (m ExchangeSetPublicMode) MessageId() retroproto.MsgCliId {
 	return retroproto.ExchangeSetPublicMode
 }
 
+func (m ExchangeSetPublicMode) MessageName() string {
+	return "ExchangeSetPublicMode"
+}
+
 func (m ExchangeSetPublicMode) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

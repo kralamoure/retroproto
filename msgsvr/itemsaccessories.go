@@ -18,6 +18,10 @@ func (m ItemsAccessories) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsAccessories
 }
 
+func (m ItemsAccessories) MessageName() string {
+	return "ItemsAccessories"
+}
+
 func (m ItemsAccessories) Serialized() (string, error) {
 	accessories, err := m.Accessories.Serialized()
 	if err != nil {

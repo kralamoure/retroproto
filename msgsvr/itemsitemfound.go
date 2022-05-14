@@ -12,6 +12,10 @@ func (m ItemsItemFound) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsItemFound
 }
 
+func (m ItemsItemFound) MessageName() string {
+	return "ItemsItemFound"
+}
+
 func (m ItemsItemFound) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m GameJoin) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameJoin
 }
 
+func (m GameJoin) MessageName() string {
+	return "GameJoin"
+}
+
 func (m GameJoin) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

@@ -12,6 +12,10 @@ func (m GameTurnMiddle) MessageId() retroproto.MsgSvrId {
 	return retroproto.GameTurnMiddle
 }
 
+func (m GameTurnMiddle) MessageName() string {
+	return "GameTurnMiddle"
+}
+
 func (m GameTurnMiddle) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

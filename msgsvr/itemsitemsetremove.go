@@ -16,6 +16,10 @@ func (m ItemsItemSetRemove) MessageId() retroproto.MsgSvrId {
 	return retroproto.ItemsItemSetRemove
 }
 
+func (m ItemsItemSetRemove) MessageName() string {
+	return "ItemsItemSetRemove"
+}
+
 func (m ItemsItemSetRemove) Serialized() (string, error) {
 	return fmt.Sprintf("%d", m.Id), nil
 }

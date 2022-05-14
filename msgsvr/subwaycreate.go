@@ -12,6 +12,10 @@ func (m SubwayCreate) MessageId() retroproto.MsgSvrId {
 	return retroproto.SubwayCreate
 }
 
+func (m SubwayCreate) MessageName() string {
+	return "SubwayCreate"
+}
+
 func (m SubwayCreate) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }

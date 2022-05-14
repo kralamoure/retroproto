@@ -12,6 +12,10 @@ func (m ConquestSwitchPlaces) MessageId() retroproto.MsgCliId {
 	return retroproto.ConquestSwitchPlaces
 }
 
+func (m ConquestSwitchPlaces) MessageName() string {
+	return "ConquestSwitchPlaces"
+}
+
 func (m ConquestSwitchPlaces) Serialized() (string, error) {
 	return "", retroproto.ErrNotImplemented
 }
